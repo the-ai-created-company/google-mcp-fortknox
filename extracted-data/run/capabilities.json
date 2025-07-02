@@ -1,0 +1,188 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "run.projects.locations.list"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "run.projects.locations.operations.list"
+    ],
+    "get_operations": [
+      "run.projects.locations.operations.get"
+    ],
+    "delete_operations": [
+      "run.projects.locations.operations.delete"
+    ],
+    "wait_operations": [
+      "run.projects.locations.operations.wait"
+    ]
+  },
+  "authorizeddomains_management": {
+    "list_authorizeddomains": [
+      "run.projects.locations.authorizeddomains.list",
+      "run.projects.authorizeddomains.list",
+      "run.namespaces.authorizeddomains.list"
+    ]
+  },
+  "revisions_management": {
+    "list_revisions": [
+      "run.projects.locations.revisions.list",
+      "run.namespaces.revisions.list"
+    ],
+    "get_revisions": [
+      "run.projects.locations.revisions.get",
+      "run.namespaces.revisions.get"
+    ],
+    "delete_revisions": [
+      "run.projects.locations.revisions.delete",
+      "run.namespaces.revisions.delete"
+    ]
+  },
+  "configurations_management": {
+    "list_configurations": [
+      "run.projects.locations.configurations.list",
+      "run.namespaces.configurations.list"
+    ],
+    "get_configurations": [
+      "run.projects.locations.configurations.get",
+      "run.namespaces.configurations.get"
+    ]
+  },
+  "domainmappings_management": {
+    "create_domainmappings": [
+      "run.projects.locations.domainmappings.create",
+      "run.namespaces.domainmappings.create"
+    ],
+    "list_domainmappings": [
+      "run.projects.locations.domainmappings.list",
+      "run.namespaces.domainmappings.list"
+    ],
+    "get_domainmappings": [
+      "run.projects.locations.domainmappings.get",
+      "run.namespaces.domainmappings.get"
+    ],
+    "delete_domainmappings": [
+      "run.projects.locations.domainmappings.delete",
+      "run.namespaces.domainmappings.delete"
+    ]
+  },
+  "jobs_management": {
+    "getIamPolicy_jobs": [
+      "run.projects.locations.jobs.getIamPolicy"
+    ],
+    "setIamPolicy_jobs": [
+      "run.projects.locations.jobs.setIamPolicy"
+    ],
+    "testIamPermissions_jobs": [
+      "run.projects.locations.jobs.testIamPermissions"
+    ],
+    "create_jobs": [
+      "run.namespaces.jobs.create"
+    ],
+    "replaceJob_jobs": [
+      "run.namespaces.jobs.replaceJob"
+    ],
+    "delete_jobs": [
+      "run.namespaces.jobs.delete"
+    ],
+    "get_jobs": [
+      "run.namespaces.jobs.get"
+    ],
+    "list_jobs": [
+      "run.namespaces.jobs.list"
+    ],
+    "run_jobs": [
+      "run.namespaces.jobs.run"
+    ]
+  },
+  "routes_management": {
+    "list_routes": [
+      "run.projects.locations.routes.list",
+      "run.namespaces.routes.list"
+    ],
+    "get_routes": [
+      "run.projects.locations.routes.get",
+      "run.namespaces.routes.get"
+    ]
+  },
+  "services_management": {
+    "list_services": [
+      "run.projects.locations.services.list",
+      "run.namespaces.services.list"
+    ],
+    "get_services": [
+      "run.projects.locations.services.get",
+      "run.namespaces.services.get"
+    ],
+    "create_services": [
+      "run.projects.locations.services.create",
+      "run.namespaces.services.create"
+    ],
+    "replaceService_services": [
+      "run.projects.locations.services.replaceService",
+      "run.namespaces.services.replaceService"
+    ],
+    "delete_services": [
+      "run.projects.locations.services.delete",
+      "run.namespaces.services.delete"
+    ],
+    "getIamPolicy_services": [
+      "run.projects.locations.services.getIamPolicy"
+    ],
+    "setIamPolicy_services": [
+      "run.projects.locations.services.setIamPolicy"
+    ],
+    "testIamPermissions_services": [
+      "run.projects.locations.services.testIamPermissions"
+    ]
+  },
+  "workerpools_management": {
+    "getIamPolicy_workerpools": [
+      "run.projects.locations.workerpools.getIamPolicy"
+    ],
+    "setIamPolicy_workerpools": [
+      "run.projects.locations.workerpools.setIamPolicy"
+    ],
+    "testIamPermissions_workerpools": [
+      "run.projects.locations.workerpools.testIamPermissions"
+    ],
+    "list_workerpools": [
+      "run.namespaces.workerpools.list"
+    ],
+    "get_workerpools": [
+      "run.namespaces.workerpools.get"
+    ],
+    "create_workerpools": [
+      "run.namespaces.workerpools.create"
+    ],
+    "replaceWorkerPool_workerpools": [
+      "run.namespaces.workerpools.replaceWorkerPool"
+    ],
+    "delete_workerpools": [
+      "run.namespaces.workerpools.delete"
+    ]
+  },
+  "tasks_management": {
+    "get_tasks": [
+      "run.namespaces.tasks.get"
+    ],
+    "list_tasks": [
+      "run.namespaces.tasks.list"
+    ]
+  },
+  "executions_management": {
+    "delete_executions": [
+      "run.namespaces.executions.delete"
+    ],
+    "get_executions": [
+      "run.namespaces.executions.get"
+    ],
+    "list_executions": [
+      "run.namespaces.executions.list"
+    ],
+    "cancel_executions": [
+      "run.namespaces.executions.cancel"
+    ]
+  }
+}

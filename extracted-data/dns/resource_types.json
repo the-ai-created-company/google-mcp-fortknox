@@ -1,0 +1,87 @@
+{
+  "resourceRecordSets": {
+    "description": "resourceRecordSets resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "changes": {
+    "description": "changes resource",
+    "operations_count": 3,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "dnsKeys": {
+    "description": "dnsKeys resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": []
+  },
+  "managedZoneOperations": {
+    "description": "managedZoneOperations resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "managedZones": {
+    "description": "managedZones resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "policies": {
+    "description": "policies resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "responsePolicies": {
+    "description": "responsePolicies resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "responsePolicyRules": {
+    "description": "responsePolicyRules resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  }
+}

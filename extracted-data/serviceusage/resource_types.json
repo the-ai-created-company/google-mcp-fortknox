@@ -1,0 +1,27 @@
+{
+  "services": {
+    "description": "services resource",
+    "operations_count": 6,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "batchEnable",
+      "batchGet",
+      "disable",
+      "enable"
+    ]
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  }
+}

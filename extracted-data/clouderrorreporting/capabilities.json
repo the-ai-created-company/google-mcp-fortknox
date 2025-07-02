@@ -1,0 +1,37 @@
+{
+  "projects_management": {
+    "deleteEvents_projects": [
+      "clouderrorreporting.projects.deleteEvents"
+    ]
+  },
+  "groups_management": {
+    "get_groups": [
+      "clouderrorreporting.projects.groups.get",
+      "clouderrorreporting.projects.locations.groups.get"
+    ],
+    "update_groups": [
+      "clouderrorreporting.projects.groups.update",
+      "clouderrorreporting.projects.locations.groups.update"
+    ]
+  },
+  "groupStats_management": {
+    "list_groupStats": [
+      "clouderrorreporting.projects.groupStats.list",
+      "clouderrorreporting.projects.locations.groupStats.list"
+    ]
+  },
+  "events_management": {
+    "list_events": [
+      "clouderrorreporting.projects.events.list",
+      "clouderrorreporting.projects.locations.events.list"
+    ],
+    "report_events": [
+      "clouderrorreporting.projects.events.report"
+    ]
+  },
+  "locations_management": {
+    "deleteEvents_locations": [
+      "clouderrorreporting.projects.locations.deleteEvents"
+    ]
+  }
+}

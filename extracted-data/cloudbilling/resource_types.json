@@ -1,0 +1,55 @@
+{
+  "billingAccounts": {
+    "description": "billingAccounts resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "move",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "subAccounts": {
+    "description": "subAccounts resource",
+    "operations_count": 2,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "getBillingInfo",
+      "updateBillingInfo"
+    ]
+  },
+  "services": {
+    "description": "services resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "skus": {
+    "description": "skus resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

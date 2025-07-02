@@ -1,0 +1,709 @@
+{
+  "datasets": {
+    "description": "datasets resource",
+    "operations_count": 13,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "export",
+      "import",
+      "searchDataItems"
+    ]
+  },
+  "datasetVersions": {
+    "description": "datasetVersions resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "restore"
+    ]
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getCacheConfig",
+      "updateCacheConfig"
+    ]
+  },
+  "locations": {
+    "description": "locations resource",
+    "operations_count": 10,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "augmentPrompt",
+      "corroborateContent",
+      "deploy",
+      "evaluateDataset",
+      "evaluateInstances",
+      "getRagEngineConfig",
+      "retrieveContexts",
+      "updateRagEngineConfig"
+    ]
+  },
+  "featurestores": {
+    "description": "featurestores resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "batchReadFeatureValues",
+      "getIamPolicy",
+      "searchFeatures",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "entityTypes": {
+    "description": "entityTypes resource",
+    "operations_count": 14,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "deleteFeatureValues",
+      "exportFeatureValues",
+      "getIamPolicy",
+      "importFeatureValues",
+      "readFeatureValues",
+      "setIamPolicy",
+      "streamingReadFeatureValues",
+      "testIamPermissions",
+      "writeFeatureValues"
+    ]
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 230,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel",
+      "listWait",
+      "wait"
+    ]
+  },
+  "features": {
+    "description": "features resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "batchCreate"
+    ]
+  },
+  "models": {
+    "description": "models resource",
+    "operations_count": 33,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "computeTokens",
+      "copy",
+      "countTokens",
+      "deleteVersion",
+      "export",
+      "fetchPredictOperation",
+      "generateContent",
+      "getIamPolicy",
+      "listCheckpoints",
+      "listVersions",
+      "mergeVersionAliases",
+      "predict",
+      "predictLongRunning",
+      "rawPredict",
+      "serverStreamingPredict",
+      "setIamPolicy",
+      "streamGenerateContent",
+      "streamRawPredict",
+      "testIamPermissions",
+      "updateExplanationDataset",
+      "upload"
+    ]
+  },
+  "evaluations": {
+    "description": "evaluations resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "import"
+    ]
+  },
+  "slices": {
+    "description": "slices resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "batchImport"
+    ]
+  },
+  "notebookRuntimeTemplates": {
+    "description": "notebookRuntimeTemplates resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "featureOnlineStores": {
+    "description": "featureOnlineStores resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "featureViews": {
+    "description": "featureViews resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "fetchFeatureValues",
+      "getIamPolicy",
+      "searchNearestEntities",
+      "setIamPolicy",
+      "sync",
+      "testIamPermissions"
+    ]
+  },
+  "featureViewSyncs": {
+    "description": "featureViewSyncs resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "featureGroups": {
+    "description": "featureGroups resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "dataItems": {
+    "description": "dataItems resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "annotations": {
+    "description": "annotations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "savedQueries": {
+    "description": "savedQueries resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "annotationSpecs": {
+    "description": "annotationSpecs resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": []
+  },
+  "deploymentResourcePools": {
+    "description": "deploymentResourcePools resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "queryDeployedModels"
+    ]
+  },
+  "endpoints": {
+    "description": "endpoints resource",
+    "operations_count": 29,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "computeTokens",
+      "countTokens",
+      "deployModel",
+      "directPredict",
+      "directRawPredict",
+      "explain",
+      "fetchPredictOperation",
+      "generateContent",
+      "mutateDeployedModel",
+      "predict",
+      "predictLongRunning",
+      "rawPredict",
+      "serverStreamingPredict",
+      "streamGenerateContent",
+      "streamRawPredict",
+      "undeployModel"
+    ]
+  },
+  "chat": {
+    "description": "chat resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "completions"
+    ]
+  },
+  "cachedContents": {
+    "description": "cachedContents resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "tuningJobs": {
+    "description": "tuningJobs resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel",
+      "rebaseTunedModel"
+    ]
+  },
+  "indexes": {
+    "description": "indexes resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "removeDatapoints",
+      "upsertDatapoints"
+    ]
+  },
+  "indexEndpoints": {
+    "description": "indexEndpoints resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "deployIndex",
+      "findNeighbors",
+      "mutateDeployedIndex",
+      "readIndexDatapoints",
+      "undeployIndex"
+    ]
+  },
+  "customJobs": {
+    "description": "customJobs resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "dataLabelingJobs": {
+    "description": "dataLabelingJobs resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "hyperparameterTuningJobs": {
+    "description": "hyperparameterTuningJobs resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "nasJobs": {
+    "description": "nasJobs resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "nasTrialDetails": {
+    "description": "nasTrialDetails resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "batchPredictionJobs": {
+    "description": "batchPredictionJobs resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "modelDeploymentMonitoringJobs": {
+    "description": "modelDeploymentMonitoringJobs resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "pause",
+      "resume",
+      "searchModelDeploymentMonitoringStatsAnomalies"
+    ]
+  },
+  "metadataStores": {
+    "description": "metadataStores resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "artifacts": {
+    "description": "artifacts resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "purge",
+      "queryArtifactLineageSubgraph"
+    ]
+  },
+  "contexts": {
+    "description": "contexts resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addContextArtifactsAndExecutions",
+      "addContextChildren",
+      "purge",
+      "queryContextLineageSubgraph",
+      "removeContextChildren"
+    ]
+  },
+  "executions": {
+    "description": "executions resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addExecutionEvents",
+      "purge",
+      "queryExecutionInputsAndOutputs"
+    ]
+  },
+  "metadataSchemas": {
+    "description": "metadataSchemas resource",
+    "operations_count": 3,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "migratableResources": {
+    "description": "migratableResources resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "batchMigrate",
+      "search"
+    ]
+  },
+  "notebookRuntimes": {
+    "description": "notebookRuntimes resource",
+    "operations_count": 7,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "assign",
+      "start",
+      "stop",
+      "upgrade"
+    ]
+  },
+  "notebookExecutionJobs": {
+    "description": "notebookExecutionJobs resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "persistentResources": {
+    "description": "persistentResources resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "reboot"
+    ]
+  },
+  "trainingPipelines": {
+    "description": "trainingPipelines resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "pipelineJobs": {
+    "description": "pipelineJobs resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "batchCancel",
+      "batchDelete",
+      "cancel"
+    ]
+  },
+  "reasoningEngines": {
+    "description": "reasoningEngines resource",
+    "operations_count": 14,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "query",
+      "streamQuery"
+    ]
+  },
+  "schedules": {
+    "description": "schedules resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "pause",
+      "resume"
+    ]
+  },
+  "specialistPools": {
+    "description": "specialistPools resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "tensorboards": {
+    "description": "tensorboards resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "batchRead",
+      "readSize",
+      "readUsage"
+    ]
+  },
+  "experiments": {
+    "description": "experiments resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "batchCreate",
+      "write"
+    ]
+  },
+  "runs": {
+    "description": "runs resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "batchCreate",
+      "write"
+    ]
+  },
+  "timeSeries": {
+    "description": "timeSeries resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "exportTensorboardTimeSeries",
+      "read",
+      "readBlobData"
+    ]
+  },
+  "studies": {
+    "description": "studies resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "lookup"
+    ]
+  },
+  "trials": {
+    "description": "trials resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "addTrialMeasurement",
+      "checkTrialEarlyStoppingState",
+      "complete",
+      "listOptimalTrials",
+      "stop",
+      "suggest"
+    ]
+  },
+  "ragCorpora": {
+    "description": "ragCorpora resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "ragFiles": {
+    "description": "ragFiles resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "import"
+    ]
+  },
+  "media": {
+    "description": "media resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "upload"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "operations_management": {
+    "list_operations": [
+      "cloudfunctions.operations.list"
+    ],
+    "get_operations": [
+      "cloudfunctions.operations.get"
+    ]
+  },
+  "locations_management": {
+    "list_locations": [
+      "cloudfunctions.projects.locations.list"
+    ]
+  },
+  "functions_management": {
+    "list_functions": [
+      "cloudfunctions.projects.locations.functions.list"
+    ],
+    "get_functions": [
+      "cloudfunctions.projects.locations.functions.get"
+    ],
+    "create_functions": [
+      "cloudfunctions.projects.locations.functions.create"
+    ],
+    "patch_functions": [
+      "cloudfunctions.projects.locations.functions.patch"
+    ],
+    "delete_functions": [
+      "cloudfunctions.projects.locations.functions.delete"
+    ],
+    "call_functions": [
+      "cloudfunctions.projects.locations.functions.call"
+    ],
+    "generateUploadUrl_functions": [
+      "cloudfunctions.projects.locations.functions.generateUploadUrl"
+    ],
+    "generateDownloadUrl_functions": [
+      "cloudfunctions.projects.locations.functions.generateDownloadUrl"
+    ],
+    "setIamPolicy_functions": [
+      "cloudfunctions.projects.locations.functions.setIamPolicy"
+    ],
+    "getIamPolicy_functions": [
+      "cloudfunctions.projects.locations.functions.getIamPolicy"
+    ],
+    "testIamPermissions_functions": [
+      "cloudfunctions.projects.locations.functions.testIamPermissions"
+    ]
+  }
+}

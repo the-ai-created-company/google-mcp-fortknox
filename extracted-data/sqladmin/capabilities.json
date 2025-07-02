@@ -1,0 +1,229 @@
+{
+  "backupRuns_management": {
+    "delete_backupRuns": [
+      "sql.backupRuns.delete"
+    ],
+    "get_backupRuns": [
+      "sql.backupRuns.get"
+    ],
+    "insert_backupRuns": [
+      "sql.backupRuns.insert"
+    ],
+    "list_backupRuns": [
+      "sql.backupRuns.list"
+    ]
+  },
+  "databases_management": {
+    "delete_databases": [
+      "sql.databases.delete"
+    ],
+    "get_databases": [
+      "sql.databases.get"
+    ],
+    "insert_databases": [
+      "sql.databases.insert"
+    ],
+    "list_databases": [
+      "sql.databases.list"
+    ],
+    "patch_databases": [
+      "sql.databases.patch"
+    ],
+    "update_databases": [
+      "sql.databases.update"
+    ]
+  },
+  "flags_management": {
+    "list_flags": [
+      "sql.flags.list"
+    ]
+  },
+  "instances_management": {
+    "addServerCa_instances": [
+      "sql.instances.addServerCa"
+    ],
+    "addServerCertificate_instances": [
+      "sql.instances.addServerCertificate"
+    ],
+    "clone_instances": [
+      "sql.instances.clone"
+    ],
+    "delete_instances": [
+      "sql.instances.delete"
+    ],
+    "demoteMaster_instances": [
+      "sql.instances.demoteMaster"
+    ],
+    "demote_instances": [
+      "sql.instances.demote"
+    ],
+    "export_instances": [
+      "sql.instances.export"
+    ],
+    "failover_instances": [
+      "sql.instances.failover"
+    ],
+    "reencrypt_instances": [
+      "sql.instances.reencrypt"
+    ],
+    "get_instances": [
+      "sql.instances.get"
+    ],
+    "import_instances": [
+      "sql.instances.import"
+    ],
+    "insert_instances": [
+      "sql.instances.insert"
+    ],
+    "list_instances": [
+      "sql.instances.list"
+    ],
+    "listServerCas_instances": [
+      "sql.instances.listServerCas"
+    ],
+    "ListServerCertificates_instances": [
+      "sql.instances.ListServerCertificates"
+    ],
+    "patch_instances": [
+      "sql.instances.patch"
+    ],
+    "promoteReplica_instances": [
+      "sql.instances.promoteReplica"
+    ],
+    "switchover_instances": [
+      "sql.instances.switchover"
+    ],
+    "resetSslConfig_instances": [
+      "sql.instances.resetSslConfig"
+    ],
+    "restart_instances": [
+      "sql.instances.restart"
+    ],
+    "restoreBackup_instances": [
+      "sql.instances.restoreBackup"
+    ],
+    "rotateServerCa_instances": [
+      "sql.instances.rotateServerCa"
+    ],
+    "RotateServerCertificate_instances": [
+      "sql.instances.RotateServerCertificate"
+    ],
+    "startReplica_instances": [
+      "sql.instances.startReplica"
+    ],
+    "stopReplica_instances": [
+      "sql.instances.stopReplica"
+    ],
+    "truncateLog_instances": [
+      "sql.instances.truncateLog"
+    ],
+    "update_instances": [
+      "sql.instances.update"
+    ],
+    "acquireSsrsLease_instances": [
+      "sql.instances.acquireSsrsLease"
+    ],
+    "releaseSsrsLease_instances": [
+      "sql.instances.releaseSsrsLease"
+    ],
+    "pointInTimeRestore_instances": [
+      "sql.instances.pointInTimeRestore"
+    ],
+    "rescheduleMaintenance_instances": [
+      "sql.projects.instances.rescheduleMaintenance"
+    ],
+    "verifyExternalSyncSettings_instances": [
+      "sql.projects.instances.verifyExternalSyncSettings"
+    ],
+    "startExternalSync_instances": [
+      "sql.projects.instances.startExternalSync"
+    ],
+    "performDiskShrink_instances": [
+      "sql.projects.instances.performDiskShrink"
+    ],
+    "getDiskShrinkConfig_instances": [
+      "sql.projects.instances.getDiskShrinkConfig"
+    ],
+    "resetReplicaSize_instances": [
+      "sql.projects.instances.resetReplicaSize"
+    ],
+    "getLatestRecoveryTime_instances": [
+      "sql.projects.instances.getLatestRecoveryTime"
+    ]
+  },
+  "sslCerts_management": {
+    "createEphemeral_sslCerts": [
+      "sql.sslCerts.createEphemeral"
+    ],
+    "delete_sslCerts": [
+      "sql.sslCerts.delete"
+    ],
+    "get_sslCerts": [
+      "sql.sslCerts.get"
+    ],
+    "insert_sslCerts": [
+      "sql.sslCerts.insert"
+    ],
+    "list_sslCerts": [
+      "sql.sslCerts.list"
+    ]
+  },
+  "operations_management": {
+    "get_operations": [
+      "sql.operations.get"
+    ],
+    "list_operations": [
+      "sql.operations.list"
+    ],
+    "cancel_operations": [
+      "sql.operations.cancel"
+    ]
+  },
+  "backups_management": {
+    "createBackup_backups": [
+      "sql.backups.createBackup"
+    ],
+    "getBackup_backups": [
+      "sql.backups.getBackup"
+    ],
+    "listBackups_backups": [
+      "sql.backups.listBackups"
+    ],
+    "updateBackup_backups": [
+      "sql.backups.updateBackup"
+    ],
+    "deleteBackup_backups": [
+      "sql.backups.deleteBackup"
+    ]
+  },
+  "connect_management": {
+    "get_connect": [
+      "sql.connect.get"
+    ],
+    "generateEphemeral_connect": [
+      "sql.connect.generateEphemeral"
+    ]
+  },
+  "tiers_management": {
+    "list_tiers": [
+      "sql.tiers.list"
+    ]
+  },
+  "users_management": {
+    "delete_users": [
+      "sql.users.delete"
+    ],
+    "get_users": [
+      "sql.users.get"
+    ],
+    "insert_users": [
+      "sql.users.insert"
+    ],
+    "list_users": [
+      "sql.users.list"
+    ],
+    "update_users": [
+      "sql.users.update"
+    ]
+  }
+}

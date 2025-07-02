@@ -1,0 +1,140 @@
+{
+  "resourceRecordSets_management": {
+    "list_resourceRecordSets": [
+      "dns.resourceRecordSets.list"
+    ],
+    "create_resourceRecordSets": [
+      "dns.resourceRecordSets.create"
+    ],
+    "get_resourceRecordSets": [
+      "dns.resourceRecordSets.get"
+    ],
+    "delete_resourceRecordSets": [
+      "dns.resourceRecordSets.delete"
+    ],
+    "patch_resourceRecordSets": [
+      "dns.resourceRecordSets.patch"
+    ]
+  },
+  "changes_management": {
+    "create_changes": [
+      "dns.changes.create"
+    ],
+    "get_changes": [
+      "dns.changes.get"
+    ],
+    "list_changes": [
+      "dns.changes.list"
+    ]
+  },
+  "dnsKeys_management": {
+    "get_dnsKeys": [
+      "dns.dnsKeys.get"
+    ],
+    "list_dnsKeys": [
+      "dns.dnsKeys.list"
+    ]
+  },
+  "projects_management": {
+    "get_projects": [
+      "dns.projects.get"
+    ]
+  },
+  "managedZoneOperations_management": {
+    "get_managedZoneOperations": [
+      "dns.managedZoneOperations.get"
+    ],
+    "list_managedZoneOperations": [
+      "dns.managedZoneOperations.list"
+    ]
+  },
+  "managedZones_management": {
+    "create_managedZones": [
+      "dns.managedZones.create"
+    ],
+    "get_managedZones": [
+      "dns.managedZones.get"
+    ],
+    "list_managedZones": [
+      "dns.managedZones.list"
+    ],
+    "delete_managedZones": [
+      "dns.managedZones.delete"
+    ],
+    "patch_managedZones": [
+      "dns.managedZones.patch"
+    ],
+    "update_managedZones": [
+      "dns.managedZones.update"
+    ],
+    "setIamPolicy_managedZones": [
+      "dns.managedZones.setIamPolicy"
+    ],
+    "getIamPolicy_managedZones": [
+      "dns.managedZones.getIamPolicy"
+    ],
+    "testIamPermissions_managedZones": [
+      "dns.managedZones.testIamPermissions"
+    ]
+  },
+  "policies_management": {
+    "create_policies": [
+      "dns.policies.create"
+    ],
+    "get_policies": [
+      "dns.policies.get"
+    ],
+    "list_policies": [
+      "dns.policies.list"
+    ],
+    "delete_policies": [
+      "dns.policies.delete"
+    ],
+    "patch_policies": [
+      "dns.policies.patch"
+    ],
+    "update_policies": [
+      "dns.policies.update"
+    ]
+  },
+  "responsePolicies_management": {
+    "create_responsePolicies": [
+      "dns.responsePolicies.create"
+    ],
+    "get_responsePolicies": [
+      "dns.responsePolicies.get"
+    ],
+    "list_responsePolicies": [
+      "dns.responsePolicies.list"
+    ],
+    "delete_responsePolicies": [
+      "dns.responsePolicies.delete"
+    ],
+    "patch_responsePolicies": [
+      "dns.responsePolicies.patch"
+    ],
+    "update_responsePolicies": [
+      "dns.responsePolicies.update"
+    ]
+  },
+  "responsePolicyRules_management": {
+    "create_responsePolicyRules": [
+      "dns.responsePolicyRules.create"
+    ],
+    "get_responsePolicyRules": [
+      "dns.responsePolicyRules.get"
+    ],
+    "delete_responsePolicyRules": [
+      "dns.responsePolicyRules.delete"
+    ],
+    "list_responsePolicyRules": [
+      "dns.responsePolicyRules.list"
+    ],
+    "patch_responsePolicyRules": [
+      "dns.responsePolicyRules.patch"
+    ],
+    "update_responsePolicyRules": [
+      "dns.responsePolicyRules.update"
+    ]
+  }
+}

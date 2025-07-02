@@ -1,0 +1,188 @@
+{
+  "monitoredResourceDescriptors_management": {
+    "list_monitoredResourceDescriptors": [
+      "monitoring.projects.monitoredResourceDescriptors.list"
+    ],
+    "get_monitoredResourceDescriptors": [
+      "monitoring.projects.monitoredResourceDescriptors.get"
+    ]
+  },
+  "metricDescriptors_management": {
+    "list_metricDescriptors": [
+      "monitoring.projects.metricDescriptors.list"
+    ],
+    "get_metricDescriptors": [
+      "monitoring.projects.metricDescriptors.get"
+    ],
+    "create_metricDescriptors": [
+      "monitoring.projects.metricDescriptors.create"
+    ],
+    "delete_metricDescriptors": [
+      "monitoring.projects.metricDescriptors.delete"
+    ]
+  },
+  "timeSeries_management": {
+    "list_timeSeries": [
+      "monitoring.projects.timeSeries.list",
+      "monitoring.organizations.timeSeries.list",
+      "monitoring.folders.timeSeries.list"
+    ],
+    "create_timeSeries": [
+      "monitoring.projects.timeSeries.create"
+    ],
+    "createService_timeSeries": [
+      "monitoring.projects.timeSeries.createService"
+    ],
+    "query_timeSeries": [
+      "monitoring.projects.timeSeries.query"
+    ]
+  },
+  "collectdTimeSeries_management": {
+    "create_collectdTimeSeries": [
+      "monitoring.projects.collectdTimeSeries.create"
+    ]
+  },
+  "alertPolicies_management": {
+    "list_alertPolicies": [
+      "monitoring.projects.alertPolicies.list"
+    ],
+    "get_alertPolicies": [
+      "monitoring.projects.alertPolicies.get"
+    ],
+    "create_alertPolicies": [
+      "monitoring.projects.alertPolicies.create"
+    ],
+    "delete_alertPolicies": [
+      "monitoring.projects.alertPolicies.delete"
+    ],
+    "patch_alertPolicies": [
+      "monitoring.projects.alertPolicies.patch"
+    ]
+  },
+  "groups_management": {
+    "list_groups": [
+      "monitoring.projects.groups.list"
+    ],
+    "get_groups": [
+      "monitoring.projects.groups.get"
+    ],
+    "create_groups": [
+      "monitoring.projects.groups.create"
+    ],
+    "update_groups": [
+      "monitoring.projects.groups.update"
+    ],
+    "delete_groups": [
+      "monitoring.projects.groups.delete"
+    ]
+  },
+  "members_management": {
+    "list_members": [
+      "monitoring.projects.groups.members.list"
+    ]
+  },
+  "notificationChannelDescriptors_management": {
+    "list_notificationChannelDescriptors": [
+      "monitoring.projects.notificationChannelDescriptors.list"
+    ],
+    "get_notificationChannelDescriptors": [
+      "monitoring.projects.notificationChannelDescriptors.get"
+    ]
+  },
+  "notificationChannels_management": {
+    "list_notificationChannels": [
+      "monitoring.projects.notificationChannels.list"
+    ],
+    "get_notificationChannels": [
+      "monitoring.projects.notificationChannels.get"
+    ],
+    "create_notificationChannels": [
+      "monitoring.projects.notificationChannels.create"
+    ],
+    "patch_notificationChannels": [
+      "monitoring.projects.notificationChannels.patch"
+    ],
+    "delete_notificationChannels": [
+      "monitoring.projects.notificationChannels.delete"
+    ],
+    "sendVerificationCode_notificationChannels": [
+      "monitoring.projects.notificationChannels.sendVerificationCode"
+    ],
+    "getVerificationCode_notificationChannels": [
+      "monitoring.projects.notificationChannels.getVerificationCode"
+    ],
+    "verify_notificationChannels": [
+      "monitoring.projects.notificationChannels.verify"
+    ]
+  },
+  "snoozes_management": {
+    "create_snoozes": [
+      "monitoring.projects.snoozes.create"
+    ],
+    "list_snoozes": [
+      "monitoring.projects.snoozes.list"
+    ],
+    "get_snoozes": [
+      "monitoring.projects.snoozes.get"
+    ],
+    "patch_snoozes": [
+      "monitoring.projects.snoozes.patch"
+    ]
+  },
+  "uptimeCheckConfigs_management": {
+    "list_uptimeCheckConfigs": [
+      "monitoring.projects.uptimeCheckConfigs.list"
+    ],
+    "get_uptimeCheckConfigs": [
+      "monitoring.projects.uptimeCheckConfigs.get"
+    ],
+    "create_uptimeCheckConfigs": [
+      "monitoring.projects.uptimeCheckConfigs.create"
+    ],
+    "patch_uptimeCheckConfigs": [
+      "monitoring.projects.uptimeCheckConfigs.patch"
+    ],
+    "delete_uptimeCheckConfigs": [
+      "monitoring.projects.uptimeCheckConfigs.delete"
+    ]
+  },
+  "services_management": {
+    "create_services": [
+      "monitoring.services.create"
+    ],
+    "get_services": [
+      "monitoring.services.get"
+    ],
+    "list_services": [
+      "monitoring.services.list"
+    ],
+    "patch_services": [
+      "monitoring.services.patch"
+    ],
+    "delete_services": [
+      "monitoring.services.delete"
+    ]
+  },
+  "serviceLevelObjectives_management": {
+    "create_serviceLevelObjectives": [
+      "monitoring.services.serviceLevelObjectives.create"
+    ],
+    "get_serviceLevelObjectives": [
+      "monitoring.services.serviceLevelObjectives.get"
+    ],
+    "list_serviceLevelObjectives": [
+      "monitoring.services.serviceLevelObjectives.list"
+    ],
+    "patch_serviceLevelObjectives": [
+      "monitoring.services.serviceLevelObjectives.patch"
+    ],
+    "delete_serviceLevelObjectives": [
+      "monitoring.services.serviceLevelObjectives.delete"
+    ]
+  },
+  "uptimeCheckIps_management": {
+    "list_uptimeCheckIps": [
+      "monitoring.uptimeCheckIps.list"
+    ]
+  }
+}

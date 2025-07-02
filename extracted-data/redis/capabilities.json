@@ -1,0 +1,107 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "redis.projects.locations.list"
+    ],
+    "get_locations": [
+      "redis.projects.locations.get"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "redis.projects.locations.operations.list"
+    ],
+    "get_operations": [
+      "redis.projects.locations.operations.get"
+    ],
+    "delete_operations": [
+      "redis.projects.locations.operations.delete"
+    ],
+    "cancel_operations": [
+      "redis.projects.locations.operations.cancel"
+    ]
+  },
+  "clusters_management": {
+    "list_clusters": [
+      "redis.projects.locations.clusters.list"
+    ],
+    "get_clusters": [
+      "redis.projects.locations.clusters.get"
+    ],
+    "patch_clusters": [
+      "redis.projects.locations.clusters.patch"
+    ],
+    "delete_clusters": [
+      "redis.projects.locations.clusters.delete"
+    ],
+    "create_clusters": [
+      "redis.projects.locations.clusters.create"
+    ],
+    "getCertificateAuthority_clusters": [
+      "redis.projects.locations.clusters.getCertificateAuthority"
+    ],
+    "rescheduleClusterMaintenance_clusters": [
+      "redis.projects.locations.clusters.rescheduleClusterMaintenance"
+    ],
+    "backup_clusters": [
+      "redis.projects.locations.clusters.backup"
+    ]
+  },
+  "backupCollections_management": {
+    "list_backupCollections": [
+      "redis.projects.locations.backupCollections.list"
+    ],
+    "get_backupCollections": [
+      "redis.projects.locations.backupCollections.get"
+    ]
+  },
+  "backups_management": {
+    "list_backups": [
+      "redis.projects.locations.backupCollections.backups.list"
+    ],
+    "get_backups": [
+      "redis.projects.locations.backupCollections.backups.get"
+    ],
+    "delete_backups": [
+      "redis.projects.locations.backupCollections.backups.delete"
+    ],
+    "export_backups": [
+      "redis.projects.locations.backupCollections.backups.export"
+    ]
+  },
+  "instances_management": {
+    "list_instances": [
+      "redis.projects.locations.instances.list"
+    ],
+    "get_instances": [
+      "redis.projects.locations.instances.get"
+    ],
+    "getAuthString_instances": [
+      "redis.projects.locations.instances.getAuthString"
+    ],
+    "create_instances": [
+      "redis.projects.locations.instances.create"
+    ],
+    "patch_instances": [
+      "redis.projects.locations.instances.patch"
+    ],
+    "upgrade_instances": [
+      "redis.projects.locations.instances.upgrade"
+    ],
+    "import_instances": [
+      "redis.projects.locations.instances.import"
+    ],
+    "export_instances": [
+      "redis.projects.locations.instances.export"
+    ],
+    "failover_instances": [
+      "redis.projects.locations.instances.failover"
+    ],
+    "delete_instances": [
+      "redis.projects.locations.instances.delete"
+    ],
+    "rescheduleMaintenance_instances": [
+      "redis.projects.locations.instances.rescheduleMaintenance"
+    ]
+  }
+}

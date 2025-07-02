@@ -1,0 +1,144 @@
+{
+  "topics_management": {
+    "setIamPolicy_topics": [
+      "pubsub.projects.topics.setIamPolicy"
+    ],
+    "getIamPolicy_topics": [
+      "pubsub.projects.topics.getIamPolicy"
+    ],
+    "testIamPermissions_topics": [
+      "pubsub.projects.topics.testIamPermissions"
+    ],
+    "create_topics": [
+      "pubsub.projects.topics.create"
+    ],
+    "patch_topics": [
+      "pubsub.projects.topics.patch"
+    ],
+    "publish_topics": [
+      "pubsub.projects.topics.publish"
+    ],
+    "get_topics": [
+      "pubsub.projects.topics.get"
+    ],
+    "list_topics": [
+      "pubsub.projects.topics.list"
+    ],
+    "delete_topics": [
+      "pubsub.projects.topics.delete"
+    ]
+  },
+  "subscriptions_management": {
+    "list_subscriptions": [
+      "pubsub.projects.topics.subscriptions.list",
+      "pubsub.projects.subscriptions.list"
+    ],
+    "setIamPolicy_subscriptions": [
+      "pubsub.projects.subscriptions.setIamPolicy"
+    ],
+    "getIamPolicy_subscriptions": [
+      "pubsub.projects.subscriptions.getIamPolicy"
+    ],
+    "testIamPermissions_subscriptions": [
+      "pubsub.projects.subscriptions.testIamPermissions"
+    ],
+    "detach_subscriptions": [
+      "pubsub.projects.subscriptions.detach"
+    ],
+    "create_subscriptions": [
+      "pubsub.projects.subscriptions.create"
+    ],
+    "get_subscriptions": [
+      "pubsub.projects.subscriptions.get"
+    ],
+    "patch_subscriptions": [
+      "pubsub.projects.subscriptions.patch"
+    ],
+    "delete_subscriptions": [
+      "pubsub.projects.subscriptions.delete"
+    ],
+    "modifyAckDeadline_subscriptions": [
+      "pubsub.projects.subscriptions.modifyAckDeadline"
+    ],
+    "acknowledge_subscriptions": [
+      "pubsub.projects.subscriptions.acknowledge"
+    ],
+    "pull_subscriptions": [
+      "pubsub.projects.subscriptions.pull"
+    ],
+    "modifyPushConfig_subscriptions": [
+      "pubsub.projects.subscriptions.modifyPushConfig"
+    ],
+    "seek_subscriptions": [
+      "pubsub.projects.subscriptions.seek"
+    ]
+  },
+  "snapshots_management": {
+    "list_snapshots": [
+      "pubsub.projects.topics.snapshots.list",
+      "pubsub.projects.snapshots.list"
+    ],
+    "setIamPolicy_snapshots": [
+      "pubsub.projects.snapshots.setIamPolicy"
+    ],
+    "getIamPolicy_snapshots": [
+      "pubsub.projects.snapshots.getIamPolicy"
+    ],
+    "testIamPermissions_snapshots": [
+      "pubsub.projects.snapshots.testIamPermissions"
+    ],
+    "get_snapshots": [
+      "pubsub.projects.snapshots.get"
+    ],
+    "create_snapshots": [
+      "pubsub.projects.snapshots.create"
+    ],
+    "patch_snapshots": [
+      "pubsub.projects.snapshots.patch"
+    ],
+    "delete_snapshots": [
+      "pubsub.projects.snapshots.delete"
+    ]
+  },
+  "schemas_management": {
+    "setIamPolicy_schemas": [
+      "pubsub.projects.schemas.setIamPolicy"
+    ],
+    "getIamPolicy_schemas": [
+      "pubsub.projects.schemas.getIamPolicy"
+    ],
+    "testIamPermissions_schemas": [
+      "pubsub.projects.schemas.testIamPermissions"
+    ],
+    "create_schemas": [
+      "pubsub.projects.schemas.create"
+    ],
+    "get_schemas": [
+      "pubsub.projects.schemas.get"
+    ],
+    "list_schemas": [
+      "pubsub.projects.schemas.list"
+    ],
+    "listRevisions_schemas": [
+      "pubsub.projects.schemas.listRevisions"
+    ],
+    "commit_schemas": [
+      "pubsub.projects.schemas.commit"
+    ],
+    "rollback_schemas": [
+      "pubsub.projects.schemas.rollback"
+    ],
+    "deleteRevision_schemas": [
+      "pubsub.projects.schemas.deleteRevision"
+    ],
+    "delete_schemas": [
+      "pubsub.projects.schemas.delete"
+    ],
+    "validate_schemas": [
+      "pubsub.projects.schemas.validate"
+    ],
+    "validateMessage_schemas": [
+      "pubsub.projects.schemas.validateMessage"
+    ]
+  }
+}

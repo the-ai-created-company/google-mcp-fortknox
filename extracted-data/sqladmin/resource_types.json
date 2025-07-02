@@ -1,0 +1,136 @@
+{
+  "backupRuns": {
+    "description": "backupRuns resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "databases": {
+    "description": "databases resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "flags": {
+    "description": "flags resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "instances": {
+    "description": "instances resource",
+    "operations_count": 37,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "ListServerCertificates",
+      "RotateServerCertificate",
+      "acquireSsrsLease",
+      "addServerCa",
+      "addServerCertificate",
+      "clone",
+      "demote",
+      "demoteMaster",
+      "export",
+      "failover",
+      "getDiskShrinkConfig",
+      "getLatestRecoveryTime",
+      "import",
+      "listServerCas",
+      "performDiskShrink",
+      "pointInTimeRestore",
+      "promoteReplica",
+      "reencrypt",
+      "releaseSsrsLease",
+      "rescheduleMaintenance",
+      "resetReplicaSize",
+      "resetSslConfig",
+      "restart",
+      "restoreBackup",
+      "rotateServerCa",
+      "startExternalSync",
+      "startReplica",
+      "stopReplica",
+      "switchover",
+      "truncateLog",
+      "verifyExternalSyncSettings"
+    ]
+  },
+  "sslCerts": {
+    "description": "sslCerts resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "createEphemeral"
+    ]
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "backups": {
+    "description": "backups resource",
+    "operations_count": 5,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "createBackup",
+      "deleteBackup",
+      "getBackup",
+      "listBackups",
+      "updateBackup"
+    ]
+  },
+  "connect": {
+    "description": "connect resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "generateEphemeral"
+    ]
+  },
+  "tiers": {
+    "description": "tiers resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "users": {
+    "description": "users resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  }
+}

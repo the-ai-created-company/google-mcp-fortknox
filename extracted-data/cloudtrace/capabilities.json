@@ -1,0 +1,12 @@
+{
+  "traces_management": {
+    "batchWrite_traces": [
+      "cloudtrace.projects.traces.batchWrite"
+    ]
+  },
+  "spans_management": {
+    "createSpan_spans": [
+      "cloudtrace.projects.traces.spans.createSpan"
+    ]
+  }
+}

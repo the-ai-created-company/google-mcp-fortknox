@@ -1,0 +1,60 @@
+{
+  "billingAccounts_management": {
+    "get_billingAccounts": [
+      "cloudbilling.billingAccounts.get"
+    ],
+    "list_billingAccounts": [
+      "cloudbilling.billingAccounts.list",
+      "cloudbilling.organizations.billingAccounts.list"
+    ],
+    "patch_billingAccounts": [
+      "cloudbilling.billingAccounts.patch"
+    ],
+    "create_billingAccounts": [
+      "cloudbilling.billingAccounts.create",
+      "cloudbilling.organizations.billingAccounts.create"
+    ],
+    "getIamPolicy_billingAccounts": [
+      "cloudbilling.billingAccounts.getIamPolicy"
+    ],
+    "setIamPolicy_billingAccounts": [
+      "cloudbilling.billingAccounts.setIamPolicy"
+    ],
+    "testIamPermissions_billingAccounts": [
+      "cloudbilling.billingAccounts.testIamPermissions"
+    ],
+    "move_billingAccounts": [
+      "cloudbilling.billingAccounts.move",
+      "cloudbilling.organizations.billingAccounts.move"
+    ]
+  },
+  "subAccounts_management": {
+    "list_subAccounts": [
+      "cloudbilling.billingAccounts.subAccounts.list"
+    ],
+    "create_subAccounts": [
+      "cloudbilling.billingAccounts.subAccounts.create"
+    ]
+  },
+  "projects_management": {
+    "list_projects": [
+      "cloudbilling.billingAccounts.projects.list"
+    ],
+    "getBillingInfo_projects": [
+      "cloudbilling.projects.getBillingInfo"
+    ],
+    "updateBillingInfo_projects": [
+      "cloudbilling.projects.updateBillingInfo"
+    ]
+  },
+  "services_management": {
+    "list_services": [
+      "cloudbilling.services.list"
+    ]
+  },
+  "skus_management": {
+    "list_skus": [
+      "cloudbilling.services.skus.list"
+    ]
+  }
+}

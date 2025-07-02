@@ -1,0 +1,178 @@
+{
+  "oauthClients": {
+    "description": "oauthClients resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "undelete"
+    ]
+  },
+  "credentials": {
+    "description": "credentials resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "workloadIdentityPools": {
+    "description": "workloadIdentityPools resource",
+    "operations_count": 13,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addAttestationRule",
+      "getIamPolicy",
+      "listAttestationRules",
+      "removeAttestationRule",
+      "setAttestationRules",
+      "setIamPolicy",
+      "testIamPermissions",
+      "undelete"
+    ]
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 10,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": []
+  },
+  "namespaces": {
+    "description": "namespaces resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "undelete"
+    ]
+  },
+  "managedIdentities": {
+    "description": "managedIdentities resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addAttestationRule",
+      "listAttestationRules",
+      "removeAttestationRule",
+      "setAttestationRules",
+      "undelete"
+    ]
+  },
+  "providers": {
+    "description": "providers resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "undelete"
+    ]
+  },
+  "keys": {
+    "description": "keys resource",
+    "operations_count": 17,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "disable",
+      "enable",
+      "undelete",
+      "upload"
+    ]
+  },
+  "serviceAccounts": {
+    "description": "serviceAccounts resource",
+    "operations_count": 14,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "disable",
+      "enable",
+      "getIamPolicy",
+      "setIamPolicy",
+      "signBlob",
+      "signJwt",
+      "testIamPermissions",
+      "undelete"
+    ]
+  },
+  "roles": {
+    "description": "roles resource",
+    "operations_count": 15,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "queryGrantableRoles",
+      "undelete"
+    ]
+  },
+  "workforcePools": {
+    "description": "workforcePools resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions",
+      "undelete"
+    ]
+  },
+  "subjects": {
+    "description": "subjects resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "undelete"
+    ]
+  },
+  "permissions": {
+    "description": "permissions resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "queryTestablePermissions"
+    ]
+  },
+  "iamPolicies": {
+    "description": "iamPolicies resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "lintPolicy",
+      "queryAuditableServices"
+    ]
+  }
+}

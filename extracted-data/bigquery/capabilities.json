@@ -1,0 +1,159 @@
+{
+  "datasets_management": {
+    "delete_datasets": [
+      "bigquery.datasets.delete"
+    ],
+    "get_datasets": [
+      "bigquery.datasets.get"
+    ],
+    "insert_datasets": [
+      "bigquery.datasets.insert"
+    ],
+    "list_datasets": [
+      "bigquery.datasets.list"
+    ],
+    "patch_datasets": [
+      "bigquery.datasets.patch"
+    ],
+    "undelete_datasets": [
+      "bigquery.datasets.undelete"
+    ],
+    "update_datasets": [
+      "bigquery.datasets.update"
+    ]
+  },
+  "jobs_management": {
+    "cancel_jobs": [
+      "bigquery.jobs.cancel"
+    ],
+    "delete_jobs": [
+      "bigquery.jobs.delete"
+    ],
+    "get_jobs": [
+      "bigquery.jobs.get"
+    ],
+    "getQueryResults_jobs": [
+      "bigquery.jobs.getQueryResults"
+    ],
+    "insert_jobs": [
+      "bigquery.jobs.insert"
+    ],
+    "list_jobs": [
+      "bigquery.jobs.list"
+    ],
+    "query_jobs": [
+      "bigquery.jobs.query"
+    ]
+  },
+  "models_management": {
+    "delete_models": [
+      "bigquery.models.delete"
+    ],
+    "get_models": [
+      "bigquery.models.get"
+    ],
+    "list_models": [
+      "bigquery.models.list"
+    ],
+    "patch_models": [
+      "bigquery.models.patch"
+    ]
+  },
+  "projects_management": {
+    "getServiceAccount_projects": [
+      "bigquery.projects.getServiceAccount"
+    ],
+    "list_projects": [
+      "bigquery.projects.list"
+    ]
+  },
+  "routines_management": {
+    "delete_routines": [
+      "bigquery.routines.delete"
+    ],
+    "get_routines": [
+      "bigquery.routines.get"
+    ],
+    "getIamPolicy_routines": [
+      "bigquery.routines.getIamPolicy"
+    ],
+    "insert_routines": [
+      "bigquery.routines.insert"
+    ],
+    "list_routines": [
+      "bigquery.routines.list"
+    ],
+    "setIamPolicy_routines": [
+      "bigquery.routines.setIamPolicy"
+    ],
+    "testIamPermissions_routines": [
+      "bigquery.routines.testIamPermissions"
+    ],
+    "update_routines": [
+      "bigquery.routines.update"
+    ]
+  },
+  "rowAccessPolicies_management": {
+    "batchDelete_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.batchDelete"
+    ],
+    "delete_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.delete"
+    ],
+    "get_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.get"
+    ],
+    "getIamPolicy_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.getIamPolicy"
+    ],
+    "insert_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.insert"
+    ],
+    "list_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.list"
+    ],
+    "testIamPermissions_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.testIamPermissions"
+    ],
+    "update_rowAccessPolicies": [
+      "bigquery.rowAccessPolicies.update"
+    ]
+  },
+  "tabledata_management": {
+    "insertAll_tabledata": [
+      "bigquery.tabledata.insertAll"
+    ],
+    "list_tabledata": [
+      "bigquery.tabledata.list"
+    ]
+  },
+  "tables_management": {
+    "delete_tables": [
+      "bigquery.tables.delete"
+    ],
+    "get_tables": [
+      "bigquery.tables.get"
+    ],
+    "getIamPolicy_tables": [
+      "bigquery.tables.getIamPolicy"
+    ],
+    "insert_tables": [
+      "bigquery.tables.insert"
+    ],
+    "list_tables": [
+      "bigquery.tables.list"
+    ],
+    "patch_tables": [
+      "bigquery.tables.patch"
+    ],
+    "setIamPolicy_tables": [
+      "bigquery.tables.setIamPolicy"
+    ],
+    "testIamPermissions_tables": [
+      "bigquery.tables.testIamPermissions"
+    ],
+    "update_tables": [
+      "bigquery.tables.update"
+    ]
+  }
+}

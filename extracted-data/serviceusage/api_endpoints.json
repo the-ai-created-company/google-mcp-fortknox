@@ -1,0 +1,359 @@
+{
+  "service": "serviceusage",
+  "version": "v1",
+  "base_url": "https://serviceusage.googleapis.com/",
+  "total_endpoints": 10,
+  "endpoints": [
+    {
+      "operation_id": "serviceusage.services.get",
+      "resource": "services",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Returns the service configuration and enabled state for a given service.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "location": "path",
+          "required": true,
+          "type": "string",
+          "description": "Name of the consumer and service to get the `ConsumerState` for. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number.",
+          "pattern": "^[^/]+/[^/]+/services/[^/]+$"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only"
+      ],
+      "response_type": "GoogleApiServiceusageV1Service"
+    },
+    {
+      "operation_id": "serviceusage.services.disable",
+      "resource": "services",
+      "action": "disable",
+      "http_method": "POST",
+      "path_template": "v1/{+name}:disable",
+      "description": "Disable a service so that it can no longer be used with a project. This prevents unintended usage that may cause unexpected billing charges or security leaks. It is not valid to call the disable method on a service that is not currently enabled. Callers will receive a `FAILED_PRECONDITION` status if the target service is not currently enabled.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Name of the consumer and service to disable the service on. The enable and disable methods currently only support projects. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number.",
+          "location": "path",
+          "pattern": "^[^/]+/[^/]+/services/[^/]+$",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "DisableServiceRequest",
+      "body_schema": {
+        "id": "DisableServiceRequest",
+        "description": "Request message for the `DisableService` method.",
+        "properties": {
+          "disableDependentServices": {
+            "type": "boolean",
+            "description": "Indicates if services that are enabled and which depend on this service should also be disabled. If not set, an error will be generated if any enabled services depend on the service to be disabled. When set, the service, and any enabled services that depend on it, will be disabled together."
+          },
+          "checkIfServiceHasUsage": {
+            "description": "Defines the behavior for checking service usage when disabling a service.",
+            "enum": [
+              "CHECK_IF_SERVICE_HAS_USAGE_UNSPECIFIED",
+              "SKIP",
+              "CHECK"
+            ],
+            "enumDescriptions": [
+              "When unset, the default behavior is used, which is SKIP.",
+              "If set, skip checking service usage when disabling a service.",
+              "If set, service usage is checked when disabling the service. If a service, or its dependents, has usage in the last 30 days, the request returns a FAILED_PRECONDITION error."
+            ],
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "serviceusage.services.list",
+      "resource": "services",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/services",
+      "description": "List all services available to the specified project, and the current state of those services with respect to the project. The list includes all public services, all services for which the calling user has the `servicemanagement.services.bind` permission, and all services that have already been enabled on the project. The list can be filtered to only include services in a specific state, for example to only include services enabled on the project. WARNING: If you need to query enabled services frequently or across an organization, you should use [Cloud Asset Inventory API](https://cloud.google.com/asset-inventory/docs/apis), which provides higher throughput and richer filtering capability.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "pageToken": {
+          "type": "string",
+          "description": "Token identifying which result to start with, which is returned by a previous list call.",
+          "location": "query"
+        },
+        "filter": {
+          "description": "Only list services that conform to the given filter. The allowed filter strings are `state:ENABLED` and `state:DISABLED`.",
+          "type": "string",
+          "location": "query"
+        },
+        "parent": {
+          "type": "string",
+          "required": true,
+          "pattern": "^[^/]+/[^/]+$",
+          "description": "Parent to search for services on. An example name would be: `projects/123` where `123` is the project number.",
+          "location": "path"
+        },
+        "pageSize": {
+          "format": "int32",
+          "description": "Requested size of the next page of data. Requested page size cannot exceed 200. If not set, the default page size is 50.",
+          "type": "integer",
+          "location": "query"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only"
+      ],
+      "response_type": "ListServicesResponse"
+    },
+    {
+      "operation_id": "serviceusage.services.batchGet",
+      "resource": "services",
+      "action": "batchGet",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/services:batchGet",
+      "description": "Returns the service configurations and enabled states for a given list of services.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Parent to retrieve services from. If this is set, the parent of all of the services specified in `names` must match this field. An example name would be: `projects/123` where `123` is the project number. The `BatchGetServices` method currently only supports projects.",
+          "required": true,
+          "type": "string",
+          "location": "path",
+          "pattern": "^[^/]+/[^/]+$"
+        },
+        "names": {
+          "type": "string",
+          "description": "Names of the services to retrieve. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number. A single request can get a maximum of 30 services at a time.",
+          "repeated": true,
+          "location": "query"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only"
+      ],
+      "response_type": "BatchGetServicesResponse"
+    },
+    {
+      "operation_id": "serviceusage.services.enable",
+      "resource": "services",
+      "action": "enable",
+      "http_method": "POST",
+      "path_template": "v1/{+name}:enable",
+      "description": "Enable a service so that it can be used with a project.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "pattern": "^[^/]+/[^/]+/services/[^/]+$",
+          "location": "path",
+          "description": "Name of the consumer and service to enable the service on. The `EnableService` and `DisableService` methods currently only support projects. Enabling a service requires that the service is public or is shared with the user enabling the service. An example name would be: `projects/123/services/serviceusage.googleapis.com` where `123` is the project number.",
+          "type": "string",
+          "required": true
+        }
+      },
+      "body_schema_ref": "EnableServiceRequest",
+      "body_schema": {
+        "description": "Request message for the `EnableService` method.",
+        "id": "EnableServiceRequest",
+        "type": "object",
+        "properties": {}
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "serviceusage.services.batchEnable",
+      "resource": "services",
+      "action": "batchEnable",
+      "http_method": "POST",
+      "path_template": "v1/{+parent}/services:batchEnable",
+      "description": "Enable multiple services on a project. The operation is atomic: if enabling any service fails, then the entire batch fails, and no state changes occur. To enable a single service, use the `EnableService` method instead.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "type": "string",
+          "location": "path",
+          "description": "Parent to enable services on. An example name would be: `projects/123` where `123` is the project number. The `BatchEnableServices` method currently only supports projects.",
+          "required": true,
+          "pattern": "^[^/]+/[^/]+$"
+        }
+      },
+      "body_schema_ref": "BatchEnableServicesRequest",
+      "body_schema": {
+        "properties": {
+          "serviceIds": {
+            "description": "The identifiers of the services to enable on the project. A valid identifier would be: serviceusage.googleapis.com Enabling services requires that each service is public or is shared with the user enabling the service. A single request can enable a maximum of 20 services at a time. If more than 20 services are specified, the request will fail, and no state changes will occur.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "description": "Request message for the `BatchEnableServices` method.",
+        "type": "object",
+        "id": "BatchEnableServicesRequest"
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "serviceusage.operations.list",
+      "resource": "operations",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/operations",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+      "required_params": [],
+      "parameters": {
+        "name": {
+          "description": "The name of the operation's parent resource.",
+          "type": "string",
+          "location": "query"
+        },
+        "pageSize": {
+          "format": "int32",
+          "description": "The standard list page size.",
+          "type": "integer",
+          "location": "query"
+        },
+        "filter": {
+          "description": "The standard list filter.",
+          "location": "query",
+          "type": "string"
+        },
+        "pageToken": {
+          "description": "The standard list page token.",
+          "type": "string",
+          "location": "query"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "ListOperationsResponse"
+    },
+    {
+      "operation_id": "serviceusage.operations.cancel",
+      "resource": "operations",
+      "action": "cancel",
+      "http_method": "POST",
+      "path_template": "v1/{+name}:cancel",
+      "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "type": "string",
+          "pattern": "^operations/.*$",
+          "required": true,
+          "location": "path",
+          "description": "The name of the operation resource to be cancelled."
+        }
+      },
+      "body_schema_ref": "CancelOperationRequest",
+      "body_schema": {
+        "description": "The request message for Operations.CancelOperation.",
+        "type": "object",
+        "id": "CancelOperationRequest",
+        "properties": {}
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "serviceusage.operations.get",
+      "resource": "operations",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the operation resource.",
+          "type": "string",
+          "required": true,
+          "pattern": "^operations/[^/]+$",
+          "location": "path"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "serviceusage.operations.delete",
+      "resource": "operations",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}",
+      "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the operation resource to be deleted.",
+          "pattern": "^operations/.*$",
+          "required": true,
+          "location": "path",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/service.management"
+      ],
+      "response_type": "Empty"
+    }
+  ]
+}

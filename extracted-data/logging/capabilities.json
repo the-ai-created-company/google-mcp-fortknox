@@ -1,0 +1,442 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "logging.locations.list",
+      "logging.projects.locations.list",
+      "logging.organizations.locations.list",
+      "logging.folders.locations.list",
+      "logging.billingAccounts.locations.list"
+    ],
+    "get_locations": [
+      "logging.locations.get",
+      "logging.projects.locations.get",
+      "logging.organizations.locations.get",
+      "logging.folders.locations.get",
+      "logging.billingAccounts.locations.get"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "logging.locations.operations.list",
+      "logging.projects.locations.operations.list",
+      "logging.organizations.locations.operations.list",
+      "logging.folders.locations.operations.list",
+      "logging.billingAccounts.locations.operations.list"
+    ],
+    "get_operations": [
+      "logging.locations.operations.get",
+      "logging.projects.locations.operations.get",
+      "logging.organizations.locations.operations.get",
+      "logging.folders.locations.operations.get",
+      "logging.billingAccounts.locations.operations.get"
+    ],
+    "cancel_operations": [
+      "logging.locations.operations.cancel",
+      "logging.projects.locations.operations.cancel",
+      "logging.organizations.locations.operations.cancel",
+      "logging.folders.locations.operations.cancel",
+      "logging.billingAccounts.locations.operations.cancel"
+    ]
+  },
+  "buckets_management": {
+    "list_buckets": [
+      "logging.locations.buckets.list",
+      "logging.projects.locations.buckets.list",
+      "logging.organizations.locations.buckets.list",
+      "logging.folders.locations.buckets.list",
+      "logging.billingAccounts.locations.buckets.list"
+    ],
+    "get_buckets": [
+      "logging.locations.buckets.get",
+      "logging.projects.locations.buckets.get",
+      "logging.organizations.locations.buckets.get",
+      "logging.folders.locations.buckets.get",
+      "logging.billingAccounts.locations.buckets.get"
+    ],
+    "createAsync_buckets": [
+      "logging.locations.buckets.createAsync",
+      "logging.projects.locations.buckets.createAsync",
+      "logging.organizations.locations.buckets.createAsync",
+      "logging.folders.locations.buckets.createAsync",
+      "logging.billingAccounts.locations.buckets.createAsync"
+    ],
+    "updateAsync_buckets": [
+      "logging.locations.buckets.updateAsync",
+      "logging.projects.locations.buckets.updateAsync",
+      "logging.organizations.locations.buckets.updateAsync",
+      "logging.folders.locations.buckets.updateAsync",
+      "logging.billingAccounts.locations.buckets.updateAsync"
+    ],
+    "create_buckets": [
+      "logging.locations.buckets.create",
+      "logging.projects.locations.buckets.create",
+      "logging.organizations.locations.buckets.create",
+      "logging.folders.locations.buckets.create",
+      "logging.billingAccounts.locations.buckets.create"
+    ],
+    "patch_buckets": [
+      "logging.locations.buckets.patch",
+      "logging.projects.locations.buckets.patch",
+      "logging.organizations.locations.buckets.patch",
+      "logging.folders.locations.buckets.patch",
+      "logging.billingAccounts.locations.buckets.patch"
+    ],
+    "delete_buckets": [
+      "logging.locations.buckets.delete",
+      "logging.projects.locations.buckets.delete",
+      "logging.organizations.locations.buckets.delete",
+      "logging.folders.locations.buckets.delete",
+      "logging.billingAccounts.locations.buckets.delete"
+    ],
+    "undelete_buckets": [
+      "logging.locations.buckets.undelete",
+      "logging.projects.locations.buckets.undelete",
+      "logging.organizations.locations.buckets.undelete",
+      "logging.folders.locations.buckets.undelete",
+      "logging.billingAccounts.locations.buckets.undelete"
+    ]
+  },
+  "views_management": {
+    "setIamPolicy_views": [
+      "logging.locations.buckets.views.setIamPolicy",
+      "logging.projects.locations.buckets.views.setIamPolicy",
+      "logging.organizations.locations.buckets.views.setIamPolicy",
+      "logging.folders.locations.buckets.views.setIamPolicy"
+    ],
+    "getIamPolicy_views": [
+      "logging.locations.buckets.views.getIamPolicy",
+      "logging.projects.locations.buckets.views.getIamPolicy",
+      "logging.organizations.locations.buckets.views.getIamPolicy",
+      "logging.folders.locations.buckets.views.getIamPolicy"
+    ],
+    "testIamPermissions_views": [
+      "logging.locations.buckets.views.testIamPermissions",
+      "logging.projects.locations.buckets.views.testIamPermissions",
+      "logging.organizations.locations.buckets.views.testIamPermissions",
+      "logging.folders.locations.buckets.views.testIamPermissions"
+    ],
+    "list_views": [
+      "logging.locations.buckets.views.list",
+      "logging.projects.locations.buckets.views.list",
+      "logging.organizations.locations.buckets.views.list",
+      "logging.folders.locations.buckets.views.list",
+      "logging.billingAccounts.locations.buckets.views.list"
+    ],
+    "get_views": [
+      "logging.locations.buckets.views.get",
+      "logging.projects.locations.buckets.views.get",
+      "logging.organizations.locations.buckets.views.get",
+      "logging.folders.locations.buckets.views.get",
+      "logging.billingAccounts.locations.buckets.views.get"
+    ],
+    "create_views": [
+      "logging.locations.buckets.views.create",
+      "logging.projects.locations.buckets.views.create",
+      "logging.organizations.locations.buckets.views.create",
+      "logging.folders.locations.buckets.views.create",
+      "logging.billingAccounts.locations.buckets.views.create"
+    ],
+    "patch_views": [
+      "logging.locations.buckets.views.patch",
+      "logging.projects.locations.buckets.views.patch",
+      "logging.organizations.locations.buckets.views.patch",
+      "logging.folders.locations.buckets.views.patch",
+      "logging.billingAccounts.locations.buckets.views.patch"
+    ],
+    "delete_views": [
+      "logging.locations.buckets.views.delete",
+      "logging.projects.locations.buckets.views.delete",
+      "logging.organizations.locations.buckets.views.delete",
+      "logging.folders.locations.buckets.views.delete",
+      "logging.billingAccounts.locations.buckets.views.delete"
+    ]
+  },
+  "links_management": {
+    "list_links": [
+      "logging.locations.buckets.links.list",
+      "logging.projects.locations.buckets.links.list",
+      "logging.organizations.locations.buckets.links.list",
+      "logging.folders.locations.buckets.links.list",
+      "logging.billingAccounts.locations.buckets.links.list"
+    ],
+    "get_links": [
+      "logging.locations.buckets.links.get",
+      "logging.projects.locations.buckets.links.get",
+      "logging.organizations.locations.buckets.links.get",
+      "logging.folders.locations.buckets.links.get",
+      "logging.billingAccounts.locations.buckets.links.get"
+    ],
+    "create_links": [
+      "logging.locations.buckets.links.create",
+      "logging.projects.locations.buckets.links.create",
+      "logging.organizations.locations.buckets.links.create",
+      "logging.folders.locations.buckets.links.create",
+      "logging.billingAccounts.locations.buckets.links.create"
+    ],
+    "delete_links": [
+      "logging.locations.buckets.links.delete",
+      "logging.projects.locations.buckets.links.delete",
+      "logging.organizations.locations.buckets.links.delete",
+      "logging.folders.locations.buckets.links.delete",
+      "logging.billingAccounts.locations.buckets.links.delete"
+    ]
+  },
+  "exclusions_management": {
+    "list_exclusions": [
+      "logging.exclusions.list",
+      "logging.projects.exclusions.list",
+      "logging.organizations.exclusions.list",
+      "logging.folders.exclusions.list",
+      "logging.billingAccounts.exclusions.list"
+    ],
+    "get_exclusions": [
+      "logging.exclusions.get",
+      "logging.projects.exclusions.get",
+      "logging.organizations.exclusions.get",
+      "logging.folders.exclusions.get",
+      "logging.billingAccounts.exclusions.get"
+    ],
+    "create_exclusions": [
+      "logging.exclusions.create",
+      "logging.projects.exclusions.create",
+      "logging.organizations.exclusions.create",
+      "logging.folders.exclusions.create",
+      "logging.billingAccounts.exclusions.create"
+    ],
+    "patch_exclusions": [
+      "logging.exclusions.patch",
+      "logging.projects.exclusions.patch",
+      "logging.organizations.exclusions.patch",
+      "logging.folders.exclusions.patch",
+      "logging.billingAccounts.exclusions.patch"
+    ],
+    "delete_exclusions": [
+      "logging.exclusions.delete",
+      "logging.projects.exclusions.delete",
+      "logging.organizations.exclusions.delete",
+      "logging.folders.exclusions.delete",
+      "logging.billingAccounts.exclusions.delete"
+    ]
+  },
+  "sinks_management": {
+    "list_sinks": [
+      "logging.sinks.list",
+      "logging.projects.sinks.list",
+      "logging.organizations.sinks.list",
+      "logging.folders.sinks.list",
+      "logging.billingAccounts.sinks.list"
+    ],
+    "get_sinks": [
+      "logging.sinks.get",
+      "logging.projects.sinks.get",
+      "logging.organizations.sinks.get",
+      "logging.folders.sinks.get",
+      "logging.billingAccounts.sinks.get"
+    ],
+    "create_sinks": [
+      "logging.sinks.create",
+      "logging.projects.sinks.create",
+      "logging.organizations.sinks.create",
+      "logging.folders.sinks.create",
+      "logging.billingAccounts.sinks.create"
+    ],
+    "update_sinks": [
+      "logging.sinks.update",
+      "logging.projects.sinks.update",
+      "logging.organizations.sinks.update",
+      "logging.folders.sinks.update",
+      "logging.billingAccounts.sinks.update"
+    ],
+    "delete_sinks": [
+      "logging.sinks.delete",
+      "logging.projects.sinks.delete",
+      "logging.organizations.sinks.delete",
+      "logging.folders.sinks.delete",
+      "logging.billingAccounts.sinks.delete"
+    ],
+    "patch_sinks": [
+      "logging.projects.sinks.patch",
+      "logging.organizations.sinks.patch",
+      "logging.folders.sinks.patch",
+      "logging.billingAccounts.sinks.patch"
+    ]
+  },
+  "v2_management": {
+    "getCmekSettings_v2": [
+      "logging.getCmekSettings"
+    ],
+    "updateCmekSettings_v2": [
+      "logging.updateCmekSettings"
+    ],
+    "getSettings_v2": [
+      "logging.getSettings"
+    ],
+    "updateSettings_v2": [
+      "logging.updateSettings"
+    ]
+  },
+  "projects_management": {
+    "getCmekSettings_projects": [
+      "logging.projects.getCmekSettings"
+    ],
+    "getSettings_projects": [
+      "logging.projects.getSettings"
+    ]
+  },
+  "logs_management": {
+    "list_logs": [
+      "logging.projects.locations.buckets.views.logs.list",
+      "logging.projects.logs.list",
+      "logging.organizations.locations.buckets.views.logs.list",
+      "logging.organizations.logs.list",
+      "logging.folders.locations.buckets.views.logs.list",
+      "logging.folders.logs.list",
+      "logging.billingAccounts.locations.buckets.views.logs.list",
+      "logging.billingAccounts.logs.list",
+      "logging.logs.list"
+    ],
+    "delete_logs": [
+      "logging.projects.logs.delete",
+      "logging.organizations.logs.delete",
+      "logging.folders.logs.delete",
+      "logging.billingAccounts.logs.delete",
+      "logging.logs.delete"
+    ]
+  },
+  "logScopes_management": {
+    "list_logScopes": [
+      "logging.projects.locations.logScopes.list",
+      "logging.organizations.locations.logScopes.list",
+      "logging.folders.locations.logScopes.list"
+    ],
+    "get_logScopes": [
+      "logging.projects.locations.logScopes.get",
+      "logging.organizations.locations.logScopes.get",
+      "logging.folders.locations.logScopes.get"
+    ],
+    "create_logScopes": [
+      "logging.projects.locations.logScopes.create",
+      "logging.organizations.locations.logScopes.create",
+      "logging.folders.locations.logScopes.create"
+    ],
+    "patch_logScopes": [
+      "logging.projects.locations.logScopes.patch",
+      "logging.organizations.locations.logScopes.patch",
+      "logging.folders.locations.logScopes.patch"
+    ],
+    "delete_logScopes": [
+      "logging.projects.locations.logScopes.delete",
+      "logging.organizations.locations.logScopes.delete",
+      "logging.folders.locations.logScopes.delete"
+    ]
+  },
+  "savedQueries_management": {
+    "list_savedQueries": [
+      "logging.projects.locations.savedQueries.list",
+      "logging.organizations.locations.savedQueries.list",
+      "logging.folders.locations.savedQueries.list",
+      "logging.billingAccounts.locations.savedQueries.list"
+    ],
+    "get_savedQueries": [
+      "logging.projects.locations.savedQueries.get",
+      "logging.organizations.locations.savedQueries.get",
+      "logging.folders.locations.savedQueries.get",
+      "logging.billingAccounts.locations.savedQueries.get"
+    ],
+    "create_savedQueries": [
+      "logging.projects.locations.savedQueries.create",
+      "logging.organizations.locations.savedQueries.create",
+      "logging.folders.locations.savedQueries.create",
+      "logging.billingAccounts.locations.savedQueries.create"
+    ],
+    "patch_savedQueries": [
+      "logging.projects.locations.savedQueries.patch",
+      "logging.organizations.locations.savedQueries.patch",
+      "logging.folders.locations.savedQueries.patch",
+      "logging.billingAccounts.locations.savedQueries.patch"
+    ],
+    "delete_savedQueries": [
+      "logging.projects.locations.savedQueries.delete",
+      "logging.organizations.locations.savedQueries.delete",
+      "logging.folders.locations.savedQueries.delete",
+      "logging.billingAccounts.locations.savedQueries.delete"
+    ]
+  },
+  "recentQueries_management": {
+    "list_recentQueries": [
+      "logging.projects.locations.recentQueries.list",
+      "logging.organizations.locations.recentQueries.list",
+      "logging.folders.locations.recentQueries.list",
+      "logging.billingAccounts.locations.recentQueries.list"
+    ]
+  },
+  "metrics_management": {
+    "list_metrics": [
+      "logging.projects.metrics.list"
+    ],
+    "get_metrics": [
+      "logging.projects.metrics.get"
+    ],
+    "create_metrics": [
+      "logging.projects.metrics.create"
+    ],
+    "update_metrics": [
+      "logging.projects.metrics.update"
+    ],
+    "delete_metrics": [
+      "logging.projects.metrics.delete"
+    ]
+  },
+  "organizations_management": {
+    "getCmekSettings_organizations": [
+      "logging.organizations.getCmekSettings"
+    ],
+    "updateCmekSettings_organizations": [
+      "logging.organizations.updateCmekSettings"
+    ],
+    "getSettings_organizations": [
+      "logging.organizations.getSettings"
+    ],
+    "updateSettings_organizations": [
+      "logging.organizations.updateSettings"
+    ]
+  },
+  "folders_management": {
+    "getCmekSettings_folders": [
+      "logging.folders.getCmekSettings"
+    ],
+    "getSettings_folders": [
+      "logging.folders.getSettings"
+    ],
+    "updateSettings_folders": [
+      "logging.folders.updateSettings"
+    ]
+  },
+  "billingAccounts_management": {
+    "getCmekSettings_billingAccounts": [
+      "logging.billingAccounts.getCmekSettings"
+    ],
+    "getSettings_billingAccounts": [
+      "logging.billingAccounts.getSettings"
+    ]
+  },
+  "entries_management": {
+    "copy_entries": [
+      "logging.entries.copy"
+    ],
+    "write_entries": [
+      "logging.entries.write"
+    ],
+    "list_entries": [
+      "logging.entries.list"
+    ],
+    "tail_entries": [
+      "logging.entries.tail"
+    ]
+  },
+  "monitoredResourceDescriptors_management": {
+    "list_monitoredResourceDescriptors": [
+      "logging.monitoredResourceDescriptors.list"
+    ]
+  }
+}

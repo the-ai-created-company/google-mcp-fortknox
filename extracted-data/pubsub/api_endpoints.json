@@ -1,0 +1,1920 @@
+{
+  "service": "pubsub",
+  "version": "v1",
+  "base_url": "https://pubsub.googleapis.com/",
+  "total_endpoints": 46,
+  "endpoints": [
+    {
+      "operation_id": "pubsub.projects.topics.setIamPolicy",
+      "resource": "projects.topics",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.getIamPolicy",
+      "resource": "projects.topics",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.testIamPermissions",
+      "resource": "projects.topics",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.create",
+      "resource": "projects.topics",
+      "action": "create",
+      "http_method": "PUT",
+      "path_template": "v1/{+name}",
+      "description": "Creates the given topic with the given name. See the [resource name rules] (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the topic. It must have the format `\"projects/{project}/topics/{topic}\"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `\"goog\"`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Topic",
+      "body_schema": {
+        "id": "Topic",
+        "description": "A topic resource.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Required. The name of the topic. It must have the format `\"projects/{project}/topics/{topic}\"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `\"goog\"`.",
+            "type": "string"
+          },
+          "labels": {
+            "description": "Optional. See [Creating and managing labels] (https://cloud.google.com/pubsub/docs/labels).",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "messageStoragePolicy": {
+            "description": "Optional. Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.",
+            "$ref": "MessageStoragePolicy"
+          },
+          "kmsKeyName": {
+            "description": "Optional. The resource name of the Cloud KMS CryptoKey to be used to protect access to messages published on this topic. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.",
+            "type": "string"
+          },
+          "schemaSettings": {
+            "description": "Optional. Settings for validating messages published against a schema.",
+            "$ref": "SchemaSettings"
+          },
+          "satisfiesPzs": {
+            "description": "Optional. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "type": "boolean"
+          },
+          "messageRetentionDuration": {
+            "description": "Optional. Indicates the minimum duration to retain a message after it is published to the topic. If this field is set, messages published to the topic in the last `message_retention_duration` are always available to subscribers. For instance, it allows any attached subscription to [seek to a timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) that is up to `message_retention_duration` in the past. If this field is not set, message retention is controlled by settings on individual subscriptions. Cannot be more than 31 days or less than 10 minutes.",
+            "type": "string",
+            "format": "google-duration"
+          },
+          "state": {
+            "description": "Output only. An output-only field indicating the state of the topic.",
+            "readOnly": true,
+            "type": "string",
+            "enumDescriptions": [
+              "Default value. This value is unused.",
+              "The topic does not have any persistent errors.",
+              "Ingestion from the data source has encountered a permanent error. See the more detailed error state in the corresponding ingestion source configuration."
+            ],
+            "enum": [
+              "STATE_UNSPECIFIED",
+              "ACTIVE",
+              "INGESTION_RESOURCE_ERROR"
+            ]
+          },
+          "ingestionDataSourceSettings": {
+            "description": "Optional. Settings for ingestion from a data source into this topic.",
+            "$ref": "IngestionDataSourceSettings"
+          },
+          "messageTransforms": {
+            "description": "Optional. Transforms to be applied to messages published to the topic. Transforms are applied in the order specified.",
+            "type": "array",
+            "items": {
+              "$ref": "MessageTransform"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Topic"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.patch",
+      "resource": "projects.topics",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "v1/{+name}",
+      "description": "Updates an existing topic by updating the fields specified in the update mask. Note that certain properties of a topic are not modifiable.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the topic. It must have the format `\"projects/{project}/topics/{topic}\"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `\"goog\"`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "UpdateTopicRequest",
+      "body_schema": {
+        "id": "UpdateTopicRequest",
+        "description": "Request for the UpdateTopic method.",
+        "type": "object",
+        "properties": {
+          "topic": {
+            "description": "Required. The updated topic object.",
+            "$ref": "Topic"
+          },
+          "updateMask": {
+            "description": "Required. Indicates which fields in the provided topic to update. Must be specified and non-empty. Note that if `update_mask` contains \"message_storage_policy\" but the `message_storage_policy` is not set in the `topic` provided above, then the updated value is determined by the policy configured at the project or organization level.",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Topic"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.publish",
+      "resource": "projects.topics",
+      "action": "publish",
+      "http_method": "POST",
+      "path_template": "v1/{+topic}:publish",
+      "description": "Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist.",
+      "required_params": [
+        "topic"
+      ],
+      "parameters": {
+        "topic": {
+          "description": "Required. The messages in the request will be published on this topic. Format is `projects/{project}/topics/{topic}`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "PublishRequest",
+      "body_schema": {
+        "id": "PublishRequest",
+        "description": "Request for the Publish method.",
+        "type": "object",
+        "properties": {
+          "messages": {
+            "description": "Required. The messages to publish.",
+            "type": "array",
+            "items": {
+              "$ref": "PubsubMessage"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "PublishResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.get",
+      "resource": "projects.topics",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+topic}",
+      "description": "Gets the configuration of a topic.",
+      "required_params": [
+        "topic"
+      ],
+      "parameters": {
+        "topic": {
+          "description": "Required. The name of the topic to get. Format is `projects/{project}/topics/{topic}`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Topic"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.list",
+      "resource": "projects.topics",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+project}/topics",
+      "description": "Lists matching topics.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Required. The name of the project in which to list topics. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Optional. Maximum number of topics to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. The value returned by the last `ListTopicsResponse`; indicates that this is a continuation of a prior `ListTopics` call, and that the system should return the next page of data.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListTopicsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.delete",
+      "resource": "projects.topics",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+topic}",
+      "description": "Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a topic is deleted, a new topic may be created with the same name; this is an entirely new topic with none of the old configuration or subscriptions. Existing subscriptions to this topic are not deleted, but their `topic` field is set to `_deleted-topic_`.",
+      "required_params": [
+        "topic"
+      ],
+      "parameters": {
+        "topic": {
+          "description": "Required. Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.subscriptions.list",
+      "resource": "projects.topics.subscriptions",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+topic}/subscriptions",
+      "description": "Lists the names of the attached subscriptions on this topic.",
+      "required_params": [
+        "topic"
+      ],
+      "parameters": {
+        "topic": {
+          "description": "Required. The name of the topic that subscriptions are attached to. Format is `projects/{project}/topics/{topic}`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Optional. Maximum number of subscription names to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. The value returned by the last `ListTopicSubscriptionsResponse`; indicates that this is a continuation of a prior `ListTopicSubscriptions` call, and that the system should return the next page of data.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListTopicSubscriptionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.topics.snapshots.list",
+      "resource": "projects.topics.snapshots",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+topic}/snapshots",
+      "description": "Lists the names of the snapshots on this topic. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.",
+      "required_params": [
+        "topic"
+      ],
+      "parameters": {
+        "topic": {
+          "description": "Required. The name of the topic that snapshots are attached to. Format is `projects/{project}/topics/{topic}`.",
+          "pattern": "^projects/[^/]+/topics/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Optional. Maximum number of snapshot names to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. The value returned by the last `ListTopicSnapshotsResponse`; indicates that this is a continuation of a prior `ListTopicSnapshots` call, and that the system should return the next page of data.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListTopicSnapshotsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.setIamPolicy",
+      "resource": "projects.subscriptions",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.getIamPolicy",
+      "resource": "projects.subscriptions",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.testIamPermissions",
+      "resource": "projects.subscriptions",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.detach",
+      "resource": "projects.subscriptions",
+      "action": "detach",
+      "http_method": "POST",
+      "path_template": "v1/{+subscription}:detach",
+      "description": "Detaches a subscription from this topic. All messages retained in the subscription are dropped. Subsequent `Pull` and `StreamingPull` requests will return FAILED_PRECONDITION. If the subscription is a push subscription, pushes to the endpoint will stop.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The subscription to detach. Format is `projects/{project}/subscriptions/{subscription}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "DetachSubscriptionResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.create",
+      "resource": "projects.subscriptions",
+      "action": "create",
+      "http_method": "PUT",
+      "path_template": "v1/{+name}",
+      "description": "Creates a subscription to a given topic. See the [resource name rules] (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). If the subscription already exists, returns `ALREADY_EXISTS`. If the corresponding topic doesn't exist, returns `NOT_FOUND`. If the name is not provided in the request, the server will assign a random name for this subscription on the same project as the topic, conforming to the [resource name format] (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). The generated name is populated in the returned Subscription object. Note that for REST API requests, you must specify a name in the request.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the subscription. It must have the format `\"projects/{project}/subscriptions/{subscription}\"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `\"goog\"`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Subscription",
+      "body_schema": {
+        "id": "Subscription",
+        "description": "A subscription resource. If none of `push_config`, `bigquery_config`, or `cloud_storage_config` is set, then the subscriber will pull and ack messages using API methods. At most one of these fields may be set.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Required. The name of the subscription. It must have the format `\"projects/{project}/subscriptions/{subscription}\"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `\"goog\"`.",
+            "type": "string"
+          },
+          "topic": {
+            "description": "Required. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_` if the topic has been deleted.",
+            "type": "string"
+          },
+          "pushConfig": {
+            "description": "Optional. If push delivery is used with this subscription, this field is used to configure it.",
+            "$ref": "PushConfig"
+          },
+          "bigqueryConfig": {
+            "description": "Optional. If delivery to BigQuery is used with this subscription, this field is used to configure it.",
+            "$ref": "BigQueryConfig"
+          },
+          "cloudStorageConfig": {
+            "description": "Optional. If delivery to Google Cloud Storage is used with this subscription, this field is used to configure it.",
+            "$ref": "CloudStorageConfig"
+          },
+          "ackDeadlineSeconds": {
+            "description": "Optional. The approximate amount of time (on a best-effort basis) Pub/Sub waits for the subscriber to acknowledge receipt before resending the message. In the interval after the message is delivered and before it is acknowledged, it is considered to be _outstanding_. During that time period, the message will not be redelivered (on a best-effort basis). For pull subscriptions, this value is used as the initial value for the ack deadline. To override this value for a given message, call `ModifyAckDeadline` with the corresponding `ack_id` if using non-streaming pull or send the `ack_id` in a `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds (10 minutes). If this parameter is 0, a default value of 10 seconds is used. For push delivery, this value is also used to set the request timeout for the call to the push endpoint. If the subscriber never acknowledges the message, the Pub/Sub system will eventually redeliver the message.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "retainAckedMessages": {
+            "description": "Optional. Indicates whether to retain acknowledged messages. If true, then messages are not expunged from the subscription's backlog, even if they are acknowledged, until they fall out of the `message_retention_duration` window. This must be true if you would like to [`Seek` to a timestamp] (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in the past to replay previously-acknowledged messages.",
+            "type": "boolean"
+          },
+          "messageRetentionDuration": {
+            "description": "Optional. How long to retain unacknowledged messages in the subscription's backlog, from the moment a message is published. If `retain_acked_messages` is true, then this also configures the retention of acknowledged messages, and thus configures how far back in time a `Seek` can be done. Defaults to 7 days. Cannot be more than 31 days or less than 10 minutes.",
+            "type": "string",
+            "format": "google-duration"
+          },
+          "labels": {
+            "description": "Optional. See [Creating and managing labels](https://cloud.google.com/pubsub/docs/labels).",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "enableMessageOrdering": {
+            "description": "Optional. If true, messages published with the same `ordering_key` in `PubsubMessage` will be delivered to the subscribers in the order in which they are received by the Pub/Sub system. Otherwise, they may be delivered in any order.",
+            "type": "boolean"
+          },
+          "expirationPolicy": {
+            "description": "Optional. A policy that specifies the conditions for this subscription's expiration. A subscription is considered active as long as any connected subscriber is successfully consuming messages from the subscription or is issuing operations on the subscription. If `expiration_policy` is not set, a *default policy* with `ttl` of 31 days will be used. The minimum allowed value for `expiration_policy.ttl` is 1 day. If `expiration_policy` is set, but `expiration_policy.ttl` is not set, the subscription never expires.",
+            "$ref": "ExpirationPolicy"
+          },
+          "filter": {
+            "description": "Optional. An expression written in the Pub/Sub [filter language](https://cloud.google.com/pubsub/docs/filtering). If non-empty, then only `PubsubMessage`s whose `attributes` field matches the filter are delivered on this subscription. If empty, then no messages are filtered out.",
+            "type": "string"
+          },
+          "deadLetterPolicy": {
+            "description": "Optional. A policy that specifies the conditions for dead lettering messages in this subscription. If dead_letter_policy is not set, dead lettering is disabled. The Pub/Sub service account associated with this subscriptions's parent project (i.e., service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com) must have permission to Acknowledge() messages on this subscription.",
+            "$ref": "DeadLetterPolicy"
+          },
+          "retryPolicy": {
+            "description": "Optional. A policy that specifies how Pub/Sub retries message delivery for this subscription. If not set, the default retry policy is applied. This generally implies that messages will be retried as soon as possible for healthy subscribers. RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded events for a given message.",
+            "$ref": "RetryPolicy"
+          },
+          "detached": {
+            "description": "Optional. Indicates whether the subscription is detached from its topic. Detached subscriptions don't receive messages from their topic and don't retain any backlog. `Pull` and `StreamingPull` requests will return FAILED_PRECONDITION. If the subscription is a push subscription, pushes to the endpoint will not be made.",
+            "type": "boolean"
+          },
+          "enableExactlyOnceDelivery": {
+            "description": "Optional. If true, Pub/Sub provides the following guarantees for the delivery of a message with a given value of `message_id` on this subscription: * The message sent to a subscriber is guaranteed not to be resent before the message's acknowledgment deadline expires. * An acknowledged message will not be resent to a subscriber. Note that subscribers may still receive multiple copies of a message when `enable_exactly_once_delivery` is true if the message was published multiple times by a publisher client. These copies are considered distinct by Pub/Sub and have distinct `message_id` values.",
+            "type": "boolean"
+          },
+          "topicMessageRetentionDuration": {
+            "description": "Output only. Indicates the minimum duration for which a message is retained after it is published to the subscription's topic. If this field is set, messages published to the subscription's topic in the last `topic_message_retention_duration` are always available to subscribers. See the `message_retention_duration` field in `Topic`. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "readOnly": true,
+            "type": "string",
+            "format": "google-duration"
+          },
+          "state": {
+            "description": "Output only. An output-only field indicating whether or not the subscription can receive messages.",
+            "readOnly": true,
+            "type": "string",
+            "enumDescriptions": [
+              "Default value. This value is unused.",
+              "The subscription can actively receive messages",
+              "The subscription cannot receive messages because of an error with the resource to which it pushes messages. See the more detailed error state in the corresponding configuration."
+            ],
+            "enum": [
+              "STATE_UNSPECIFIED",
+              "ACTIVE",
+              "RESOURCE_ERROR"
+            ]
+          },
+          "analyticsHubSubscriptionInfo": {
+            "description": "Output only. Information about the associated Analytics Hub subscription. Only set if the subscritpion is created by Analytics Hub.",
+            "readOnly": true,
+            "$ref": "AnalyticsHubSubscriptionInfo"
+          },
+          "messageTransforms": {
+            "description": "Optional. Transforms to be applied to messages before they are delivered to subscribers. Transforms are applied in the order specified.",
+            "type": "array",
+            "items": {
+              "$ref": "MessageTransform"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Subscription"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.get",
+      "resource": "projects.subscriptions",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+subscription}",
+      "description": "Gets the configuration details of a subscription.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The name of the subscription to get. Format is `projects/{project}/subscriptions/{sub}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Subscription"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.patch",
+      "resource": "projects.subscriptions",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "v1/{+name}",
+      "description": "Updates an existing subscription by updating the fields specified in the update mask. Note that certain properties of a subscription, such as its topic, are not modifiable.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the subscription. It must have the format `\"projects/{project}/subscriptions/{subscription}\"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `\"goog\"`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "UpdateSubscriptionRequest",
+      "body_schema": {
+        "id": "UpdateSubscriptionRequest",
+        "description": "Request for the UpdateSubscription method.",
+        "type": "object",
+        "properties": {
+          "subscription": {
+            "description": "Required. The updated subscription object.",
+            "$ref": "Subscription"
+          },
+          "updateMask": {
+            "description": "Required. Indicates which fields in the provided subscription to update. Must be specified and non-empty.",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Subscription"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.list",
+      "resource": "projects.subscriptions",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+project}/subscriptions",
+      "description": "Lists matching subscriptions.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Required. The name of the project in which to list subscriptions. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Optional. Maximum number of subscriptions to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. The value returned by the last `ListSubscriptionsResponse`; indicates that this is a continuation of a prior `ListSubscriptions` call, and that the system should return the next page of data.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListSubscriptionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.delete",
+      "resource": "projects.subscriptions",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+subscription}",
+      "description": "Deletes an existing subscription. All messages retained in the subscription are immediately dropped. Calls to `Pull` after deletion will return `NOT_FOUND`. After a subscription is deleted, a new one may be created with the same name, but the new one has no association with the old subscription or its topic unless the same topic is specified.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The subscription to delete. Format is `projects/{project}/subscriptions/{sub}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.modifyAckDeadline",
+      "resource": "projects.subscriptions",
+      "action": "modifyAckDeadline",
+      "http_method": "POST",
+      "path_template": "v1/{+subscription}:modifyAckDeadline",
+      "description": "Modifies the ack deadline for a specific message. This method is useful to indicate that more time is needed to process a message by the subscriber, or to make the message available for redelivery if the processing was interrupted. Note that this does not modify the subscription-level `ackDeadlineSeconds` used for subsequent messages.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ModifyAckDeadlineRequest",
+      "body_schema": {
+        "id": "ModifyAckDeadlineRequest",
+        "description": "Request for the ModifyAckDeadline method.",
+        "type": "object",
+        "properties": {
+          "ackIds": {
+            "description": "Required. List of acknowledgment IDs.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ackDeadlineSeconds": {
+            "description": "Required. The new ack deadline with respect to the time this request was sent to the Pub/Sub system. For example, if the value is 10, the new ack deadline will expire 10 seconds after the `ModifyAckDeadline` call was made. Specifying zero might immediately make the message available for delivery to another subscriber client. This typically results in an increase in the rate of message redeliveries (that is, duplicates). The minimum deadline you can specify is 0 seconds. The maximum deadline you can specify in a single request is 600 seconds (10 minutes).",
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.acknowledge",
+      "resource": "projects.subscriptions",
+      "action": "acknowledge",
+      "http_method": "POST",
+      "path_template": "v1/{+subscription}:acknowledge",
+      "description": "Acknowledges the messages associated with the `ack_ids` in the `AcknowledgeRequest`. The Pub/Sub system can remove the relevant messages from the subscription. Acknowledging a message whose ack deadline has expired may succeed, but such a message may be redelivered later. Acknowledging a message more than once will not result in an error.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The subscription whose message is being acknowledged. Format is `projects/{project}/subscriptions/{sub}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "AcknowledgeRequest",
+      "body_schema": {
+        "id": "AcknowledgeRequest",
+        "description": "Request for the Acknowledge method.",
+        "type": "object",
+        "properties": {
+          "ackIds": {
+            "description": "Required. The acknowledgment ID for the messages being acknowledged that was returned by the Pub/Sub system in the `Pull` response. Must not be empty.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.pull",
+      "resource": "projects.subscriptions",
+      "action": "pull",
+      "http_method": "POST",
+      "path_template": "v1/{+subscription}:pull",
+      "description": "Pulls messages from the server.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The subscription from which messages should be pulled. Format is `projects/{project}/subscriptions/{sub}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "PullRequest",
+      "body_schema": {
+        "id": "PullRequest",
+        "description": "Request for the `Pull` method.",
+        "type": "object",
+        "properties": {
+          "returnImmediately": {
+            "description": "Optional. If this field set to true, the system will respond immediately even if it there are no messages available to return in the `Pull` response. Otherwise, the system may wait (for a bounded amount of time) until at least one message is available, rather than returning no messages. Warning: setting this field to `true` is discouraged because it adversely impacts the performance of `Pull` operations. We recommend that users do not set this field.",
+            "deprecated": true,
+            "type": "boolean"
+          },
+          "maxMessages": {
+            "description": "Required. The maximum number of messages to return for this request. Must be a positive integer. The Pub/Sub system may return fewer than the number specified.",
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "PullResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.modifyPushConfig",
+      "resource": "projects.subscriptions",
+      "action": "modifyPushConfig",
+      "http_method": "POST",
+      "path_template": "v1/{+subscription}:modifyPushConfig",
+      "description": "Modifies the `PushConfig` for a specified subscription. This may be used to change a push subscription to a pull one (signified by an empty `PushConfig`) or vice versa, or change the endpoint URL and other attributes of a push subscription. Messages will accumulate for delivery continuously through the call regardless of changes to the `PushConfig`.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ModifyPushConfigRequest",
+      "body_schema": {
+        "id": "ModifyPushConfigRequest",
+        "description": "Request for the ModifyPushConfig method.",
+        "type": "object",
+        "properties": {
+          "pushConfig": {
+            "description": "Required. The push configuration for future deliveries. An empty `pushConfig` indicates that the Pub/Sub system should stop pushing messages from the given subscription and allow messages to be pulled and acknowledged - effectively pausing the subscription if `Pull` or `StreamingPull` is not called.",
+            "$ref": "PushConfig"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.subscriptions.seek",
+      "resource": "projects.subscriptions",
+      "action": "seek",
+      "http_method": "POST",
+      "path_template": "v1/{+subscription}:seek",
+      "description": "Seeks an existing subscription to a point in time or to a given snapshot, whichever is provided in the request. Snapshots are used in [Seek] (https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. Note that both the subscription and the snapshot must be on the same topic.",
+      "required_params": [
+        "subscription"
+      ],
+      "parameters": {
+        "subscription": {
+          "description": "Required. The subscription to affect.",
+          "pattern": "^projects/[^/]+/subscriptions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SeekRequest",
+      "body_schema": {
+        "id": "SeekRequest",
+        "description": "Request for the `Seek` method.",
+        "type": "object",
+        "properties": {
+          "time": {
+            "description": "Optional. The time to seek to. Messages retained in the subscription that were published before this time are marked as acknowledged, and messages retained in the subscription that were published after this time are marked as unacknowledged. Note that this operation affects only those messages retained in the subscription (configured by the combination of `message_retention_duration` and `retain_acked_messages`). For example, if `time` corresponds to a point before the message retention window (or to a point before the system's notion of the subscription creation time), only retained messages will be marked as unacknowledged, and already-expunged messages will not be restored.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "snapshot": {
+            "description": "Optional. The snapshot to seek to. The snapshot's topic must be the same as that of the provided subscription. Format is `projects/{project}/snapshots/{snap}`.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "SeekResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.setIamPolicy",
+      "resource": "projects.snapshots",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.getIamPolicy",
+      "resource": "projects.snapshots",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.testIamPermissions",
+      "resource": "projects.snapshots",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.get",
+      "resource": "projects.snapshots",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+snapshot}",
+      "description": "Gets the configuration details of a snapshot. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.",
+      "required_params": [
+        "snapshot"
+      ],
+      "parameters": {
+        "snapshot": {
+          "description": "Required. The name of the snapshot to get. Format is `projects/{project}/snapshots/{snap}`.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.list",
+      "resource": "projects.snapshots",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+project}/snapshots",
+      "description": "Lists the existing snapshots. Snapshots are used in [Seek]( https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Required. The name of the project in which to list snapshots. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Optional. Maximum number of snapshots to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. The value returned by the last `ListSnapshotsResponse`; indicates that this is a continuation of a prior `ListSnapshots` call, and that the system should return the next page of data.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListSnapshotsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.create",
+      "resource": "projects.snapshots",
+      "action": "create",
+      "http_method": "PUT",
+      "path_template": "v1/{+name}",
+      "description": "Creates a snapshot from the requested subscription. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. If the snapshot already exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the `Snapshot.expire_time` field. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription, conforming to the [resource name format] (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). The generated name is populated in the returned Snapshot object. Note that for REST API requests, you must specify a name in the request.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the [resource name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is `projects/{project}/snapshots/{snap}`.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "CreateSnapshotRequest",
+      "body_schema": {
+        "id": "CreateSnapshotRequest",
+        "description": "Request for the `CreateSnapshot` method.",
+        "type": "object",
+        "properties": {
+          "subscription": {
+            "description": "Required. The subscription whose backlog the snapshot retains. Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the subscription. More precisely, this is defined as the messages in the subscription's backlog that are unacknowledged upon the successful completion of the `CreateSnapshot` request; as well as: (b) Any messages published to the subscription's topic following the successful completion of the CreateSnapshot request. Format is `projects/{project}/subscriptions/{sub}`.",
+            "type": "string"
+          },
+          "labels": {
+            "description": "Optional. See [Creating and managing labels](https://cloud.google.com/pubsub/docs/labels).",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.patch",
+      "resource": "projects.snapshots",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "v1/{+name}",
+      "description": "Updates an existing snapshot by updating the fields specified in the update mask. Snapshots are used in [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Optional. The name of the snapshot.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "UpdateSnapshotRequest",
+      "body_schema": {
+        "id": "UpdateSnapshotRequest",
+        "description": "Request for the UpdateSnapshot method.",
+        "type": "object",
+        "properties": {
+          "snapshot": {
+            "description": "Required. The updated snapshot object.",
+            "$ref": "Snapshot"
+          },
+          "updateMask": {
+            "description": "Required. Indicates which fields in the provided snapshot to update. Must be specified and non-empty.",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "pubsub.projects.snapshots.delete",
+      "resource": "projects.snapshots",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+snapshot}",
+      "description": "Removes an existing snapshot. Snapshots are used in [Seek] (https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in an existing subscription to the state captured by a snapshot. When the snapshot is deleted, all messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new one may be created with the same name, but the new one has no association with the old snapshot or its subscription, unless the same subscription is specified.",
+      "required_params": [
+        "snapshot"
+      ],
+      "parameters": {
+        "snapshot": {
+          "description": "Required. The name of the snapshot to delete. Format is `projects/{project}/snapshots/{snap}`.",
+          "pattern": "^projects/[^/]+/snapshots/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.setIamPolicy",
+      "resource": "projects.schemas",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.getIamPolicy",
+      "resource": "projects.schemas",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.testIamPermissions",
+      "resource": "projects.schemas",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.create",
+      "resource": "projects.schemas",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1/{+parent}/schemas",
+      "description": "Creates a schema.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The name of the project in which to create the schema. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "schemaId": {
+          "description": "The ID to use for the schema, which will become the final component of the schema's resource name. See https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names for resource name constraints.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Schema",
+      "body_schema": {
+        "id": "Schema",
+        "description": "A schema resource.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of the schema definition.",
+            "type": "string",
+            "enumDescriptions": [
+              "Default value. This value is unused.",
+              "A Protocol Buffer schema definition.",
+              "An Avro schema definition."
+            ],
+            "enum": [
+              "TYPE_UNSPECIFIED",
+              "PROTOCOL_BUFFER",
+              "AVRO"
+            ]
+          },
+          "definition": {
+            "description": "The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.",
+            "type": "string"
+          },
+          "revisionId": {
+            "description": "Output only. Immutable. The revision ID of the schema.",
+            "readOnly": true,
+            "type": "string"
+          },
+          "revisionCreateTime": {
+            "description": "Output only. The timestamp that the revision was created.",
+            "readOnly": true,
+            "type": "string",
+            "format": "google-datetime"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Schema"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.get",
+      "resource": "projects.schemas",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Gets a schema.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the schema to get. Format is `projects/{project}/schemas/{schema}`.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The set of fields to return in the response. If not set, returns a Schema with all fields filled out. Set to `BASIC` to omit the `definition`.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The default / unset value. The API will default to the BASIC view.",
+            "Include the name and type of the schema, but not the definition.",
+            "Include all Schema object fields."
+          ],
+          "enum": [
+            "SCHEMA_VIEW_UNSPECIFIED",
+            "BASIC",
+            "FULL"
+          ]
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Schema"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.list",
+      "resource": "projects.schemas",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/schemas",
+      "description": "Lists schemas in a project.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The name of the project in which to list schemas. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The set of Schema fields to return in the response. If not set, returns Schemas with `name` and `type`, but not `definition`. Set to `FULL` to retrieve all fields.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The default / unset value. The API will default to the BASIC view.",
+            "Include the name and type of the schema, but not the definition.",
+            "Include all Schema object fields."
+          ],
+          "enum": [
+            "SCHEMA_VIEW_UNSPECIFIED",
+            "BASIC",
+            "FULL"
+          ]
+        },
+        "pageSize": {
+          "description": "Maximum number of schemas to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "The value returned by the last `ListSchemasResponse`; indicates that this is a continuation of a prior `ListSchemas` call, and that the system should return the next page of data.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListSchemasResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.listRevisions",
+      "resource": "projects.schemas",
+      "action": "listRevisions",
+      "http_method": "GET",
+      "path_template": "v1/{+name}:listRevisions",
+      "description": "Lists all schema revisions for the named schema.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the schema to list revisions for.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The set of Schema fields to return in the response. If not set, returns Schemas with `name` and `type`, but not `definition`. Set to `FULL` to retrieve all fields.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The default / unset value. The API will default to the BASIC view.",
+            "Include the name and type of the schema, but not the definition.",
+            "Include all Schema object fields."
+          ],
+          "enum": [
+            "SCHEMA_VIEW_UNSPECIFIED",
+            "BASIC",
+            "FULL"
+          ]
+        },
+        "pageSize": {
+          "description": "The maximum number of revisions to return per page.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "The page token, received from a previous ListSchemaRevisions call. Provide this to retrieve the subsequent page.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ListSchemaRevisionsResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.commit",
+      "resource": "projects.schemas",
+      "action": "commit",
+      "http_method": "POST",
+      "path_template": "v1/{+name}:commit",
+      "description": "Commits a new schema revision to an existing schema.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the schema we are revising. Format is `projects/{project}/schemas/{schema}`.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "CommitSchemaRequest",
+      "body_schema": {
+        "id": "CommitSchemaRequest",
+        "description": "Request for CommitSchema method.",
+        "type": "object",
+        "properties": {
+          "schema": {
+            "description": "Required. The schema revision to commit.",
+            "$ref": "Schema"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Schema"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.rollback",
+      "resource": "projects.schemas",
+      "action": "rollback",
+      "http_method": "POST",
+      "path_template": "v1/{+name}:rollback",
+      "description": "Creates a new schema revision that is a copy of the provided revision_id.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The schema being rolled back with revision id.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "RollbackSchemaRequest",
+      "body_schema": {
+        "id": "RollbackSchemaRequest",
+        "description": "Request for the `RollbackSchema` method.",
+        "type": "object",
+        "properties": {
+          "revisionId": {
+            "description": "Required. The revision ID to roll back to. It must be a revision of the same schema. Example: c7cfa2a8",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Schema"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.deleteRevision",
+      "resource": "projects.schemas",
+      "action": "deleteRevision",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}:deleteRevision",
+      "description": "Deletes a specific schema revision.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the schema revision to be deleted, with a revision ID explicitly included. Example: `projects/123/schemas/my-schema@c7cfa2a8`",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "revisionId": {
+          "description": "Optional. This field is deprecated and should not be used for specifying the revision ID. The revision ID should be specified via the `name` parameter.",
+          "location": "query",
+          "deprecated": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Schema"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.delete",
+      "resource": "projects.schemas",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}",
+      "description": "Deletes a schema.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. Name of the schema to delete. Format is `projects/{project}/schemas/{schema}`.",
+          "pattern": "^projects/[^/]+/schemas/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.validate",
+      "resource": "projects.schemas",
+      "action": "validate",
+      "http_method": "POST",
+      "path_template": "v1/{+parent}/schemas:validate",
+      "description": "Validates a schema.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The name of the project in which to validate schemas. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ValidateSchemaRequest",
+      "body_schema": {
+        "id": "ValidateSchemaRequest",
+        "description": "Request for the `ValidateSchema` method.",
+        "type": "object",
+        "properties": {
+          "schema": {
+            "description": "Required. The schema object to validate.",
+            "$ref": "Schema"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ValidateSchemaResponse"
+    },
+    {
+      "operation_id": "pubsub.projects.schemas.validateMessage",
+      "resource": "projects.schemas",
+      "action": "validateMessage",
+      "http_method": "POST",
+      "path_template": "v1/{+parent}/schemas:validateMessage",
+      "description": "Validates a message against a schema.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The name of the project in which to validate schemas. Format is `projects/{project-id}`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ValidateMessageRequest",
+      "body_schema": {
+        "id": "ValidateMessageRequest",
+        "description": "Request for the `ValidateMessage` method.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the schema against which to validate. Format is `projects/{project}/schemas/{schema}`.",
+            "type": "string"
+          },
+          "schema": {
+            "description": "Ad-hoc schema against which to validate",
+            "$ref": "Schema"
+          },
+          "message": {
+            "description": "Message to validate against the provided `schema_spec`.",
+            "type": "string",
+            "format": "byte"
+          },
+          "encoding": {
+            "description": "The encoding expected for messages",
+            "type": "string",
+            "enumDescriptions": [
+              "Unspecified",
+              "JSON encoding",
+              "Binary encoding, as defined by the schema type. For some schema types, binary encoding may not be available."
+            ],
+            "enum": [
+              "ENCODING_UNSPECIFIED",
+              "JSON",
+              "BINARY"
+            ]
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/pubsub"
+      ],
+      "response_type": "ValidateMessageResponse"
+    }
+  ]
+}

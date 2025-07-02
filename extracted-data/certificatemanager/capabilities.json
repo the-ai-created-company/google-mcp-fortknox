@@ -1,0 +1,126 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "certificatemanager.projects.locations.list"
+    ],
+    "get_locations": [
+      "certificatemanager.projects.locations.get"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "certificatemanager.projects.locations.operations.list"
+    ],
+    "get_operations": [
+      "certificatemanager.projects.locations.operations.get"
+    ],
+    "delete_operations": [
+      "certificatemanager.projects.locations.operations.delete"
+    ],
+    "cancel_operations": [
+      "certificatemanager.projects.locations.operations.cancel"
+    ]
+  },
+  "certificates_management": {
+    "list_certificates": [
+      "certificatemanager.projects.locations.certificates.list"
+    ],
+    "get_certificates": [
+      "certificatemanager.projects.locations.certificates.get"
+    ],
+    "create_certificates": [
+      "certificatemanager.projects.locations.certificates.create"
+    ],
+    "patch_certificates": [
+      "certificatemanager.projects.locations.certificates.patch"
+    ],
+    "delete_certificates": [
+      "certificatemanager.projects.locations.certificates.delete"
+    ]
+  },
+  "certificateMaps_management": {
+    "list_certificateMaps": [
+      "certificatemanager.projects.locations.certificateMaps.list"
+    ],
+    "get_certificateMaps": [
+      "certificatemanager.projects.locations.certificateMaps.get"
+    ],
+    "create_certificateMaps": [
+      "certificatemanager.projects.locations.certificateMaps.create"
+    ],
+    "patch_certificateMaps": [
+      "certificatemanager.projects.locations.certificateMaps.patch"
+    ],
+    "delete_certificateMaps": [
+      "certificatemanager.projects.locations.certificateMaps.delete"
+    ]
+  },
+  "certificateMapEntries_management": {
+    "list_certificateMapEntries": [
+      "certificatemanager.projects.locations.certificateMaps.certificateMapEntries.list"
+    ],
+    "get_certificateMapEntries": [
+      "certificatemanager.projects.locations.certificateMaps.certificateMapEntries.get"
+    ],
+    "create_certificateMapEntries": [
+      "certificatemanager.projects.locations.certificateMaps.certificateMapEntries.create"
+    ],
+    "patch_certificateMapEntries": [
+      "certificatemanager.projects.locations.certificateMaps.certificateMapEntries.patch"
+    ],
+    "delete_certificateMapEntries": [
+      "certificatemanager.projects.locations.certificateMaps.certificateMapEntries.delete"
+    ]
+  },
+  "dnsAuthorizations_management": {
+    "list_dnsAuthorizations": [
+      "certificatemanager.projects.locations.dnsAuthorizations.list"
+    ],
+    "get_dnsAuthorizations": [
+      "certificatemanager.projects.locations.dnsAuthorizations.get"
+    ],
+    "create_dnsAuthorizations": [
+      "certificatemanager.projects.locations.dnsAuthorizations.create"
+    ],
+    "patch_dnsAuthorizations": [
+      "certificatemanager.projects.locations.dnsAuthorizations.patch"
+    ],
+    "delete_dnsAuthorizations": [
+      "certificatemanager.projects.locations.dnsAuthorizations.delete"
+    ]
+  },
+  "certificateIssuanceConfigs_management": {
+    "list_certificateIssuanceConfigs": [
+      "certificatemanager.projects.locations.certificateIssuanceConfigs.list"
+    ],
+    "get_certificateIssuanceConfigs": [
+      "certificatemanager.projects.locations.certificateIssuanceConfigs.get"
+    ],
+    "create_certificateIssuanceConfigs": [
+      "certificatemanager.projects.locations.certificateIssuanceConfigs.create"
+    ],
+    "patch_certificateIssuanceConfigs": [
+      "certificatemanager.projects.locations.certificateIssuanceConfigs.patch"
+    ],
+    "delete_certificateIssuanceConfigs": [
+      "certificatemanager.projects.locations.certificateIssuanceConfigs.delete"
+    ]
+  },
+  "trustConfigs_management": {
+    "list_trustConfigs": [
+      "certificatemanager.projects.locations.trustConfigs.list"
+    ],
+    "get_trustConfigs": [
+      "certificatemanager.projects.locations.trustConfigs.get"
+    ],
+    "create_trustConfigs": [
+      "certificatemanager.projects.locations.trustConfigs.create"
+    ],
+    "patch_trustConfigs": [
+      "certificatemanager.projects.locations.trustConfigs.patch"
+    ],
+    "delete_trustConfigs": [
+      "certificatemanager.projects.locations.trustConfigs.delete"
+    ]
+  }
+}

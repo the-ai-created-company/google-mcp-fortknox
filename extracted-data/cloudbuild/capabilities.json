@@ -1,0 +1,177 @@
+{
+  "operations_management": {
+    "cancel_operations": [
+      "cloudbuild.operations.cancel",
+      "cloudbuild.projects.locations.operations.cancel"
+    ],
+    "get_operations": [
+      "cloudbuild.operations.get",
+      "cloudbuild.projects.locations.operations.get"
+    ]
+  },
+  "githubDotComWebhook_management": {
+    "receive_githubDotComWebhook": [
+      "cloudbuild.githubDotComWebhook.receive"
+    ]
+  },
+  "triggers_management": {
+    "create_triggers": [
+      "cloudbuild.projects.triggers.create",
+      "cloudbuild.projects.locations.triggers.create"
+    ],
+    "list_triggers": [
+      "cloudbuild.projects.triggers.list",
+      "cloudbuild.projects.locations.triggers.list"
+    ],
+    "patch_triggers": [
+      "cloudbuild.projects.triggers.patch",
+      "cloudbuild.projects.locations.triggers.patch"
+    ],
+    "get_triggers": [
+      "cloudbuild.projects.triggers.get",
+      "cloudbuild.projects.locations.triggers.get"
+    ],
+    "delete_triggers": [
+      "cloudbuild.projects.triggers.delete",
+      "cloudbuild.projects.locations.triggers.delete"
+    ],
+    "webhook_triggers": [
+      "cloudbuild.projects.triggers.webhook",
+      "cloudbuild.projects.locations.triggers.webhook"
+    ],
+    "run_triggers": [
+      "cloudbuild.projects.triggers.run",
+      "cloudbuild.projects.locations.triggers.run"
+    ]
+  },
+  "githubEnterpriseConfigs_management": {
+    "create_githubEnterpriseConfigs": [
+      "cloudbuild.projects.githubEnterpriseConfigs.create",
+      "cloudbuild.projects.locations.githubEnterpriseConfigs.create"
+    ],
+    "list_githubEnterpriseConfigs": [
+      "cloudbuild.projects.githubEnterpriseConfigs.list",
+      "cloudbuild.projects.locations.githubEnterpriseConfigs.list"
+    ],
+    "get_githubEnterpriseConfigs": [
+      "cloudbuild.projects.githubEnterpriseConfigs.get",
+      "cloudbuild.projects.locations.githubEnterpriseConfigs.get"
+    ],
+    "patch_githubEnterpriseConfigs": [
+      "cloudbuild.projects.githubEnterpriseConfigs.patch",
+      "cloudbuild.projects.locations.githubEnterpriseConfigs.patch"
+    ],
+    "delete_githubEnterpriseConfigs": [
+      "cloudbuild.projects.githubEnterpriseConfigs.delete",
+      "cloudbuild.projects.locations.githubEnterpriseConfigs.delete"
+    ]
+  },
+  "builds_management": {
+    "cancel_builds": [
+      "cloudbuild.projects.builds.cancel",
+      "cloudbuild.projects.locations.builds.cancel"
+    ],
+    "approve_builds": [
+      "cloudbuild.projects.builds.approve",
+      "cloudbuild.projects.locations.builds.approve"
+    ],
+    "get_builds": [
+      "cloudbuild.projects.builds.get",
+      "cloudbuild.projects.locations.builds.get"
+    ],
+    "list_builds": [
+      "cloudbuild.projects.builds.list",
+      "cloudbuild.projects.locations.builds.list"
+    ],
+    "create_builds": [
+      "cloudbuild.projects.builds.create",
+      "cloudbuild.projects.locations.builds.create"
+    ],
+    "retry_builds": [
+      "cloudbuild.projects.builds.retry",
+      "cloudbuild.projects.locations.builds.retry"
+    ]
+  },
+  "locations_management": {
+    "getDefaultServiceAccount_locations": [
+      "cloudbuild.projects.locations.getDefaultServiceAccount"
+    ],
+    "regionalWebhook_locations": [
+      "cloudbuild.locations.regionalWebhook"
+    ]
+  },
+  "gitLabConfigs_management": {
+    "get_gitLabConfigs": [
+      "cloudbuild.projects.locations.gitLabConfigs.get"
+    ],
+    "create_gitLabConfigs": [
+      "cloudbuild.projects.locations.gitLabConfigs.create"
+    ],
+    "delete_gitLabConfigs": [
+      "cloudbuild.projects.locations.gitLabConfigs.delete"
+    ],
+    "removeGitLabConnectedRepository_gitLabConfigs": [
+      "cloudbuild.projects.locations.gitLabConfigs.removeGitLabConnectedRepository"
+    ],
+    "list_gitLabConfigs": [
+      "cloudbuild.projects.locations.gitLabConfigs.list"
+    ],
+    "patch_gitLabConfigs": [
+      "cloudbuild.projects.locations.gitLabConfigs.patch"
+    ]
+  },
+  "repos_management": {
+    "list_repos": [
+      "cloudbuild.projects.locations.gitLabConfigs.repos.list",
+      "cloudbuild.projects.locations.bitbucketServerConfigs.repos.list"
+    ]
+  },
+  "connectedRepositories_management": {
+    "batchCreate_connectedRepositories": [
+      "cloudbuild.projects.locations.gitLabConfigs.connectedRepositories.batchCreate",
+      "cloudbuild.projects.locations.bitbucketServerConfigs.connectedRepositories.batchCreate"
+    ]
+  },
+  "workerPools_management": {
+    "get_workerPools": [
+      "cloudbuild.projects.locations.workerPools.get"
+    ],
+    "delete_workerPools": [
+      "cloudbuild.projects.locations.workerPools.delete"
+    ],
+    "list_workerPools": [
+      "cloudbuild.projects.locations.workerPools.list"
+    ],
+    "create_workerPools": [
+      "cloudbuild.projects.locations.workerPools.create"
+    ],
+    "patch_workerPools": [
+      "cloudbuild.projects.locations.workerPools.patch"
+    ]
+  },
+  "bitbucketServerConfigs_management": {
+    "get_bitbucketServerConfigs": [
+      "cloudbuild.projects.locations.bitbucketServerConfigs.get"
+    ],
+    "patch_bitbucketServerConfigs": [
+      "cloudbuild.projects.locations.bitbucketServerConfigs.patch"
+    ],
+    "delete_bitbucketServerConfigs": [
+      "cloudbuild.projects.locations.bitbucketServerConfigs.delete"
+    ],
+    "list_bitbucketServerConfigs": [
+      "cloudbuild.projects.locations.bitbucketServerConfigs.list"
+    ],
+    "removeBitbucketServerConnectedRepository_bitbucketServerConfigs": [
+      "cloudbuild.projects.locations.bitbucketServerConfigs.removeBitbucketServerConnectedRepository"
+    ],
+    "create_bitbucketServerConfigs": [
+      "cloudbuild.projects.locations.bitbucketServerConfigs.create"
+    ]
+  },
+  "v1_management": {
+    "webhook_v1": [
+      "cloudbuild.webhook"
+    ]
+  }
+}

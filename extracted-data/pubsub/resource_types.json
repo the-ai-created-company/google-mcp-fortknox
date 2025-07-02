@@ -1,0 +1,67 @@
+{
+  "topics": {
+    "description": "topics resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "publish",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "subscriptions": {
+    "description": "subscriptions resource",
+    "operations_count": 15,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "acknowledge",
+      "detach",
+      "getIamPolicy",
+      "modifyAckDeadline",
+      "modifyPushConfig",
+      "pull",
+      "seek",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "snapshots": {
+    "description": "snapshots resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "schemas": {
+    "description": "schemas resource",
+    "operations_count": 13,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "commit",
+      "deleteRevision",
+      "getIamPolicy",
+      "listRevisions",
+      "rollback",
+      "setIamPolicy",
+      "testIamPermissions",
+      "validate",
+      "validateMessage"
+    ]
+  }
+}

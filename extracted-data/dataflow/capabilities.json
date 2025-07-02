@@ -1,0 +1,114 @@
+{
+  "projects_management": {
+    "deleteSnapshots_projects": [
+      "dataflow.projects.deleteSnapshots"
+    ],
+    "workerMessages_projects": [
+      "dataflow.projects.workerMessages"
+    ]
+  },
+  "snapshots_management": {
+    "get_snapshots": [
+      "dataflow.projects.snapshots.get",
+      "dataflow.projects.locations.snapshots.get"
+    ],
+    "list_snapshots": [
+      "dataflow.projects.snapshots.list",
+      "dataflow.projects.locations.snapshots.list",
+      "dataflow.projects.locations.jobs.snapshots.list"
+    ],
+    "delete_snapshots": [
+      "dataflow.projects.locations.snapshots.delete"
+    ]
+  },
+  "jobs_management": {
+    "create_jobs": [
+      "dataflow.projects.jobs.create",
+      "dataflow.projects.locations.jobs.create"
+    ],
+    "get_jobs": [
+      "dataflow.projects.jobs.get",
+      "dataflow.projects.locations.jobs.get"
+    ],
+    "update_jobs": [
+      "dataflow.projects.jobs.update",
+      "dataflow.projects.locations.jobs.update"
+    ],
+    "list_jobs": [
+      "dataflow.projects.jobs.list",
+      "dataflow.projects.locations.jobs.list"
+    ],
+    "aggregated_jobs": [
+      "dataflow.projects.jobs.aggregated"
+    ],
+    "snapshot_jobs": [
+      "dataflow.projects.jobs.snapshot",
+      "dataflow.projects.locations.jobs.snapshot"
+    ],
+    "getMetrics_jobs": [
+      "dataflow.projects.jobs.getMetrics",
+      "dataflow.projects.locations.jobs.getMetrics"
+    ],
+    "getExecutionDetails_jobs": [
+      "dataflow.projects.locations.jobs.getExecutionDetails"
+    ]
+  },
+  "debug_management": {
+    "getConfig_debug": [
+      "dataflow.projects.jobs.debug.getConfig",
+      "dataflow.projects.locations.jobs.debug.getConfig"
+    ],
+    "sendCapture_debug": [
+      "dataflow.projects.jobs.debug.sendCapture",
+      "dataflow.projects.locations.jobs.debug.sendCapture"
+    ],
+    "getWorkerStacktraces_debug": [
+      "dataflow.projects.jobs.debug.getWorkerStacktraces"
+    ]
+  },
+  "messages_management": {
+    "list_messages": [
+      "dataflow.projects.jobs.messages.list",
+      "dataflow.projects.locations.jobs.messages.list"
+    ]
+  },
+  "workItems_management": {
+    "reportStatus_workItems": [
+      "dataflow.projects.jobs.workItems.reportStatus",
+      "dataflow.projects.locations.jobs.workItems.reportStatus"
+    ],
+    "lease_workItems": [
+      "dataflow.projects.jobs.workItems.lease",
+      "dataflow.projects.locations.jobs.workItems.lease"
+    ]
+  },
+  "templates_management": {
+    "create_templates": [
+      "dataflow.projects.templates.create",
+      "dataflow.projects.locations.templates.create"
+    ],
+    "launch_templates": [
+      "dataflow.projects.templates.launch",
+      "dataflow.projects.locations.templates.launch"
+    ],
+    "get_templates": [
+      "dataflow.projects.templates.get",
+      "dataflow.projects.locations.templates.get"
+    ]
+  },
+  "locations_management": {
+    "workerMessages_locations": [
+      "dataflow.projects.locations.workerMessages"
+    ]
+  },
+  "stages_management": {
+    "getExecutionDetails_stages": [
+      "dataflow.projects.locations.jobs.stages.getExecutionDetails"
+    ]
+  },
+  "flexTemplates_management": {
+    "launch_flexTemplates": [
+      "dataflow.projects.locations.flexTemplates.launch"
+    ]
+  }
+}

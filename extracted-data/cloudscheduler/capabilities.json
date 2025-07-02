@@ -1,0 +1,50 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "cloudscheduler.projects.locations.list"
+    ],
+    "get_locations": [
+      "cloudscheduler.projects.locations.get"
+    ]
+  },
+  "jobs_management": {
+    "list_jobs": [
+      "cloudscheduler.projects.locations.jobs.list"
+    ],
+    "get_jobs": [
+      "cloudscheduler.projects.locations.jobs.get"
+    ],
+    "create_jobs": [
+      "cloudscheduler.projects.locations.jobs.create"
+    ],
+    "patch_jobs": [
+      "cloudscheduler.projects.locations.jobs.patch"
+    ],
+    "delete_jobs": [
+      "cloudscheduler.projects.locations.jobs.delete"
+    ],
+    "pause_jobs": [
+      "cloudscheduler.projects.locations.jobs.pause"
+    ],
+    "resume_jobs": [
+      "cloudscheduler.projects.locations.jobs.resume"
+    ],
+    "run_jobs": [
+      "cloudscheduler.projects.locations.jobs.run"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "cloudscheduler.operations.list"
+    ],
+    "get_operations": [
+      "cloudscheduler.operations.get"
+    ],
+    "delete_operations": [
+      "cloudscheduler.operations.delete"
+    ],
+    "cancel_operations": [
+      "cloudscheduler.operations.cancel"
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "locations": {
+    "description": "locations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "wait"
+    ]
+  },
+  "authorizeddomains": {
+    "description": "authorizeddomains resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "revisions": {
+    "description": "revisions resource",
+    "operations_count": 6,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "configurations": {
+    "description": "configurations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "domainmappings": {
+    "description": "domainmappings resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "jobs": {
+    "description": "jobs resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "getIamPolicy",
+      "replaceJob",
+      "run",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "routes": {
+    "description": "routes resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "services": {
+    "description": "services resource",
+    "operations_count": 13,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "getIamPolicy",
+      "replaceService",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "workerpools": {
+    "description": "workerpools resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "getIamPolicy",
+      "replaceWorkerPool",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "tasks": {
+    "description": "tasks resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "executions": {
+    "description": "executions resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  }
+}

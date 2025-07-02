@@ -1,0 +1,24 @@
+{
+  "traces": {
+    "description": "traces resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "batchWrite"
+    ]
+  },
+  "spans": {
+    "description": "spans resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "createSpan"
+    ]
+  }
+}

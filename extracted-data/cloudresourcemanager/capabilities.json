@@ -1,0 +1,214 @@
+{
+  "liens_management": {
+    "list_liens": [
+      "cloudresourcemanager.liens.list"
+    ],
+    "get_liens": [
+      "cloudresourcemanager.liens.get"
+    ],
+    "create_liens": [
+      "cloudresourcemanager.liens.create"
+    ],
+    "delete_liens": [
+      "cloudresourcemanager.liens.delete"
+    ]
+  },
+  "operations_management": {
+    "get_operations": [
+      "cloudresourcemanager.operations.get"
+    ]
+  },
+  "folders_management": {
+    "get_folders": [
+      "cloudresourcemanager.folders.get"
+    ],
+    "list_folders": [
+      "cloudresourcemanager.folders.list"
+    ],
+    "search_folders": [
+      "cloudresourcemanager.folders.search"
+    ],
+    "create_folders": [
+      "cloudresourcemanager.folders.create"
+    ],
+    "patch_folders": [
+      "cloudresourcemanager.folders.patch"
+    ],
+    "move_folders": [
+      "cloudresourcemanager.folders.move"
+    ],
+    "delete_folders": [
+      "cloudresourcemanager.folders.delete"
+    ],
+    "undelete_folders": [
+      "cloudresourcemanager.folders.undelete"
+    ],
+    "getIamPolicy_folders": [
+      "cloudresourcemanager.folders.getIamPolicy"
+    ],
+    "setIamPolicy_folders": [
+      "cloudresourcemanager.folders.setIamPolicy"
+    ],
+    "testIamPermissions_folders": [
+      "cloudresourcemanager.folders.testIamPermissions"
+    ]
+  },
+  "capabilities_management": {
+    "get_capabilities": [
+      "cloudresourcemanager.folders.capabilities.get"
+    ],
+    "patch_capabilities": [
+      "cloudresourcemanager.folders.capabilities.patch"
+    ]
+  },
+  "organizations_management": {
+    "get_organizations": [
+      "cloudresourcemanager.organizations.get"
+    ],
+    "search_organizations": [
+      "cloudresourcemanager.organizations.search"
+    ],
+    "getIamPolicy_organizations": [
+      "cloudresourcemanager.organizations.getIamPolicy"
+    ],
+    "setIamPolicy_organizations": [
+      "cloudresourcemanager.organizations.setIamPolicy"
+    ],
+    "testIamPermissions_organizations": [
+      "cloudresourcemanager.organizations.testIamPermissions"
+    ]
+  },
+  "projects_management": {
+    "get_projects": [
+      "cloudresourcemanager.projects.get"
+    ],
+    "list_projects": [
+      "cloudresourcemanager.projects.list"
+    ],
+    "search_projects": [
+      "cloudresourcemanager.projects.search"
+    ],
+    "create_projects": [
+      "cloudresourcemanager.projects.create"
+    ],
+    "patch_projects": [
+      "cloudresourcemanager.projects.patch"
+    ],
+    "move_projects": [
+      "cloudresourcemanager.projects.move"
+    ],
+    "delete_projects": [
+      "cloudresourcemanager.projects.delete"
+    ],
+    "undelete_projects": [
+      "cloudresourcemanager.projects.undelete"
+    ],
+    "getIamPolicy_projects": [
+      "cloudresourcemanager.projects.getIamPolicy"
+    ],
+    "setIamPolicy_projects": [
+      "cloudresourcemanager.projects.setIamPolicy"
+    ],
+    "testIamPermissions_projects": [
+      "cloudresourcemanager.projects.testIamPermissions"
+    ]
+  },
+  "tagBindingCollections_management": {
+    "get_tagBindingCollections": [
+      "cloudresourcemanager.locations.tagBindingCollections.get"
+    ],
+    "update_tagBindingCollections": [
+      "cloudresourcemanager.locations.tagBindingCollections.update"
+    ]
+  },
+  "effectiveTagBindingCollections_management": {
+    "get_effectiveTagBindingCollections": [
+      "cloudresourcemanager.locations.effectiveTagBindingCollections.get"
+    ]
+  },
+  "tagBindings_management": {
+    "list_tagBindings": [
+      "cloudresourcemanager.tagBindings.list"
+    ],
+    "create_tagBindings": [
+      "cloudresourcemanager.tagBindings.create"
+    ],
+    "delete_tagBindings": [
+      "cloudresourcemanager.tagBindings.delete"
+    ]
+  },
+  "effectiveTags_management": {
+    "list_effectiveTags": [
+      "cloudresourcemanager.effectiveTags.list"
+    ]
+  },
+  "tagKeys_management": {
+    "list_tagKeys": [
+      "cloudresourcemanager.tagKeys.list"
+    ],
+    "get_tagKeys": [
+      "cloudresourcemanager.tagKeys.get"
+    ],
+    "getNamespaced_tagKeys": [
+      "cloudresourcemanager.tagKeys.getNamespaced"
+    ],
+    "create_tagKeys": [
+      "cloudresourcemanager.tagKeys.create"
+    ],
+    "patch_tagKeys": [
+      "cloudresourcemanager.tagKeys.patch"
+    ],
+    "delete_tagKeys": [
+      "cloudresourcemanager.tagKeys.delete"
+    ],
+    "getIamPolicy_tagKeys": [
+      "cloudresourcemanager.tagKeys.getIamPolicy"
+    ],
+    "setIamPolicy_tagKeys": [
+      "cloudresourcemanager.tagKeys.setIamPolicy"
+    ],
+    "testIamPermissions_tagKeys": [
+      "cloudresourcemanager.tagKeys.testIamPermissions"
+    ]
+  },
+  "tagValues_management": {
+    "list_tagValues": [
+      "cloudresourcemanager.tagValues.list"
+    ],
+    "get_tagValues": [
+      "cloudresourcemanager.tagValues.get"
+    ],
+    "getNamespaced_tagValues": [
+      "cloudresourcemanager.tagValues.getNamespaced"
+    ],
+    "create_tagValues": [
+      "cloudresourcemanager.tagValues.create"
+    ],
+    "patch_tagValues": [
+      "cloudresourcemanager.tagValues.patch"
+    ],
+    "delete_tagValues": [
+      "cloudresourcemanager.tagValues.delete"
+    ],
+    "getIamPolicy_tagValues": [
+      "cloudresourcemanager.tagValues.getIamPolicy"
+    ],
+    "setIamPolicy_tagValues": [
+      "cloudresourcemanager.tagValues.setIamPolicy"
+    ],
+    "testIamPermissions_tagValues": [
+      "cloudresourcemanager.tagValues.testIamPermissions"
+    ]
+  },
+  "tagHolds_management": {
+    "create_tagHolds": [
+      "cloudresourcemanager.tagValues.tagHolds.create"
+    ],
+    "delete_tagHolds": [
+      "cloudresourcemanager.tagValues.tagHolds.delete"
+    ],
+    "list_tagHolds": [
+      "cloudresourcemanager.tagValues.tagHolds.list"
+    ]
+  }
+}

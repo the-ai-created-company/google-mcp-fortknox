@@ -1,0 +1,74 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "secretmanager.projects.locations.list"
+    ],
+    "get_locations": [
+      "secretmanager.projects.locations.get"
+    ]
+  },
+  "secrets_management": {
+    "list_secrets": [
+      "secretmanager.projects.locations.secrets.list",
+      "secretmanager.projects.secrets.list"
+    ],
+    "create_secrets": [
+      "secretmanager.projects.locations.secrets.create",
+      "secretmanager.projects.secrets.create"
+    ],
+    "addVersion_secrets": [
+      "secretmanager.projects.locations.secrets.addVersion",
+      "secretmanager.projects.secrets.addVersion"
+    ],
+    "get_secrets": [
+      "secretmanager.projects.locations.secrets.get",
+      "secretmanager.projects.secrets.get"
+    ],
+    "patch_secrets": [
+      "secretmanager.projects.locations.secrets.patch",
+      "secretmanager.projects.secrets.patch"
+    ],
+    "delete_secrets": [
+      "secretmanager.projects.locations.secrets.delete",
+      "secretmanager.projects.secrets.delete"
+    ],
+    "setIamPolicy_secrets": [
+      "secretmanager.projects.locations.secrets.setIamPolicy",
+      "secretmanager.projects.secrets.setIamPolicy"
+    ],
+    "getIamPolicy_secrets": [
+      "secretmanager.projects.locations.secrets.getIamPolicy",
+      "secretmanager.projects.secrets.getIamPolicy"
+    ],
+    "testIamPermissions_secrets": [
+      "secretmanager.projects.locations.secrets.testIamPermissions",
+      "secretmanager.projects.secrets.testIamPermissions"
+    ]
+  },
+  "versions_management": {
+    "list_versions": [
+      "secretmanager.projects.locations.secrets.versions.list",
+      "secretmanager.projects.secrets.versions.list"
+    ],
+    "get_versions": [
+      "secretmanager.projects.locations.secrets.versions.get",
+      "secretmanager.projects.secrets.versions.get"
+    ],
+    "access_versions": [
+      "secretmanager.projects.locations.secrets.versions.access",
+      "secretmanager.projects.secrets.versions.access"
+    ],
+    "disable_versions": [
+      "secretmanager.projects.locations.secrets.versions.disable",
+      "secretmanager.projects.secrets.versions.disable"
+    ],
+    "enable_versions": [
+      "secretmanager.projects.locations.secrets.versions.enable",
+      "secretmanager.projects.secrets.versions.enable"
+    ],
+    "destroy_versions": [
+      "secretmanager.projects.locations.secrets.versions.destroy",
+      "secretmanager.projects.secrets.versions.destroy"
+    ]
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "networkconnectivity.projects.locations.list"
+    ],
+    "get_locations": [
+      "networkconnectivity.projects.locations.get"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "networkconnectivity.projects.locations.operations.list"
+    ],
+    "get_operations": [
+      "networkconnectivity.projects.locations.operations.get"
+    ],
+    "delete_operations": [
+      "networkconnectivity.projects.locations.operations.delete"
+    ],
+    "cancel_operations": [
+      "networkconnectivity.projects.locations.operations.cancel"
+    ]
+  },
+  "serviceConnectionMaps_management": {
+    "list_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.list"
+    ],
+    "get_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.get"
+    ],
+    "create_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.create"
+    ],
+    "patch_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.patch"
+    ],
+    "delete_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.delete"
+    ],
+    "setIamPolicy_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.setIamPolicy"
+    ],
+    "getIamPolicy_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.getIamPolicy"
+    ],
+    "testIamPermissions_serviceConnectionMaps": [
+      "networkconnectivity.projects.locations.serviceConnectionMaps.testIamPermissions"
+    ]
+  },
+  "serviceConnectionPolicies_management": {
+    "list_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.list"
+    ],
+    "get_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.get"
+    ],
+    "create_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.create"
+    ],
+    "patch_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.patch"
+    ],
+    "delete_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.delete"
+    ],
+    "setIamPolicy_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.setIamPolicy"
+    ],
+    "getIamPolicy_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.getIamPolicy"
+    ],
+    "testIamPermissions_serviceConnectionPolicies": [
+      "networkconnectivity.projects.locations.serviceConnectionPolicies.testIamPermissions"
+    ]
+  },
+  "serviceClasses_management": {
+    "list_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.list"
+    ],
+    "get_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.get"
+    ],
+    "patch_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.patch"
+    ],
+    "delete_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.delete"
+    ],
+    "setIamPolicy_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.setIamPolicy"
+    ],
+    "getIamPolicy_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.getIamPolicy"
+    ],
+    "testIamPermissions_serviceClasses": [
+      "networkconnectivity.projects.locations.serviceClasses.testIamPermissions"
+    ]
+  },
+  "serviceConnectionTokens_management": {
+    "get_serviceConnectionTokens": [
+      "networkconnectivity.projects.locations.serviceConnectionTokens.get"
+    ],
+    "list_serviceConnectionTokens": [
+      "networkconnectivity.projects.locations.serviceConnectionTokens.list"
+    ],
+    "create_serviceConnectionTokens": [
+      "networkconnectivity.projects.locations.serviceConnectionTokens.create"
+    ],
+    "delete_serviceConnectionTokens": [
+      "networkconnectivity.projects.locations.serviceConnectionTokens.delete"
+    ]
+  },
+  "hubs_management": {
+    "list_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.list"
+    ],
+    "get_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.get"
+    ],
+    "create_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.create"
+    ],
+    "patch_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.patch"
+    ],
+    "delete_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.delete"
+    ],
+    "listSpokes_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.listSpokes"
+    ],
+    "queryStatus_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.queryStatus"
+    ],
+    "rejectSpoke_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.rejectSpoke"
+    ],
+    "acceptSpoke_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.acceptSpoke"
+    ],
+    "acceptSpokeUpdate_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.acceptSpokeUpdate"
+    ],
+    "rejectSpokeUpdate_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.rejectSpokeUpdate"
+    ],
+    "setIamPolicy_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.setIamPolicy"
+    ],
+    "getIamPolicy_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.getIamPolicy"
+    ],
+    "testIamPermissions_hubs": [
+      "networkconnectivity.projects.locations.global.hubs.testIamPermissions"
+    ]
+  },
+  "routeTables_management": {
+    "get_routeTables": [
+      "networkconnectivity.projects.locations.global.hubs.routeTables.get"
+    ],
+    "list_routeTables": [
+      "networkconnectivity.projects.locations.global.hubs.routeTables.list"
+    ]
+  },
+  "routes_management": {
+    "get_routes": [
+      "networkconnectivity.projects.locations.global.hubs.routeTables.routes.get"
+    ],
+    "list_routes": [
+      "networkconnectivity.projects.locations.global.hubs.routeTables.routes.list"
+    ]
+  },
+  "groups_management": {
+    "get_groups": [
+      "networkconnectivity.projects.locations.global.hubs.groups.get"
+    ],
+    "list_groups": [
+      "networkconnectivity.projects.locations.global.hubs.groups.list"
+    ],
+    "patch_groups": [
+      "networkconnectivity.projects.locations.global.hubs.groups.patch"
+    ],
+    "setIamPolicy_groups": [
+      "networkconnectivity.projects.locations.global.hubs.groups.setIamPolicy"
+    ],
+    "getIamPolicy_groups": [
+      "networkconnectivity.projects.locations.global.hubs.groups.getIamPolicy"
+    ],
+    "testIamPermissions_groups": [
+      "networkconnectivity.projects.locations.global.hubs.groups.testIamPermissions"
+    ]
+  },
+  "policyBasedRoutes_management": {
+    "list_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.list"
+    ],
+    "get_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.get"
+    ],
+    "create_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.create"
+    ],
+    "delete_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.delete"
+    ],
+    "setIamPolicy_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.setIamPolicy"
+    ],
+    "getIamPolicy_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.getIamPolicy"
+    ],
+    "testIamPermissions_policyBasedRoutes": [
+      "networkconnectivity.projects.locations.global.policyBasedRoutes.testIamPermissions"
+    ]
+  },
+  "spokes_management": {
+    "list_spokes": [
+      "networkconnectivity.projects.locations.spokes.list"
+    ],
+    "get_spokes": [
+      "networkconnectivity.projects.locations.spokes.get"
+    ],
+    "create_spokes": [
+      "networkconnectivity.projects.locations.spokes.create"
+    ],
+    "patch_spokes": [
+      "networkconnectivity.projects.locations.spokes.patch"
+    ],
+    "delete_spokes": [
+      "networkconnectivity.projects.locations.spokes.delete"
+    ],
+    "setIamPolicy_spokes": [
+      "networkconnectivity.projects.locations.spokes.setIamPolicy"
+    ],
+    "getIamPolicy_spokes": [
+      "networkconnectivity.projects.locations.spokes.getIamPolicy"
+    ],
+    "testIamPermissions_spokes": [
+      "networkconnectivity.projects.locations.spokes.testIamPermissions"
+    ]
+  },
+  "internalRanges_management": {
+    "list_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.list"
+    ],
+    "get_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.get"
+    ],
+    "create_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.create"
+    ],
+    "patch_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.patch"
+    ],
+    "delete_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.delete"
+    ],
+    "setIamPolicy_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.setIamPolicy"
+    ],
+    "getIamPolicy_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.getIamPolicy"
+    ],
+    "testIamPermissions_internalRanges": [
+      "networkconnectivity.projects.locations.internalRanges.testIamPermissions"
+    ]
+  },
+  "regionalEndpoints_management": {
+    "list_regionalEndpoints": [
+      "networkconnectivity.projects.locations.regionalEndpoints.list"
+    ],
+    "get_regionalEndpoints": [
+      "networkconnectivity.projects.locations.regionalEndpoints.get"
+    ],
+    "create_regionalEndpoints": [
+      "networkconnectivity.projects.locations.regionalEndpoints.create"
+    ],
+    "delete_regionalEndpoints": [
+      "networkconnectivity.projects.locations.regionalEndpoints.delete"
+    ]
+  }
+}

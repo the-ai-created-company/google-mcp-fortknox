@@ -1,0 +1,36 @@
+{
+  "services_management": {
+    "get_services": [
+      "serviceusage.services.get"
+    ],
+    "disable_services": [
+      "serviceusage.services.disable"
+    ],
+    "list_services": [
+      "serviceusage.services.list"
+    ],
+    "batchGet_services": [
+      "serviceusage.services.batchGet"
+    ],
+    "enable_services": [
+      "serviceusage.services.enable"
+    ],
+    "batchEnable_services": [
+      "serviceusage.services.batchEnable"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "serviceusage.operations.list"
+    ],
+    "cancel_operations": [
+      "serviceusage.operations.cancel"
+    ],
+    "get_operations": [
+      "serviceusage.operations.get"
+    ],
+    "delete_operations": [
+      "serviceusage.operations.delete"
+    ]
+  }
+}

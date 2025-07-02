@@ -1,0 +1,152 @@
+{
+  "run": {
+    "version": "v1",
+    "endpoint_count": 66,
+    "discovery_file": "discovery-docs/run_discovery.json",
+    "extracted_at": "2025-07-02T03:04:04.353267"
+  },
+  "sqladmin": {
+    "version": "v1beta4",
+    "endpoint_count": 69,
+    "discovery_file": "discovery-docs/sqladmin_discovery.json",
+    "extracted_at": "2025-07-02T03:04:05.848913"
+  },
+  "aiplatform": {
+    "version": "v1",
+    "endpoint_count": 630,
+    "discovery_file": "discovery-docs/aiplatform_discovery.json",
+    "extracted_at": "2025-07-02T03:04:08.067518"
+  },
+  "container": {
+    "version": "v1",
+    "endpoint_count": 69,
+    "discovery_file": "discovery-docs/container_discovery.json",
+    "extracted_at": "2025-07-02T03:04:09.700556"
+  },
+  "iam": {
+    "version": "v1",
+    "endpoint_count": 122,
+    "discovery_file": "discovery-docs/iam_discovery.json",
+    "extracted_at": "2025-07-02T03:04:11.310166"
+  },
+  "cloudresourcemanager": {
+    "version": "v3",
+    "endpoint_count": 62,
+    "discovery_file": "discovery-docs/cloudresourcemanager_discovery.json",
+    "extracted_at": "2025-07-02T03:04:12.600708"
+  },
+  "secretmanager": {
+    "version": "v1",
+    "endpoint_count": 32,
+    "discovery_file": "discovery-docs/secretmanager_discovery.json",
+    "extracted_at": "2025-07-02T03:04:14.182201"
+  },
+  "cloudbuild": {
+    "version": "v1",
+    "endpoint_count": 65,
+    "discovery_file": "discovery-docs/cloudbuild_discovery.json",
+    "extracted_at": "2025-07-02T03:04:15.758290"
+  },
+  "cloudscheduler": {
+    "version": "v1",
+    "endpoint_count": 14,
+    "discovery_file": "discovery-docs/cloudscheduler_discovery.json",
+    "extracted_at": "2025-07-02T03:04:17.235988"
+  },
+  "pubsub": {
+    "version": "v1",
+    "endpoint_count": 46,
+    "discovery_file": "discovery-docs/pubsub_discovery.json",
+    "extracted_at": "2025-07-02T03:04:18.440674"
+  },
+  "cloudfunctions": {
+    "version": "v1",
+    "endpoint_count": 14,
+    "discovery_file": "discovery-docs/cloudfunctions_discovery.json",
+    "extracted_at": "2025-07-02T03:04:20.137996"
+  },
+  "logging": {
+    "version": "v2",
+    "endpoint_count": 254,
+    "discovery_file": "discovery-docs/logging_discovery.json",
+    "extracted_at": "2025-07-02T03:04:21.673421"
+  },
+  "monitoring": {
+    "version": "v3",
+    "endpoint_count": 54,
+    "discovery_file": "discovery-docs/monitoring_discovery.json",
+    "extracted_at": "2025-07-02T03:04:23.283149"
+  },
+  "bigquery": {
+    "version": "v2",
+    "endpoint_count": 47,
+    "discovery_file": "discovery-docs/bigquery_discovery.json",
+    "extracted_at": "2025-07-02T03:04:24.617138"
+  },
+  "firestore": {
+    "version": "v1",
+    "endpoint_count": 55,
+    "discovery_file": "discovery-docs/firestore_discovery.json",
+    "extracted_at": "2025-07-02T03:04:26.194055"
+  },
+  "spanner": {
+    "version": "v1",
+    "endpoint_count": 99,
+    "discovery_file": "discovery-docs/spanner_discovery.json",
+    "extracted_at": "2025-07-02T03:04:27.885833"
+  },
+  "redis": {
+    "version": "v1",
+    "endpoint_count": 31,
+    "discovery_file": "discovery-docs/redis_discovery.json",
+    "extracted_at": "2025-07-02T03:04:29.268992"
+  },
+  "dataflow": {
+    "version": "v1b3",
+    "endpoint_count": 42,
+    "discovery_file": "discovery-docs/dataflow_discovery.json",
+    "extracted_at": "2025-07-02T03:04:30.723049"
+  },
+  "dns": {
+    "version": "v1",
+    "endpoint_count": 40,
+    "discovery_file": "discovery-docs/dns_discovery.json",
+    "extracted_at": "2025-07-02T03:04:31.958916"
+  },
+  "certificatemanager": {
+    "version": "v1",
+    "endpoint_count": 36,
+    "discovery_file": "discovery-docs/certificatemanager_discovery.json",
+    "extracted_at": "2025-07-02T03:04:33.526133"
+  },
+  "networkconnectivity": {
+    "version": "v1",
+    "endpoint_count": 84,
+    "discovery_file": "discovery-docs/networkconnectivity_discovery.json",
+    "extracted_at": "2025-07-02T03:04:35.209868"
+  },
+  "cloudbilling": {
+    "version": "v1",
+    "endpoint_count": 18,
+    "discovery_file": "discovery-docs/cloudbilling_discovery.json",
+    "extracted_at": "2025-07-02T03:04:36.894074"
+  },
+  "serviceusage": {
+    "version": "v1",
+    "endpoint_count": 10,
+    "discovery_file": "discovery-docs/serviceusage_discovery.json",
+    "extracted_at": "2025-07-02T03:04:38.549101"
+  },
+  "clouderrorreporting": {
+    "version": "v1beta1",
+    "endpoint_count": 11,
+    "discovery_file": "discovery-docs/clouderrorreporting_discovery.json",
+    "extracted_at": "2025-07-02T03:04:40.119948"
+  },
+  "cloudtrace": {
+    "version": "v2",
+    "endpoint_count": 2,
+    "discovery_file": "discovery-docs/cloudtrace_discovery.json",
+    "extracted_at": "2025-07-02T03:04:41.690525"
+  }
+}

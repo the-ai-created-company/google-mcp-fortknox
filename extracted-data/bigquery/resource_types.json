@@ -1,0 +1,96 @@
+{
+  "datasets": {
+    "description": "datasets resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "undelete"
+    ]
+  },
+  "jobs": {
+    "description": "jobs resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel",
+      "getQueryResults",
+      "query"
+    ]
+  },
+  "models": {
+    "description": "models resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "getServiceAccount"
+    ]
+  },
+  "routines": {
+    "description": "routines resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "rowAccessPolicies": {
+    "description": "rowAccessPolicies resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "batchDelete",
+      "getIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "tabledata": {
+    "description": "tabledata resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "insertAll"
+    ]
+  },
+  "tables": {
+    "description": "tables resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  }
+}

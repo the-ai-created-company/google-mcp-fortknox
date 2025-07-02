@@ -1,0 +1,2864 @@
+{
+  "service": "run",
+  "version": "v1",
+  "base_url": "https://run.googleapis.com/",
+  "total_endpoints": 66,
+  "endpoints": [
+    {
+      "operation_id": "run.projects.locations.list",
+      "resource": "projects.locations",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+name}/locations",
+      "description": "Lists information about the supported locations for this service.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The resource that owns the locations collection, if applicable.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "filter": {
+          "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+          "location": "query",
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "The maximum number of results to return. If not set, the service selects a default.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+          "location": "query",
+          "type": "string"
+        },
+        "extraLocationTypes": {
+          "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+          "location": "query",
+          "repeated": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListLocationsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.operations.list",
+      "resource": "projects.locations.operations",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+name}/operations",
+      "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. To query for all of the operations for a project.",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "filter": {
+          "description": "Optional. A filter for matching the completed or in-progress operations. The supported formats of *filter* are: To query for only completed operations: done:true To query for only ongoing operations: done:false Must be empty to query for all of the latest operations for the given parent project.",
+          "location": "query",
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "The maximum number of records that should be returned. Requested page size cannot exceed 100. If not set or set to less than or equal to 0, the default page size is 100. .",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Token identifying which result to start with, which is returned by a previous list call.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "GoogleLongrunningListOperationsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.operations.get",
+      "resource": "projects.locations.operations",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the operation resource.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "GoogleLongrunningOperation"
+    },
+    {
+      "operation_id": "run.projects.locations.operations.delete",
+      "resource": "projects.locations.operations",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}",
+      "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the operation resource to be deleted.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Empty"
+    },
+    {
+      "operation_id": "run.projects.locations.operations.wait",
+      "resource": "projects.locations.operations",
+      "action": "wait",
+      "http_method": "POST",
+      "path_template": "v1/{+name}:wait",
+      "description": "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the operation resource to wait on.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GoogleLongrunningWaitOperationRequest",
+      "body_schema": {
+        "id": "GoogleLongrunningWaitOperationRequest",
+        "description": "The request message for Operations.WaitOperation.",
+        "type": "object",
+        "properties": {
+          "timeout": {
+            "description": "The maximum duration to wait before timing out. If left blank, the wait will be at most the time permitted by the underlying HTTP/RPC protocol. If RPC context deadline is also specified, the shorter one will be used.",
+            "type": "string",
+            "format": "google-duration"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "GoogleLongrunningOperation"
+    },
+    {
+      "operation_id": "run.projects.locations.authorizeddomains.list",
+      "resource": "projects.locations.authorizeddomains",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/authorizeddomains",
+      "description": "List authorized domains.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Name of the parent Project resource. Example: `projects/myproject`.",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Maximum results to return per page.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Continuation token for fetching the next page of results.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListAuthorizedDomainsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.revisions.list",
+      "resource": "projects.locations.revisions",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/revisions",
+      "description": "List revisions. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListRevisionsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.revisions.get",
+      "resource": "projects.locations.revisions",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Get information about a revision.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+/revisions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Revision"
+    },
+    {
+      "operation_id": "run.projects.locations.revisions.delete",
+      "resource": "projects.locations.revisions",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}",
+      "description": "Delete a revision.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the revision to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+/revisions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.projects.locations.configurations.list",
+      "resource": "projects.locations.configurations",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/configurations",
+      "description": "List configurations. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "The namespace from which the configurations should be listed. For Cloud Run, replace {namespace_id} with the project ID or number.",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of the records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListConfigurationsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.configurations.get",
+      "resource": "projects.locations.configurations",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Get information about a configuration.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the configuration to retrieve. For Cloud Run, replace {namespace_id} with the project ID or number.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/configurations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Configuration"
+    },
+    {
+      "operation_id": "run.projects.locations.domainmappings.create",
+      "resource": "projects.locations.domainmappings",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1/{+parent}/domainmappings",
+      "description": "Create a new domain mapping.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "DomainMapping",
+      "body_schema": {
+        "id": "DomainMapping",
+        "description": "Resource to hold the state and status of a user's domain mapping. NOTE: This resource is currently in Beta.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call such as \"domains.cloudrun.com/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource, in this case \"DomainMapping\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this BuildTemplate.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "The spec for this DomainMapping.",
+            "$ref": "DomainMappingSpec"
+          },
+          "status": {
+            "description": "The current status of the DomainMapping.",
+            "$ref": "DomainMappingStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "DomainMapping"
+    },
+    {
+      "operation_id": "run.projects.locations.domainmappings.list",
+      "resource": "projects.locations.domainmappings",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/domainmappings",
+      "description": "List all domain mappings.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListDomainMappingsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.domainmappings.get",
+      "resource": "projects.locations.domainmappings",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Get information about a domain mapping.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+/domainmappings/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "DomainMapping"
+    },
+    {
+      "operation_id": "run.projects.locations.domainmappings.delete",
+      "resource": "projects.locations.domainmappings",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}",
+      "description": "Delete a domain mapping.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+/domainmappings/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.projects.locations.jobs.getIamPolicy",
+      "resource": "projects.locations.jobs",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Get the IAM Access Control policy currently in effect for the given job. This result does not include any inherited policies.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "run.projects.locations.jobs.setIamPolicy",
+      "resource": "projects.locations.jobs",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the IAM Access control policy for the specified job. Overwrites any existing policy.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          },
+          "updateMask": {
+            "description": "OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: `paths: \"bindings, etag\"`",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "run.projects.locations.jobs.testIamPermissions",
+      "resource": "projects.locations.jobs",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified job. There are no permissions required for making this API call.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.routes.list",
+      "resource": "projects.locations.routes",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/routes",
+      "description": "List routes. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListRoutesResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.routes.get",
+      "resource": "projects.locations.routes",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Get information about a route.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^projects/[^/]+/locations/[^/]+/routes/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Route"
+    },
+    {
+      "operation_id": "run.projects.locations.services.list",
+      "resource": "projects.locations.services",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/services",
+      "description": "Lists services for the given project and region. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListServicesResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.services.get",
+      "resource": "projects.locations.services",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1/{+name}",
+      "description": "Gets information about a service.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`",
+          "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Service"
+    },
+    {
+      "operation_id": "run.projects.locations.services.create",
+      "resource": "projects.locations.services",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1/{+parent}/services",
+      "description": "Creates a new Service. Service creation will trigger a new deployment. Use GetService, and check service.status to determine if the Service is ready.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The resource's parent. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`",
+          "pattern": "^projects/[^/]+/locations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Service",
+      "body_schema": {
+        "id": "Service",
+        "description": "Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. Service acts only as an orchestrator of the underlying Routes and Configurations (much as a kubernetes Deployment orchestrates ReplicaSets). The Service's controller will track the statuses of its owned Configuration and Route, reflecting their statuses and conditions as its own.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call. It must be \"serving.knative.dev/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource. It must be \"Service\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this Service, including name, namespace, labels, and annotations. In Cloud Run, annotations with 'run.googleapis.com/' and 'autoscaling.knative.dev' are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in Service.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/custom-audiences` * `run.googleapis.com/default-url-disabled` * `run.googleapis.com/description` * `run.googleapis.com/gc-traffic-tags` * `run.googleapis.com/ingress` * `run.googleapis.com/ingress` sets the ingress settings for the Service. See [the ingress settings documentation](/run/docs/securing/ingress) for details on configuring ingress settings. * `run.googleapis.com/ingress-status` is output-only and contains the currently active ingress settings for the Service. `run.googleapis.com/ingress-status` may differ from `run.googleapis.com/ingress` while the system is processing a change to `run.googleapis.com/ingress` or if the system failed to process a change to `run.googleapis.com/ingress`. When the system has processed all changes successfully `run.googleapis.com/ingress-status` and `run.googleapis.com/ingress` are equal.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Holds the desired state of the Service (from the client).",
+            "$ref": "ServiceSpec"
+          },
+          "status": {
+            "description": "Communicates the system-controlled state of the Service.",
+            "$ref": "ServiceStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Service"
+    },
+    {
+      "operation_id": "run.projects.locations.services.replaceService",
+      "resource": "projects.locations.services",
+      "action": "replaceService",
+      "http_method": "PUT",
+      "path_template": "v1/{+name}",
+      "description": "Replaces a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`",
+          "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Service",
+      "body_schema": {
+        "id": "Service",
+        "description": "Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. Service acts only as an orchestrator of the underlying Routes and Configurations (much as a kubernetes Deployment orchestrates ReplicaSets). The Service's controller will track the statuses of its owned Configuration and Route, reflecting their statuses and conditions as its own.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call. It must be \"serving.knative.dev/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource. It must be \"Service\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this Service, including name, namespace, labels, and annotations. In Cloud Run, annotations with 'run.googleapis.com/' and 'autoscaling.knative.dev' are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in Service.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/custom-audiences` * `run.googleapis.com/default-url-disabled` * `run.googleapis.com/description` * `run.googleapis.com/gc-traffic-tags` * `run.googleapis.com/ingress` * `run.googleapis.com/ingress` sets the ingress settings for the Service. See [the ingress settings documentation](/run/docs/securing/ingress) for details on configuring ingress settings. * `run.googleapis.com/ingress-status` is output-only and contains the currently active ingress settings for the Service. `run.googleapis.com/ingress-status` may differ from `run.googleapis.com/ingress` while the system is processing a change to `run.googleapis.com/ingress` or if the system failed to process a change to `run.googleapis.com/ingress`. When the system has processed all changes successfully `run.googleapis.com/ingress-status` and `run.googleapis.com/ingress` are equal.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Holds the desired state of the Service (from the client).",
+            "$ref": "ServiceSpec"
+          },
+          "status": {
+            "description": "Communicates the system-controlled state of the Service.",
+            "$ref": "ServiceStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Service"
+    },
+    {
+      "operation_id": "run.projects.locations.services.delete",
+      "resource": "projects.locations.services",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1/{+name}",
+      "description": "Deletes the provided service. This will cause the Service to stop serving traffic and will delete all associated Revisions.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`",
+          "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.projects.locations.services.getIamPolicy",
+      "resource": "projects.locations.services",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Gets the IAM Access Control policy currently in effect for the given Cloud Run service. This result does not include any inherited policies.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "run.projects.locations.services.setIamPolicy",
+      "resource": "projects.locations.services",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the IAM Access control policy for the specified Service. Overwrites any existing policy.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          },
+          "updateMask": {
+            "description": "OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: `paths: \"bindings, etag\"`",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "run.projects.locations.services.testIamPermissions",
+      "resource": "projects.locations.services",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified Project. There are no permissions required for making this API call.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "run.projects.locations.workerpools.getIamPolicy",
+      "resource": "projects.locations.workerpools",
+      "action": "getIamPolicy",
+      "http_method": "GET",
+      "path_template": "v1/{+resource}:getIamPolicy",
+      "description": "Get the IAM Access Control policy currently in effect for the given worker pool. This result does not include any inherited policies.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/workerpools/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "options.requestedPolicyVersion": {
+          "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "run.projects.locations.workerpools.setIamPolicy",
+      "resource": "projects.locations.workerpools",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:setIamPolicy",
+      "description": "Sets the IAM Access control policy for the specified worker pool. Overwrites any existing policy.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/workerpools/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SetIamPolicyRequest",
+      "body_schema": {
+        "id": "SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "Policy"
+          },
+          "updateMask": {
+            "description": "OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: `paths: \"bindings, etag\"`",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "run.projects.locations.workerpools.testIamPermissions",
+      "resource": "projects.locations.workerpools",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified worker pool. There are no permissions required for making this API call.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/locations/[^/]+/workerpools/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "run.projects.authorizeddomains.list",
+      "resource": "projects.authorizeddomains",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1/{+parent}/authorizeddomains",
+      "description": "List authorized domains.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Name of the parent Project resource. Example: `projects/myproject`.",
+          "pattern": "^projects/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Maximum results to return per page.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Continuation token for fetching the next page of results.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListAuthorizedDomainsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.authorizeddomains.list",
+      "resource": "namespaces.authorizeddomains",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/domains.cloudrun.com/v1/{+parent}/authorizeddomains",
+      "description": "List authorized domains.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Name of the parent Project resource. Example: `projects/myproject`.",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "Maximum results to return per page.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Continuation token for fetching the next page of results.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListAuthorizedDomainsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.revisions.list",
+      "resource": "namespaces.revisions",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+parent}/revisions",
+      "description": "List revisions. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListRevisionsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.revisions.get",
+      "resource": "namespaces.revisions",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Get information about a revision.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/revisions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Revision"
+    },
+    {
+      "operation_id": "run.namespaces.revisions.delete",
+      "resource": "namespaces.revisions",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Delete a revision.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the revision to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/revisions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.namespaces.configurations.list",
+      "resource": "namespaces.configurations",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+parent}/configurations",
+      "description": "List configurations. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "The namespace from which the configurations should be listed. For Cloud Run, replace {namespace_id} with the project ID or number.",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of the records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListConfigurationsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.configurations.get",
+      "resource": "namespaces.configurations",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Get information about a configuration.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the configuration to retrieve. For Cloud Run, replace {namespace_id} with the project ID or number.",
+          "pattern": "^namespaces/[^/]+/configurations/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Configuration"
+    },
+    {
+      "operation_id": "run.namespaces.domainmappings.create",
+      "resource": "namespaces.domainmappings",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "apis/domains.cloudrun.com/v1/{+parent}/domainmappings",
+      "description": "Create a new domain mapping.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "DomainMapping",
+      "body_schema": {
+        "id": "DomainMapping",
+        "description": "Resource to hold the state and status of a user's domain mapping. NOTE: This resource is currently in Beta.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call such as \"domains.cloudrun.com/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource, in this case \"DomainMapping\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this BuildTemplate.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "The spec for this DomainMapping.",
+            "$ref": "DomainMappingSpec"
+          },
+          "status": {
+            "description": "The current status of the DomainMapping.",
+            "$ref": "DomainMappingStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "DomainMapping"
+    },
+    {
+      "operation_id": "run.namespaces.domainmappings.list",
+      "resource": "namespaces.domainmappings",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/domains.cloudrun.com/v1/{+parent}/domainmappings",
+      "description": "List all domain mappings.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListDomainMappingsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.domainmappings.get",
+      "resource": "namespaces.domainmappings",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/domains.cloudrun.com/v1/{+name}",
+      "description": "Get information about a domain mapping.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/domainmappings/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "DomainMapping"
+    },
+    {
+      "operation_id": "run.namespaces.domainmappings.delete",
+      "resource": "namespaces.domainmappings",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "apis/domains.cloudrun.com/v1/{+name}",
+      "description": "Delete a domain mapping.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/domainmappings/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.namespaces.tasks.get",
+      "resource": "namespaces.tasks",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Get information about a task.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the task to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/tasks/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Task"
+    },
+    {
+      "operation_id": "run.namespaces.tasks.list",
+      "resource": "namespaces.tasks",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+parent}/tasks",
+      "description": "List tasks.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace from which the tasks should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn. For example, to list all tasks of execution \"foo\" in succeeded state: `run.googleapis.com/execution=foo,run.googleapis.com/runningState=Succeeded`. Supported states are: * `Pending`: Initial state of all tasks. The task has not yet started but eventually will. * `Running`: Container instances for this task are running or will be running shortly. * `Succeeded`: No more container instances to run for the task, and the last attempt succeeded. * `Failed`: No more container instances to run for the task, and the last attempt failed. This task has run out of retry attempts. * `Cancelled`: Task was running but got stopped because its parent execution has been aborted. * `Abandoned`: The task has not yet started and never will because its parent execution has been aborted.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Optional encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListTasksResponse"
+    },
+    {
+      "operation_id": "run.namespaces.executions.delete",
+      "resource": "namespaces.executions",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Delete an execution.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the execution to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/executions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Optional. Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Optional. Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.namespaces.executions.get",
+      "resource": "namespaces.executions",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Get information about an execution.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the execution to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/executions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Execution"
+    },
+    {
+      "operation_id": "run.namespaces.executions.list",
+      "resource": "namespaces.executions",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+parent}/executions",
+      "description": "List executions. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace from which the executions should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of the records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Optional encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListExecutionsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.executions.cancel",
+      "resource": "namespaces.executions",
+      "action": "cancel",
+      "http_method": "POST",
+      "path_template": "apis/run.googleapis.com/v1/{+name}:cancel",
+      "description": "Cancel an execution.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the execution to cancel. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/executions/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "CancelExecutionRequest",
+      "body_schema": {
+        "id": "CancelExecutionRequest",
+        "description": "Request message for cancelling an execution.",
+        "type": "object",
+        "properties": {}
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Execution"
+    },
+    {
+      "operation_id": "run.namespaces.jobs.create",
+      "resource": "namespaces.jobs",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "apis/run.googleapis.com/v1/{+parent}/jobs",
+      "description": "Create a job.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace in which the job should be created. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Job",
+      "body_schema": {
+        "id": "Job",
+        "description": "Job represents the configuration of a single job, which references a container image which is run to completion.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.",
+            "type": "string"
+          },
+          "kind": {
+            "description": "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Optional. Standard object's metadata.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Optional. Specification of the desired behavior of a job.",
+            "$ref": "JobSpec"
+          },
+          "status": {
+            "description": "Output only. Current status of a job.",
+            "readOnly": true,
+            "$ref": "JobStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "run.namespaces.jobs.replaceJob",
+      "resource": "namespaces.jobs",
+      "action": "replaceJob",
+      "http_method": "PUT",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Replace a job. Only the spec and metadata labels and annotations are modifiable. After the Replace request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the job being replaced. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Job",
+      "body_schema": {
+        "id": "Job",
+        "description": "Job represents the configuration of a single job, which references a container image which is run to completion.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "Optional. APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.",
+            "type": "string"
+          },
+          "kind": {
+            "description": "Optional. Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Optional. Standard object's metadata.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Optional. Specification of the desired behavior of a job.",
+            "$ref": "JobSpec"
+          },
+          "status": {
+            "description": "Output only. Current status of a job.",
+            "readOnly": true,
+            "$ref": "JobStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "run.namespaces.jobs.delete",
+      "resource": "namespaces.jobs",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Delete a job.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the job to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Optional. Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Optional. Cloud Run currently ignores this parameter.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.namespaces.jobs.get",
+      "resource": "namespaces.jobs",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Get information about a job.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the job to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "run.namespaces.jobs.list",
+      "resource": "namespaces.jobs",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+parent}/jobs",
+      "description": "List jobs. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The namespace from which the jobs should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Optional. Not supported by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Optional encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListJobsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.jobs.run",
+      "resource": "namespaces.jobs",
+      "action": "run",
+      "http_method": "POST",
+      "path_template": "apis/run.googleapis.com/v1/{+name}:run",
+      "description": "Trigger creation of a new execution of this job.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The name of the job to run. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/jobs/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "RunJobRequest",
+      "body_schema": {
+        "id": "RunJobRequest",
+        "description": "Request message for creating a new execution of a job.",
+        "type": "object",
+        "properties": {
+          "overrides": {
+            "description": "Optional. Overrides existing job configuration for one specific new job execution only, using the specified values to update the job configuration for the new execution.",
+            "$ref": "Overrides"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Execution"
+    },
+    {
+      "operation_id": "run.namespaces.routes.list",
+      "resource": "namespaces.routes",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+parent}/routes",
+      "description": "List routes. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "Optional. The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Allows to filter resources based on a specific value for a field name. Send this in a query string format. i.e. 'metadata.name%3Dlorem'. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Optional. Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListRoutesResponse"
+    },
+    {
+      "operation_id": "run.namespaces.routes.get",
+      "resource": "namespaces.routes",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Get information about a route.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID",
+          "pattern": "^namespaces/[^/]+/routes/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Route"
+    },
+    {
+      "operation_id": "run.namespaces.services.list",
+      "resource": "namespaces.services",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+parent}/services",
+      "description": "Lists services for the given project and region. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "includeUninitialized": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "fieldSelector": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "labelSelector": {
+          "description": "Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "resourceVersion": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "watch": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "continue": {
+          "description": "Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListServicesResponse"
+    },
+    {
+      "operation_id": "run.namespaces.services.get",
+      "resource": "namespaces.services",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Gets information about a service.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`",
+          "pattern": "^namespaces/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Service"
+    },
+    {
+      "operation_id": "run.namespaces.services.create",
+      "resource": "namespaces.services",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "apis/serving.knative.dev/v1/{+parent}/services",
+      "description": "Creates a new Service. Service creation will trigger a new deployment. Use GetService, and check service.status to determine if the Service is ready.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The resource's parent. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Service",
+      "body_schema": {
+        "id": "Service",
+        "description": "Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. Service acts only as an orchestrator of the underlying Routes and Configurations (much as a kubernetes Deployment orchestrates ReplicaSets). The Service's controller will track the statuses of its owned Configuration and Route, reflecting their statuses and conditions as its own.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call. It must be \"serving.knative.dev/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource. It must be \"Service\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this Service, including name, namespace, labels, and annotations. In Cloud Run, annotations with 'run.googleapis.com/' and 'autoscaling.knative.dev' are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in Service.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/custom-audiences` * `run.googleapis.com/default-url-disabled` * `run.googleapis.com/description` * `run.googleapis.com/gc-traffic-tags` * `run.googleapis.com/ingress` * `run.googleapis.com/ingress` sets the ingress settings for the Service. See [the ingress settings documentation](/run/docs/securing/ingress) for details on configuring ingress settings. * `run.googleapis.com/ingress-status` is output-only and contains the currently active ingress settings for the Service. `run.googleapis.com/ingress-status` may differ from `run.googleapis.com/ingress` while the system is processing a change to `run.googleapis.com/ingress` or if the system failed to process a change to `run.googleapis.com/ingress`. When the system has processed all changes successfully `run.googleapis.com/ingress-status` and `run.googleapis.com/ingress` are equal.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Holds the desired state of the Service (from the client).",
+            "$ref": "ServiceSpec"
+          },
+          "status": {
+            "description": "Communicates the system-controlled state of the Service.",
+            "$ref": "ServiceStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Service"
+    },
+    {
+      "operation_id": "run.namespaces.services.replaceService",
+      "resource": "namespaces.services",
+      "action": "replaceService",
+      "http_method": "PUT",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Replaces a service. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`",
+          "pattern": "^namespaces/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Service",
+      "body_schema": {
+        "id": "Service",
+        "description": "Service acts as a top-level container that manages a set of Routes and Configurations which implement a network service. Service exists to provide a singular abstraction which can be access controlled, reasoned about, and which encapsulates software lifecycle decisions such as rollout policy and team resource ownership. Service acts only as an orchestrator of the underlying Routes and Configurations (much as a kubernetes Deployment orchestrates ReplicaSets). The Service's controller will track the statuses of its owned Configuration and Route, reflecting their statuses and conditions as its own.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call. It must be \"serving.knative.dev/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource. It must be \"Service\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this Service, including name, namespace, labels, and annotations. In Cloud Run, annotations with 'run.googleapis.com/' and 'autoscaling.knative.dev' are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in Service.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/custom-audiences` * `run.googleapis.com/default-url-disabled` * `run.googleapis.com/description` * `run.googleapis.com/gc-traffic-tags` * `run.googleapis.com/ingress` * `run.googleapis.com/ingress` sets the ingress settings for the Service. See [the ingress settings documentation](/run/docs/securing/ingress) for details on configuring ingress settings. * `run.googleapis.com/ingress-status` is output-only and contains the currently active ingress settings for the Service. `run.googleapis.com/ingress-status` may differ from `run.googleapis.com/ingress` while the system is processing a change to `run.googleapis.com/ingress` or if the system failed to process a change to `run.googleapis.com/ingress`. When the system has processed all changes successfully `run.googleapis.com/ingress-status` and `run.googleapis.com/ingress` are equal.",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Holds the desired state of the Service (from the client).",
+            "$ref": "ServiceSpec"
+          },
+          "status": {
+            "description": "Communicates the system-controlled state of the Service.",
+            "$ref": "ServiceStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Service"
+    },
+    {
+      "operation_id": "run.namespaces.services.delete",
+      "resource": "namespaces.services",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "apis/serving.knative.dev/v1/{+name}",
+      "description": "Deletes the provided service. This will cause the Service to stop serving traffic and will delete all associated Revisions.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`",
+          "pattern": "^namespaces/[^/]+/services/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "propagationPolicy": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "Not supported, and ignored by Cloud Run.",
+          "location": "query",
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    },
+    {
+      "operation_id": "run.namespaces.workerpools.list",
+      "resource": "namespaces.workerpools",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+parent}/workerpools",
+      "description": "Lists worker pools for the given project and region. Results are sorted by creation time, descending.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/workerpools` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "limit": {
+          "description": "The maximum number of records that should be returned.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "labelSelector": {
+          "description": "=, !=, exists, in, and notIn.",
+          "location": "query",
+          "type": "string"
+        },
+        "continue": {
+          "description": "Encoded string to continue paging.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "ListWorkerPoolsResponse"
+    },
+    {
+      "operation_id": "run.namespaces.workerpools.get",
+      "resource": "namespaces.workerpools",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Gets information about a worker pool.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the worker pool to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/workerpools/{worker_pool_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/workerpools/{worker_pool_name}` * `projects/{project_id_or_number}/regions/{region}/workerpools/{worker_pool_name}`",
+          "pattern": "^namespaces/[^/]+/workerpools/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "WorkerPool"
+    },
+    {
+      "operation_id": "run.namespaces.workerpools.create",
+      "resource": "namespaces.workerpools",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "apis/run.googleapis.com/v1/{+parent}/workerpools",
+      "description": "Creates a new WorkerPool. WorkerPool creation will trigger a new deployment. Use GetWorkerPool, and check worker_pool.status to determine if the WorkerPool is ready.",
+      "required_params": [
+        "parent"
+      ],
+      "parameters": {
+        "parent": {
+          "description": "Required. The resource's parent. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/workerpools` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`",
+          "pattern": "^namespaces/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "WorkerPool",
+      "body_schema": {
+        "id": "WorkerPool",
+        "description": "WorkerPool acts as a top-level container that manages a set instance splits among a set of Revisions and a template for creating new Revisions.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call. It must be \"run.googleapis.com/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource. It must be \"WorkerPool\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this WorkerPool, including name, namespace, labels, and annotations. In Cloud Run, annotations with 'run.googleapis.com/' and 'autoscaling.knative.dev' are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in WorkerPool.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/description`",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Holds the desired state of the WorkerPool (from the client).",
+            "$ref": "WorkerPoolSpec"
+          },
+          "status": {
+            "description": "Communicates the system-controlled state of the WorkerPool.",
+            "$ref": "WorkerPoolStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "WorkerPool"
+    },
+    {
+      "operation_id": "run.namespaces.workerpools.replaceWorkerPool",
+      "resource": "namespaces.workerpools",
+      "action": "replaceWorkerPool",
+      "http_method": "PUT",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Replaces a worker pool. Only the spec and metadata labels and annotations are modifiable. After the Update request, Cloud Run will work to make the 'status' match the requested 'spec'. May provide metadata.resourceVersion to enforce update from last read for optimistic concurrency control.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the worker pool to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/workerpools/{worker_pool_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/workerpools/{worker_pool_name}` * `projects/{project_id_or_number}/regions/{region}/workerpools/{worker_pool_name}`",
+          "pattern": "^namespaces/[^/]+/workerpools/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "WorkerPool",
+      "body_schema": {
+        "id": "WorkerPool",
+        "description": "WorkerPool acts as a top-level container that manages a set instance splits among a set of Revisions and a template for creating new Revisions.",
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "description": "The API version for this call. It must be \"run.googleapis.com/v1\".",
+            "type": "string"
+          },
+          "kind": {
+            "description": "The kind of resource. It must be \"WorkerPool\".",
+            "type": "string"
+          },
+          "metadata": {
+            "description": "Metadata associated with this WorkerPool, including name, namespace, labels, and annotations. In Cloud Run, annotations with 'run.googleapis.com/' and 'autoscaling.knative.dev' are restricted, and the accepted annotations will be different depending on the resource type. The following Cloud Run-specific annotations are accepted in WorkerPool.metadata.annotations. * `run.googleapis.com/binary-authorization-breakglass` * `run.googleapis.com/binary-authorization` * `run.googleapis.com/client-name` * `run.googleapis.com/description`",
+            "$ref": "ObjectMeta"
+          },
+          "spec": {
+            "description": "Holds the desired state of the WorkerPool (from the client).",
+            "$ref": "WorkerPoolSpec"
+          },
+          "status": {
+            "description": "Communicates the system-controlled state of the WorkerPool.",
+            "$ref": "WorkerPoolStatus"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "WorkerPool"
+    },
+    {
+      "operation_id": "run.namespaces.workerpools.delete",
+      "resource": "namespaces.workerpools",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "apis/run.googleapis.com/v1/{+name}",
+      "description": "Deletes the provided worker pool. This will cause the WorkerPool to stop all instances and will delete all associated WorkerPoolRevisions.",
+      "required_params": [
+        "name"
+      ],
+      "parameters": {
+        "name": {
+          "description": "Required. The fully qualified name of the worker pool to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/workerpools/{worker_pool_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/workerpools/{worker_pool_name}` * `projects/{project_id_or_number}/regions/{region}/workerpools/{worker_pool_name}`",
+          "pattern": "^namespaces/[^/]+/workerpools/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dryRun": {
+          "description": "Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ],
+      "response_type": "Status"
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "oauthClients_management": {
+    "list_oauthClients": [
+      "iam.projects.locations.oauthClients.list"
+    ],
+    "get_oauthClients": [
+      "iam.projects.locations.oauthClients.get"
+    ],
+    "create_oauthClients": [
+      "iam.projects.locations.oauthClients.create"
+    ],
+    "patch_oauthClients": [
+      "iam.projects.locations.oauthClients.patch"
+    ],
+    "delete_oauthClients": [
+      "iam.projects.locations.oauthClients.delete"
+    ],
+    "undelete_oauthClients": [
+      "iam.projects.locations.oauthClients.undelete"
+    ]
+  },
+  "credentials_management": {
+    "list_credentials": [
+      "iam.projects.locations.oauthClients.credentials.list"
+    ],
+    "get_credentials": [
+      "iam.projects.locations.oauthClients.credentials.get"
+    ],
+    "create_credentials": [
+      "iam.projects.locations.oauthClients.credentials.create"
+    ],
+    "patch_credentials": [
+      "iam.projects.locations.oauthClients.credentials.patch"
+    ],
+    "delete_credentials": [
+      "iam.projects.locations.oauthClients.credentials.delete"
+    ]
+  },
+  "workloadIdentityPools_management": {
+    "list_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.list"
+    ],
+    "get_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.get"
+    ],
+    "create_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.create"
+    ],
+    "patch_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.patch"
+    ],
+    "delete_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.delete"
+    ],
+    "undelete_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.undelete"
+    ],
+    "setIamPolicy_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.setIamPolicy"
+    ],
+    "getIamPolicy_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.getIamPolicy"
+    ],
+    "testIamPermissions_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.testIamPermissions"
+    ],
+    "addAttestationRule_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.addAttestationRule"
+    ],
+    "removeAttestationRule_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.removeAttestationRule"
+    ],
+    "setAttestationRules_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.setAttestationRules"
+    ],
+    "listAttestationRules_workloadIdentityPools": [
+      "iam.projects.locations.workloadIdentityPools.listAttestationRules"
+    ]
+  },
+  "operations_management": {
+    "get_operations": [
+      "iam.projects.locations.workloadIdentityPools.operations.get",
+      "iam.projects.locations.workloadIdentityPools.namespaces.operations.get",
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.operations.get",
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.workloadSources.operations.get",
+      "iam.projects.locations.workloadIdentityPools.providers.operations.get",
+      "iam.projects.locations.workloadIdentityPools.providers.keys.operations.get",
+      "iam.locations.workforcePools.operations.get",
+      "iam.locations.workforcePools.providers.operations.get",
+      "iam.locations.workforcePools.providers.keys.operations.get",
+      "iam.locations.workforcePools.subjects.operations.get"
+    ]
+  },
+  "namespaces_management": {
+    "list_namespaces": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.list"
+    ],
+    "get_namespaces": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.get"
+    ],
+    "create_namespaces": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.create"
+    ],
+    "patch_namespaces": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.patch"
+    ],
+    "delete_namespaces": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.delete"
+    ],
+    "undelete_namespaces": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.undelete"
+    ]
+  },
+  "managedIdentities_management": {
+    "list_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.list"
+    ],
+    "get_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.get"
+    ],
+    "create_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.create"
+    ],
+    "patch_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.patch"
+    ],
+    "delete_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.delete"
+    ],
+    "undelete_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.undelete"
+    ],
+    "addAttestationRule_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.addAttestationRule"
+    ],
+    "removeAttestationRule_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.removeAttestationRule"
+    ],
+    "setAttestationRules_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.setAttestationRules"
+    ],
+    "listAttestationRules_managedIdentities": [
+      "iam.projects.locations.workloadIdentityPools.namespaces.managedIdentities.listAttestationRules"
+    ]
+  },
+  "providers_management": {
+    "list_providers": [
+      "iam.projects.locations.workloadIdentityPools.providers.list",
+      "iam.locations.workforcePools.providers.list"
+    ],
+    "get_providers": [
+      "iam.projects.locations.workloadIdentityPools.providers.get",
+      "iam.locations.workforcePools.providers.get"
+    ],
+    "create_providers": [
+      "iam.projects.locations.workloadIdentityPools.providers.create",
+      "iam.locations.workforcePools.providers.create"
+    ],
+    "patch_providers": [
+      "iam.projects.locations.workloadIdentityPools.providers.patch",
+      "iam.locations.workforcePools.providers.patch"
+    ],
+    "delete_providers": [
+      "iam.projects.locations.workloadIdentityPools.providers.delete",
+      "iam.locations.workforcePools.providers.delete"
+    ],
+    "undelete_providers": [
+      "iam.projects.locations.workloadIdentityPools.providers.undelete",
+      "iam.locations.workforcePools.providers.undelete"
+    ]
+  },
+  "keys_management": {
+    "list_keys": [
+      "iam.projects.locations.workloadIdentityPools.providers.keys.list",
+      "iam.projects.serviceAccounts.keys.list",
+      "iam.locations.workforcePools.providers.keys.list"
+    ],
+    "get_keys": [
+      "iam.projects.locations.workloadIdentityPools.providers.keys.get",
+      "iam.projects.serviceAccounts.keys.get",
+      "iam.locations.workforcePools.providers.keys.get"
+    ],
+    "create_keys": [
+      "iam.projects.locations.workloadIdentityPools.providers.keys.create",
+      "iam.projects.serviceAccounts.keys.create",
+      "iam.locations.workforcePools.providers.keys.create"
+    ],
+    "delete_keys": [
+      "iam.projects.locations.workloadIdentityPools.providers.keys.delete",
+      "iam.projects.serviceAccounts.keys.delete",
+      "iam.locations.workforcePools.providers.keys.delete"
+    ],
+    "undelete_keys": [
+      "iam.projects.locations.workloadIdentityPools.providers.keys.undelete",
+      "iam.locations.workforcePools.providers.keys.undelete"
+    ],
+    "upload_keys": [
+      "iam.projects.serviceAccounts.keys.upload"
+    ],
+    "disable_keys": [
+      "iam.projects.serviceAccounts.keys.disable"
+    ],
+    "enable_keys": [
+      "iam.projects.serviceAccounts.keys.enable"
+    ]
+  },
+  "serviceAccounts_management": {
+    "list_serviceAccounts": [
+      "iam.projects.serviceAccounts.list"
+    ],
+    "get_serviceAccounts": [
+      "iam.projects.serviceAccounts.get"
+    ],
+    "create_serviceAccounts": [
+      "iam.projects.serviceAccounts.create"
+    ],
+    "update_serviceAccounts": [
+      "iam.projects.serviceAccounts.update"
+    ],
+    "patch_serviceAccounts": [
+      "iam.projects.serviceAccounts.patch"
+    ],
+    "delete_serviceAccounts": [
+      "iam.projects.serviceAccounts.delete"
+    ],
+    "undelete_serviceAccounts": [
+      "iam.projects.serviceAccounts.undelete"
+    ],
+    "enable_serviceAccounts": [
+      "iam.projects.serviceAccounts.enable"
+    ],
+    "disable_serviceAccounts": [
+      "iam.projects.serviceAccounts.disable"
+    ],
+    "signBlob_serviceAccounts": [
+      "iam.projects.serviceAccounts.signBlob"
+    ],
+    "signJwt_serviceAccounts": [
+      "iam.projects.serviceAccounts.signJwt"
+    ],
+    "getIamPolicy_serviceAccounts": [
+      "iam.projects.serviceAccounts.getIamPolicy"
+    ],
+    "setIamPolicy_serviceAccounts": [
+      "iam.projects.serviceAccounts.setIamPolicy"
+    ],
+    "testIamPermissions_serviceAccounts": [
+      "iam.projects.serviceAccounts.testIamPermissions"
+    ]
+  },
+  "roles_management": {
+    "list_roles": [
+      "iam.projects.roles.list",
+      "iam.roles.list",
+      "iam.organizations.roles.list"
+    ],
+    "get_roles": [
+      "iam.projects.roles.get",
+      "iam.roles.get",
+      "iam.organizations.roles.get"
+    ],
+    "create_roles": [
+      "iam.projects.roles.create",
+      "iam.organizations.roles.create"
+    ],
+    "patch_roles": [
+      "iam.projects.roles.patch",
+      "iam.organizations.roles.patch"
+    ],
+    "delete_roles": [
+      "iam.projects.roles.delete",
+      "iam.organizations.roles.delete"
+    ],
+    "undelete_roles": [
+      "iam.projects.roles.undelete",
+      "iam.organizations.roles.undelete"
+    ],
+    "queryGrantableRoles_roles": [
+      "iam.roles.queryGrantableRoles"
+    ]
+  },
+  "workforcePools_management": {
+    "list_workforcePools": [
+      "iam.locations.workforcePools.list"
+    ],
+    "get_workforcePools": [
+      "iam.locations.workforcePools.get"
+    ],
+    "create_workforcePools": [
+      "iam.locations.workforcePools.create"
+    ],
+    "patch_workforcePools": [
+      "iam.locations.workforcePools.patch"
+    ],
+    "delete_workforcePools": [
+      "iam.locations.workforcePools.delete"
+    ],
+    "undelete_workforcePools": [
+      "iam.locations.workforcePools.undelete"
+    ],
+    "getIamPolicy_workforcePools": [
+      "iam.locations.workforcePools.getIamPolicy"
+    ],
+    "setIamPolicy_workforcePools": [
+      "iam.locations.workforcePools.setIamPolicy"
+    ],
+    "testIamPermissions_workforcePools": [
+      "iam.locations.workforcePools.testIamPermissions"
+    ]
+  },
+  "subjects_management": {
+    "delete_subjects": [
+      "iam.locations.workforcePools.subjects.delete"
+    ],
+    "undelete_subjects": [
+      "iam.locations.workforcePools.subjects.undelete"
+    ]
+  },
+  "permissions_management": {
+    "queryTestablePermissions_permissions": [
+      "iam.permissions.queryTestablePermissions"
+    ]
+  },
+  "iamPolicies_management": {
+    "queryAuditableServices_iamPolicies": [
+      "iam.iamPolicies.queryAuditableServices"
+    ],
+    "lintPolicy_iamPolicies": [
+      "iam.iamPolicies.lintPolicy"
+    ]
+  }
+}

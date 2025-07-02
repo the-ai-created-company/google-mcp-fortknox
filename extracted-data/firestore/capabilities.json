@@ -1,0 +1,185 @@
+{
+  "locations_management": {
+    "list_locations": [
+      "firestore.projects.locations.list"
+    ],
+    "get_locations": [
+      "firestore.projects.locations.get"
+    ]
+  },
+  "backups_management": {
+    "get_backups": [
+      "firestore.projects.locations.backups.get"
+    ],
+    "list_backups": [
+      "firestore.projects.locations.backups.list"
+    ],
+    "delete_backups": [
+      "firestore.projects.locations.backups.delete"
+    ]
+  },
+  "databases_management": {
+    "exportDocuments_databases": [
+      "firestore.projects.databases.exportDocuments"
+    ],
+    "importDocuments_databases": [
+      "firestore.projects.databases.importDocuments"
+    ],
+    "bulkDeleteDocuments_databases": [
+      "firestore.projects.databases.bulkDeleteDocuments"
+    ],
+    "create_databases": [
+      "firestore.projects.databases.create"
+    ],
+    "get_databases": [
+      "firestore.projects.databases.get"
+    ],
+    "list_databases": [
+      "firestore.projects.databases.list"
+    ],
+    "patch_databases": [
+      "firestore.projects.databases.patch"
+    ],
+    "delete_databases": [
+      "firestore.projects.databases.delete"
+    ],
+    "restore_databases": [
+      "firestore.projects.databases.restore"
+    ],
+    "clone_databases": [
+      "firestore.projects.databases.clone"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "firestore.projects.databases.operations.list"
+    ],
+    "get_operations": [
+      "firestore.projects.databases.operations.get"
+    ],
+    "delete_operations": [
+      "firestore.projects.databases.operations.delete"
+    ],
+    "cancel_operations": [
+      "firestore.projects.databases.operations.cancel"
+    ]
+  },
+  "indexes_management": {
+    "create_indexes": [
+      "firestore.projects.databases.collectionGroups.indexes.create"
+    ],
+    "list_indexes": [
+      "firestore.projects.databases.collectionGroups.indexes.list"
+    ],
+    "get_indexes": [
+      "firestore.projects.databases.collectionGroups.indexes.get"
+    ],
+    "delete_indexes": [
+      "firestore.projects.databases.collectionGroups.indexes.delete"
+    ]
+  },
+  "fields_management": {
+    "get_fields": [
+      "firestore.projects.databases.collectionGroups.fields.get"
+    ],
+    "patch_fields": [
+      "firestore.projects.databases.collectionGroups.fields.patch"
+    ],
+    "list_fields": [
+      "firestore.projects.databases.collectionGroups.fields.list"
+    ]
+  },
+  "userCreds_management": {
+    "create_userCreds": [
+      "firestore.projects.databases.userCreds.create"
+    ],
+    "get_userCreds": [
+      "firestore.projects.databases.userCreds.get"
+    ],
+    "list_userCreds": [
+      "firestore.projects.databases.userCreds.list"
+    ],
+    "enable_userCreds": [
+      "firestore.projects.databases.userCreds.enable"
+    ],
+    "disable_userCreds": [
+      "firestore.projects.databases.userCreds.disable"
+    ],
+    "resetPassword_userCreds": [
+      "firestore.projects.databases.userCreds.resetPassword"
+    ],
+    "delete_userCreds": [
+      "firestore.projects.databases.userCreds.delete"
+    ]
+  },
+  "backupSchedules_management": {
+    "create_backupSchedules": [
+      "firestore.projects.databases.backupSchedules.create"
+    ],
+    "get_backupSchedules": [
+      "firestore.projects.databases.backupSchedules.get"
+    ],
+    "list_backupSchedules": [
+      "firestore.projects.databases.backupSchedules.list"
+    ],
+    "patch_backupSchedules": [
+      "firestore.projects.databases.backupSchedules.patch"
+    ],
+    "delete_backupSchedules": [
+      "firestore.projects.databases.backupSchedules.delete"
+    ]
+  },
+  "documents_management": {
+    "get_documents": [
+      "firestore.projects.databases.documents.get"
+    ],
+    "list_documents": [
+      "firestore.projects.databases.documents.list"
+    ],
+    "listDocuments_documents": [
+      "firestore.projects.databases.documents.listDocuments"
+    ],
+    "patch_documents": [
+      "firestore.projects.databases.documents.patch"
+    ],
+    "delete_documents": [
+      "firestore.projects.databases.documents.delete"
+    ],
+    "batchGet_documents": [
+      "firestore.projects.databases.documents.batchGet"
+    ],
+    "beginTransaction_documents": [
+      "firestore.projects.databases.documents.beginTransaction"
+    ],
+    "commit_documents": [
+      "firestore.projects.databases.documents.commit"
+    ],
+    "rollback_documents": [
+      "firestore.projects.databases.documents.rollback"
+    ],
+    "runQuery_documents": [
+      "firestore.projects.databases.documents.runQuery"
+    ],
+    "runAggregationQuery_documents": [
+      "firestore.projects.databases.documents.runAggregationQuery"
+    ],
+    "partitionQuery_documents": [
+      "firestore.projects.databases.documents.partitionQuery"
+    ],
+    "write_documents": [
+      "firestore.projects.databases.documents.write"
+    ],
+    "listen_documents": [
+      "firestore.projects.databases.documents.listen"
+    ],
+    "listCollectionIds_documents": [
+      "firestore.projects.databases.documents.listCollectionIds"
+    ],
+    "batchWrite_documents": [
+      "firestore.projects.databases.documents.batchWrite"
+    ],
+    "createDocument_documents": [
+      "firestore.projects.databases.documents.createDocument"
+    ]
+  }
+}

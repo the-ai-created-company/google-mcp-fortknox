@@ -1,0 +1,287 @@
+{
+  "scans_management": {
+    "list_scans": [
+      "spanner.scans.list"
+    ]
+  },
+  "instanceConfigs_management": {
+    "list_instanceConfigs": [
+      "spanner.projects.instanceConfigs.list"
+    ],
+    "get_instanceConfigs": [
+      "spanner.projects.instanceConfigs.get"
+    ],
+    "create_instanceConfigs": [
+      "spanner.projects.instanceConfigs.create"
+    ],
+    "patch_instanceConfigs": [
+      "spanner.projects.instanceConfigs.patch"
+    ],
+    "delete_instanceConfigs": [
+      "spanner.projects.instanceConfigs.delete"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "spanner.projects.instanceConfigs.operations.list",
+      "spanner.projects.instanceConfigs.ssdCaches.operations.list",
+      "spanner.projects.instances.databases.operations.list",
+      "spanner.projects.instances.operations.list",
+      "spanner.projects.instances.backups.operations.list",
+      "spanner.projects.instances.instancePartitions.operations.list"
+    ],
+    "get_operations": [
+      "spanner.projects.instanceConfigs.operations.get",
+      "spanner.projects.instanceConfigs.ssdCaches.operations.get",
+      "spanner.projects.instances.databases.operations.get",
+      "spanner.projects.instances.operations.get",
+      "spanner.projects.instances.backups.operations.get",
+      "spanner.projects.instances.instancePartitions.operations.get"
+    ],
+    "delete_operations": [
+      "spanner.projects.instanceConfigs.operations.delete",
+      "spanner.projects.instanceConfigs.ssdCaches.operations.delete",
+      "spanner.projects.instances.databases.operations.delete",
+      "spanner.projects.instances.operations.delete",
+      "spanner.projects.instances.backups.operations.delete",
+      "spanner.projects.instances.instancePartitions.operations.delete"
+    ],
+    "cancel_operations": [
+      "spanner.projects.instanceConfigs.operations.cancel",
+      "spanner.projects.instanceConfigs.ssdCaches.operations.cancel",
+      "spanner.projects.instances.databases.operations.cancel",
+      "spanner.projects.instances.operations.cancel",
+      "spanner.projects.instances.backups.operations.cancel",
+      "spanner.projects.instances.instancePartitions.operations.cancel"
+    ]
+  },
+  "instanceConfigOperations_management": {
+    "list_instanceConfigOperations": [
+      "spanner.projects.instanceConfigOperations.list"
+    ]
+  },
+  "instances_management": {
+    "list_instances": [
+      "spanner.projects.instances.list"
+    ],
+    "get_instances": [
+      "spanner.projects.instances.get"
+    ],
+    "create_instances": [
+      "spanner.projects.instances.create"
+    ],
+    "patch_instances": [
+      "spanner.projects.instances.patch"
+    ],
+    "delete_instances": [
+      "spanner.projects.instances.delete"
+    ],
+    "setIamPolicy_instances": [
+      "spanner.projects.instances.setIamPolicy"
+    ],
+    "getIamPolicy_instances": [
+      "spanner.projects.instances.getIamPolicy"
+    ],
+    "testIamPermissions_instances": [
+      "spanner.projects.instances.testIamPermissions"
+    ],
+    "move_instances": [
+      "spanner.projects.instances.move"
+    ]
+  },
+  "databases_management": {
+    "getScans_databases": [
+      "spanner.projects.instances.databases.getScans"
+    ],
+    "list_databases": [
+      "spanner.projects.instances.databases.list"
+    ],
+    "create_databases": [
+      "spanner.projects.instances.databases.create"
+    ],
+    "get_databases": [
+      "spanner.projects.instances.databases.get"
+    ],
+    "patch_databases": [
+      "spanner.projects.instances.databases.patch"
+    ],
+    "updateDdl_databases": [
+      "spanner.projects.instances.databases.updateDdl"
+    ],
+    "dropDatabase_databases": [
+      "spanner.projects.instances.databases.dropDatabase"
+    ],
+    "getDdl_databases": [
+      "spanner.projects.instances.databases.getDdl"
+    ],
+    "changequorum_databases": [
+      "spanner.projects.instances.databases.changequorum"
+    ],
+    "setIamPolicy_databases": [
+      "spanner.projects.instances.databases.setIamPolicy"
+    ],
+    "getIamPolicy_databases": [
+      "spanner.projects.instances.databases.getIamPolicy"
+    ],
+    "testIamPermissions_databases": [
+      "spanner.projects.instances.databases.testIamPermissions"
+    ],
+    "restore_databases": [
+      "spanner.projects.instances.databases.restore"
+    ],
+    "addSplitPoints_databases": [
+      "spanner.projects.instances.databases.addSplitPoints"
+    ]
+  },
+  "sessions_management": {
+    "adapter_sessions": [
+      "spanner.projects.instances.databases.sessions.adapter"
+    ],
+    "adaptMessage_sessions": [
+      "spanner.projects.instances.databases.sessions.adaptMessage"
+    ],
+    "create_sessions": [
+      "spanner.projects.instances.databases.sessions.create"
+    ],
+    "batchCreate_sessions": [
+      "spanner.projects.instances.databases.sessions.batchCreate"
+    ],
+    "get_sessions": [
+      "spanner.projects.instances.databases.sessions.get"
+    ],
+    "list_sessions": [
+      "spanner.projects.instances.databases.sessions.list"
+    ],
+    "delete_sessions": [
+      "spanner.projects.instances.databases.sessions.delete"
+    ],
+    "executeSql_sessions": [
+      "spanner.projects.instances.databases.sessions.executeSql"
+    ],
+    "executeStreamingSql_sessions": [
+      "spanner.projects.instances.databases.sessions.executeStreamingSql"
+    ],
+    "executeBatchDml_sessions": [
+      "spanner.projects.instances.databases.sessions.executeBatchDml"
+    ],
+    "read_sessions": [
+      "spanner.projects.instances.databases.sessions.read"
+    ],
+    "streamingRead_sessions": [
+      "spanner.projects.instances.databases.sessions.streamingRead"
+    ],
+    "beginTransaction_sessions": [
+      "spanner.projects.instances.databases.sessions.beginTransaction"
+    ],
+    "commit_sessions": [
+      "spanner.projects.instances.databases.sessions.commit"
+    ],
+    "rollback_sessions": [
+      "spanner.projects.instances.databases.sessions.rollback"
+    ],
+    "partitionQuery_sessions": [
+      "spanner.projects.instances.databases.sessions.partitionQuery"
+    ],
+    "partitionRead_sessions": [
+      "spanner.projects.instances.databases.sessions.partitionRead"
+    ],
+    "batchWrite_sessions": [
+      "spanner.projects.instances.databases.sessions.batchWrite"
+    ]
+  },
+  "backupSchedules_management": {
+    "setIamPolicy_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.setIamPolicy"
+    ],
+    "getIamPolicy_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.getIamPolicy"
+    ],
+    "testIamPermissions_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.testIamPermissions"
+    ],
+    "create_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.create"
+    ],
+    "get_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.get"
+    ],
+    "patch_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.patch"
+    ],
+    "delete_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.delete"
+    ],
+    "list_backupSchedules": [
+      "spanner.projects.instances.databases.backupSchedules.list"
+    ]
+  },
+  "databaseRoles_management": {
+    "testIamPermissions_databaseRoles": [
+      "spanner.projects.instances.databases.databaseRoles.testIamPermissions"
+    ],
+    "list_databaseRoles": [
+      "spanner.projects.instances.databases.databaseRoles.list"
+    ]
+  },
+  "backups_management": {
+    "setIamPolicy_backups": [
+      "spanner.projects.instances.backups.setIamPolicy"
+    ],
+    "getIamPolicy_backups": [
+      "spanner.projects.instances.backups.getIamPolicy"
+    ],
+    "testIamPermissions_backups": [
+      "spanner.projects.instances.backups.testIamPermissions"
+    ],
+    "create_backups": [
+      "spanner.projects.instances.backups.create"
+    ],
+    "copy_backups": [
+      "spanner.projects.instances.backups.copy"
+    ],
+    "get_backups": [
+      "spanner.projects.instances.backups.get"
+    ],
+    "patch_backups": [
+      "spanner.projects.instances.backups.patch"
+    ],
+    "delete_backups": [
+      "spanner.projects.instances.backups.delete"
+    ],
+    "list_backups": [
+      "spanner.projects.instances.backups.list"
+    ]
+  },
+  "databaseOperations_management": {
+    "list_databaseOperations": [
+      "spanner.projects.instances.databaseOperations.list"
+    ]
+  },
+  "backupOperations_management": {
+    "list_backupOperations": [
+      "spanner.projects.instances.backupOperations.list"
+    ]
+  },
+  "instancePartitions_management": {
+    "list_instancePartitions": [
+      "spanner.projects.instances.instancePartitions.list"
+    ],
+    "get_instancePartitions": [
+      "spanner.projects.instances.instancePartitions.get"
+    ],
+    "create_instancePartitions": [
+      "spanner.projects.instances.instancePartitions.create"
+    ],
+    "delete_instancePartitions": [
+      "spanner.projects.instances.instancePartitions.delete"
+    ],
+    "patch_instancePartitions": [
+      "spanner.projects.instances.instancePartitions.patch"
+    ]
+  },
+  "instancePartitionOperations_management": {
+    "list_instancePartitionOperations": [
+      "spanner.projects.instances.instancePartitionOperations.list"
+    ]
+  }
+}

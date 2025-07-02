@@ -1,0 +1,148 @@
+{
+  "liens": {
+    "description": "liens resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": []
+  },
+  "folders": {
+    "description": "folders resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "move",
+      "search",
+      "setIamPolicy",
+      "testIamPermissions",
+      "undelete"
+    ]
+  },
+  "capabilities": {
+    "description": "capabilities resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": true,
+    "special_operations": []
+  },
+  "organizations": {
+    "description": "organizations resource",
+    "operations_count": 5,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getIamPolicy",
+      "search",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "move",
+      "search",
+      "setIamPolicy",
+      "testIamPermissions",
+      "undelete"
+    ]
+  },
+  "tagBindingCollections": {
+    "description": "tagBindingCollections resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": true,
+    "special_operations": []
+  },
+  "effectiveTagBindingCollections": {
+    "description": "effectiveTagBindingCollections resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": []
+  },
+  "tagBindings": {
+    "description": "tagBindings resource",
+    "operations_count": 3,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "effectiveTags": {
+    "description": "effectiveTags resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "tagKeys": {
+    "description": "tagKeys resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "getNamespaced",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "tagValues": {
+    "description": "tagValues resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "getNamespaced",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "tagHolds": {
+    "description": "tagHolds resource",
+    "operations_count": 3,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

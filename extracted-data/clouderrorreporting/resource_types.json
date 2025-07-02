@@ -1,0 +1,53 @@
+{
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "deleteEvents"
+    ]
+  },
+  "groups": {
+    "description": "groups resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": true,
+    "special_operations": []
+  },
+  "groupStats": {
+    "description": "groupStats resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "events": {
+    "description": "events resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "report"
+    ]
+  },
+  "locations": {
+    "description": "locations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "deleteEvents"
+    ]
+  }
+}

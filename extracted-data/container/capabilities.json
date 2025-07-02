@@ -1,0 +1,177 @@
+{
+  "locations_management": {
+    "getServerConfig_locations": [
+      "container.projects.locations.getServerConfig"
+    ]
+  },
+  "clusters_management": {
+    "list_clusters": [
+      "container.projects.locations.clusters.list",
+      "container.projects.zones.clusters.list"
+    ],
+    "get_clusters": [
+      "container.projects.locations.clusters.get",
+      "container.projects.zones.clusters.get"
+    ],
+    "create_clusters": [
+      "container.projects.locations.clusters.create",
+      "container.projects.zones.clusters.create"
+    ],
+    "update_clusters": [
+      "container.projects.locations.clusters.update",
+      "container.projects.zones.clusters.update"
+    ],
+    "setLogging_clusters": [
+      "container.projects.locations.clusters.setLogging"
+    ],
+    "setMonitoring_clusters": [
+      "container.projects.locations.clusters.setMonitoring"
+    ],
+    "setAddons_clusters": [
+      "container.projects.locations.clusters.setAddons"
+    ],
+    "setLocations_clusters": [
+      "container.projects.locations.clusters.setLocations"
+    ],
+    "updateMaster_clusters": [
+      "container.projects.locations.clusters.updateMaster"
+    ],
+    "setMasterAuth_clusters": [
+      "container.projects.locations.clusters.setMasterAuth",
+      "container.projects.zones.clusters.setMasterAuth"
+    ],
+    "delete_clusters": [
+      "container.projects.locations.clusters.delete",
+      "container.projects.zones.clusters.delete"
+    ],
+    "getJwks_clusters": [
+      "container.projects.locations.clusters.getJwks"
+    ],
+    "setResourceLabels_clusters": [
+      "container.projects.locations.clusters.setResourceLabels"
+    ],
+    "setLegacyAbac_clusters": [
+      "container.projects.locations.clusters.setLegacyAbac"
+    ],
+    "startIpRotation_clusters": [
+      "container.projects.locations.clusters.startIpRotation",
+      "container.projects.zones.clusters.startIpRotation"
+    ],
+    "completeIpRotation_clusters": [
+      "container.projects.locations.clusters.completeIpRotation",
+      "container.projects.zones.clusters.completeIpRotation"
+    ],
+    "setNetworkPolicy_clusters": [
+      "container.projects.locations.clusters.setNetworkPolicy",
+      "container.projects.zones.clusters.setNetworkPolicy"
+    ],
+    "setMaintenancePolicy_clusters": [
+      "container.projects.locations.clusters.setMaintenancePolicy",
+      "container.projects.zones.clusters.setMaintenancePolicy"
+    ],
+    "checkAutopilotCompatibility_clusters": [
+      "container.projects.locations.clusters.checkAutopilotCompatibility"
+    ],
+    "fetchClusterUpgradeInfo_clusters": [
+      "container.projects.locations.clusters.fetchClusterUpgradeInfo",
+      "container.projects.zones.clusters.fetchClusterUpgradeInfo"
+    ],
+    "logging_clusters": [
+      "container.projects.zones.clusters.logging"
+    ],
+    "monitoring_clusters": [
+      "container.projects.zones.clusters.monitoring"
+    ],
+    "addons_clusters": [
+      "container.projects.zones.clusters.addons"
+    ],
+    "locations_clusters": [
+      "container.projects.zones.clusters.locations"
+    ],
+    "master_clusters": [
+      "container.projects.zones.clusters.master"
+    ],
+    "resourceLabels_clusters": [
+      "container.projects.zones.clusters.resourceLabels"
+    ],
+    "legacyAbac_clusters": [
+      "container.projects.zones.clusters.legacyAbac"
+    ]
+  },
+  "nodePools_management": {
+    "update_nodePools": [
+      "container.projects.locations.clusters.nodePools.update",
+      "container.projects.zones.clusters.nodePools.update"
+    ],
+    "setAutoscaling_nodePools": [
+      "container.projects.locations.clusters.nodePools.setAutoscaling"
+    ],
+    "list_nodePools": [
+      "container.projects.locations.clusters.nodePools.list",
+      "container.projects.zones.clusters.nodePools.list"
+    ],
+    "get_nodePools": [
+      "container.projects.locations.clusters.nodePools.get",
+      "container.projects.zones.clusters.nodePools.get"
+    ],
+    "create_nodePools": [
+      "container.projects.locations.clusters.nodePools.create",
+      "container.projects.zones.clusters.nodePools.create"
+    ],
+    "delete_nodePools": [
+      "container.projects.locations.clusters.nodePools.delete",
+      "container.projects.zones.clusters.nodePools.delete"
+    ],
+    "completeUpgrade_nodePools": [
+      "container.projects.locations.clusters.nodePools.completeUpgrade"
+    ],
+    "rollback_nodePools": [
+      "container.projects.locations.clusters.nodePools.rollback",
+      "container.projects.zones.clusters.nodePools.rollback"
+    ],
+    "setManagement_nodePools": [
+      "container.projects.locations.clusters.nodePools.setManagement",
+      "container.projects.zones.clusters.nodePools.setManagement"
+    ],
+    "setSize_nodePools": [
+      "container.projects.locations.clusters.nodePools.setSize",
+      "container.projects.zones.clusters.nodePools.setSize"
+    ],
+    "fetchNodePoolUpgradeInfo_nodePools": [
+      "container.projects.locations.clusters.nodePools.fetchNodePoolUpgradeInfo",
+      "container.projects.zones.clusters.nodePools.fetchNodePoolUpgradeInfo"
+    ],
+    "autoscaling_nodePools": [
+      "container.projects.zones.clusters.nodePools.autoscaling"
+    ]
+  },
+  "well-known_management": {
+    "getOpenid-configuration_well-known": [
+      "container.projects.locations.clusters.well-known.getOpenid-configuration"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "container.projects.locations.operations.list",
+      "container.projects.zones.operations.list"
+    ],
+    "get_operations": [
+      "container.projects.locations.operations.get",
+      "container.projects.zones.operations.get"
+    ],
+    "cancel_operations": [
+      "container.projects.locations.operations.cancel",
+      "container.projects.zones.operations.cancel"
+    ]
+  },
+  "zones_management": {
+    "getServerconfig_zones": [
+      "container.projects.zones.getServerconfig"
+    ]
+  },
+  "usableSubnetworks_management": {
+    "list_usableSubnetworks": [
+      "container.projects.aggregated.usableSubnetworks.list"
+    ]
+  }
+}

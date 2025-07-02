@@ -1,0 +1,1472 @@
+{
+  "datasets_management": {
+    "create_datasets": [
+      "aiplatform.datasets.create",
+      "aiplatform.projects.locations.datasets.create"
+    ],
+    "get_datasets": [
+      "aiplatform.datasets.get",
+      "aiplatform.projects.locations.datasets.get"
+    ],
+    "patch_datasets": [
+      "aiplatform.datasets.patch",
+      "aiplatform.projects.locations.datasets.patch"
+    ],
+    "list_datasets": [
+      "aiplatform.datasets.list",
+      "aiplatform.projects.locations.datasets.list"
+    ],
+    "delete_datasets": [
+      "aiplatform.datasets.delete",
+      "aiplatform.projects.locations.datasets.delete"
+    ],
+    "import_datasets": [
+      "aiplatform.projects.locations.datasets.import"
+    ],
+    "export_datasets": [
+      "aiplatform.projects.locations.datasets.export"
+    ],
+    "searchDataItems_datasets": [
+      "aiplatform.projects.locations.datasets.searchDataItems"
+    ]
+  },
+  "datasetVersions_management": {
+    "create_datasetVersions": [
+      "aiplatform.datasets.datasetVersions.create",
+      "aiplatform.projects.locations.datasets.datasetVersions.create"
+    ],
+    "patch_datasetVersions": [
+      "aiplatform.datasets.datasetVersions.patch",
+      "aiplatform.projects.locations.datasets.datasetVersions.patch"
+    ],
+    "delete_datasetVersions": [
+      "aiplatform.datasets.datasetVersions.delete",
+      "aiplatform.projects.locations.datasets.datasetVersions.delete"
+    ],
+    "get_datasetVersions": [
+      "aiplatform.datasets.datasetVersions.get",
+      "aiplatform.projects.locations.datasets.datasetVersions.get"
+    ],
+    "list_datasetVersions": [
+      "aiplatform.datasets.datasetVersions.list",
+      "aiplatform.projects.locations.datasets.datasetVersions.list"
+    ],
+    "restore_datasetVersions": [
+      "aiplatform.datasets.datasetVersions.restore",
+      "aiplatform.projects.locations.datasets.datasetVersions.restore"
+    ]
+  },
+  "projects_management": {
+    "updateCacheConfig_projects": [
+      "aiplatform.projects.updateCacheConfig"
+    ],
+    "getCacheConfig_projects": [
+      "aiplatform.projects.getCacheConfig"
+    ]
+  },
+  "locations_management": {
+    "list_locations": [
+      "aiplatform.projects.locations.list"
+    ],
+    "get_locations": [
+      "aiplatform.projects.locations.get"
+    ],
+    "evaluateInstances_locations": [
+      "aiplatform.projects.locations.evaluateInstances"
+    ],
+    "evaluateDataset_locations": [
+      "aiplatform.projects.locations.evaluateDataset"
+    ],
+    "deploy_locations": [
+      "aiplatform.projects.locations.deploy"
+    ],
+    "updateRagEngineConfig_locations": [
+      "aiplatform.projects.locations.updateRagEngineConfig"
+    ],
+    "getRagEngineConfig_locations": [
+      "aiplatform.projects.locations.getRagEngineConfig"
+    ],
+    "retrieveContexts_locations": [
+      "aiplatform.projects.locations.retrieveContexts"
+    ],
+    "augmentPrompt_locations": [
+      "aiplatform.projects.locations.augmentPrompt"
+    ],
+    "corroborateContent_locations": [
+      "aiplatform.projects.locations.corroborateContent"
+    ]
+  },
+  "featurestores_management": {
+    "setIamPolicy_featurestores": [
+      "aiplatform.projects.locations.featurestores.setIamPolicy"
+    ],
+    "getIamPolicy_featurestores": [
+      "aiplatform.projects.locations.featurestores.getIamPolicy"
+    ],
+    "testIamPermissions_featurestores": [
+      "aiplatform.projects.locations.featurestores.testIamPermissions"
+    ],
+    "create_featurestores": [
+      "aiplatform.projects.locations.featurestores.create"
+    ],
+    "get_featurestores": [
+      "aiplatform.projects.locations.featurestores.get"
+    ],
+    "list_featurestores": [
+      "aiplatform.projects.locations.featurestores.list"
+    ],
+    "patch_featurestores": [
+      "aiplatform.projects.locations.featurestores.patch"
+    ],
+    "delete_featurestores": [
+      "aiplatform.projects.locations.featurestores.delete"
+    ],
+    "batchReadFeatureValues_featurestores": [
+      "aiplatform.projects.locations.featurestores.batchReadFeatureValues"
+    ],
+    "searchFeatures_featurestores": [
+      "aiplatform.projects.locations.featurestores.searchFeatures"
+    ]
+  },
+  "entityTypes_management": {
+    "setIamPolicy_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.setIamPolicy"
+    ],
+    "getIamPolicy_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.getIamPolicy"
+    ],
+    "testIamPermissions_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.testIamPermissions"
+    ],
+    "readFeatureValues_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.readFeatureValues"
+    ],
+    "streamingReadFeatureValues_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.streamingReadFeatureValues"
+    ],
+    "writeFeatureValues_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.writeFeatureValues"
+    ],
+    "create_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.create"
+    ],
+    "get_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.get"
+    ],
+    "list_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.list"
+    ],
+    "patch_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.patch"
+    ],
+    "delete_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.delete"
+    ],
+    "importFeatureValues_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.importFeatureValues"
+    ],
+    "exportFeatureValues_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.exportFeatureValues"
+    ],
+    "deleteFeatureValues_entityTypes": [
+      "aiplatform.projects.locations.featurestores.entityTypes.deleteFeatureValues"
+    ]
+  },
+  "operations_management": {
+    "list_operations": [
+      "aiplatform.projects.locations.featurestores.entityTypes.operations.list",
+      "aiplatform.projects.locations.featurestores.entityTypes.features.operations.list",
+      "aiplatform.projects.locations.featurestores.operations.list",
+      "aiplatform.projects.locations.models.operations.list",
+      "aiplatform.projects.locations.models.evaluations.operations.list",
+      "aiplatform.projects.locations.notebookRuntimeTemplates.operations.list",
+      "aiplatform.projects.locations.operations.list",
+      "aiplatform.projects.locations.ragEngineConfig.operations.list",
+      "aiplatform.projects.locations.datasets.operations.list",
+      "aiplatform.projects.locations.datasets.dataItems.operations.list",
+      "aiplatform.projects.locations.datasets.dataItems.annotations.operations.list",
+      "aiplatform.projects.locations.datasets.savedQueries.operations.list",
+      "aiplatform.projects.locations.datasets.annotationSpecs.operations.list",
+      "aiplatform.projects.locations.deploymentResourcePools.operations.list",
+      "aiplatform.projects.locations.endpoints.operations.list",
+      "aiplatform.projects.locations.tuningJobs.operations.list",
+      "aiplatform.projects.locations.indexes.operations.list",
+      "aiplatform.projects.locations.indexEndpoints.operations.list",
+      "aiplatform.projects.locations.customJobs.operations.list",
+      "aiplatform.projects.locations.dataLabelingJobs.operations.list",
+      "aiplatform.projects.locations.hyperparameterTuningJobs.operations.list",
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.operations.list",
+      "aiplatform.projects.locations.metadataStores.operations.list",
+      "aiplatform.projects.locations.metadataStores.artifacts.operations.list",
+      "aiplatform.projects.locations.metadataStores.contexts.operations.list",
+      "aiplatform.projects.locations.metadataStores.executions.operations.list",
+      "aiplatform.projects.locations.migratableResources.operations.list",
+      "aiplatform.projects.locations.notebookRuntimes.operations.list",
+      "aiplatform.projects.locations.notebookExecutionJobs.operations.list",
+      "aiplatform.projects.locations.persistentResources.operations.list",
+      "aiplatform.projects.locations.trainingPipelines.operations.list",
+      "aiplatform.projects.locations.pipelineJobs.operations.list",
+      "aiplatform.projects.locations.reasoningEngines.operations.list",
+      "aiplatform.projects.locations.schedules.operations.list",
+      "aiplatform.projects.locations.specialistPools.operations.list",
+      "aiplatform.projects.locations.tensorboards.operations.list",
+      "aiplatform.projects.locations.tensorboards.experiments.operations.list",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.operations.list",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.operations.list",
+      "aiplatform.projects.locations.studies.operations.list",
+      "aiplatform.projects.locations.studies.trials.operations.list",
+      "aiplatform.projects.locations.ragCorpora.operations.list",
+      "aiplatform.projects.locations.ragCorpora.ragFiles.operations.list"
+    ],
+    "get_operations": [
+      "aiplatform.projects.locations.featurestores.entityTypes.operations.get",
+      "aiplatform.projects.locations.featurestores.entityTypes.features.operations.get",
+      "aiplatform.projects.locations.featurestores.operations.get",
+      "aiplatform.projects.locations.models.operations.get",
+      "aiplatform.projects.locations.models.evaluations.operations.get",
+      "aiplatform.projects.locations.notebookRuntimeTemplates.operations.get",
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.operations.get",
+      "aiplatform.projects.locations.featureOnlineStores.operations.get",
+      "aiplatform.projects.locations.featureGroups.operations.get",
+      "aiplatform.projects.locations.featureGroups.features.operations.get",
+      "aiplatform.projects.locations.operations.get",
+      "aiplatform.projects.locations.ragEngineConfig.operations.get",
+      "aiplatform.projects.locations.datasets.operations.get",
+      "aiplatform.projects.locations.datasets.dataItems.operations.get",
+      "aiplatform.projects.locations.datasets.dataItems.annotations.operations.get",
+      "aiplatform.projects.locations.datasets.savedQueries.operations.get",
+      "aiplatform.projects.locations.datasets.annotationSpecs.operations.get",
+      "aiplatform.projects.locations.deploymentResourcePools.operations.get",
+      "aiplatform.projects.locations.endpoints.operations.get",
+      "aiplatform.projects.locations.tuningJobs.operations.get",
+      "aiplatform.projects.locations.indexes.operations.get",
+      "aiplatform.projects.locations.indexEndpoints.operations.get",
+      "aiplatform.projects.locations.customJobs.operations.get",
+      "aiplatform.projects.locations.dataLabelingJobs.operations.get",
+      "aiplatform.projects.locations.hyperparameterTuningJobs.operations.get",
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.operations.get",
+      "aiplatform.projects.locations.metadataStores.operations.get",
+      "aiplatform.projects.locations.metadataStores.artifacts.operations.get",
+      "aiplatform.projects.locations.metadataStores.contexts.operations.get",
+      "aiplatform.projects.locations.metadataStores.executions.operations.get",
+      "aiplatform.projects.locations.migratableResources.operations.get",
+      "aiplatform.projects.locations.notebookRuntimes.operations.get",
+      "aiplatform.projects.locations.notebookExecutionJobs.operations.get",
+      "aiplatform.projects.locations.persistentResources.operations.get",
+      "aiplatform.projects.locations.trainingPipelines.operations.get",
+      "aiplatform.projects.locations.pipelineJobs.operations.get",
+      "aiplatform.projects.locations.reasoningEngines.operations.get",
+      "aiplatform.projects.locations.schedules.operations.get",
+      "aiplatform.projects.locations.specialistPools.operations.get",
+      "aiplatform.projects.locations.tensorboards.operations.get",
+      "aiplatform.projects.locations.tensorboards.experiments.operations.get",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.operations.get",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.operations.get",
+      "aiplatform.projects.locations.studies.operations.get",
+      "aiplatform.projects.locations.studies.trials.operations.get",
+      "aiplatform.projects.locations.ragCorpora.operations.get",
+      "aiplatform.projects.locations.ragCorpora.ragFiles.operations.get"
+    ],
+    "delete_operations": [
+      "aiplatform.projects.locations.featurestores.entityTypes.operations.delete",
+      "aiplatform.projects.locations.featurestores.entityTypes.features.operations.delete",
+      "aiplatform.projects.locations.featurestores.operations.delete",
+      "aiplatform.projects.locations.models.operations.delete",
+      "aiplatform.projects.locations.models.evaluations.operations.delete",
+      "aiplatform.projects.locations.notebookRuntimeTemplates.operations.delete",
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.operations.delete",
+      "aiplatform.projects.locations.featureOnlineStores.operations.delete",
+      "aiplatform.projects.locations.featureGroups.operations.delete",
+      "aiplatform.projects.locations.featureGroups.features.operations.delete",
+      "aiplatform.projects.locations.operations.delete",
+      "aiplatform.projects.locations.ragEngineConfig.operations.delete",
+      "aiplatform.projects.locations.datasets.operations.delete",
+      "aiplatform.projects.locations.datasets.dataItems.operations.delete",
+      "aiplatform.projects.locations.datasets.dataItems.annotations.operations.delete",
+      "aiplatform.projects.locations.datasets.savedQueries.operations.delete",
+      "aiplatform.projects.locations.datasets.annotationSpecs.operations.delete",
+      "aiplatform.projects.locations.deploymentResourcePools.operations.delete",
+      "aiplatform.projects.locations.endpoints.operations.delete",
+      "aiplatform.projects.locations.tuningJobs.operations.delete",
+      "aiplatform.projects.locations.indexes.operations.delete",
+      "aiplatform.projects.locations.indexEndpoints.operations.delete",
+      "aiplatform.projects.locations.customJobs.operations.delete",
+      "aiplatform.projects.locations.dataLabelingJobs.operations.delete",
+      "aiplatform.projects.locations.hyperparameterTuningJobs.operations.delete",
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.operations.delete",
+      "aiplatform.projects.locations.metadataStores.operations.delete",
+      "aiplatform.projects.locations.metadataStores.artifacts.operations.delete",
+      "aiplatform.projects.locations.metadataStores.contexts.operations.delete",
+      "aiplatform.projects.locations.metadataStores.executions.operations.delete",
+      "aiplatform.projects.locations.migratableResources.operations.delete",
+      "aiplatform.projects.locations.notebookRuntimes.operations.delete",
+      "aiplatform.projects.locations.notebookExecutionJobs.operations.delete",
+      "aiplatform.projects.locations.persistentResources.operations.delete",
+      "aiplatform.projects.locations.trainingPipelines.operations.delete",
+      "aiplatform.projects.locations.pipelineJobs.operations.delete",
+      "aiplatform.projects.locations.reasoningEngines.operations.delete",
+      "aiplatform.projects.locations.schedules.operations.delete",
+      "aiplatform.projects.locations.specialistPools.operations.delete",
+      "aiplatform.projects.locations.tensorboards.operations.delete",
+      "aiplatform.projects.locations.tensorboards.experiments.operations.delete",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.operations.delete",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.operations.delete",
+      "aiplatform.projects.locations.studies.operations.delete",
+      "aiplatform.projects.locations.studies.trials.operations.delete",
+      "aiplatform.projects.locations.ragCorpora.operations.delete",
+      "aiplatform.projects.locations.ragCorpora.ragFiles.operations.delete"
+    ],
+    "cancel_operations": [
+      "aiplatform.projects.locations.featurestores.entityTypes.operations.cancel",
+      "aiplatform.projects.locations.featurestores.entityTypes.features.operations.cancel",
+      "aiplatform.projects.locations.featurestores.operations.cancel",
+      "aiplatform.projects.locations.models.operations.cancel",
+      "aiplatform.projects.locations.models.evaluations.operations.cancel",
+      "aiplatform.projects.locations.notebookRuntimeTemplates.operations.cancel",
+      "aiplatform.projects.locations.operations.cancel",
+      "aiplatform.projects.locations.ragEngineConfig.operations.cancel",
+      "aiplatform.projects.locations.datasets.operations.cancel",
+      "aiplatform.projects.locations.datasets.dataItems.operations.cancel",
+      "aiplatform.projects.locations.datasets.dataItems.annotations.operations.cancel",
+      "aiplatform.projects.locations.datasets.savedQueries.operations.cancel",
+      "aiplatform.projects.locations.datasets.annotationSpecs.operations.cancel",
+      "aiplatform.projects.locations.deploymentResourcePools.operations.cancel",
+      "aiplatform.projects.locations.endpoints.operations.cancel",
+      "aiplatform.projects.locations.tuningJobs.operations.cancel",
+      "aiplatform.projects.locations.indexes.operations.cancel",
+      "aiplatform.projects.locations.indexEndpoints.operations.cancel",
+      "aiplatform.projects.locations.customJobs.operations.cancel",
+      "aiplatform.projects.locations.dataLabelingJobs.operations.cancel",
+      "aiplatform.projects.locations.hyperparameterTuningJobs.operations.cancel",
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.operations.cancel",
+      "aiplatform.projects.locations.metadataStores.operations.cancel",
+      "aiplatform.projects.locations.metadataStores.artifacts.operations.cancel",
+      "aiplatform.projects.locations.metadataStores.contexts.operations.cancel",
+      "aiplatform.projects.locations.metadataStores.executions.operations.cancel",
+      "aiplatform.projects.locations.migratableResources.operations.cancel",
+      "aiplatform.projects.locations.notebookRuntimes.operations.cancel",
+      "aiplatform.projects.locations.notebookExecutionJobs.operations.cancel",
+      "aiplatform.projects.locations.persistentResources.operations.cancel",
+      "aiplatform.projects.locations.trainingPipelines.operations.cancel",
+      "aiplatform.projects.locations.pipelineJobs.operations.cancel",
+      "aiplatform.projects.locations.reasoningEngines.operations.cancel",
+      "aiplatform.projects.locations.schedules.operations.cancel",
+      "aiplatform.projects.locations.specialistPools.operations.cancel",
+      "aiplatform.projects.locations.tensorboards.operations.cancel",
+      "aiplatform.projects.locations.tensorboards.experiments.operations.cancel",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.operations.cancel",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.operations.cancel",
+      "aiplatform.projects.locations.studies.operations.cancel",
+      "aiplatform.projects.locations.studies.trials.operations.cancel",
+      "aiplatform.projects.locations.ragCorpora.operations.cancel",
+      "aiplatform.projects.locations.ragCorpora.ragFiles.operations.cancel"
+    ],
+    "wait_operations": [
+      "aiplatform.projects.locations.featurestores.entityTypes.operations.wait",
+      "aiplatform.projects.locations.featurestores.entityTypes.features.operations.wait",
+      "aiplatform.projects.locations.featurestores.operations.wait",
+      "aiplatform.projects.locations.models.operations.wait",
+      "aiplatform.projects.locations.models.evaluations.operations.wait",
+      "aiplatform.projects.locations.notebookRuntimeTemplates.operations.wait",
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.operations.wait",
+      "aiplatform.projects.locations.featureOnlineStores.operations.wait",
+      "aiplatform.projects.locations.featureGroups.operations.wait",
+      "aiplatform.projects.locations.featureGroups.features.operations.wait",
+      "aiplatform.projects.locations.operations.wait",
+      "aiplatform.projects.locations.ragEngineConfig.operations.wait",
+      "aiplatform.projects.locations.datasets.operations.wait",
+      "aiplatform.projects.locations.datasets.dataItems.operations.wait",
+      "aiplatform.projects.locations.datasets.dataItems.annotations.operations.wait",
+      "aiplatform.projects.locations.datasets.savedQueries.operations.wait",
+      "aiplatform.projects.locations.datasets.annotationSpecs.operations.wait",
+      "aiplatform.projects.locations.deploymentResourcePools.operations.wait",
+      "aiplatform.projects.locations.endpoints.operations.wait",
+      "aiplatform.projects.locations.indexes.operations.wait",
+      "aiplatform.projects.locations.indexEndpoints.operations.wait",
+      "aiplatform.projects.locations.customJobs.operations.wait",
+      "aiplatform.projects.locations.dataLabelingJobs.operations.wait",
+      "aiplatform.projects.locations.hyperparameterTuningJobs.operations.wait",
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.operations.wait",
+      "aiplatform.projects.locations.metadataStores.operations.wait",
+      "aiplatform.projects.locations.metadataStores.artifacts.operations.wait",
+      "aiplatform.projects.locations.metadataStores.contexts.operations.wait",
+      "aiplatform.projects.locations.metadataStores.executions.operations.wait",
+      "aiplatform.projects.locations.migratableResources.operations.wait",
+      "aiplatform.projects.locations.notebookRuntimes.operations.wait",
+      "aiplatform.projects.locations.notebookExecutionJobs.operations.wait",
+      "aiplatform.projects.locations.persistentResources.operations.wait",
+      "aiplatform.projects.locations.trainingPipelines.operations.wait",
+      "aiplatform.projects.locations.pipelineJobs.operations.wait",
+      "aiplatform.projects.locations.reasoningEngines.operations.wait",
+      "aiplatform.projects.locations.schedules.operations.wait",
+      "aiplatform.projects.locations.specialistPools.operations.wait",
+      "aiplatform.projects.locations.tensorboards.operations.wait",
+      "aiplatform.projects.locations.tensorboards.experiments.operations.wait",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.operations.wait",
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.operations.wait",
+      "aiplatform.projects.locations.studies.operations.wait",
+      "aiplatform.projects.locations.studies.trials.operations.wait",
+      "aiplatform.projects.locations.ragCorpora.operations.wait",
+      "aiplatform.projects.locations.ragCorpora.ragFiles.operations.wait"
+    ],
+    "listWait_operations": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.operations.listWait",
+      "aiplatform.projects.locations.featureOnlineStores.operations.listWait",
+      "aiplatform.projects.locations.featureGroups.operations.listWait",
+      "aiplatform.projects.locations.featureGroups.features.operations.listWait"
+    ]
+  },
+  "features_management": {
+    "create_features": [
+      "aiplatform.projects.locations.featurestores.entityTypes.features.create",
+      "aiplatform.projects.locations.featureGroups.features.create"
+    ],
+    "batchCreate_features": [
+      "aiplatform.projects.locations.featurestores.entityTypes.features.batchCreate",
+      "aiplatform.projects.locations.featureGroups.features.batchCreate"
+    ],
+    "get_features": [
+      "aiplatform.projects.locations.featurestores.entityTypes.features.get",
+      "aiplatform.projects.locations.featureGroups.features.get"
+    ],
+    "list_features": [
+      "aiplatform.projects.locations.featurestores.entityTypes.features.list",
+      "aiplatform.projects.locations.featureGroups.features.list"
+    ],
+    "patch_features": [
+      "aiplatform.projects.locations.featurestores.entityTypes.features.patch",
+      "aiplatform.projects.locations.featureGroups.features.patch"
+    ],
+    "delete_features": [
+      "aiplatform.projects.locations.featurestores.entityTypes.features.delete",
+      "aiplatform.projects.locations.featureGroups.features.delete"
+    ]
+  },
+  "models_management": {
+    "setIamPolicy_models": [
+      "aiplatform.projects.locations.models.setIamPolicy"
+    ],
+    "getIamPolicy_models": [
+      "aiplatform.projects.locations.models.getIamPolicy"
+    ],
+    "testIamPermissions_models": [
+      "aiplatform.projects.locations.models.testIamPermissions"
+    ],
+    "upload_models": [
+      "aiplatform.projects.locations.models.upload"
+    ],
+    "get_models": [
+      "aiplatform.projects.locations.models.get",
+      "aiplatform.publishers.models.get"
+    ],
+    "list_models": [
+      "aiplatform.projects.locations.models.list"
+    ],
+    "listVersions_models": [
+      "aiplatform.projects.locations.models.listVersions"
+    ],
+    "listCheckpoints_models": [
+      "aiplatform.projects.locations.models.listCheckpoints"
+    ],
+    "patch_models": [
+      "aiplatform.projects.locations.models.patch"
+    ],
+    "updateExplanationDataset_models": [
+      "aiplatform.projects.locations.models.updateExplanationDataset"
+    ],
+    "delete_models": [
+      "aiplatform.projects.locations.models.delete"
+    ],
+    "deleteVersion_models": [
+      "aiplatform.projects.locations.models.deleteVersion"
+    ],
+    "mergeVersionAliases_models": [
+      "aiplatform.projects.locations.models.mergeVersionAliases"
+    ],
+    "export_models": [
+      "aiplatform.projects.locations.models.export"
+    ],
+    "copy_models": [
+      "aiplatform.projects.locations.models.copy"
+    ],
+    "predict_models": [
+      "aiplatform.projects.locations.publishers.models.predict",
+      "aiplatform.publishers.models.predict"
+    ],
+    "rawPredict_models": [
+      "aiplatform.projects.locations.publishers.models.rawPredict"
+    ],
+    "streamRawPredict_models": [
+      "aiplatform.projects.locations.publishers.models.streamRawPredict"
+    ],
+    "serverStreamingPredict_models": [
+      "aiplatform.projects.locations.publishers.models.serverStreamingPredict"
+    ],
+    "predictLongRunning_models": [
+      "aiplatform.projects.locations.publishers.models.predictLongRunning",
+      "aiplatform.publishers.models.predictLongRunning"
+    ],
+    "fetchPredictOperation_models": [
+      "aiplatform.projects.locations.publishers.models.fetchPredictOperation",
+      "aiplatform.publishers.models.fetchPredictOperation"
+    ],
+    "generateContent_models": [
+      "aiplatform.projects.locations.publishers.models.generateContent",
+      "aiplatform.publishers.models.generateContent"
+    ],
+    "streamGenerateContent_models": [
+      "aiplatform.projects.locations.publishers.models.streamGenerateContent",
+      "aiplatform.publishers.models.streamGenerateContent"
+    ],
+    "countTokens_models": [
+      "aiplatform.projects.locations.publishers.models.countTokens",
+      "aiplatform.publishers.models.countTokens"
+    ],
+    "computeTokens_models": [
+      "aiplatform.projects.locations.publishers.models.computeTokens",
+      "aiplatform.publishers.models.computeTokens"
+    ]
+  },
+  "evaluations_management": {
+    "import_evaluations": [
+      "aiplatform.projects.locations.models.evaluations.import"
+    ],
+    "get_evaluations": [
+      "aiplatform.projects.locations.models.evaluations.get"
+    ],
+    "list_evaluations": [
+      "aiplatform.projects.locations.models.evaluations.list"
+    ]
+  },
+  "slices_management": {
+    "batchImport_slices": [
+      "aiplatform.projects.locations.models.evaluations.slices.batchImport"
+    ],
+    "get_slices": [
+      "aiplatform.projects.locations.models.evaluations.slices.get"
+    ],
+    "list_slices": [
+      "aiplatform.projects.locations.models.evaluations.slices.list"
+    ]
+  },
+  "notebookRuntimeTemplates_management": {
+    "setIamPolicy_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.setIamPolicy"
+    ],
+    "getIamPolicy_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.getIamPolicy"
+    ],
+    "testIamPermissions_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.testIamPermissions"
+    ],
+    "create_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.create"
+    ],
+    "get_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.get"
+    ],
+    "list_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.list"
+    ],
+    "delete_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.delete"
+    ],
+    "patch_notebookRuntimeTemplates": [
+      "aiplatform.projects.locations.notebookRuntimeTemplates.patch"
+    ]
+  },
+  "featureOnlineStores_management": {
+    "setIamPolicy_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.setIamPolicy"
+    ],
+    "getIamPolicy_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.getIamPolicy"
+    ],
+    "testIamPermissions_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.testIamPermissions"
+    ],
+    "create_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.create"
+    ],
+    "get_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.get"
+    ],
+    "list_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.list"
+    ],
+    "patch_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.patch"
+    ],
+    "delete_featureOnlineStores": [
+      "aiplatform.projects.locations.featureOnlineStores.delete"
+    ]
+  },
+  "featureViews_management": {
+    "setIamPolicy_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.setIamPolicy"
+    ],
+    "getIamPolicy_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.getIamPolicy"
+    ],
+    "testIamPermissions_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.testIamPermissions"
+    ],
+    "create_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.create"
+    ],
+    "get_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.get"
+    ],
+    "list_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.list"
+    ],
+    "patch_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.patch"
+    ],
+    "delete_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.delete"
+    ],
+    "sync_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.sync"
+    ],
+    "fetchFeatureValues_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.fetchFeatureValues"
+    ],
+    "searchNearestEntities_featureViews": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.searchNearestEntities"
+    ]
+  },
+  "featureViewSyncs_management": {
+    "get_featureViewSyncs": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.featureViewSyncs.get"
+    ],
+    "list_featureViewSyncs": [
+      "aiplatform.projects.locations.featureOnlineStores.featureViews.featureViewSyncs.list"
+    ]
+  },
+  "featureGroups_management": {
+    "setIamPolicy_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.setIamPolicy"
+    ],
+    "getIamPolicy_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.getIamPolicy"
+    ],
+    "testIamPermissions_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.testIamPermissions"
+    ],
+    "create_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.create"
+    ],
+    "get_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.get"
+    ],
+    "list_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.list"
+    ],
+    "patch_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.patch"
+    ],
+    "delete_featureGroups": [
+      "aiplatform.projects.locations.featureGroups.delete"
+    ]
+  },
+  "dataItems_management": {
+    "list_dataItems": [
+      "aiplatform.projects.locations.datasets.dataItems.list"
+    ]
+  },
+  "annotations_management": {
+    "list_annotations": [
+      "aiplatform.projects.locations.datasets.dataItems.annotations.list"
+    ]
+  },
+  "savedQueries_management": {
+    "list_savedQueries": [
+      "aiplatform.projects.locations.datasets.savedQueries.list"
+    ],
+    "delete_savedQueries": [
+      "aiplatform.projects.locations.datasets.savedQueries.delete"
+    ]
+  },
+  "annotationSpecs_management": {
+    "get_annotationSpecs": [
+      "aiplatform.projects.locations.datasets.annotationSpecs.get"
+    ]
+  },
+  "deploymentResourcePools_management": {
+    "create_deploymentResourcePools": [
+      "aiplatform.projects.locations.deploymentResourcePools.create"
+    ],
+    "get_deploymentResourcePools": [
+      "aiplatform.projects.locations.deploymentResourcePools.get"
+    ],
+    "list_deploymentResourcePools": [
+      "aiplatform.projects.locations.deploymentResourcePools.list"
+    ],
+    "patch_deploymentResourcePools": [
+      "aiplatform.projects.locations.deploymentResourcePools.patch"
+    ],
+    "delete_deploymentResourcePools": [
+      "aiplatform.projects.locations.deploymentResourcePools.delete"
+    ],
+    "queryDeployedModels_deploymentResourcePools": [
+      "aiplatform.projects.locations.deploymentResourcePools.queryDeployedModels"
+    ]
+  },
+  "endpoints_management": {
+    "create_endpoints": [
+      "aiplatform.projects.locations.endpoints.create"
+    ],
+    "get_endpoints": [
+      "aiplatform.projects.locations.endpoints.get"
+    ],
+    "list_endpoints": [
+      "aiplatform.projects.locations.endpoints.list"
+    ],
+    "patch_endpoints": [
+      "aiplatform.projects.locations.endpoints.patch"
+    ],
+    "update_endpoints": [
+      "aiplatform.projects.locations.endpoints.update"
+    ],
+    "delete_endpoints": [
+      "aiplatform.projects.locations.endpoints.delete"
+    ],
+    "deployModel_endpoints": [
+      "aiplatform.projects.locations.endpoints.deployModel"
+    ],
+    "undeployModel_endpoints": [
+      "aiplatform.projects.locations.endpoints.undeployModel"
+    ],
+    "mutateDeployedModel_endpoints": [
+      "aiplatform.projects.locations.endpoints.mutateDeployedModel"
+    ],
+    "predict_endpoints": [
+      "aiplatform.projects.locations.endpoints.predict",
+      "aiplatform.endpoints.predict"
+    ],
+    "rawPredict_endpoints": [
+      "aiplatform.projects.locations.endpoints.rawPredict"
+    ],
+    "streamRawPredict_endpoints": [
+      "aiplatform.projects.locations.endpoints.streamRawPredict"
+    ],
+    "directPredict_endpoints": [
+      "aiplatform.projects.locations.endpoints.directPredict"
+    ],
+    "directRawPredict_endpoints": [
+      "aiplatform.projects.locations.endpoints.directRawPredict"
+    ],
+    "serverStreamingPredict_endpoints": [
+      "aiplatform.projects.locations.endpoints.serverStreamingPredict"
+    ],
+    "predictLongRunning_endpoints": [
+      "aiplatform.projects.locations.endpoints.predictLongRunning",
+      "aiplatform.endpoints.predictLongRunning"
+    ],
+    "fetchPredictOperation_endpoints": [
+      "aiplatform.projects.locations.endpoints.fetchPredictOperation",
+      "aiplatform.endpoints.fetchPredictOperation"
+    ],
+    "explain_endpoints": [
+      "aiplatform.projects.locations.endpoints.explain"
+    ],
+    "generateContent_endpoints": [
+      "aiplatform.projects.locations.endpoints.generateContent",
+      "aiplatform.endpoints.generateContent"
+    ],
+    "streamGenerateContent_endpoints": [
+      "aiplatform.projects.locations.endpoints.streamGenerateContent",
+      "aiplatform.endpoints.streamGenerateContent"
+    ],
+    "countTokens_endpoints": [
+      "aiplatform.projects.locations.endpoints.countTokens",
+      "aiplatform.endpoints.countTokens"
+    ],
+    "computeTokens_endpoints": [
+      "aiplatform.projects.locations.endpoints.computeTokens",
+      "aiplatform.endpoints.computeTokens"
+    ]
+  },
+  "chat_management": {
+    "completions_chat": [
+      "aiplatform.projects.locations.endpoints.chat.completions",
+      "aiplatform.endpoints.chat.completions"
+    ]
+  },
+  "cachedContents_management": {
+    "create_cachedContents": [
+      "aiplatform.projects.locations.cachedContents.create"
+    ],
+    "get_cachedContents": [
+      "aiplatform.projects.locations.cachedContents.get"
+    ],
+    "patch_cachedContents": [
+      "aiplatform.projects.locations.cachedContents.patch"
+    ],
+    "delete_cachedContents": [
+      "aiplatform.projects.locations.cachedContents.delete"
+    ],
+    "list_cachedContents": [
+      "aiplatform.projects.locations.cachedContents.list"
+    ]
+  },
+  "tuningJobs_management": {
+    "create_tuningJobs": [
+      "aiplatform.projects.locations.tuningJobs.create"
+    ],
+    "get_tuningJobs": [
+      "aiplatform.projects.locations.tuningJobs.get"
+    ],
+    "list_tuningJobs": [
+      "aiplatform.projects.locations.tuningJobs.list"
+    ],
+    "cancel_tuningJobs": [
+      "aiplatform.projects.locations.tuningJobs.cancel"
+    ],
+    "rebaseTunedModel_tuningJobs": [
+      "aiplatform.projects.locations.tuningJobs.rebaseTunedModel"
+    ]
+  },
+  "indexes_management": {
+    "create_indexes": [
+      "aiplatform.projects.locations.indexes.create"
+    ],
+    "get_indexes": [
+      "aiplatform.projects.locations.indexes.get"
+    ],
+    "list_indexes": [
+      "aiplatform.projects.locations.indexes.list"
+    ],
+    "patch_indexes": [
+      "aiplatform.projects.locations.indexes.patch"
+    ],
+    "delete_indexes": [
+      "aiplatform.projects.locations.indexes.delete"
+    ],
+    "upsertDatapoints_indexes": [
+      "aiplatform.projects.locations.indexes.upsertDatapoints"
+    ],
+    "removeDatapoints_indexes": [
+      "aiplatform.projects.locations.indexes.removeDatapoints"
+    ]
+  },
+  "indexEndpoints_management": {
+    "create_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.create"
+    ],
+    "get_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.get"
+    ],
+    "list_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.list"
+    ],
+    "patch_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.patch"
+    ],
+    "delete_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.delete"
+    ],
+    "deployIndex_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.deployIndex"
+    ],
+    "undeployIndex_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.undeployIndex"
+    ],
+    "mutateDeployedIndex_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.mutateDeployedIndex"
+    ],
+    "findNeighbors_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.findNeighbors"
+    ],
+    "readIndexDatapoints_indexEndpoints": [
+      "aiplatform.projects.locations.indexEndpoints.readIndexDatapoints"
+    ]
+  },
+  "customJobs_management": {
+    "create_customJobs": [
+      "aiplatform.projects.locations.customJobs.create"
+    ],
+    "get_customJobs": [
+      "aiplatform.projects.locations.customJobs.get"
+    ],
+    "list_customJobs": [
+      "aiplatform.projects.locations.customJobs.list"
+    ],
+    "delete_customJobs": [
+      "aiplatform.projects.locations.customJobs.delete"
+    ],
+    "cancel_customJobs": [
+      "aiplatform.projects.locations.customJobs.cancel"
+    ]
+  },
+  "dataLabelingJobs_management": {
+    "create_dataLabelingJobs": [
+      "aiplatform.projects.locations.dataLabelingJobs.create"
+    ],
+    "get_dataLabelingJobs": [
+      "aiplatform.projects.locations.dataLabelingJobs.get"
+    ],
+    "list_dataLabelingJobs": [
+      "aiplatform.projects.locations.dataLabelingJobs.list"
+    ],
+    "delete_dataLabelingJobs": [
+      "aiplatform.projects.locations.dataLabelingJobs.delete"
+    ],
+    "cancel_dataLabelingJobs": [
+      "aiplatform.projects.locations.dataLabelingJobs.cancel"
+    ]
+  },
+  "hyperparameterTuningJobs_management": {
+    "create_hyperparameterTuningJobs": [
+      "aiplatform.projects.locations.hyperparameterTuningJobs.create"
+    ],
+    "get_hyperparameterTuningJobs": [
+      "aiplatform.projects.locations.hyperparameterTuningJobs.get"
+    ],
+    "list_hyperparameterTuningJobs": [
+      "aiplatform.projects.locations.hyperparameterTuningJobs.list"
+    ],
+    "delete_hyperparameterTuningJobs": [
+      "aiplatform.projects.locations.hyperparameterTuningJobs.delete"
+    ],
+    "cancel_hyperparameterTuningJobs": [
+      "aiplatform.projects.locations.hyperparameterTuningJobs.cancel"
+    ]
+  },
+  "nasJobs_management": {
+    "create_nasJobs": [
+      "aiplatform.projects.locations.nasJobs.create"
+    ],
+    "get_nasJobs": [
+      "aiplatform.projects.locations.nasJobs.get"
+    ],
+    "list_nasJobs": [
+      "aiplatform.projects.locations.nasJobs.list"
+    ],
+    "delete_nasJobs": [
+      "aiplatform.projects.locations.nasJobs.delete"
+    ],
+    "cancel_nasJobs": [
+      "aiplatform.projects.locations.nasJobs.cancel"
+    ]
+  },
+  "nasTrialDetails_management": {
+    "get_nasTrialDetails": [
+      "aiplatform.projects.locations.nasJobs.nasTrialDetails.get"
+    ],
+    "list_nasTrialDetails": [
+      "aiplatform.projects.locations.nasJobs.nasTrialDetails.list"
+    ]
+  },
+  "batchPredictionJobs_management": {
+    "create_batchPredictionJobs": [
+      "aiplatform.projects.locations.batchPredictionJobs.create",
+      "aiplatform.batchPredictionJobs.create"
+    ],
+    "get_batchPredictionJobs": [
+      "aiplatform.projects.locations.batchPredictionJobs.get",
+      "aiplatform.batchPredictionJobs.get"
+    ],
+    "list_batchPredictionJobs": [
+      "aiplatform.projects.locations.batchPredictionJobs.list",
+      "aiplatform.batchPredictionJobs.list"
+    ],
+    "delete_batchPredictionJobs": [
+      "aiplatform.projects.locations.batchPredictionJobs.delete"
+    ],
+    "cancel_batchPredictionJobs": [
+      "aiplatform.projects.locations.batchPredictionJobs.cancel"
+    ]
+  },
+  "modelDeploymentMonitoringJobs_management": {
+    "create_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.create"
+    ],
+    "searchModelDeploymentMonitoringStatsAnomalies_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.searchModelDeploymentMonitoringStatsAnomalies"
+    ],
+    "get_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.get"
+    ],
+    "list_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.list"
+    ],
+    "patch_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.patch"
+    ],
+    "delete_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.delete"
+    ],
+    "pause_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.pause"
+    ],
+    "resume_modelDeploymentMonitoringJobs": [
+      "aiplatform.projects.locations.modelDeploymentMonitoringJobs.resume"
+    ]
+  },
+  "metadataStores_management": {
+    "create_metadataStores": [
+      "aiplatform.projects.locations.metadataStores.create"
+    ],
+    "get_metadataStores": [
+      "aiplatform.projects.locations.metadataStores.get"
+    ],
+    "list_metadataStores": [
+      "aiplatform.projects.locations.metadataStores.list"
+    ],
+    "delete_metadataStores": [
+      "aiplatform.projects.locations.metadataStores.delete"
+    ]
+  },
+  "artifacts_management": {
+    "create_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.create"
+    ],
+    "get_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.get"
+    ],
+    "list_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.list"
+    ],
+    "patch_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.patch"
+    ],
+    "delete_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.delete"
+    ],
+    "purge_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.purge"
+    ],
+    "queryArtifactLineageSubgraph_artifacts": [
+      "aiplatform.projects.locations.metadataStores.artifacts.queryArtifactLineageSubgraph"
+    ]
+  },
+  "contexts_management": {
+    "create_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.create"
+    ],
+    "get_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.get"
+    ],
+    "list_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.list"
+    ],
+    "patch_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.patch"
+    ],
+    "delete_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.delete"
+    ],
+    "purge_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.purge"
+    ],
+    "addContextArtifactsAndExecutions_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.addContextArtifactsAndExecutions"
+    ],
+    "addContextChildren_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.addContextChildren"
+    ],
+    "removeContextChildren_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.removeContextChildren"
+    ],
+    "queryContextLineageSubgraph_contexts": [
+      "aiplatform.projects.locations.metadataStores.contexts.queryContextLineageSubgraph"
+    ]
+  },
+  "executions_management": {
+    "create_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.create"
+    ],
+    "get_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.get"
+    ],
+    "list_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.list"
+    ],
+    "patch_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.patch"
+    ],
+    "delete_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.delete"
+    ],
+    "purge_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.purge"
+    ],
+    "addExecutionEvents_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.addExecutionEvents"
+    ],
+    "queryExecutionInputsAndOutputs_executions": [
+      "aiplatform.projects.locations.metadataStores.executions.queryExecutionInputsAndOutputs"
+    ]
+  },
+  "metadataSchemas_management": {
+    "create_metadataSchemas": [
+      "aiplatform.projects.locations.metadataStores.metadataSchemas.create"
+    ],
+    "get_metadataSchemas": [
+      "aiplatform.projects.locations.metadataStores.metadataSchemas.get"
+    ],
+    "list_metadataSchemas": [
+      "aiplatform.projects.locations.metadataStores.metadataSchemas.list"
+    ]
+  },
+  "migratableResources_management": {
+    "search_migratableResources": [
+      "aiplatform.projects.locations.migratableResources.search"
+    ],
+    "batchMigrate_migratableResources": [
+      "aiplatform.projects.locations.migratableResources.batchMigrate"
+    ]
+  },
+  "notebookRuntimes_management": {
+    "assign_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.assign"
+    ],
+    "get_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.get"
+    ],
+    "list_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.list"
+    ],
+    "delete_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.delete"
+    ],
+    "upgrade_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.upgrade"
+    ],
+    "start_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.start"
+    ],
+    "stop_notebookRuntimes": [
+      "aiplatform.projects.locations.notebookRuntimes.stop"
+    ]
+  },
+  "notebookExecutionJobs_management": {
+    "create_notebookExecutionJobs": [
+      "aiplatform.projects.locations.notebookExecutionJobs.create"
+    ],
+    "get_notebookExecutionJobs": [
+      "aiplatform.projects.locations.notebookExecutionJobs.get"
+    ],
+    "list_notebookExecutionJobs": [
+      "aiplatform.projects.locations.notebookExecutionJobs.list"
+    ],
+    "delete_notebookExecutionJobs": [
+      "aiplatform.projects.locations.notebookExecutionJobs.delete"
+    ]
+  },
+  "persistentResources_management": {
+    "create_persistentResources": [
+      "aiplatform.projects.locations.persistentResources.create"
+    ],
+    "get_persistentResources": [
+      "aiplatform.projects.locations.persistentResources.get"
+    ],
+    "list_persistentResources": [
+      "aiplatform.projects.locations.persistentResources.list"
+    ],
+    "delete_persistentResources": [
+      "aiplatform.projects.locations.persistentResources.delete"
+    ],
+    "patch_persistentResources": [
+      "aiplatform.projects.locations.persistentResources.patch"
+    ],
+    "reboot_persistentResources": [
+      "aiplatform.projects.locations.persistentResources.reboot"
+    ]
+  },
+  "trainingPipelines_management": {
+    "create_trainingPipelines": [
+      "aiplatform.projects.locations.trainingPipelines.create"
+    ],
+    "get_trainingPipelines": [
+      "aiplatform.projects.locations.trainingPipelines.get"
+    ],
+    "list_trainingPipelines": [
+      "aiplatform.projects.locations.trainingPipelines.list"
+    ],
+    "delete_trainingPipelines": [
+      "aiplatform.projects.locations.trainingPipelines.delete"
+    ],
+    "cancel_trainingPipelines": [
+      "aiplatform.projects.locations.trainingPipelines.cancel"
+    ]
+  },
+  "pipelineJobs_management": {
+    "create_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.create"
+    ],
+    "get_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.get"
+    ],
+    "list_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.list"
+    ],
+    "delete_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.delete"
+    ],
+    "batchDelete_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.batchDelete"
+    ],
+    "cancel_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.cancel"
+    ],
+    "batchCancel_pipelineJobs": [
+      "aiplatform.projects.locations.pipelineJobs.batchCancel"
+    ]
+  },
+  "reasoningEngines_management": {
+    "query_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.query",
+      "aiplatform.reasoningEngines.query"
+    ],
+    "streamQuery_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.streamQuery",
+      "aiplatform.reasoningEngines.streamQuery"
+    ],
+    "create_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.create",
+      "aiplatform.reasoningEngines.create"
+    ],
+    "get_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.get",
+      "aiplatform.reasoningEngines.get"
+    ],
+    "list_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.list",
+      "aiplatform.reasoningEngines.list"
+    ],
+    "patch_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.patch",
+      "aiplatform.reasoningEngines.patch"
+    ],
+    "delete_reasoningEngines": [
+      "aiplatform.projects.locations.reasoningEngines.delete",
+      "aiplatform.reasoningEngines.delete"
+    ]
+  },
+  "schedules_management": {
+    "create_schedules": [
+      "aiplatform.projects.locations.schedules.create"
+    ],
+    "delete_schedules": [
+      "aiplatform.projects.locations.schedules.delete"
+    ],
+    "get_schedules": [
+      "aiplatform.projects.locations.schedules.get"
+    ],
+    "list_schedules": [
+      "aiplatform.projects.locations.schedules.list"
+    ],
+    "pause_schedules": [
+      "aiplatform.projects.locations.schedules.pause"
+    ],
+    "resume_schedules": [
+      "aiplatform.projects.locations.schedules.resume"
+    ],
+    "patch_schedules": [
+      "aiplatform.projects.locations.schedules.patch"
+    ]
+  },
+  "specialistPools_management": {
+    "create_specialistPools": [
+      "aiplatform.projects.locations.specialistPools.create"
+    ],
+    "get_specialistPools": [
+      "aiplatform.projects.locations.specialistPools.get"
+    ],
+    "list_specialistPools": [
+      "aiplatform.projects.locations.specialistPools.list"
+    ],
+    "delete_specialistPools": [
+      "aiplatform.projects.locations.specialistPools.delete"
+    ],
+    "patch_specialistPools": [
+      "aiplatform.projects.locations.specialistPools.patch"
+    ]
+  },
+  "tensorboards_management": {
+    "create_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.create"
+    ],
+    "get_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.get"
+    ],
+    "patch_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.patch"
+    ],
+    "list_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.list"
+    ],
+    "delete_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.delete"
+    ],
+    "readUsage_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.readUsage"
+    ],
+    "readSize_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.readSize"
+    ],
+    "batchRead_tensorboards": [
+      "aiplatform.projects.locations.tensorboards.batchRead"
+    ]
+  },
+  "experiments_management": {
+    "create_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.create"
+    ],
+    "get_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.get"
+    ],
+    "patch_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.patch"
+    ],
+    "list_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.list"
+    ],
+    "delete_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.delete"
+    ],
+    "batchCreate_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.batchCreate"
+    ],
+    "write_experiments": [
+      "aiplatform.projects.locations.tensorboards.experiments.write"
+    ]
+  },
+  "runs_management": {
+    "create_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.create"
+    ],
+    "batchCreate_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.batchCreate"
+    ],
+    "get_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.get"
+    ],
+    "patch_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.patch"
+    ],
+    "list_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.list"
+    ],
+    "delete_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.delete"
+    ],
+    "write_runs": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.write"
+    ]
+  },
+  "timeSeries_management": {
+    "create_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.create"
+    ],
+    "get_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.get"
+    ],
+    "patch_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.patch"
+    ],
+    "list_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.list"
+    ],
+    "delete_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.delete"
+    ],
+    "read_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.read"
+    ],
+    "readBlobData_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.readBlobData"
+    ],
+    "exportTensorboardTimeSeries_timeSeries": [
+      "aiplatform.projects.locations.tensorboards.experiments.runs.timeSeries.exportTensorboardTimeSeries"
+    ]
+  },
+  "studies_management": {
+    "create_studies": [
+      "aiplatform.projects.locations.studies.create"
+    ],
+    "get_studies": [
+      "aiplatform.projects.locations.studies.get"
+    ],
+    "list_studies": [
+      "aiplatform.projects.locations.studies.list"
+    ],
+    "delete_studies": [
+      "aiplatform.projects.locations.studies.delete"
+    ],
+    "lookup_studies": [
+      "aiplatform.projects.locations.studies.lookup"
+    ]
+  },
+  "trials_management": {
+    "suggest_trials": [
+      "aiplatform.projects.locations.studies.trials.suggest"
+    ],
+    "create_trials": [
+      "aiplatform.projects.locations.studies.trials.create"
+    ],
+    "get_trials": [
+      "aiplatform.projects.locations.studies.trials.get"
+    ],
+    "list_trials": [
+      "aiplatform.projects.locations.studies.trials.list"
+    ],
+    "addTrialMeasurement_trials": [
+      "aiplatform.projects.locations.studies.trials.addTrialMeasurement"
+    ],
+    "complete_trials": [
+      "aiplatform.projects.locations.studies.trials.complete"
+    ],
+    "delete_trials": [
+      "aiplatform.projects.locations.studies.trials.delete"
+    ],
+    "checkTrialEarlyStoppingState_trials": [
+      "aiplatform.projects.locations.studies.trials.checkTrialEarlyStoppingState"
+    ],
+    "stop_trials": [
+      "aiplatform.projects.locations.studies.trials.stop"
+    ],
+    "listOptimalTrials_trials": [
+      "aiplatform.projects.locations.studies.trials.listOptimalTrials"
+    ]
+  },
+  "ragCorpora_management": {
+    "create_ragCorpora": [
+      "aiplatform.projects.locations.ragCorpora.create"
+    ],
+    "patch_ragCorpora": [
+      "aiplatform.projects.locations.ragCorpora.patch"
+    ],
+    "get_ragCorpora": [
+      "aiplatform.projects.locations.ragCorpora.get"
+    ],
+    "list_ragCorpora": [
+      "aiplatform.projects.locations.ragCorpora.list"
+    ],
+    "delete_ragCorpora": [
+      "aiplatform.projects.locations.ragCorpora.delete"
+    ]
+  },
+  "ragFiles_management": {
+    "import_ragFiles": [
+      "aiplatform.projects.locations.ragCorpora.ragFiles.import"
+    ],
+    "get_ragFiles": [
+      "aiplatform.projects.locations.ragCorpora.ragFiles.get"
+    ],
+    "list_ragFiles": [
+      "aiplatform.projects.locations.ragCorpora.ragFiles.list"
+    ],
+    "delete_ragFiles": [
+      "aiplatform.projects.locations.ragCorpora.ragFiles.delete"
+    ]
+  },
+  "media_management": {
+    "upload_media": [
+      "aiplatform.media.upload"
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "locations": {
+    "description": "locations resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "serviceConnectionMaps": {
+    "description": "serviceConnectionMaps resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "serviceConnectionPolicies": {
+    "description": "serviceConnectionPolicies resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "serviceClasses": {
+    "description": "serviceClasses resource",
+    "operations_count": 7,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "serviceConnectionTokens": {
+    "description": "serviceConnectionTokens resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "hubs": {
+    "description": "hubs resource",
+    "operations_count": 14,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "acceptSpoke",
+      "acceptSpokeUpdate",
+      "getIamPolicy",
+      "listSpokes",
+      "queryStatus",
+      "rejectSpoke",
+      "rejectSpokeUpdate",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "routeTables": {
+    "description": "routeTables resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "routes": {
+    "description": "routes resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "groups": {
+    "description": "groups resource",
+    "operations_count": 6,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "policyBasedRoutes": {
+    "description": "policyBasedRoutes resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "spokes": {
+    "description": "spokes resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "internalRanges": {
+    "description": "internalRanges resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "regionalEndpoints": {
+    "description": "regionalEndpoints resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

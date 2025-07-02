@@ -1,0 +1,172 @@
+{
+  "scans": {
+    "description": "scans resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "instanceConfigs": {
+    "description": "instanceConfigs resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 24,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "instanceConfigOperations": {
+    "description": "instanceConfigOperations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "instances": {
+    "description": "instances resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "move",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "databases": {
+    "description": "databases resource",
+    "operations_count": 14,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addSplitPoints",
+      "changequorum",
+      "dropDatabase",
+      "getDdl",
+      "getIamPolicy",
+      "getScans",
+      "restore",
+      "setIamPolicy",
+      "testIamPermissions",
+      "updateDdl"
+    ]
+  },
+  "sessions": {
+    "description": "sessions resource",
+    "operations_count": 18,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "adaptMessage",
+      "adapter",
+      "batchCreate",
+      "batchWrite",
+      "beginTransaction",
+      "commit",
+      "executeBatchDml",
+      "executeSql",
+      "executeStreamingSql",
+      "partitionQuery",
+      "partitionRead",
+      "read",
+      "rollback",
+      "streamingRead"
+    ]
+  },
+  "backupSchedules": {
+    "description": "backupSchedules resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "databaseRoles": {
+    "description": "databaseRoles resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "testIamPermissions"
+    ]
+  },
+  "backups": {
+    "description": "backups resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "copy",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "databaseOperations": {
+    "description": "databaseOperations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "backupOperations": {
+    "description": "backupOperations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "instancePartitions": {
+    "description": "instancePartitions resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "instancePartitionOperations": {
+    "description": "instancePartitionOperations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

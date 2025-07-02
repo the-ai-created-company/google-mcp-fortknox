@@ -1,0 +1,104 @@
+{
+  "locations": {
+    "description": "locations resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getServerConfig"
+    ]
+  },
+  "clusters": {
+    "description": "clusters resource",
+    "operations_count": 38,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addons",
+      "checkAutopilotCompatibility",
+      "completeIpRotation",
+      "fetchClusterUpgradeInfo",
+      "getJwks",
+      "legacyAbac",
+      "locations",
+      "logging",
+      "master",
+      "monitoring",
+      "resourceLabels",
+      "setAddons",
+      "setLegacyAbac",
+      "setLocations",
+      "setLogging",
+      "setMaintenancePolicy",
+      "setMasterAuth",
+      "setMonitoring",
+      "setNetworkPolicy",
+      "setResourceLabels",
+      "startIpRotation",
+      "updateMaster"
+    ]
+  },
+  "nodePools": {
+    "description": "nodePools resource",
+    "operations_count": 21,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "autoscaling",
+      "completeUpgrade",
+      "fetchNodePoolUpgradeInfo",
+      "rollback",
+      "setAutoscaling",
+      "setManagement",
+      "setSize"
+    ]
+  },
+  "well-known": {
+    "description": "well-known resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getOpenid-configuration"
+    ]
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 6,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "zones": {
+    "description": "zones resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getServerconfig"
+    ]
+  },
+  "usableSubnetworks": {
+    "description": "usableSubnetworks resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

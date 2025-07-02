@@ -1,0 +1,2483 @@
+{
+  "service": "dns",
+  "version": "v1",
+  "base_url": "https://dns.googleapis.com/",
+  "total_endpoints": 40,
+  "endpoints": [
+    {
+      "operation_id": "dns.resourceRecordSets.list",
+      "resource": "resourceRecordSets",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/rrsets",
+      "description": "Enumerates ResourceRecordSets that you have created but not yet deleted.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        },
+        "name": {
+          "description": "Restricts the list to return only records with this fully qualified domain name.",
+          "location": "query",
+          "type": "string"
+        },
+        "type": {
+          "description": "Restricts the list to return only records of this type. If present, the \"name\" parameter must also be present.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResourceRecordSetsListResponse"
+    },
+    {
+      "operation_id": "dns.resourceRecordSets.create",
+      "resource": "resourceRecordSets",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/rrsets",
+      "description": "Creates a new ResourceRecordSet.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResourceRecordSet",
+      "body_schema": {
+        "id": "ResourceRecordSet",
+        "description": "A unit of data that is returned by the DNS servers.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "For example, www.example.com.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The identifier of a supported record type. See the list of Supported DNS record types.",
+            "type": "string"
+          },
+          "ttl": {
+            "description": "Number of seconds that this `ResourceRecordSet` can be cached by resolvers.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "rrdatas": {
+            "description": "As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "signatureRrdatas": {
+            "description": "As defined in RFC 4034 (section 3.2).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "routingPolicy": {
+            "description": "Configures dynamic query responses based on either the geo location of the querying user or a weighted round robin based routing policy. A valid `ResourceRecordSet` contains only `rrdata` (for static resolution) or a `routing_policy` (for dynamic resolution).",
+            "$ref": "RRSetRoutingPolicy"
+          },
+          "kind": {
+            "default": "dns#resourceRecordSet",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResourceRecordSet"
+    },
+    {
+      "operation_id": "dns.resourceRecordSets.get",
+      "resource": "resourceRecordSets",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
+      "description": "Fetches the representation of an existing ResourceRecordSet.",
+      "required_params": [
+        "project",
+        "managedZone",
+        "name",
+        "type"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "name": {
+          "description": "Fully qualified domain name.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "type": {
+          "description": "RRSet type.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResourceRecordSet"
+    },
+    {
+      "operation_id": "dns.resourceRecordSets.delete",
+      "resource": "resourceRecordSets",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
+      "description": "Deletes a previously created ResourceRecordSet.",
+      "required_params": [
+        "project",
+        "managedZone",
+        "name",
+        "type"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "name": {
+          "description": "Fully qualified domain name.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "type": {
+          "description": "RRSet type.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResourceRecordSetsDeleteResponse"
+    },
+    {
+      "operation_id": "dns.resourceRecordSets.patch",
+      "resource": "resourceRecordSets",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/rrsets/{name}/{type}",
+      "description": "Applies a partial update to an existing ResourceRecordSet.",
+      "required_params": [
+        "project",
+        "managedZone",
+        "name",
+        "type"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "name": {
+          "description": "Fully qualified domain name.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "type": {
+          "description": "RRSet type.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResourceRecordSet",
+      "body_schema": {
+        "id": "ResourceRecordSet",
+        "description": "A unit of data that is returned by the DNS servers.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "For example, www.example.com.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The identifier of a supported record type. See the list of Supported DNS record types.",
+            "type": "string"
+          },
+          "ttl": {
+            "description": "Number of seconds that this `ResourceRecordSet` can be cached by resolvers.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "rrdatas": {
+            "description": "As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "signatureRrdatas": {
+            "description": "As defined in RFC 4034 (section 3.2).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "routingPolicy": {
+            "description": "Configures dynamic query responses based on either the geo location of the querying user or a weighted round robin based routing policy. A valid `ResourceRecordSet` contains only `rrdata` (for static resolution) or a `routing_policy` (for dynamic resolution).",
+            "$ref": "RRSetRoutingPolicy"
+          },
+          "kind": {
+            "default": "dns#resourceRecordSet",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResourceRecordSet"
+    },
+    {
+      "operation_id": "dns.changes.create",
+      "resource": "changes",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/changes",
+      "description": "Atomically updates the ResourceRecordSet collection.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Change",
+      "body_schema": {
+        "id": "Change",
+        "description": "A Change represents a set of `ResourceRecordSet` additions and deletions applied atomically to a ManagedZone. ResourceRecordSets within a ManagedZone are modified by creating a new Change element in the Changes collection. In turn the Changes collection also records the past modifications to the `ResourceRecordSets` in a `ManagedZone`. The current state of the `ManagedZone` is the sum effect of applying all `Change` elements in the `Changes` collection in sequence.",
+        "type": "object",
+        "properties": {
+          "additions": {
+            "description": "Which ResourceRecordSets to add?",
+            "type": "array",
+            "items": {
+              "$ref": "ResourceRecordSet"
+            }
+          },
+          "deletions": {
+            "description": "Which ResourceRecordSets to remove? Must match existing data exactly.",
+            "type": "array",
+            "items": {
+              "$ref": "ResourceRecordSet"
+            }
+          },
+          "startTime": {
+            "description": "The time that this operation was started by the server (output only). This is in RFC3339 text format.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string"
+          },
+          "status": {
+            "description": "Status of the operation (output only). A status of \"done\" means that the request to update the authoritative servers has been sent, but the servers might not be updated yet.",
+            "type": "string",
+            "enumDescriptions": [
+              "",
+              ""
+            ],
+            "enum": [
+              "pending",
+              "done"
+            ]
+          },
+          "isServing": {
+            "description": "If the DNS queries for the zone will be served.",
+            "type": "boolean"
+          },
+          "kind": {
+            "default": "dns#change",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Change"
+    },
+    {
+      "operation_id": "dns.changes.get",
+      "resource": "changes",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/changes/{changeId}",
+      "description": "Fetches the representation of an existing Change.",
+      "required_params": [
+        "project",
+        "managedZone",
+        "changeId"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "changeId": {
+          "description": "The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Change"
+    },
+    {
+      "operation_id": "dns.changes.list",
+      "resource": "changes",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/changes",
+      "description": "Enumerates Changes to a ResourceRecordSet collection.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        },
+        "sortBy": {
+          "description": "Sorting criterion. The only supported value is change sequence.",
+          "default": "changeSequence",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            ""
+          ],
+          "enum": [
+            "changeSequence"
+          ]
+        },
+        "sortOrder": {
+          "description": "Sorting order direction: 'ascending' or 'descending'.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ChangesListResponse"
+    },
+    {
+      "operation_id": "dns.dnsKeys.get",
+      "resource": "dnsKeys",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/dnsKeys/{dnsKeyId}",
+      "description": "Fetches the representation of an existing DnsKey.",
+      "required_params": [
+        "project",
+        "managedZone",
+        "dnsKeyId"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "dnsKeyId": {
+          "description": "The identifier of the requested DnsKey.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        },
+        "digestType": {
+          "description": "An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type is computed and displayed.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "DnsKey"
+    },
+    {
+      "operation_id": "dns.dnsKeys.list",
+      "resource": "dnsKeys",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/dnsKeys",
+      "description": "Enumerates DnsKeys to a ResourceRecordSet collection.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        },
+        "digestType": {
+          "description": "An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type is computed and displayed.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "DnsKeysListResponse"
+    },
+    {
+      "operation_id": "dns.projects.get",
+      "resource": "projects",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}",
+      "description": "Fetches the representation of an existing Project.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Project"
+    },
+    {
+      "operation_id": "dns.managedZoneOperations.get",
+      "resource": "managedZoneOperations",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/operations/{operation}",
+      "description": "Fetches the representation of an existing Operation.",
+      "required_params": [
+        "project",
+        "managedZone",
+        "operation"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "operation": {
+          "description": "Identifies the operation addressed by this request (ID of the operation).",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "dns.managedZoneOperations.list",
+      "resource": "managedZoneOperations",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}/operations",
+      "description": "Enumerates Operations for the given ManagedZone.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        },
+        "sortBy": {
+          "description": "Sorting criterion. The only supported values are START_TIME and ID.",
+          "default": "startTime",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "",
+            ""
+          ],
+          "enum": [
+            "startTime",
+            "id"
+          ]
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ManagedZoneOperationsListResponse"
+    },
+    {
+      "operation_id": "dns.managedZones.create",
+      "resource": "managedZones",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "dns/v1/projects/{project}/managedZones",
+      "description": "Creates a new ManagedZone.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ManagedZone",
+      "body_schema": {
+        "id": "ManagedZone",
+        "description": "A zone is a subtree of the DNS namespace under one administrative responsibility. A ManagedZone is a resource that represents a DNS zone hosted by the Cloud DNS service.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.",
+            "type": "string"
+          },
+          "dnsName": {
+            "description": "The DNS name of this managed zone, for instance \"example.com.\".",
+            "type": "string"
+          },
+          "description": {
+            "description": "A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only)",
+            "type": "string",
+            "format": "uint64"
+          },
+          "nameServers": {
+            "description": "Delegate your managed_zone to these virtual name servers; defined by the server (output only)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creationTime": {
+            "description": "The time that this resource was created on the server. This is in RFC3339 text format. Output only.",
+            "type": "string"
+          },
+          "dnssecConfig": {
+            "description": "DNSSEC configuration.",
+            "$ref": "ManagedZoneDnsSecConfig"
+          },
+          "nameServerSet": {
+            "description": "Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.",
+            "type": "string",
+            "enumDescriptions": [
+              "Indicates that records in this zone can be queried from the public internet.",
+              "Indicates that records in this zone cannot be queried from the public internet. Access to private zones depends on the zone configuration."
+            ],
+            "enum": [
+              "public",
+              "private"
+            ]
+          },
+          "privateVisibilityConfig": {
+            "description": "For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from.",
+            "$ref": "ManagedZonePrivateVisibilityConfig"
+          },
+          "forwardingConfig": {
+            "description": "The presence for this field indicates that outbound forwarding is enabled for this zone. The value of this field contains the set of destinations to forward to.",
+            "$ref": "ManagedZoneForwardingConfig"
+          },
+          "labels": {
+            "description": "User labels.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "peeringConfig": {
+            "description": "The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.",
+            "$ref": "ManagedZonePeeringConfig"
+          },
+          "reverseLookupConfig": {
+            "description": "The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS resolves reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config.",
+            "$ref": "ManagedZoneReverseLookupConfig"
+          },
+          "serviceDirectoryConfig": {
+            "description": "This field links to the associated service directory namespace. Do not set this field for public zones or forwarding zones.",
+            "$ref": "ManagedZoneServiceDirectoryConfig"
+          },
+          "cloudLoggingConfig": {
+            "$ref": "ManagedZoneCloudLoggingConfig"
+          },
+          "kind": {
+            "default": "dns#managedZone",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ManagedZone"
+    },
+    {
+      "operation_id": "dns.managedZones.get",
+      "resource": "managedZones",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}",
+      "description": "Fetches the representation of an existing ManagedZone.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ManagedZone"
+    },
+    {
+      "operation_id": "dns.managedZones.list",
+      "resource": "managedZones",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/managedZones",
+      "description": "Enumerates ManagedZones that have been created but not yet deleted.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        },
+        "dnsName": {
+          "description": "Restricts the list to return only zones with this domain name.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ManagedZonesListResponse"
+    },
+    {
+      "operation_id": "dns.managedZones.delete",
+      "resource": "managedZones",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}",
+      "description": "Deletes a previously created ManagedZone.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": ""
+    },
+    {
+      "operation_id": "dns.managedZones.patch",
+      "resource": "managedZones",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}",
+      "description": "Applies a partial update to an existing ManagedZone.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ManagedZone",
+      "body_schema": {
+        "id": "ManagedZone",
+        "description": "A zone is a subtree of the DNS namespace under one administrative responsibility. A ManagedZone is a resource that represents a DNS zone hosted by the Cloud DNS service.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.",
+            "type": "string"
+          },
+          "dnsName": {
+            "description": "The DNS name of this managed zone, for instance \"example.com.\".",
+            "type": "string"
+          },
+          "description": {
+            "description": "A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only)",
+            "type": "string",
+            "format": "uint64"
+          },
+          "nameServers": {
+            "description": "Delegate your managed_zone to these virtual name servers; defined by the server (output only)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creationTime": {
+            "description": "The time that this resource was created on the server. This is in RFC3339 text format. Output only.",
+            "type": "string"
+          },
+          "dnssecConfig": {
+            "description": "DNSSEC configuration.",
+            "$ref": "ManagedZoneDnsSecConfig"
+          },
+          "nameServerSet": {
+            "description": "Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.",
+            "type": "string",
+            "enumDescriptions": [
+              "Indicates that records in this zone can be queried from the public internet.",
+              "Indicates that records in this zone cannot be queried from the public internet. Access to private zones depends on the zone configuration."
+            ],
+            "enum": [
+              "public",
+              "private"
+            ]
+          },
+          "privateVisibilityConfig": {
+            "description": "For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from.",
+            "$ref": "ManagedZonePrivateVisibilityConfig"
+          },
+          "forwardingConfig": {
+            "description": "The presence for this field indicates that outbound forwarding is enabled for this zone. The value of this field contains the set of destinations to forward to.",
+            "$ref": "ManagedZoneForwardingConfig"
+          },
+          "labels": {
+            "description": "User labels.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "peeringConfig": {
+            "description": "The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.",
+            "$ref": "ManagedZonePeeringConfig"
+          },
+          "reverseLookupConfig": {
+            "description": "The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS resolves reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config.",
+            "$ref": "ManagedZoneReverseLookupConfig"
+          },
+          "serviceDirectoryConfig": {
+            "description": "This field links to the associated service directory namespace. Do not set this field for public zones or forwarding zones.",
+            "$ref": "ManagedZoneServiceDirectoryConfig"
+          },
+          "cloudLoggingConfig": {
+            "$ref": "ManagedZoneCloudLoggingConfig"
+          },
+          "kind": {
+            "default": "dns#managedZone",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "dns.managedZones.update",
+      "resource": "managedZones",
+      "action": "update",
+      "http_method": "PUT",
+      "path_template": "dns/v1/projects/{project}/managedZones/{managedZone}",
+      "description": "Updates an existing ManagedZone.",
+      "required_params": [
+        "project",
+        "managedZone"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "managedZone": {
+          "description": "Identifies the managed zone addressed by this request. Can be the managed zone name or ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ManagedZone",
+      "body_schema": {
+        "id": "ManagedZone",
+        "description": "A zone is a subtree of the DNS namespace under one administrative responsibility. A ManagedZone is a resource that represents a DNS zone hosted by the Cloud DNS service.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "User assigned name for this resource. Must be unique within the project. The name must be 1-63 characters long, must begin with a letter, end with a letter or digit, and only contain lowercase letters, digits or dashes.",
+            "type": "string"
+          },
+          "dnsName": {
+            "description": "The DNS name of this managed zone, for instance \"example.com.\".",
+            "type": "string"
+          },
+          "description": {
+            "description": "A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the managed zone's function.",
+            "type": "string"
+          },
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only)",
+            "type": "string",
+            "format": "uint64"
+          },
+          "nameServers": {
+            "description": "Delegate your managed_zone to these virtual name servers; defined by the server (output only)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "creationTime": {
+            "description": "The time that this resource was created on the server. This is in RFC3339 text format. Output only.",
+            "type": "string"
+          },
+          "dnssecConfig": {
+            "description": "DNSSEC configuration.",
+            "$ref": "ManagedZoneDnsSecConfig"
+          },
+          "nameServerSet": {
+            "description": "Optionally specifies the NameServerSet for this ManagedZone. A NameServerSet is a set of DNS name servers that all host the same ManagedZones. Most users leave this field unset. If you need to use this field, contact your account team.",
+            "type": "string"
+          },
+          "visibility": {
+            "description": "The zone's visibility: public zones are exposed to the Internet, while private zones are visible only to Virtual Private Cloud resources.",
+            "type": "string",
+            "enumDescriptions": [
+              "Indicates that records in this zone can be queried from the public internet.",
+              "Indicates that records in this zone cannot be queried from the public internet. Access to private zones depends on the zone configuration."
+            ],
+            "enum": [
+              "public",
+              "private"
+            ]
+          },
+          "privateVisibilityConfig": {
+            "description": "For privately visible zones, the set of Virtual Private Cloud resources that the zone is visible from.",
+            "$ref": "ManagedZonePrivateVisibilityConfig"
+          },
+          "forwardingConfig": {
+            "description": "The presence for this field indicates that outbound forwarding is enabled for this zone. The value of this field contains the set of destinations to forward to.",
+            "$ref": "ManagedZoneForwardingConfig"
+          },
+          "labels": {
+            "description": "User labels.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "peeringConfig": {
+            "description": "The presence of this field indicates that DNS Peering is enabled for this zone. The value of this field contains the network to peer with.",
+            "$ref": "ManagedZonePeeringConfig"
+          },
+          "reverseLookupConfig": {
+            "description": "The presence of this field indicates that this is a managed reverse lookup zone and Cloud DNS resolves reverse lookup queries using automatically configured records for VPC resources. This only applies to networks listed under private_visibility_config.",
+            "$ref": "ManagedZoneReverseLookupConfig"
+          },
+          "serviceDirectoryConfig": {
+            "description": "This field links to the associated service directory namespace. Do not set this field for public zones or forwarding zones.",
+            "$ref": "ManagedZoneServiceDirectoryConfig"
+          },
+          "cloudLoggingConfig": {
+            "$ref": "ManagedZoneCloudLoggingConfig"
+          },
+          "kind": {
+            "default": "dns#managedZone",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Operation"
+    },
+    {
+      "operation_id": "dns.managedZones.setIamPolicy",
+      "resource": "managedZones",
+      "action": "setIamPolicy",
+      "http_method": "POST",
+      "path_template": "dns/v1/{+resource}:setIamPolicy",
+      "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/managedZones/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GoogleIamV1SetIamPolicyRequest",
+      "body_schema": {
+        "id": "GoogleIamV1SetIamPolicyRequest",
+        "description": "Request message for `SetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "policy": {
+            "description": "REQUIRED: The complete policy to be applied to the `resource`. The size of the policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Google Cloud services (such as Projects) might reject them.",
+            "$ref": "GoogleIamV1Policy"
+          },
+          "updateMask": {
+            "description": "OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only the fields in the mask will be modified. If no mask is provided, the following default mask is used: `paths: \"bindings, etag\"`",
+            "type": "string",
+            "format": "google-fieldmask"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "GoogleIamV1Policy"
+    },
+    {
+      "operation_id": "dns.managedZones.getIamPolicy",
+      "resource": "managedZones",
+      "action": "getIamPolicy",
+      "http_method": "POST",
+      "path_template": "dns/v1/{+resource}:getIamPolicy",
+      "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/managedZones/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GoogleIamV1GetIamPolicyRequest",
+      "body_schema": {
+        "id": "GoogleIamV1GetIamPolicyRequest",
+        "description": "Request message for `GetIamPolicy` method.",
+        "type": "object",
+        "properties": {
+          "options": {
+            "description": "OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`.",
+            "$ref": "GoogleIamV1GetPolicyOptions"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "GoogleIamV1Policy"
+    },
+    {
+      "operation_id": "dns.managedZones.testIamPermissions",
+      "resource": "managedZones",
+      "action": "testIamPermissions",
+      "http_method": "POST",
+      "path_template": "dns/v1/{+resource}:testIamPermissions",
+      "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this returns an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+      "required_params": [
+        "resource"
+      ],
+      "parameters": {
+        "resource": {
+          "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+          "pattern": "^projects/[^/]+/managedZones/[^/]+$",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GoogleIamV1TestIamPermissionsRequest",
+      "body_schema": {
+        "id": "GoogleIamV1TestIamPermissionsRequest",
+        "description": "Request message for `TestIamPermissions` method.",
+        "type": "object",
+        "properties": {
+          "permissions": {
+            "description": "The set of permissions to check for the `resource`. Permissions with wildcards (such as `*` or `storage.*`) are not allowed. For more information see [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "GoogleIamV1TestIamPermissionsResponse"
+    },
+    {
+      "operation_id": "dns.policies.create",
+      "resource": "policies",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "dns/v1/projects/{project}/policies",
+      "description": "Creates a new Policy.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Policy",
+      "body_schema": {
+        "id": "Policy",
+        "description": "A policy is a collection of DNS rules applied to one or more Virtual Private Cloud resources.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string",
+            "format": "uint64"
+          },
+          "name": {
+            "description": "User-assigned name for this policy.",
+            "type": "string"
+          },
+          "enableInboundForwarding": {
+            "description": "Allows networks bound to this policy to receive DNS queries sent by VMs or applications over VPN connections. When enabled, a virtual IP address is allocated from each of the subnetworks that are bound to this policy.",
+            "type": "boolean"
+          },
+          "description": {
+            "description": "A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.",
+            "type": "string"
+          },
+          "networks": {
+            "description": "List of network names specifying networks to which this policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "PolicyNetwork"
+            }
+          },
+          "alternativeNameServerConfig": {
+            "description": "Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.",
+            "$ref": "PolicyAlternativeNameServerConfig"
+          },
+          "enableLogging": {
+            "description": "Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.",
+            "type": "boolean"
+          },
+          "dns64Config": {
+            "description": "Configurations related to DNS64 for this Policy.",
+            "$ref": "PolicyDns64Config"
+          },
+          "kind": {
+            "default": "dns#policy",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "dns.policies.get",
+      "resource": "policies",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/policies/{policy}",
+      "description": "Fetches the representation of an existing Policy.",
+      "required_params": [
+        "project",
+        "policy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "policy": {
+          "description": "User given friendly name of the policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "Policy"
+    },
+    {
+      "operation_id": "dns.policies.list",
+      "resource": "policies",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/policies",
+      "description": "Enumerates all Policies associated with a project.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "PoliciesListResponse"
+    },
+    {
+      "operation_id": "dns.policies.delete",
+      "resource": "policies",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "dns/v1/projects/{project}/policies/{policy}",
+      "description": "Deletes a previously created Policy. Fails if the policy is still being referenced by a network.",
+      "required_params": [
+        "project",
+        "policy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "policy": {
+          "description": "User given friendly name of the policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": ""
+    },
+    {
+      "operation_id": "dns.policies.patch",
+      "resource": "policies",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "dns/v1/projects/{project}/policies/{policy}",
+      "description": "Applies a partial update to an existing Policy.",
+      "required_params": [
+        "project",
+        "policy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "policy": {
+          "description": "User given friendly name of the policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Policy",
+      "body_schema": {
+        "id": "Policy",
+        "description": "A policy is a collection of DNS rules applied to one or more Virtual Private Cloud resources.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string",
+            "format": "uint64"
+          },
+          "name": {
+            "description": "User-assigned name for this policy.",
+            "type": "string"
+          },
+          "enableInboundForwarding": {
+            "description": "Allows networks bound to this policy to receive DNS queries sent by VMs or applications over VPN connections. When enabled, a virtual IP address is allocated from each of the subnetworks that are bound to this policy.",
+            "type": "boolean"
+          },
+          "description": {
+            "description": "A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.",
+            "type": "string"
+          },
+          "networks": {
+            "description": "List of network names specifying networks to which this policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "PolicyNetwork"
+            }
+          },
+          "alternativeNameServerConfig": {
+            "description": "Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.",
+            "$ref": "PolicyAlternativeNameServerConfig"
+          },
+          "enableLogging": {
+            "description": "Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.",
+            "type": "boolean"
+          },
+          "dns64Config": {
+            "description": "Configurations related to DNS64 for this Policy.",
+            "$ref": "PolicyDns64Config"
+          },
+          "kind": {
+            "default": "dns#policy",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "PoliciesPatchResponse"
+    },
+    {
+      "operation_id": "dns.policies.update",
+      "resource": "policies",
+      "action": "update",
+      "http_method": "PUT",
+      "path_template": "dns/v1/projects/{project}/policies/{policy}",
+      "description": "Updates an existing Policy.",
+      "required_params": [
+        "project",
+        "policy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "policy": {
+          "description": "User given friendly name of the policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Policy",
+      "body_schema": {
+        "id": "Policy",
+        "description": "A policy is a collection of DNS rules applied to one or more Virtual Private Cloud resources.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string",
+            "format": "uint64"
+          },
+          "name": {
+            "description": "User-assigned name for this policy.",
+            "type": "string"
+          },
+          "enableInboundForwarding": {
+            "description": "Allows networks bound to this policy to receive DNS queries sent by VMs or applications over VPN connections. When enabled, a virtual IP address is allocated from each of the subnetworks that are bound to this policy.",
+            "type": "boolean"
+          },
+          "description": {
+            "description": "A mutable string of at most 1024 characters associated with this resource for the user's convenience. Has no effect on the policy's function.",
+            "type": "string"
+          },
+          "networks": {
+            "description": "List of network names specifying networks to which this policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "PolicyNetwork"
+            }
+          },
+          "alternativeNameServerConfig": {
+            "description": "Sets an alternative name server for the associated networks. When specified, all DNS queries are forwarded to a name server that you choose. Names such as .internal are not available when an alternative name server is specified.",
+            "$ref": "PolicyAlternativeNameServerConfig"
+          },
+          "enableLogging": {
+            "description": "Controls whether logging is enabled for the networks bound to this policy. Defaults to no logging if not set.",
+            "type": "boolean"
+          },
+          "dns64Config": {
+            "description": "Configurations related to DNS64 for this Policy.",
+            "$ref": "PolicyDns64Config"
+          },
+          "kind": {
+            "default": "dns#policy",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "PoliciesUpdateResponse"
+    },
+    {
+      "operation_id": "dns.responsePolicies.create",
+      "resource": "responsePolicies",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "dns/v1/projects/{project}/responsePolicies",
+      "description": "Creates a new Response Policy",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResponsePolicy",
+      "body_schema": {
+        "id": "ResponsePolicy",
+        "description": "A Response Policy is a collection of selectors that apply to queries made against one or more Virtual Private Cloud networks.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string",
+            "format": "int64"
+          },
+          "responsePolicyName": {
+            "description": "User assigned name for this Response Policy.",
+            "type": "string"
+          },
+          "description": {
+            "description": "User-provided description for this Response Policy.",
+            "type": "string"
+          },
+          "networks": {
+            "description": "List of network names specifying networks to which this policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "ResponsePolicyNetwork"
+            }
+          },
+          "gkeClusters": {
+            "description": "The list of Google Kubernetes Engine clusters to which this response policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "ResponsePolicyGKECluster"
+            }
+          },
+          "labels": {
+            "description": "User labels.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "default": "dns#responsePolicy",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicy"
+    },
+    {
+      "operation_id": "dns.responsePolicies.get",
+      "resource": "responsePolicies",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}",
+      "description": "Fetches the representation of an existing Response Policy.",
+      "required_params": [
+        "project",
+        "responsePolicy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicy"
+    },
+    {
+      "operation_id": "dns.responsePolicies.list",
+      "resource": "responsePolicies",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/responsePolicies",
+      "description": "Enumerates all Response Policies associated with a project.",
+      "required_params": [
+        "project"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePoliciesListResponse"
+    },
+    {
+      "operation_id": "dns.responsePolicies.delete",
+      "resource": "responsePolicies",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}",
+      "description": "Deletes a previously created Response Policy. Fails if the response policy is non-empty or still being referenced by a network.",
+      "required_params": [
+        "project",
+        "responsePolicy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": ""
+    },
+    {
+      "operation_id": "dns.responsePolicies.patch",
+      "resource": "responsePolicies",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}",
+      "description": "Applies a partial update to an existing Response Policy.",
+      "required_params": [
+        "project",
+        "responsePolicy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the response policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResponsePolicy",
+      "body_schema": {
+        "id": "ResponsePolicy",
+        "description": "A Response Policy is a collection of selectors that apply to queries made against one or more Virtual Private Cloud networks.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string",
+            "format": "int64"
+          },
+          "responsePolicyName": {
+            "description": "User assigned name for this Response Policy.",
+            "type": "string"
+          },
+          "description": {
+            "description": "User-provided description for this Response Policy.",
+            "type": "string"
+          },
+          "networks": {
+            "description": "List of network names specifying networks to which this policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "ResponsePolicyNetwork"
+            }
+          },
+          "gkeClusters": {
+            "description": "The list of Google Kubernetes Engine clusters to which this response policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "ResponsePolicyGKECluster"
+            }
+          },
+          "labels": {
+            "description": "User labels.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "default": "dns#responsePolicy",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePoliciesPatchResponse"
+    },
+    {
+      "operation_id": "dns.responsePolicies.update",
+      "resource": "responsePolicies",
+      "action": "update",
+      "http_method": "PUT",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}",
+      "description": "Updates an existing Response Policy.",
+      "required_params": [
+        "project",
+        "responsePolicy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResponsePolicy",
+      "body_schema": {
+        "id": "ResponsePolicy",
+        "description": "A Response Policy is a collection of selectors that apply to queries made against one or more Virtual Private Cloud networks.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier for the resource; defined by the server (output only).",
+            "type": "string",
+            "format": "int64"
+          },
+          "responsePolicyName": {
+            "description": "User assigned name for this Response Policy.",
+            "type": "string"
+          },
+          "description": {
+            "description": "User-provided description for this Response Policy.",
+            "type": "string"
+          },
+          "networks": {
+            "description": "List of network names specifying networks to which this policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "ResponsePolicyNetwork"
+            }
+          },
+          "gkeClusters": {
+            "description": "The list of Google Kubernetes Engine clusters to which this response policy is applied.",
+            "type": "array",
+            "items": {
+              "$ref": "ResponsePolicyGKECluster"
+            }
+          },
+          "labels": {
+            "description": "User labels.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "default": "dns#responsePolicy",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePoliciesUpdateResponse"
+    },
+    {
+      "operation_id": "dns.responsePolicyRules.create",
+      "resource": "responsePolicyRules",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}/rules",
+      "description": "Creates a new Response Policy Rule.",
+      "required_params": [
+        "project",
+        "responsePolicy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResponsePolicyRule",
+      "body_schema": {
+        "id": "ResponsePolicyRule",
+        "description": "A Response Policy Rule is a selector that applies its behavior to queries that match the selector. Selectors are DNS names, which may be wildcards or exact matches. Each DNS query subject to a Response Policy matches at most one ResponsePolicyRule, as identified by the dns_name field with the longest matching suffix.",
+        "type": "object",
+        "properties": {
+          "ruleName": {
+            "description": "An identifier for this rule. Must be unique with the ResponsePolicy.",
+            "type": "string"
+          },
+          "dnsName": {
+            "description": "The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.",
+            "type": "string"
+          },
+          "localData": {
+            "description": "Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.",
+            "$ref": "ResponsePolicyRuleLocalData"
+          },
+          "behavior": {
+            "description": "Answer this query with a behavior rather than DNS data.",
+            "type": "string",
+            "enumDescriptions": [
+              "",
+              "Skip a less-specific Response Policy Rule and let the query logic continue. This mechanism, when used with wildcard selectors, lets you exempt specific subdomains from a broader Response Policy Rule and direct the queries to the public internet instead. For example, if the following rules exist: ``` *.example.com -> LocalData 1.2.3.4 foo.example.com -> Behavior 'passthrough' ``` A query for foo.example.com skips the wildcard rule. This functionality also facilitates allowlisting. Response Policy Zones (RPZs) can be applied at multiple levels within the hierarchy: for example, an organization, a folder, a project, or a VPC network. If an RPZ rule is applied at a higher level, adding a `passthrough` rule at a lower level will override it. Queries from affected virtual machines (VMs) to that domain bypass the RPZ and proceed with normal resolution."
+            ],
+            "enum": [
+              "behaviorUnspecified",
+              "bypassResponsePolicy"
+            ]
+          },
+          "kind": {
+            "default": "dns#responsePolicyRule",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicyRule"
+    },
+    {
+      "operation_id": "dns.responsePolicyRules.get",
+      "resource": "responsePolicyRules",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
+      "description": "Fetches the representation of an existing Response Policy Rule.",
+      "required_params": [
+        "project",
+        "responsePolicy",
+        "responsePolicyRule"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicyRule": {
+          "description": "User assigned name of the Response Policy Rule addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicyRule"
+    },
+    {
+      "operation_id": "dns.responsePolicyRules.delete",
+      "resource": "responsePolicyRules",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
+      "description": "Deletes a previously created Response Policy Rule.",
+      "required_params": [
+        "project",
+        "responsePolicy",
+        "responsePolicyRule"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicyRule": {
+          "description": "User assigned name of the Response Policy Rule addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": ""
+    },
+    {
+      "operation_id": "dns.responsePolicyRules.list",
+      "resource": "responsePolicyRules",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}/rules",
+      "description": "Enumerates all Response Policy Rules associated with a project.",
+      "required_params": [
+        "project",
+        "responsePolicy"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy to list.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "maxResults": {
+          "description": "Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/cloud-platform.read-only",
+        "https://www.googleapis.com/auth/ndev.clouddns.readonly",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicyRulesListResponse"
+    },
+    {
+      "operation_id": "dns.responsePolicyRules.patch",
+      "resource": "responsePolicyRules",
+      "action": "patch",
+      "http_method": "PATCH",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
+      "description": "Applies a partial update to an existing Response Policy Rule.",
+      "required_params": [
+        "project",
+        "responsePolicy",
+        "responsePolicyRule"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicyRule": {
+          "description": "User assigned name of the Response Policy Rule addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResponsePolicyRule",
+      "body_schema": {
+        "id": "ResponsePolicyRule",
+        "description": "A Response Policy Rule is a selector that applies its behavior to queries that match the selector. Selectors are DNS names, which may be wildcards or exact matches. Each DNS query subject to a Response Policy matches at most one ResponsePolicyRule, as identified by the dns_name field with the longest matching suffix.",
+        "type": "object",
+        "properties": {
+          "ruleName": {
+            "description": "An identifier for this rule. Must be unique with the ResponsePolicy.",
+            "type": "string"
+          },
+          "dnsName": {
+            "description": "The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.",
+            "type": "string"
+          },
+          "localData": {
+            "description": "Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.",
+            "$ref": "ResponsePolicyRuleLocalData"
+          },
+          "behavior": {
+            "description": "Answer this query with a behavior rather than DNS data.",
+            "type": "string",
+            "enumDescriptions": [
+              "",
+              "Skip a less-specific Response Policy Rule and let the query logic continue. This mechanism, when used with wildcard selectors, lets you exempt specific subdomains from a broader Response Policy Rule and direct the queries to the public internet instead. For example, if the following rules exist: ``` *.example.com -> LocalData 1.2.3.4 foo.example.com -> Behavior 'passthrough' ``` A query for foo.example.com skips the wildcard rule. This functionality also facilitates allowlisting. Response Policy Zones (RPZs) can be applied at multiple levels within the hierarchy: for example, an organization, a folder, a project, or a VPC network. If an RPZ rule is applied at a higher level, adding a `passthrough` rule at a lower level will override it. Queries from affected virtual machines (VMs) to that domain bypass the RPZ and proceed with normal resolution."
+            ],
+            "enum": [
+              "behaviorUnspecified",
+              "bypassResponsePolicy"
+            ]
+          },
+          "kind": {
+            "default": "dns#responsePolicyRule",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicyRulesPatchResponse"
+    },
+    {
+      "operation_id": "dns.responsePolicyRules.update",
+      "resource": "responsePolicyRules",
+      "action": "update",
+      "http_method": "PUT",
+      "path_template": "dns/v1/projects/{project}/responsePolicies/{responsePolicy}/rules/{responsePolicyRule}",
+      "description": "Updates an existing Response Policy Rule.",
+      "required_params": [
+        "project",
+        "responsePolicy",
+        "responsePolicyRule"
+      ],
+      "parameters": {
+        "project": {
+          "description": "Identifies the project addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicy": {
+          "description": "User assigned name of the Response Policy containing the Response Policy Rule.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "responsePolicyRule": {
+          "description": "User assigned name of the Response Policy Rule addressed by this request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "clientOperationId": {
+          "description": "For mutating operation requests only. An optional identifier specified by the client. Must be unique for operation resources in the Operations collection.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ResponsePolicyRule",
+      "body_schema": {
+        "id": "ResponsePolicyRule",
+        "description": "A Response Policy Rule is a selector that applies its behavior to queries that match the selector. Selectors are DNS names, which may be wildcards or exact matches. Each DNS query subject to a Response Policy matches at most one ResponsePolicyRule, as identified by the dns_name field with the longest matching suffix.",
+        "type": "object",
+        "properties": {
+          "ruleName": {
+            "description": "An identifier for this rule. Must be unique with the ResponsePolicy.",
+            "type": "string"
+          },
+          "dnsName": {
+            "description": "The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.",
+            "type": "string"
+          },
+          "localData": {
+            "description": "Answer this query directly with DNS data. These ResourceRecordSets override any other DNS behavior for the matched name; in particular they override private zones, the public internet, and GCP internal DNS. No SOA nor NS types are allowed.",
+            "$ref": "ResponsePolicyRuleLocalData"
+          },
+          "behavior": {
+            "description": "Answer this query with a behavior rather than DNS data.",
+            "type": "string",
+            "enumDescriptions": [
+              "",
+              "Skip a less-specific Response Policy Rule and let the query logic continue. This mechanism, when used with wildcard selectors, lets you exempt specific subdomains from a broader Response Policy Rule and direct the queries to the public internet instead. For example, if the following rules exist: ``` *.example.com -> LocalData 1.2.3.4 foo.example.com -> Behavior 'passthrough' ``` A query for foo.example.com skips the wildcard rule. This functionality also facilitates allowlisting. Response Policy Zones (RPZs) can be applied at multiple levels within the hierarchy: for example, an organization, a folder, a project, or a VPC network. If an RPZ rule is applied at a higher level, adding a `passthrough` rule at a lower level will override it. Queries from affected virtual machines (VMs) to that domain bypass the RPZ and proceed with normal resolution."
+            ],
+            "enum": [
+              "behaviorUnspecified",
+              "bypassResponsePolicy"
+            ]
+          },
+          "kind": {
+            "default": "dns#responsePolicyRule",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/ndev.clouddns.readwrite"
+      ],
+      "response_type": "ResponsePolicyRulesUpdateResponse"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "locations": {
+    "description": "locations resource",
+    "operations_count": 10,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 15,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel"
+    ]
+  },
+  "buckets": {
+    "description": "buckets resource",
+    "operations_count": 40,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "createAsync",
+      "undelete",
+      "updateAsync"
+    ]
+  },
+  "views": {
+    "description": "views resource",
+    "operations_count": 37,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "links": {
+    "description": "links resource",
+    "operations_count": 20,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "exclusions": {
+    "description": "exclusions resource",
+    "operations_count": 25,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "sinks": {
+    "description": "sinks resource",
+    "operations_count": 29,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "v2": {
+    "description": "v2 resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getCmekSettings",
+      "getSettings",
+      "updateCmekSettings",
+      "updateSettings"
+    ]
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getCmekSettings",
+      "getSettings"
+    ]
+  },
+  "logs": {
+    "description": "logs resource",
+    "operations_count": 14,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "logScopes": {
+    "description": "logScopes resource",
+    "operations_count": 15,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "savedQueries": {
+    "description": "savedQueries resource",
+    "operations_count": 20,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "recentQueries": {
+    "description": "recentQueries resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  },
+  "metrics": {
+    "description": "metrics resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": []
+  },
+  "organizations": {
+    "description": "organizations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getCmekSettings",
+      "getSettings",
+      "updateCmekSettings",
+      "updateSettings"
+    ]
+  },
+  "folders": {
+    "description": "folders resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getCmekSettings",
+      "getSettings",
+      "updateSettings"
+    ]
+  },
+  "billingAccounts": {
+    "description": "billingAccounts resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "getCmekSettings",
+      "getSettings"
+    ]
+  },
+  "entries": {
+    "description": "entries resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "copy",
+      "tail",
+      "write"
+    ]
+  },
+  "monitoredResourceDescriptors": {
+    "description": "monitoredResourceDescriptors resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

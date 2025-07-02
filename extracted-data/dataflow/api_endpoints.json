@@ -1,0 +1,3314 @@
+{
+  "service": "dataflow",
+  "version": "v1b3",
+  "base_url": "https://dataflow.googleapis.com/",
+  "total_endpoints": 42,
+  "endpoints": [
+    {
+      "operation_id": "dataflow.projects.deleteSnapshots",
+      "resource": "projects",
+      "action": "deleteSnapshots",
+      "http_method": "DELETE",
+      "path_template": "v1b3/projects/{projectId}/snapshots",
+      "description": "Deletes a snapshot.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the snapshot belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "snapshotId": {
+          "description": "The ID of the snapshot.",
+          "location": "query",
+          "type": "string"
+        },
+        "location": {
+          "description": "The location that contains this snapshot.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "DeleteSnapshotResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.workerMessages",
+      "resource": "projects",
+      "action": "workerMessages",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/WorkerMessages",
+      "description": "Send a worker_message to the service.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project to send the WorkerMessages to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SendWorkerMessagesRequest",
+      "body_schema": {
+        "id": "SendWorkerMessagesRequest",
+        "description": "A request for sending worker messages to the service.",
+        "type": "object",
+        "properties": {
+          "workerMessages": {
+            "description": "The WorkerMessages to send.",
+            "type": "array",
+            "items": {
+              "$ref": "WorkerMessage"
+            }
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "SendWorkerMessagesResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.snapshots.get",
+      "resource": "projects.snapshots",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/snapshots/{snapshotId}",
+      "description": "Gets information about a snapshot.",
+      "required_params": [
+        "projectId",
+        "snapshotId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the snapshot belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "snapshotId": {
+          "description": "The ID of the snapshot.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The location that contains this snapshot.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "dataflow.projects.snapshots.list",
+      "resource": "projects.snapshots",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/snapshots",
+      "description": "Lists snapshots.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project ID to list snapshots for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "If specified, list snapshots created from this job.",
+          "location": "query",
+          "type": "string"
+        },
+        "location": {
+          "description": "The location to list snapshots in.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListSnapshotsResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.create",
+      "resource": "projects.jobs",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs",
+      "description": "A Job is a multi-stage computation graph run by the Cloud Dataflow service. Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The level of information requested in response.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        },
+        "replaceJobId": {
+          "description": "Deprecated. This field is now in the Job message.",
+          "location": "query",
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Job",
+      "body_schema": {
+        "id": "Job",
+        "description": "Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The unique ID of this job. This field is set by the Dataflow service when the job is created, and is immutable for the life of the job.",
+            "type": "string"
+          },
+          "projectId": {
+            "description": "The ID of the Google Cloud project that the job belongs to.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
+            "type": "string"
+          },
+          "type": {
+            "description": "Optional. The type of Dataflow job.",
+            "type": "string",
+            "enumDescriptions": [
+              "The type of the job is unspecified, or unknown.",
+              "A batch job with a well-defined end point: data is read, data is processed, data is written, and the job is done.",
+              "A continuously streaming job with no end: data is read, processed, and written continuously."
+            ],
+            "enum": [
+              "JOB_TYPE_UNKNOWN",
+              "JOB_TYPE_BATCH",
+              "JOB_TYPE_STREAMING"
+            ]
+          },
+          "environment": {
+            "description": "Optional. The environment for the job.",
+            "$ref": "Environment"
+          },
+          "steps": {
+            "description": "Exactly one of step or steps_location should be specified. The top-level steps that constitute the entire job. Only retrieved with JOB_VIEW_ALL.",
+            "type": "array",
+            "items": {
+              "$ref": "Step"
+            }
+          },
+          "stepsLocation": {
+            "description": "The Cloud Storage location where the steps are stored.",
+            "type": "string"
+          },
+          "currentState": {
+            "description": "The current state of the job. Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise specified. A job in the `JOB_STATE_RUNNING` state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made. This field might be mutated by the Dataflow service; callers cannot mutate it.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "currentStateTime": {
+            "description": "The timestamp associated with the current state.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "requestedState": {
+            "description": "The job's requested state. Applies to `UpdateJob` requests. Set `requested_state` with `UpdateJob` requests to switch between the states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use `UpdateJob` requests to change a job's state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`, `JOB_STATE_DONE`, or `JOB_STATE_DRAINED`. These states irrevocably terminate the job if it hasn't already reached a terminal state. This field has no effect on `CreateJob` requests.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "executionInfo": {
+            "description": "Deprecated.",
+            "$ref": "JobExecutionInfo"
+          },
+          "createTime": {
+            "description": "The timestamp when the job was initially created. Immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "replaceJobId": {
+            "description": "If this job is an update of an existing job, this field is the job ID of the job it replaced. When sending a `CreateJobRequest`, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job.",
+            "type": "string"
+          },
+          "transformNameMapping": {
+            "description": "Optional. The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "clientRequestId": {
+            "description": "The client's unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client's ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it.",
+            "type": "string"
+          },
+          "replacedByJobId": {
+            "description": "If another job is an update of this job (and thus, this job is in `JOB_STATE_UPDATED`), this field contains the ID of that job.",
+            "type": "string"
+          },
+          "tempFiles": {
+            "description": "A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported. The supported files are: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "labels": {
+            "description": "User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "description": "Optional. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+            "type": "string"
+          },
+          "pipelineDescription": {
+            "description": "Preliminary field: The format of this data may change at any time. A description of the user pipeline and stages through which it is executed. Created by Cloud Dataflow service. Only retrieved with JOB_VIEW_DESCRIPTION or JOB_VIEW_ALL.",
+            "$ref": "PipelineDescription"
+          },
+          "stageStates": {
+            "description": "This field may be mutated by the Cloud Dataflow service; callers cannot mutate it.",
+            "type": "array",
+            "items": {
+              "$ref": "ExecutionStageState"
+            }
+          },
+          "jobMetadata": {
+            "description": "This field is populated by the Dataflow service to support filtering jobs by the metadata values provided here. Populated for ListJobs and all GetJob views SUMMARY and higher.",
+            "$ref": "JobMetadata"
+          },
+          "startTime": {
+            "description": "The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "createdFromSnapshotId": {
+            "description": "If this is specified, the job's initial state is populated from the given snapshot.",
+            "type": "string"
+          },
+          "satisfiesPzs": {
+            "description": "Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "type": "boolean"
+          },
+          "runtimeUpdatableParams": {
+            "description": "This field may ONLY be modified at runtime using the projects.jobs.update method to adjust job behavior. This field has no effect when specified at job creation.",
+            "$ref": "RuntimeUpdatableParams"
+          },
+          "satisfiesPzi": {
+            "description": "Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "serviceResources": {
+            "description": "Output only. Resources used by the Dataflow Service to run the job.",
+            "readOnly": true,
+            "$ref": "ServiceResources"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.get",
+      "resource": "projects.jobs",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}",
+      "description": "Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The level of information requested in response.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.update",
+      "resource": "projects.jobs",
+      "action": "update",
+      "http_method": "PUT",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}",
+      "description": "Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "query",
+          "type": "string"
+        },
+        "updateMask": {
+          "description": "The list of fields to update relative to Job. If empty, only RequestedJobState will be considered for update. If the FieldMask is not empty and RequestedJobState is none/empty, The fields specified in the update mask will be the only ones considered for update. If both RequestedJobState and update_mask are specified, an error will be returned as we cannot update both state and mask.",
+          "location": "query",
+          "type": "string",
+          "format": "google-fieldmask"
+        }
+      },
+      "body_schema_ref": "Job",
+      "body_schema": {
+        "id": "Job",
+        "description": "Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The unique ID of this job. This field is set by the Dataflow service when the job is created, and is immutable for the life of the job.",
+            "type": "string"
+          },
+          "projectId": {
+            "description": "The ID of the Google Cloud project that the job belongs to.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
+            "type": "string"
+          },
+          "type": {
+            "description": "Optional. The type of Dataflow job.",
+            "type": "string",
+            "enumDescriptions": [
+              "The type of the job is unspecified, or unknown.",
+              "A batch job with a well-defined end point: data is read, data is processed, data is written, and the job is done.",
+              "A continuously streaming job with no end: data is read, processed, and written continuously."
+            ],
+            "enum": [
+              "JOB_TYPE_UNKNOWN",
+              "JOB_TYPE_BATCH",
+              "JOB_TYPE_STREAMING"
+            ]
+          },
+          "environment": {
+            "description": "Optional. The environment for the job.",
+            "$ref": "Environment"
+          },
+          "steps": {
+            "description": "Exactly one of step or steps_location should be specified. The top-level steps that constitute the entire job. Only retrieved with JOB_VIEW_ALL.",
+            "type": "array",
+            "items": {
+              "$ref": "Step"
+            }
+          },
+          "stepsLocation": {
+            "description": "The Cloud Storage location where the steps are stored.",
+            "type": "string"
+          },
+          "currentState": {
+            "description": "The current state of the job. Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise specified. A job in the `JOB_STATE_RUNNING` state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made. This field might be mutated by the Dataflow service; callers cannot mutate it.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "currentStateTime": {
+            "description": "The timestamp associated with the current state.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "requestedState": {
+            "description": "The job's requested state. Applies to `UpdateJob` requests. Set `requested_state` with `UpdateJob` requests to switch between the states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use `UpdateJob` requests to change a job's state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`, `JOB_STATE_DONE`, or `JOB_STATE_DRAINED`. These states irrevocably terminate the job if it hasn't already reached a terminal state. This field has no effect on `CreateJob` requests.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "executionInfo": {
+            "description": "Deprecated.",
+            "$ref": "JobExecutionInfo"
+          },
+          "createTime": {
+            "description": "The timestamp when the job was initially created. Immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "replaceJobId": {
+            "description": "If this job is an update of an existing job, this field is the job ID of the job it replaced. When sending a `CreateJobRequest`, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job.",
+            "type": "string"
+          },
+          "transformNameMapping": {
+            "description": "Optional. The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "clientRequestId": {
+            "description": "The client's unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client's ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it.",
+            "type": "string"
+          },
+          "replacedByJobId": {
+            "description": "If another job is an update of this job (and thus, this job is in `JOB_STATE_UPDATED`), this field contains the ID of that job.",
+            "type": "string"
+          },
+          "tempFiles": {
+            "description": "A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported. The supported files are: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "labels": {
+            "description": "User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "description": "Optional. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+            "type": "string"
+          },
+          "pipelineDescription": {
+            "description": "Preliminary field: The format of this data may change at any time. A description of the user pipeline and stages through which it is executed. Created by Cloud Dataflow service. Only retrieved with JOB_VIEW_DESCRIPTION or JOB_VIEW_ALL.",
+            "$ref": "PipelineDescription"
+          },
+          "stageStates": {
+            "description": "This field may be mutated by the Cloud Dataflow service; callers cannot mutate it.",
+            "type": "array",
+            "items": {
+              "$ref": "ExecutionStageState"
+            }
+          },
+          "jobMetadata": {
+            "description": "This field is populated by the Dataflow service to support filtering jobs by the metadata values provided here. Populated for ListJobs and all GetJob views SUMMARY and higher.",
+            "$ref": "JobMetadata"
+          },
+          "startTime": {
+            "description": "The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "createdFromSnapshotId": {
+            "description": "If this is specified, the job's initial state is populated from the given snapshot.",
+            "type": "string"
+          },
+          "satisfiesPzs": {
+            "description": "Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "type": "boolean"
+          },
+          "runtimeUpdatableParams": {
+            "description": "This field may ONLY be modified at runtime using the projects.jobs.update method to adjust job behavior. This field has no effect when specified at job creation.",
+            "$ref": "RuntimeUpdatableParams"
+          },
+          "satisfiesPzi": {
+            "description": "Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "serviceResources": {
+            "description": "Output only. Resources used by the Dataflow Service to run the job.",
+            "readOnly": true,
+            "$ref": "ServiceResources"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.list",
+      "resource": "projects.jobs",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/jobs",
+      "description": "List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, because you can only get the list of jobs that are running in `us-central1`. `projects.locations.jobs.list` and `projects.jobs.list` support filtering the list of jobs by name. Filtering by name isn't supported by `projects.jobs.aggregated`.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the jobs.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "filter": {
+          "description": "The kind of filter to use.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The filter isn't specified, or is unknown. This returns all jobs ordered on descending `JobUuid`.",
+            "Returns all running jobs first ordered on creation timestamp, then returns all terminated jobs ordered on the termination timestamp.",
+            "Filters the jobs that have a terminated state, ordered on the termination timestamp. Example terminated states: `JOB_STATE_STOPPED`, `JOB_STATE_UPDATED`, `JOB_STATE_DRAINED`, etc.",
+            "Filters the jobs that are running ordered on the creation timestamp."
+          ],
+          "enum": [
+            "UNKNOWN",
+            "ALL",
+            "TERMINATED",
+            "ACTIVE"
+          ]
+        },
+        "view": {
+          "description": "Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.",
+          "location": "query",
+          "deprecated": true,
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        },
+        "pageSize": {
+          "description": "If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Set this to the 'next_page_token' field of a previous response to request additional results in a long list.",
+          "location": "query",
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "query",
+          "type": "string"
+        },
+        "name": {
+          "description": "Optional. The job name.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListJobsResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.aggregated",
+      "resource": "projects.jobs",
+      "action": "aggregated",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/jobs:aggregated",
+      "description": "List the jobs of a project across all regions. **Note:** This method doesn't support filtering the list of jobs by name.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the jobs.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "filter": {
+          "description": "The kind of filter to use.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The filter isn't specified, or is unknown. This returns all jobs ordered on descending `JobUuid`.",
+            "Returns all running jobs first ordered on creation timestamp, then returns all terminated jobs ordered on the termination timestamp.",
+            "Filters the jobs that have a terminated state, ordered on the termination timestamp. Example terminated states: `JOB_STATE_STOPPED`, `JOB_STATE_UPDATED`, `JOB_STATE_DRAINED`, etc.",
+            "Filters the jobs that are running ordered on the creation timestamp."
+          ],
+          "enum": [
+            "UNKNOWN",
+            "ALL",
+            "TERMINATED",
+            "ACTIVE"
+          ]
+        },
+        "view": {
+          "description": "Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.",
+          "location": "query",
+          "deprecated": true,
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        },
+        "pageSize": {
+          "description": "If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Set this to the 'next_page_token' field of a previous response to request additional results in a long list.",
+          "location": "query",
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "query",
+          "type": "string"
+        },
+        "name": {
+          "description": "Optional. The job name.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListJobsResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.snapshot",
+      "resource": "projects.jobs",
+      "action": "snapshot",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}:snapshot",
+      "description": "Snapshot the state of a streaming job.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the job to be snapshotted.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to be snapshotted.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SnapshotJobRequest",
+      "body_schema": {
+        "id": "SnapshotJobRequest",
+        "description": "Request to create a snapshot of a job.",
+        "type": "object",
+        "properties": {
+          "ttl": {
+            "description": "TTL for the snapshot.",
+            "type": "string",
+            "format": "google-duration"
+          },
+          "location": {
+            "description": "The location that contains this job.",
+            "type": "string"
+          },
+          "snapshotSources": {
+            "description": "If true, perform snapshots for sources which support this.",
+            "type": "boolean"
+          },
+          "description": {
+            "description": "User specified description of the snapshot. Maybe empty.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.getMetrics",
+      "resource": "projects.jobs",
+      "action": "getMetrics",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/metrics",
+      "description": "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "A project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to get metrics for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "startTime": {
+          "description": "Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "JobMetrics"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.debug.getConfig",
+      "resource": "projects.jobs.debug",
+      "action": "getConfig",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/debug/getConfig",
+      "description": "Get encoded debug configuration for component. Not cacheable.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GetDebugConfigRequest",
+      "body_schema": {
+        "id": "GetDebugConfigRequest",
+        "description": "Request to get updated debug configuration for component.",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The worker id, i.e., VM hostname.",
+            "type": "string"
+          },
+          "componentId": {
+            "description": "The internal component id for which debug configuration is requested.",
+            "type": "string"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "GetDebugConfigResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.debug.sendCapture",
+      "resource": "projects.jobs.debug",
+      "action": "sendCapture",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/debug/sendCapture",
+      "description": "Send encoded debug capture data for component.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SendDebugCaptureRequest",
+      "body_schema": {
+        "id": "SendDebugCaptureRequest",
+        "description": "Request to send encoded debug information. Next ID: 8",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The worker id, i.e., VM hostname.",
+            "type": "string"
+          },
+          "componentId": {
+            "description": "The internal component id for which debug information is sent.",
+            "type": "string"
+          },
+          "data": {
+            "description": "The encoded debug information.",
+            "type": "string"
+          },
+          "dataFormat": {
+            "description": "Format for the data field above (id=5).",
+            "type": "string",
+            "enumDescriptions": [
+              "Format unspecified, parsing is determined based upon page type and legacy encoding. (go/protodosdonts#do-include-an-unspecified-value-in-an-enum)",
+              "Raw HTML string.",
+              "JSON-encoded string.",
+              "Websafe encoded zlib-compressed string.",
+              "Websafe encoded brotli-compressed string."
+            ],
+            "enum": [
+              "DATA_FORMAT_UNSPECIFIED",
+              "RAW",
+              "JSON",
+              "ZLIB",
+              "BROTLI"
+            ]
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "SendDebugCaptureResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.debug.getWorkerStacktraces",
+      "resource": "projects.jobs.debug",
+      "action": "getWorkerStacktraces",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/debug/getWorkerStacktraces",
+      "description": "Get worker stacktraces from debug capture.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job for which to get stacktraces.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GetWorkerStacktracesRequest",
+      "body_schema": {
+        "id": "GetWorkerStacktracesRequest",
+        "description": "Request to get worker stacktraces from debug capture.",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The worker for which to get stacktraces. The returned stacktraces will be for the SDK harness running on this worker.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "GetWorkerStacktracesResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.messages.list",
+      "resource": "projects.jobs.messages",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/messages",
+      "description": "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "A project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to get messages about.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "minimumImportance": {
+          "description": "Filter to only get messages with importance >= level",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The message importance isn't specified, or is unknown.",
+            "The message is at the 'debug' level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default.",
+            "The message is at the 'detailed' level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI.",
+            "The message is at the 'basic' level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI.",
+            "The message is at the 'warning' level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI.",
+            "The message is at the 'error' level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."
+          ],
+          "enum": [
+            "JOB_MESSAGE_IMPORTANCE_UNKNOWN",
+            "JOB_MESSAGE_DEBUG",
+            "JOB_MESSAGE_DETAILED",
+            "JOB_MESSAGE_BASIC",
+            "JOB_MESSAGE_WARNING",
+            "JOB_MESSAGE_ERROR"
+          ]
+        },
+        "pageSize": {
+          "description": "If specified, determines the maximum number of messages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.",
+          "location": "query",
+          "type": "string"
+        },
+        "startTime": {
+          "description": "If specified, return only messages with timestamps >= start_time. The default is the job creation time (i.e. beginning of messages).",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        },
+        "endTime": {
+          "description": "Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available).",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListJobMessagesResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.workItems.reportStatus",
+      "resource": "projects.jobs.workItems",
+      "action": "reportStatus",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/workItems:reportStatus",
+      "description": "Reports the status of dataflow WorkItems leased by a worker.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the WorkItem's job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job which the WorkItem is part of.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ReportWorkItemStatusRequest",
+      "body_schema": {
+        "id": "ReportWorkItemStatusRequest",
+        "description": "Request to report the status of WorkItems.",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The ID of the worker reporting the WorkItem status. If this does not match the ID of the worker which the Dataflow service believes currently has the lease on the WorkItem, the report will be dropped (with an error response).",
+            "type": "string"
+          },
+          "workItemStatuses": {
+            "description": "The order is unimportant, except that the order of the WorkItemServiceState messages in the ReportWorkItemStatusResponse corresponds to the order of WorkItemStatus messages here.",
+            "type": "array",
+            "items": {
+              "$ref": "WorkItemStatus"
+            }
+          },
+          "currentWorkerTime": {
+            "description": "The current timestamp at the worker.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.",
+            "type": "string"
+          },
+          "unifiedWorkerRequest": {
+            "description": "Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "any",
+              "description": "Properties of the object. Contains field @type with type URL."
+            }
+          },
+          "projectNumber": {
+            "description": "Optional. The project number of the project which owns the WorkItem's job.",
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ReportWorkItemStatusResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.jobs.workItems.lease",
+      "resource": "projects.jobs.workItems",
+      "action": "lease",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/jobs/{jobId}/workItems:lease",
+      "description": "Leases a dataflow WorkItem to run.",
+      "required_params": [
+        "projectId",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Identifies the project this worker belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "Identifies the workflow job this worker belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "LeaseWorkItemRequest",
+      "body_schema": {
+        "id": "LeaseWorkItemRequest",
+        "description": "Request to lease WorkItems.",
+        "type": "object",
+        "properties": {
+          "workItemTypes": {
+            "description": "Filter for WorkItem type.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "workerCapabilities": {
+            "description": "Worker capabilities. WorkItems might be limited to workers with specific capabilities.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requestedLeaseDuration": {
+            "description": "The initial lease period.",
+            "type": "string",
+            "format": "google-duration"
+          },
+          "currentWorkerTime": {
+            "description": "The current timestamp at the worker.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "workerId": {
+            "description": "Identifies the worker leasing work -- typically the ID of the virtual machine running the worker.",
+            "type": "string"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.",
+            "type": "string"
+          },
+          "unifiedWorkerRequest": {
+            "description": "Untranslated bag-of-bytes WorkRequest from UnifiedWorker.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "any",
+              "description": "Properties of the object. Contains field @type with type URL."
+            }
+          },
+          "projectNumber": {
+            "description": "Optional. The project number of the project this worker belongs to.",
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "LeaseWorkItemResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.templates.create",
+      "resource": "projects.templates",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/templates",
+      "description": "Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API. To create a job, we recommend using `projects.locations.templates.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.create` is not recommended, because your job will always start in `us-central1`.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "CreateJobFromTemplateRequest",
+      "body_schema": {
+        "id": "CreateJobFromTemplateRequest",
+        "description": "A request to create a Cloud Dataflow job from a template.",
+        "type": "object",
+        "properties": {
+          "jobName": {
+            "description": "Required. The job name to use for the created job.",
+            "type": "string"
+          },
+          "gcsPath": {
+            "description": "Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with `gs://`.",
+            "type": "string"
+          },
+          "parameters": {
+            "description": "The runtime parameters to pass to the job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "environment": {
+            "description": "The runtime environment for the job.",
+            "$ref": "RuntimeEnvironment"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.templates.launch",
+      "resource": "projects.templates",
+      "action": "launch",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/templates:launch",
+      "description": "Launches a template. To launch a template, we recommend using `projects.locations.templates.launch` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.launch` is not recommended, because jobs launched from the template will always start in `us-central1`.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "validateOnly": {
+          "description": "If true, the request is validated but not actually executed. Defaults to false.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "gcsPath": {
+          "description": "A Cloud Storage path to the template to use to create the job. Must be valid Cloud Storage URL, beginning with `gs://`.",
+          "location": "query",
+          "type": "string"
+        },
+        "dynamicTemplate.gcsPath": {
+          "description": "Path to the dynamic template specification file on Cloud Storage. The file must be a JSON serialized `DynamicTemplateFileSpec` object.",
+          "location": "query",
+          "type": "string"
+        },
+        "dynamicTemplate.stagingLocation": {
+          "description": "Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with `gs://`.",
+          "location": "query",
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "LaunchTemplateParameters",
+      "body_schema": {
+        "id": "LaunchTemplateParameters",
+        "description": "Parameters to provide to the template being launched. Note that the [metadata in the pipeline code] (https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#metadata) determines which runtime parameters are valid.",
+        "type": "object",
+        "properties": {
+          "jobName": {
+            "description": "Required. The job name to use for the created job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
+            "type": "string"
+          },
+          "parameters": {
+            "description": "The runtime parameters to pass to the job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "environment": {
+            "description": "The runtime environment for the job.",
+            "$ref": "RuntimeEnvironment"
+          },
+          "update": {
+            "description": "If set, replace the existing pipeline with the name specified by jobName with this pipeline, preserving state.",
+            "type": "boolean"
+          },
+          "transformNameMapping": {
+            "description": "Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "LaunchTemplateResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.templates.get",
+      "resource": "projects.templates",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/templates:get",
+      "description": "Get the template associated with a template. To get the template, we recommend using `projects.locations.templates.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.get` is not recommended, because only templates that are running in `us-central1` are retrieved.",
+      "required_params": [
+        "projectId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "gcsPath": {
+          "description": "Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.",
+          "location": "query",
+          "type": "string"
+        },
+        "view": {
+          "description": "The view to retrieve. Defaults to METADATA_ONLY.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "Template view that retrieves only the metadata associated with the template."
+          ],
+          "enum": [
+            "METADATA_ONLY"
+          ]
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "GetTemplateResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.workerMessages",
+      "resource": "projects.locations",
+      "action": "workerMessages",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/WorkerMessages",
+      "description": "Send a worker_message to the service.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project to send the WorkerMessages to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SendWorkerMessagesRequest",
+      "body_schema": {
+        "id": "SendWorkerMessagesRequest",
+        "description": "A request for sending worker messages to the service.",
+        "type": "object",
+        "properties": {
+          "workerMessages": {
+            "description": "The WorkerMessages to send.",
+            "type": "array",
+            "items": {
+              "$ref": "WorkerMessage"
+            }
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "SendWorkerMessagesResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.snapshots.get",
+      "resource": "projects.locations.snapshots",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}",
+      "description": "Gets information about a snapshot.",
+      "required_params": [
+        "projectId",
+        "location",
+        "snapshotId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the snapshot belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The location that contains this snapshot.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "snapshotId": {
+          "description": "The ID of the snapshot.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.snapshots.delete",
+      "resource": "projects.locations.snapshots",
+      "action": "delete",
+      "http_method": "DELETE",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/snapshots/{snapshotId}",
+      "description": "Deletes a snapshot.",
+      "required_params": [
+        "projectId",
+        "location",
+        "snapshotId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the snapshot belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The location that contains this snapshot.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "snapshotId": {
+          "description": "The ID of the snapshot.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "DeleteSnapshotResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.snapshots.list",
+      "resource": "projects.locations.snapshots",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/snapshots",
+      "description": "Lists snapshots.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project ID to list snapshots for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The location to list snapshots in.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "If specified, list snapshots created from this job.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListSnapshotsResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.create",
+      "resource": "projects.locations.jobs",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs",
+      "description": "A Job is a multi-stage computation graph run by the Cloud Dataflow service. Creates a Cloud Dataflow job. To create a job, we recommend using `projects.locations.jobs.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.create` is not recommended, as your job will always start in `us-central1`. Do not enter confidential information when you supply string values using the API.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The level of information requested in response.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        },
+        "replaceJobId": {
+          "description": "Deprecated. This field is now in the Job message.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "Job",
+      "body_schema": {
+        "id": "Job",
+        "description": "Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The unique ID of this job. This field is set by the Dataflow service when the job is created, and is immutable for the life of the job.",
+            "type": "string"
+          },
+          "projectId": {
+            "description": "The ID of the Google Cloud project that the job belongs to.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
+            "type": "string"
+          },
+          "type": {
+            "description": "Optional. The type of Dataflow job.",
+            "type": "string",
+            "enumDescriptions": [
+              "The type of the job is unspecified, or unknown.",
+              "A batch job with a well-defined end point: data is read, data is processed, data is written, and the job is done.",
+              "A continuously streaming job with no end: data is read, processed, and written continuously."
+            ],
+            "enum": [
+              "JOB_TYPE_UNKNOWN",
+              "JOB_TYPE_BATCH",
+              "JOB_TYPE_STREAMING"
+            ]
+          },
+          "environment": {
+            "description": "Optional. The environment for the job.",
+            "$ref": "Environment"
+          },
+          "steps": {
+            "description": "Exactly one of step or steps_location should be specified. The top-level steps that constitute the entire job. Only retrieved with JOB_VIEW_ALL.",
+            "type": "array",
+            "items": {
+              "$ref": "Step"
+            }
+          },
+          "stepsLocation": {
+            "description": "The Cloud Storage location where the steps are stored.",
+            "type": "string"
+          },
+          "currentState": {
+            "description": "The current state of the job. Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise specified. A job in the `JOB_STATE_RUNNING` state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made. This field might be mutated by the Dataflow service; callers cannot mutate it.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "currentStateTime": {
+            "description": "The timestamp associated with the current state.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "requestedState": {
+            "description": "The job's requested state. Applies to `UpdateJob` requests. Set `requested_state` with `UpdateJob` requests to switch between the states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use `UpdateJob` requests to change a job's state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`, `JOB_STATE_DONE`, or `JOB_STATE_DRAINED`. These states irrevocably terminate the job if it hasn't already reached a terminal state. This field has no effect on `CreateJob` requests.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "executionInfo": {
+            "description": "Deprecated.",
+            "$ref": "JobExecutionInfo"
+          },
+          "createTime": {
+            "description": "The timestamp when the job was initially created. Immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "replaceJobId": {
+            "description": "If this job is an update of an existing job, this field is the job ID of the job it replaced. When sending a `CreateJobRequest`, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job.",
+            "type": "string"
+          },
+          "transformNameMapping": {
+            "description": "Optional. The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "clientRequestId": {
+            "description": "The client's unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client's ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it.",
+            "type": "string"
+          },
+          "replacedByJobId": {
+            "description": "If another job is an update of this job (and thus, this job is in `JOB_STATE_UPDATED`), this field contains the ID of that job.",
+            "type": "string"
+          },
+          "tempFiles": {
+            "description": "A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported. The supported files are: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "labels": {
+            "description": "User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "description": "Optional. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+            "type": "string"
+          },
+          "pipelineDescription": {
+            "description": "Preliminary field: The format of this data may change at any time. A description of the user pipeline and stages through which it is executed. Created by Cloud Dataflow service. Only retrieved with JOB_VIEW_DESCRIPTION or JOB_VIEW_ALL.",
+            "$ref": "PipelineDescription"
+          },
+          "stageStates": {
+            "description": "This field may be mutated by the Cloud Dataflow service; callers cannot mutate it.",
+            "type": "array",
+            "items": {
+              "$ref": "ExecutionStageState"
+            }
+          },
+          "jobMetadata": {
+            "description": "This field is populated by the Dataflow service to support filtering jobs by the metadata values provided here. Populated for ListJobs and all GetJob views SUMMARY and higher.",
+            "$ref": "JobMetadata"
+          },
+          "startTime": {
+            "description": "The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "createdFromSnapshotId": {
+            "description": "If this is specified, the job's initial state is populated from the given snapshot.",
+            "type": "string"
+          },
+          "satisfiesPzs": {
+            "description": "Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "type": "boolean"
+          },
+          "runtimeUpdatableParams": {
+            "description": "This field may ONLY be modified at runtime using the projects.jobs.update method to adjust job behavior. This field has no effect when specified at job creation.",
+            "$ref": "RuntimeUpdatableParams"
+          },
+          "satisfiesPzi": {
+            "description": "Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "serviceResources": {
+            "description": "Output only. Resources used by the Dataflow Service to run the job.",
+            "readOnly": true,
+            "$ref": "ServiceResources"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.get",
+      "resource": "projects.locations.jobs",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}",
+      "description": "Gets the state of the specified Cloud Dataflow job. To get the state of a job, we recommend using `projects.locations.jobs.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.get` is not recommended, as you can only get the state of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "view": {
+          "description": "The level of information requested in response.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.update",
+      "resource": "projects.locations.jobs",
+      "action": "update",
+      "http_method": "PUT",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}",
+      "description": "Updates the state of an existing Cloud Dataflow job. To update the state of an existing job, we recommend using `projects.locations.jobs.update` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.update` is not recommended, as you can only update the state of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job ID.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "updateMask": {
+          "description": "The list of fields to update relative to Job. If empty, only RequestedJobState will be considered for update. If the FieldMask is not empty and RequestedJobState is none/empty, The fields specified in the update mask will be the only ones considered for update. If both RequestedJobState and update_mask are specified, an error will be returned as we cannot update both state and mask.",
+          "location": "query",
+          "type": "string",
+          "format": "google-fieldmask"
+        }
+      },
+      "body_schema_ref": "Job",
+      "body_schema": {
+        "id": "Job",
+        "description": "Defines a job to be run by the Cloud Dataflow service. Do not enter confidential information when you supply string values using the API.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The unique ID of this job. This field is set by the Dataflow service when the job is created, and is immutable for the life of the job.",
+            "type": "string"
+          },
+          "projectId": {
+            "description": "The ID of the Google Cloud project that the job belongs to.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
+            "type": "string"
+          },
+          "type": {
+            "description": "Optional. The type of Dataflow job.",
+            "type": "string",
+            "enumDescriptions": [
+              "The type of the job is unspecified, or unknown.",
+              "A batch job with a well-defined end point: data is read, data is processed, data is written, and the job is done.",
+              "A continuously streaming job with no end: data is read, processed, and written continuously."
+            ],
+            "enum": [
+              "JOB_TYPE_UNKNOWN",
+              "JOB_TYPE_BATCH",
+              "JOB_TYPE_STREAMING"
+            ]
+          },
+          "environment": {
+            "description": "Optional. The environment for the job.",
+            "$ref": "Environment"
+          },
+          "steps": {
+            "description": "Exactly one of step or steps_location should be specified. The top-level steps that constitute the entire job. Only retrieved with JOB_VIEW_ALL.",
+            "type": "array",
+            "items": {
+              "$ref": "Step"
+            }
+          },
+          "stepsLocation": {
+            "description": "The Cloud Storage location where the steps are stored.",
+            "type": "string"
+          },
+          "currentState": {
+            "description": "The current state of the job. Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise specified. A job in the `JOB_STATE_RUNNING` state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made. This field might be mutated by the Dataflow service; callers cannot mutate it.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "currentStateTime": {
+            "description": "The timestamp associated with the current state.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "requestedState": {
+            "description": "The job's requested state. Applies to `UpdateJob` requests. Set `requested_state` with `UpdateJob` requests to switch between the states `JOB_STATE_STOPPED` and `JOB_STATE_RUNNING`. You can also use `UpdateJob` requests to change a job's state from `JOB_STATE_RUNNING` to `JOB_STATE_CANCELLED`, `JOB_STATE_DONE`, or `JOB_STATE_DRAINED`. These states irrevocably terminate the job if it hasn't already reached a terminal state. This field has no effect on `CreateJob` requests.",
+            "type": "string",
+            "enumDescriptions": [
+              "The job's run state isn't specified.",
+              "`JOB_STATE_STOPPED` indicates that the job has not yet started to run.",
+              "`JOB_STATE_RUNNING` indicates that the job is currently running.",
+              "`JOB_STATE_DONE` indicates that the job has successfully completed. This is a terminal job state. This state may be set by the Cloud Dataflow service, as a transition from `JOB_STATE_RUNNING`. It may also be set via a Cloud Dataflow `UpdateJob` call, if the job has not yet reached a terminal state.",
+              "`JOB_STATE_FAILED` indicates that the job has failed. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_CANCELLED` indicates that the job has been explicitly cancelled. This is a terminal job state. This state may only be set via a Cloud Dataflow `UpdateJob` call, and only if the job has not yet reached another terminal state.",
+              "`JOB_STATE_UPDATED` indicates that the job was successfully updated, meaning that this job was stopped and another job was started, inheriting state from this one. This is a terminal job state. This state may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_RUNNING`.",
+              "`JOB_STATE_DRAINING` indicates that the job is in the process of draining. A draining job has stopped pulling from its input sources and is processing any data that remains in-flight. This state may be set via a Cloud Dataflow `UpdateJob` call, but only as a transition from `JOB_STATE_RUNNING`. Jobs that are draining may only transition to `JOB_STATE_DRAINED`, `JOB_STATE_CANCELLED`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_DRAINED` indicates that the job has been drained. A drained job terminated by stopping pulling from its input sources and processing any data that remained in-flight when draining was requested. This state is a terminal state, may only be set by the Cloud Dataflow service, and only as a transition from `JOB_STATE_DRAINING`.",
+              "`JOB_STATE_PENDING` indicates that the job has been created but is not yet running. Jobs that are pending may only transition to `JOB_STATE_RUNNING`, or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_CANCELLING` indicates that the job has been explicitly cancelled and is in the process of stopping. Jobs that are cancelling may only transition to `JOB_STATE_CANCELLED` or `JOB_STATE_FAILED`.",
+              "`JOB_STATE_QUEUED` indicates that the job has been created but is being delayed until launch. Jobs that are queued may only transition to `JOB_STATE_PENDING` or `JOB_STATE_CANCELLED`.",
+              "`JOB_STATE_RESOURCE_CLEANING_UP` indicates that the batch job's associated resources are currently being cleaned up after a successful run. Currently, this is an opt-in feature, please reach out to Cloud support team if you are interested."
+            ],
+            "enum": [
+              "JOB_STATE_UNKNOWN",
+              "JOB_STATE_STOPPED",
+              "JOB_STATE_RUNNING",
+              "JOB_STATE_DONE",
+              "JOB_STATE_FAILED",
+              "JOB_STATE_CANCELLED",
+              "JOB_STATE_UPDATED",
+              "JOB_STATE_DRAINING",
+              "JOB_STATE_DRAINED",
+              "JOB_STATE_PENDING",
+              "JOB_STATE_CANCELLING",
+              "JOB_STATE_QUEUED",
+              "JOB_STATE_RESOURCE_CLEANING_UP"
+            ]
+          },
+          "executionInfo": {
+            "description": "Deprecated.",
+            "$ref": "JobExecutionInfo"
+          },
+          "createTime": {
+            "description": "The timestamp when the job was initially created. Immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "replaceJobId": {
+            "description": "If this job is an update of an existing job, this field is the job ID of the job it replaced. When sending a `CreateJobRequest`, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job.",
+            "type": "string"
+          },
+          "transformNameMapping": {
+            "description": "Optional. The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "clientRequestId": {
+            "description": "The client's unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client's ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it.",
+            "type": "string"
+          },
+          "replacedByJobId": {
+            "description": "If another job is an update of this job (and thus, this job is in `JOB_STATE_UPDATED`), this field contains the ID of that job.",
+            "type": "string"
+          },
+          "tempFiles": {
+            "description": "A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported. The supported files are: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "labels": {
+            "description": "User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "description": "Optional. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+            "type": "string"
+          },
+          "pipelineDescription": {
+            "description": "Preliminary field: The format of this data may change at any time. A description of the user pipeline and stages through which it is executed. Created by Cloud Dataflow service. Only retrieved with JOB_VIEW_DESCRIPTION or JOB_VIEW_ALL.",
+            "$ref": "PipelineDescription"
+          },
+          "stageStates": {
+            "description": "This field may be mutated by the Cloud Dataflow service; callers cannot mutate it.",
+            "type": "array",
+            "items": {
+              "$ref": "ExecutionStageState"
+            }
+          },
+          "jobMetadata": {
+            "description": "This field is populated by the Dataflow service to support filtering jobs by the metadata values provided here. Populated for ListJobs and all GetJob views SUMMARY and higher.",
+            "$ref": "JobMetadata"
+          },
+          "startTime": {
+            "description": "The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "createdFromSnapshotId": {
+            "description": "If this is specified, the job's initial state is populated from the given snapshot.",
+            "type": "string"
+          },
+          "satisfiesPzs": {
+            "description": "Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "type": "boolean"
+          },
+          "runtimeUpdatableParams": {
+            "description": "This field may ONLY be modified at runtime using the projects.jobs.update method to adjust job behavior. This field has no effect when specified at job creation.",
+            "$ref": "RuntimeUpdatableParams"
+          },
+          "satisfiesPzi": {
+            "description": "Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.",
+            "readOnly": true,
+            "type": "boolean"
+          },
+          "serviceResources": {
+            "description": "Output only. Resources used by the Dataflow Service to run the job.",
+            "readOnly": true,
+            "$ref": "ServiceResources"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.list",
+      "resource": "projects.locations.jobs",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs",
+      "description": "List the jobs of a project. To list the jobs of a project in a region, we recommend using `projects.locations.jobs.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). To list the all jobs across all regions, use `projects.jobs.aggregated`. Using `projects.jobs.list` is not recommended, because you can only get the list of jobs that are running in `us-central1`. `projects.locations.jobs.list` and `projects.jobs.list` support filtering the list of jobs by name. Filtering by name isn't supported by `projects.jobs.aggregated`.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the jobs.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "filter": {
+          "description": "The kind of filter to use.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The filter isn't specified, or is unknown. This returns all jobs ordered on descending `JobUuid`.",
+            "Returns all running jobs first ordered on creation timestamp, then returns all terminated jobs ordered on the termination timestamp.",
+            "Filters the jobs that have a terminated state, ordered on the termination timestamp. Example terminated states: `JOB_STATE_STOPPED`, `JOB_STATE_UPDATED`, `JOB_STATE_DRAINED`, etc.",
+            "Filters the jobs that are running ordered on the creation timestamp."
+          ],
+          "enum": [
+            "UNKNOWN",
+            "ALL",
+            "TERMINATED",
+            "ACTIVE"
+          ]
+        },
+        "view": {
+          "description": "Deprecated. ListJobs always returns summaries now. Use GetJob for other JobViews.",
+          "location": "query",
+          "deprecated": true,
+          "type": "string",
+          "enumDescriptions": [
+            "The job view to return isn't specified, or is unknown. Responses will contain at least the `JOB_VIEW_SUMMARY` information, and may contain additional information.",
+            "Request summary information only: Project ID, Job ID, job name, job type, job status, start/end time, and Cloud SDK version details.",
+            "Request all information available for this job. When the job is in `JOB_STATE_PENDING`, the job has been created but is not yet running, and not all job information is available. For complete job information, wait until the job in is `JOB_STATE_RUNNING`. For more information, see [JobState](https://cloud.google.com/dataflow/docs/reference/rest/v1b3/projects.jobs#jobstate).",
+            "Request summary info and limited job description data for steps, labels and environment."
+          ],
+          "enum": [
+            "JOB_VIEW_UNKNOWN",
+            "JOB_VIEW_SUMMARY",
+            "JOB_VIEW_ALL",
+            "JOB_VIEW_DESCRIPTION"
+          ]
+        },
+        "pageSize": {
+          "description": "If there are many jobs, limit response to at most this many. The actual number of jobs returned will be the lesser of max_responses and an unspecified server-defined limit.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "Set this to the 'next_page_token' field of a previous response to request additional results in a long list.",
+          "location": "query",
+          "type": "string"
+        },
+        "name": {
+          "description": "Optional. The job name.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListJobsResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.snapshot",
+      "resource": "projects.locations.jobs",
+      "action": "snapshot",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}:snapshot",
+      "description": "Snapshot the state of a streaming job.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the job to be snapshotted.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The location that contains this job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to be snapshotted.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SnapshotJobRequest",
+      "body_schema": {
+        "id": "SnapshotJobRequest",
+        "description": "Request to create a snapshot of a job.",
+        "type": "object",
+        "properties": {
+          "ttl": {
+            "description": "TTL for the snapshot.",
+            "type": "string",
+            "format": "google-duration"
+          },
+          "location": {
+            "description": "The location that contains this job.",
+            "type": "string"
+          },
+          "snapshotSources": {
+            "description": "If true, perform snapshots for sources which support this.",
+            "type": "boolean"
+          },
+          "description": {
+            "description": "User specified description of the snapshot. Maybe empty.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Snapshot"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.getMetrics",
+      "resource": "projects.locations.jobs",
+      "action": "getMetrics",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/metrics",
+      "description": "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.getMetrics` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.getMetrics` is not recommended, as you can only request the status of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "A project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to get metrics for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "startTime": {
+          "description": "Return only metric data that has changed since this time. Default is to return all information about all metrics for the job.",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "JobMetrics"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.getExecutionDetails",
+      "resource": "projects.locations.jobs",
+      "action": "getExecutionDetails",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/executionDetails",
+      "description": "Request detailed information about the execution status of the job. EXPERIMENTAL. This API is subject to change or removal without notice.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "A project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to get execution details for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "If specified, determines the maximum number of stages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "JobExecutionDetails"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.debug.getConfig",
+      "resource": "projects.locations.jobs.debug",
+      "action": "getConfig",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/debug/getConfig",
+      "description": "Get encoded debug configuration for component. Not cacheable.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "GetDebugConfigRequest",
+      "body_schema": {
+        "id": "GetDebugConfigRequest",
+        "description": "Request to get updated debug configuration for component.",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The worker id, i.e., VM hostname.",
+            "type": "string"
+          },
+          "componentId": {
+            "description": "The internal component id for which debug configuration is requested.",
+            "type": "string"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "GetDebugConfigResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.debug.sendCapture",
+      "resource": "projects.locations.jobs.debug",
+      "action": "sendCapture",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/debug/sendCapture",
+      "description": "Send encoded debug capture data for component.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "SendDebugCaptureRequest",
+      "body_schema": {
+        "id": "SendDebugCaptureRequest",
+        "description": "Request to send encoded debug information. Next ID: 8",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The worker id, i.e., VM hostname.",
+            "type": "string"
+          },
+          "componentId": {
+            "description": "The internal component id for which debug information is sent.",
+            "type": "string"
+          },
+          "data": {
+            "description": "The encoded debug information.",
+            "type": "string"
+          },
+          "dataFormat": {
+            "description": "Format for the data field above (id=5).",
+            "type": "string",
+            "enumDescriptions": [
+              "Format unspecified, parsing is determined based upon page type and legacy encoding. (go/protodosdonts#do-include-an-unspecified-value-in-an-enum)",
+              "Raw HTML string.",
+              "JSON-encoded string.",
+              "Websafe encoded zlib-compressed string.",
+              "Websafe encoded brotli-compressed string."
+            ],
+            "enum": [
+              "DATA_FORMAT_UNSPECIFIED",
+              "RAW",
+              "JSON",
+              "ZLIB",
+              "BROTLI"
+            ]
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "SendDebugCaptureResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.snapshots.list",
+      "resource": "projects.locations.jobs.snapshots",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/snapshots",
+      "description": "Lists snapshots.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project ID to list snapshots for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The location to list snapshots in.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "If specified, list snapshots created from this job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListSnapshotsResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.messages.list",
+      "resource": "projects.locations.jobs.messages",
+      "action": "list",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/messages",
+      "description": "Request the job status. To request the status of a job, we recommend using `projects.locations.jobs.messages.list` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.jobs.messages.list` is not recommended, as you can only request the status of jobs that are running in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "A project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to get messages about.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "minimumImportance": {
+          "description": "Filter to only get messages with importance >= level",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "The message importance isn't specified, or is unknown.",
+            "The message is at the 'debug' level: typically only useful for software engineers working on the code the job is running. Typically, Dataflow pipeline runners do not display log messages at this level by default.",
+            "The message is at the 'detailed' level: somewhat verbose, but potentially useful to users. Typically, Dataflow pipeline runners do not display log messages at this level by default. These messages are displayed by default in the Dataflow monitoring UI.",
+            "The message is at the 'basic' level: useful for keeping track of the execution of a Dataflow pipeline. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI.",
+            "The message is at the 'warning' level: indicating a condition pertaining to a job which may require human intervention. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI.",
+            "The message is at the 'error' level: indicating a condition preventing a job from succeeding. Typically, Dataflow pipeline runners display log messages at this level by default, and these messages are displayed by default in the Dataflow monitoring UI."
+          ],
+          "enum": [
+            "JOB_MESSAGE_IMPORTANCE_UNKNOWN",
+            "JOB_MESSAGE_DEBUG",
+            "JOB_MESSAGE_DETAILED",
+            "JOB_MESSAGE_BASIC",
+            "JOB_MESSAGE_WARNING",
+            "JOB_MESSAGE_ERROR"
+          ]
+        },
+        "pageSize": {
+          "description": "If specified, determines the maximum number of messages to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.",
+          "location": "query",
+          "type": "string"
+        },
+        "startTime": {
+          "description": "If specified, return only messages with timestamps >= start_time. The default is the job creation time (i.e. beginning of messages).",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        },
+        "endTime": {
+          "description": "Return only messages with timestamps < end_time. The default is now (i.e. return up to the latest messages available).",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ListJobMessagesResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.stages.getExecutionDetails",
+      "resource": "projects.locations.jobs.stages",
+      "action": "getExecutionDetails",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/stages/{stageId}/executionDetails",
+      "description": "Request detailed information about the execution status of a stage of the job. EXPERIMENTAL. This API is subject to change or removal without notice.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId",
+        "stageId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "A project id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the job specified by job_id.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job to get execution details for.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "stageId": {
+          "description": "The stage for which to fetch information.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "pageSize": {
+          "description": "If specified, determines the maximum number of work items to return. If unspecified, the service may choose an appropriate default, or may return an arbitrarily large number of results.",
+          "location": "query",
+          "type": "integer",
+          "format": "int32"
+        },
+        "pageToken": {
+          "description": "If supplied, this should be the value of next_page_token returned by an earlier call. This will cause the next page of results to be returned.",
+          "location": "query",
+          "type": "string"
+        },
+        "startTime": {
+          "description": "Lower time bound of work items to include, by start time.",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        },
+        "endTime": {
+          "description": "Upper time bound of work items to include, by start time.",
+          "location": "query",
+          "type": "string",
+          "format": "google-datetime"
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "StageExecutionDetails"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.workItems.reportStatus",
+      "resource": "projects.locations.jobs.workItems",
+      "action": "reportStatus",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/workItems:reportStatus",
+      "description": "Reports the status of dataflow WorkItems leased by a worker.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "The project which owns the WorkItem's job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "The job which the WorkItem is part of.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "ReportWorkItemStatusRequest",
+      "body_schema": {
+        "id": "ReportWorkItemStatusRequest",
+        "description": "Request to report the status of WorkItems.",
+        "type": "object",
+        "properties": {
+          "workerId": {
+            "description": "The ID of the worker reporting the WorkItem status. If this does not match the ID of the worker which the Dataflow service believes currently has the lease on the WorkItem, the report will be dropped (with an error response).",
+            "type": "string"
+          },
+          "workItemStatuses": {
+            "description": "The order is unimportant, except that the order of the WorkItemServiceState messages in the ReportWorkItemStatusResponse corresponds to the order of WorkItemStatus messages here.",
+            "type": "array",
+            "items": {
+              "$ref": "WorkItemStatus"
+            }
+          },
+          "currentWorkerTime": {
+            "description": "The current timestamp at the worker.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.",
+            "type": "string"
+          },
+          "unifiedWorkerRequest": {
+            "description": "Untranslated bag-of-bytes WorkProgressUpdateRequest from UnifiedWorker.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "any",
+              "description": "Properties of the object. Contains field @type with type URL."
+            }
+          },
+          "projectNumber": {
+            "description": "Optional. The project number of the project which owns the WorkItem's job.",
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "ReportWorkItemStatusResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.jobs.workItems.lease",
+      "resource": "projects.locations.jobs.workItems",
+      "action": "lease",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/jobs/{jobId}/workItems:lease",
+      "description": "Leases a dataflow WorkItem to run.",
+      "required_params": [
+        "projectId",
+        "location",
+        "jobId"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Identifies the project this worker belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "jobId": {
+          "description": "Identifies the workflow job this worker belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "LeaseWorkItemRequest",
+      "body_schema": {
+        "id": "LeaseWorkItemRequest",
+        "description": "Request to lease WorkItems.",
+        "type": "object",
+        "properties": {
+          "workItemTypes": {
+            "description": "Filter for WorkItem type.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "workerCapabilities": {
+            "description": "Worker capabilities. WorkItems might be limited to workers with specific capabilities.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requestedLeaseDuration": {
+            "description": "The initial lease period.",
+            "type": "string",
+            "format": "google-duration"
+          },
+          "currentWorkerTime": {
+            "description": "The current timestamp at the worker.",
+            "type": "string",
+            "format": "google-datetime"
+          },
+          "workerId": {
+            "description": "Identifies the worker leasing work -- typically the ID of the virtual machine running the worker.",
+            "type": "string"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.",
+            "type": "string"
+          },
+          "unifiedWorkerRequest": {
+            "description": "Untranslated bag-of-bytes WorkRequest from UnifiedWorker.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "any",
+              "description": "Properties of the object. Contains field @type with type URL."
+            }
+          },
+          "projectNumber": {
+            "description": "Optional. The project number of the project this worker belongs to.",
+            "type": "string",
+            "format": "int64"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "LeaseWorkItemResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.templates.create",
+      "resource": "projects.locations.templates",
+      "action": "create",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/templates",
+      "description": "Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API. To create a job, we recommend using `projects.locations.templates.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.create` is not recommended, because your job will always start in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "CreateJobFromTemplateRequest",
+      "body_schema": {
+        "id": "CreateJobFromTemplateRequest",
+        "description": "A request to create a Cloud Dataflow job from a template.",
+        "type": "object",
+        "properties": {
+          "jobName": {
+            "description": "Required. The job name to use for the created job.",
+            "type": "string"
+          },
+          "gcsPath": {
+            "description": "Required. A Cloud Storage path to the template from which to create the job. Must be a valid Cloud Storage URL, beginning with `gs://`.",
+            "type": "string"
+          },
+          "parameters": {
+            "description": "The runtime parameters to pass to the job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "environment": {
+            "description": "The runtime environment for the job.",
+            "$ref": "RuntimeEnvironment"
+          },
+          "location": {
+            "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+            "type": "string"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "Job"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.templates.launch",
+      "resource": "projects.locations.templates",
+      "action": "launch",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/templates:launch",
+      "description": "Launches a template. To launch a template, we recommend using `projects.locations.templates.launch` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.launch` is not recommended, because jobs launched from the template will always start in `us-central1`.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "validateOnly": {
+          "description": "If true, the request is validated but not actually executed. Defaults to false.",
+          "location": "query",
+          "type": "boolean"
+        },
+        "gcsPath": {
+          "description": "A Cloud Storage path to the template to use to create the job. Must be valid Cloud Storage URL, beginning with `gs://`.",
+          "location": "query",
+          "type": "string"
+        },
+        "dynamicTemplate.gcsPath": {
+          "description": "Path to the dynamic template specification file on Cloud Storage. The file must be a JSON serialized `DynamicTemplateFileSpec` object.",
+          "location": "query",
+          "type": "string"
+        },
+        "dynamicTemplate.stagingLocation": {
+          "description": "Cloud Storage path for staging dependencies. Must be a valid Cloud Storage URL, beginning with `gs://`.",
+          "location": "query",
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "LaunchTemplateParameters",
+      "body_schema": {
+        "id": "LaunchTemplateParameters",
+        "description": "Parameters to provide to the template being launched. Note that the [metadata in the pipeline code] (https://cloud.google.com/dataflow/docs/guides/templates/creating-templates#metadata) determines which runtime parameters are valid.",
+        "type": "object",
+        "properties": {
+          "jobName": {
+            "description": "Required. The job name to use for the created job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`",
+            "type": "string"
+          },
+          "parameters": {
+            "description": "The runtime parameters to pass to the job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "environment": {
+            "description": "The runtime environment for the job.",
+            "$ref": "RuntimeEnvironment"
+          },
+          "update": {
+            "description": "If set, replace the existing pipeline with the name specified by jobName with this pipeline, preserving state.",
+            "type": "boolean"
+          },
+          "transformNameMapping": {
+            "description": "Only applicable when updating a pipeline. Map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "LaunchTemplateResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.templates.get",
+      "resource": "projects.locations.templates",
+      "action": "get",
+      "http_method": "GET",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/templates:get",
+      "description": "Get the template associated with a template. To get the template, we recommend using `projects.locations.templates.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.get` is not recommended, because only templates that are running in `us-central1` are retrieved.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "gcsPath": {
+          "description": "Required. A Cloud Storage path to the template from which to create the job. Must be valid Cloud Storage URL, beginning with 'gs://'.",
+          "location": "query",
+          "type": "string"
+        },
+        "view": {
+          "description": "The view to retrieve. Defaults to METADATA_ONLY.",
+          "location": "query",
+          "type": "string",
+          "enumDescriptions": [
+            "Template view that retrieves only the metadata associated with the template."
+          ],
+          "enum": [
+            "METADATA_ONLY"
+          ]
+        }
+      },
+      "body_schema_ref": null,
+      "body_schema": {},
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "GetTemplateResponse"
+    },
+    {
+      "operation_id": "dataflow.projects.locations.flexTemplates.launch",
+      "resource": "projects.locations.flexTemplates",
+      "action": "launch",
+      "http_method": "POST",
+      "path_template": "v1b3/projects/{projectId}/locations/{location}/flexTemplates:launch",
+      "description": "Launch a job with a FlexTemplate.",
+      "required_params": [
+        "projectId",
+        "location"
+      ],
+      "parameters": {
+        "projectId": {
+          "description": "Required. The ID of the Cloud Platform project that the job belongs to.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        },
+        "location": {
+          "description": "Required. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to which to direct the request. E.g., us-central1, us-west1.",
+          "location": "path",
+          "required": true,
+          "type": "string"
+        }
+      },
+      "body_schema_ref": "LaunchFlexTemplateRequest",
+      "body_schema": {
+        "id": "LaunchFlexTemplateRequest",
+        "description": "A request to launch a Cloud Dataflow job from a FlexTemplate.",
+        "type": "object",
+        "properties": {
+          "launchParameter": {
+            "description": "Required. Parameter to launch a job form Flex Template.",
+            "$ref": "LaunchFlexTemplateParameter"
+          },
+          "validateOnly": {
+            "description": "If true, the request is validated but not actually executed. Defaults to false.",
+            "type": "boolean"
+          }
+        }
+      },
+      "scopes_required": [
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/compute"
+      ],
+      "response_type": "LaunchFlexTemplateResponse"
+    }
+  ]
+}
