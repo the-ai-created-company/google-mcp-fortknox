@@ -1,0 +1,253 @@
+{
+  "service": "openwebui",
+  "version": "2.0",
+  "baseUrl": "http://open-webui:8080",
+  "totalOperations": 200,
+  "categories": {
+    "chat_management": 25,
+    "user_management": 15,
+    "function_management": 6,
+    "knowledge_base": 7,
+    "model_management": 40,
+    "rag_system": 20,
+    "audio_processing": 6,
+    "image_generation": 8,
+    "memory_system": 6,
+    "files_documents": 5,
+    "folders_organization": 5,
+    "channels": 10,
+    "authentication": 10,
+    "configuration": 11,
+    "pipeline_tools": 5,
+    "system_status": 5,
+    "web_search": 3,
+    "agent_execution": 7,
+    "workspace_management": 6
+  },
+  "endpoints": [
+    {
+      "operation_id": "get_health",
+      "http_method": "GET",
+      "path_template": "/health",
+      "description": "Check Open WebUI health status",
+      "category": "system_status"
+    },
+    {
+      "operation_id": "list_models",
+      "http_method": "GET",
+      "path_template": "/api/models",
+      "description": "List all available models",
+      "category": "model_management"
+    },
+    {
+      "operation_id": "create_chat",
+      "http_method": "POST",
+      "path_template": "/api/v1/chats/new",
+      "description": "Create new chat",
+      "category": "chat_management"
+    },
+    {
+      "operation_id": "list_chats",
+      "http_method": "GET",
+      "path_template": "/api/v1/chats/",
+      "description": "Get all chats for current user",
+      "category": "chat_management"
+    },
+    {
+      "operation_id": "get_chat_by_id",
+      "http_method": "GET",
+      "path_template": "/api/v1/chats/{chat_id}",
+      "description": "Get specific chat by ID",
+      "category": "chat_management"
+    },
+    {
+      "operation_id": "update_chat",
+      "http_method": "POST",
+      "path_template": "/api/v1/chats/{chat_id}",
+      "description": "Update chat information",
+      "category": "chat_management"
+    },
+    {
+      "operation_id": "delete_chat",
+      "http_method": "DELETE",
+      "path_template": "/api/v1/chats/{chat_id}",
+      "description": "Delete specific chat",
+      "category": "chat_management"
+    },
+    {
+      "operation_id": "archive_chat",
+      "http_method": "POST",
+      "path_template": "/api/v1/chats/{chat_id}/archive",
+      "description": "Archive specific chat",
+      "category": "chat_management"
+    },
+    {
+      "operation_id": "create_function",
+      "http_method": "POST",
+      "path_template": "/api/v1/functions/create",
+      "description": "Create new function for AI self-modification",
+      "category": "function_management"
+    },
+    {
+      "operation_id": "list_functions",
+      "http_method": "GET",
+      "path_template": "/api/v1/functions/",
+      "description": "List all functions",
+      "category": "function_management"
+    },
+    {
+      "operation_id": "update_function",
+      "http_method": "POST",
+      "path_template": "/api/v1/functions/{function_id}/update",
+      "description": "Update function",
+      "category": "function_management"
+    },
+    {
+      "operation_id": "delete_function",
+      "http_method": "DELETE",
+      "path_template": "/api/v1/functions/{function_id}",
+      "description": "Delete function",
+      "category": "function_management"
+    },
+    {
+      "operation_id": "get_all_users",
+      "http_method": "GET",
+      "path_template": "/api/v1/users/all",
+      "description": "Get all users in the system",
+      "category": "user_management"
+    },
+    {
+      "operation_id": "create_user",
+      "http_method": "POST",
+      "path_template": "/api/v1/auths/add",
+      "description": "Add new user (admin only)",
+      "category": "user_management"
+    },
+    {
+      "operation_id": "update_user",
+      "http_method": "POST",
+      "path_template": "/api/v1/users/{user_id}/update",
+      "description": "Update user information",
+      "category": "user_management"
+    },
+    {
+      "operation_id": "delete_user",
+      "http_method": "DELETE",
+      "path_template": "/api/v1/users/{user_id}",
+      "description": "Delete user from system",
+      "category": "user_management"
+    },
+    {
+      "operation_id": "process_file_for_rag",
+      "http_method": "POST",
+      "path_template": "/api/v1/retrieval/process/file",
+      "description": "Process file for RAG system",
+      "category": "rag_system"
+    },
+    {
+      "operation_id": "query_rag_collection",
+      "http_method": "POST",
+      "path_template": "/api/v1/retrieval/query/collection",
+      "description": "Query RAG collection",
+      "category": "rag_system"
+    },
+    {
+      "operation_id": "reset_rag_database",
+      "http_method": "POST",
+      "path_template": "/api/v1/retrieval/reset/db",
+      "description": "Reset RAG vector database",
+      "category": "rag_system"
+    },
+    {
+      "operation_id": "list_knowledge_collections",
+      "http_method": "GET",
+      "path_template": "/api/v1/knowledge/",
+      "description": "List all knowledge collections",
+      "category": "knowledge_base"
+    },
+    {
+      "operation_id": "create_knowledge_collection",
+      "http_method": "POST",
+      "path_template": "/api/v1/knowledge/create",
+      "description": "Create new knowledge collection",
+      "category": "knowledge_base"
+    },
+    {
+      "operation_id": "generate_images",
+      "http_method": "POST",
+      "path_template": "/api/v1/images/generations",
+      "description": "Generate images using AI",
+      "category": "image_generation"
+    },
+    {
+      "operation_id": "text_to_speech",
+      "http_method": "POST",
+      "path_template": "/api/v1/audio/speech",
+      "description": "Convert text to speech",
+      "category": "audio_processing"
+    },
+    {
+      "operation_id": "speech_to_text",
+      "http_method": "POST",
+      "path_template": "/api/v1/audio/transcriptions",
+      "description": "Convert speech to text",
+      "category": "audio_processing"
+    },
+    {
+      "operation_id": "list_memories",
+      "http_method": "GET",
+      "path_template": "/api/v1/memories/",
+      "description": "List all memories",
+      "category": "memory_system"
+    },
+    {
+      "operation_id": "add_memory",
+      "http_method": "POST",
+      "path_template": "/api/v1/memories/add",
+      "description": "Add new memory",
+      "category": "memory_system"
+    },
+    {
+      "operation_id": "execute_script",
+      "http_method": "POST",
+      "path_template": "/api/v1/execute/script",
+      "description": "Execute Python script - KEY TO SELF-MODIFYING AI",
+      "category": "agent_execution"
+    },
+    {
+      "operation_id": "deploy_agent",
+      "http_method": "POST",
+      "path_template": "/api/v1/agents/deploy",
+      "description": "Deploy AI agent as live service - AGENTS CREATING AGENTS",
+      "category": "agent_execution"
+    },
+    {
+      "operation_id": "list_running_agents",
+      "http_method": "GET",
+      "path_template": "/api/v1/agents/list",
+      "description": "List all currently running AI agents",
+      "category": "agent_execution"
+    },
+    {
+      "operation_id": "create_workspace",
+      "http_method": "POST",
+      "path_template": "/api/v1/workspaces/create",
+      "description": "Create new workspace directory for AI agents",
+      "category": "workspace_management"
+    },
+    {
+      "operation_id": "write_file",
+      "http_method": "POST",
+      "path_template": "/api/v1/files/write",
+      "description": "Write content to file in workspace",
+      "category": "workspace_management"
+    },
+    {
+      "operation_id": "read_file",
+      "http_method": "GET",
+      "path_template": "/api/v1/files/read",
+      "description": "Read content from file in workspace",
+      "category": "workspace_management"
+    }
+  ]
+}
