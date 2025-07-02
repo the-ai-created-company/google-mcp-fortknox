@@ -1,12 +1,86 @@
 {
-  "storage": {
-    "base_url": "https://storage.googleapis.com/storage/v1/",
-    "discovery_file": "storage_discovery.json",
-    "endpoint_count": 81
+  "google_cloud_services": {
+    "total_operations": 2953,
+    "services": {
+      "storage": {
+        "base_url": "https://storage.googleapis.com/storage/v1/",
+        "discovery_file": "storage_discovery.json",
+        "endpoint_count": 81
+      },
+      "compute": {
+        "base_url": "https://compute.googleapis.com/compute/v1/",
+        "discovery_file": "compute_discovery.json",
+        "endpoint_count": 831
+      },
+      "aiplatform": {"endpoint_count": 630},
+      "bigquery": {"endpoint_count": 47},
+      "certificatemanager": {"endpoint_count": 36},
+      "cloudbilling": {"endpoint_count": 18},
+      "cloudbuild": {"endpoint_count": 65},
+      "clouderrorreporting": {"endpoint_count": 11},
+      "cloudfunctions": {"endpoint_count": 14},
+      "cloudresourcemanager": {"endpoint_count": 62},
+      "cloudscheduler": {"endpoint_count": 14},
+      "cloudtrace": {"endpoint_count": 2},
+      "container": {"endpoint_count": 69},
+      "dataflow": {"endpoint_count": 42},
+      "dns": {"endpoint_count": 40},
+      "firestore": {"endpoint_count": 55},
+      "iam": {"endpoint_count": 122},
+      "logging": {"endpoint_count": 254},
+      "monitoring": {"endpoint_count": 54},
+      "networkconnectivity": {"endpoint_count": 84},
+      "pubsub": {"endpoint_count": 46},
+      "redis": {"endpoint_count": 31},
+      "run": {"endpoint_count": 66},
+      "secretmanager": {"endpoint_count": 32},
+      "serviceusage": {"endpoint_count": 10},
+      "spanner": {"endpoint_count": 101},
+      "sqladmin": {"endpoint_count": 69}
+    }
   },
-  "compute": {
-    "base_url": "https://compute.googleapis.com/compute/v1/",
-    "discovery_file": "compute_discovery.json",
-    "endpoint_count": 831
+  "openwebui_control": {
+    "total_operations": 200,
+    "base_url": "http://open-webui:8080",
+    "categories": {
+      "chat_management": 25,
+      "user_management": 15,
+      "function_management": 6,
+      "knowledge_base": 7,
+      "model_management": 40,
+      "rag_system": 20,
+      "audio_processing": 6,
+      "image_generation": 8,
+      "memory_system": 6,
+      "files_documents": 5,
+      "folders_organization": 5,
+      "channels": 10,
+      "authentication": 10,
+      "configuration": 11,
+      "pipeline_tools": 5,
+      "system_status": 5,
+      "web_search": 3,
+      "agent_execution": 7,
+      "workspace_management": 6
+    }
+  },
+  "mcp_server_tools": {
+    "total_built": 29,
+    "categories": {
+      "infrastructure": 4,
+      "agents": 5,
+      "database": 5,
+      "tool_creation": 5,
+      "api_discovery": 5,
+      "openwebui": 5,
+      "deployment": 5
+    }
+  },
+  "grand_total": {
+    "google_cloud_operations": 2953,
+    "openwebui_operations": 200,
+    "total_available": 3153,
+    "mcp_tools_built": 29,
+    "mcp_tools_remaining": 136
   }
 }
