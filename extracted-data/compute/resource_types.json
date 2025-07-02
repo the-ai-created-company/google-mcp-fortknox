@@ -1,0 +1,1554 @@
+{
+  "globalOperations": {
+    "description": "globalOperations resource",
+    "operations_count": 5,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "wait"
+    ]
+  },
+  "globalOrganizationOperations": {
+    "description": "globalOrganizationOperations resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "zoneOperations": {
+    "description": "zoneOperations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "wait"
+    ]
+  },
+  "regionOperations": {
+    "description": "regionOperations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "wait"
+    ]
+  },
+  "acceleratorTypes": {
+    "description": "acceleratorTypes resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "globalAddresses": {
+    "description": "globalAddresses resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "move",
+      "setLabels"
+    ]
+  },
+  "addresses": {
+    "description": "addresses resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "move",
+      "setLabels"
+    ]
+  },
+  "images": {
+    "description": "images resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "deprecate",
+      "get",
+      "getFromFamily",
+      "getIamPolicy",
+      "setIamPolicy",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "imageFamilyViews": {
+    "description": "imageFamilyViews resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "snapshots": {
+    "description": "snapshots resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "disks": {
+    "description": "disks resource",
+    "operations_count": 19,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addResourcePolicies",
+      "aggregatedList",
+      "bulkInsert",
+      "bulkSetLabels",
+      "createSnapshot",
+      "get",
+      "getIamPolicy",
+      "removeResourcePolicies",
+      "resize",
+      "setIamPolicy",
+      "setLabels",
+      "startAsyncReplication",
+      "stopAsyncReplication",
+      "stopGroupAsyncReplication",
+      "testIamPermissions"
+    ]
+  },
+  "regionDisks": {
+    "description": "regionDisks resource",
+    "operations_count": 17,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addResourcePolicies",
+      "bulkInsert",
+      "createSnapshot",
+      "get",
+      "getIamPolicy",
+      "removeResourcePolicies",
+      "resize",
+      "setIamPolicy",
+      "setLabels",
+      "startAsyncReplication",
+      "stopAsyncReplication",
+      "stopGroupAsyncReplication",
+      "testIamPermissions"
+    ]
+  },
+  "firewalls": {
+    "description": "firewalls resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "firewallPolicies": {
+    "description": "firewallPolicies resource",
+    "operations_count": 18,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addAssociation",
+      "addRule",
+      "cloneRules",
+      "get",
+      "getAssociation",
+      "getIamPolicy",
+      "getRule",
+      "listAssociations",
+      "move",
+      "patchRule",
+      "removeAssociation",
+      "removeRule",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "networkFirewallPolicies": {
+    "description": "networkFirewallPolicies resource",
+    "operations_count": 21,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addAssociation",
+      "addPacketMirroringRule",
+      "addRule",
+      "aggregatedList",
+      "cloneRules",
+      "get",
+      "getAssociation",
+      "getIamPolicy",
+      "getPacketMirroringRule",
+      "getRule",
+      "patchPacketMirroringRule",
+      "patchRule",
+      "removeAssociation",
+      "removePacketMirroringRule",
+      "removeRule",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "regionNetworkFirewallPolicies": {
+    "description": "regionNetworkFirewallPolicies resource",
+    "operations_count": 17,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addAssociation",
+      "addRule",
+      "cloneRules",
+      "get",
+      "getAssociation",
+      "getEffectiveFirewalls",
+      "getIamPolicy",
+      "getRule",
+      "patchRule",
+      "removeAssociation",
+      "removeRule",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "securityPolicies": {
+    "description": "securityPolicies resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addRule",
+      "aggregatedList",
+      "get",
+      "getRule",
+      "listPreconfiguredExpressionSets",
+      "patchRule",
+      "removeRule",
+      "setLabels"
+    ]
+  },
+  "regionSecurityPolicies": {
+    "description": "regionSecurityPolicies resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addRule",
+      "get",
+      "getRule",
+      "patchRule",
+      "removeRule",
+      "setLabels"
+    ]
+  },
+  "instances": {
+    "description": "instances resource",
+    "operations_count": 49,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addAccessConfig",
+      "addResourcePolicies",
+      "aggregatedList",
+      "attachDisk",
+      "bulkInsert",
+      "deleteAccessConfig",
+      "detachDisk",
+      "get",
+      "getEffectiveFirewalls",
+      "getGuestAttributes",
+      "getIamPolicy",
+      "getScreenshot",
+      "getSerialPortOutput",
+      "getShieldedInstanceIdentity",
+      "listReferrers",
+      "performMaintenance",
+      "removeResourcePolicies",
+      "reportHostAsFaulty",
+      "reset",
+      "resume",
+      "sendDiagnosticInterrupt",
+      "setDeletionProtection",
+      "setDiskAutoDelete",
+      "setIamPolicy",
+      "setLabels",
+      "setMachineResources",
+      "setMachineType",
+      "setMetadata",
+      "setMinCpuPlatform",
+      "setName",
+      "setScheduling",
+      "setSecurityPolicy",
+      "setServiceAccount",
+      "setShieldedInstanceIntegrityPolicy",
+      "setTags",
+      "simulateMaintenanceEvent",
+      "start",
+      "startWithEncryptionKey",
+      "stop",
+      "suspend",
+      "testIamPermissions",
+      "updateAccessConfig",
+      "updateDisplayDevice",
+      "updateNetworkInterface",
+      "updateShieldedInstanceConfig"
+    ]
+  },
+  "regionInstances": {
+    "description": "regionInstances resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "bulkInsert"
+    ]
+  },
+  "reservations": {
+    "description": "reservations resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "performMaintenance",
+      "resize",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "instanceGroups": {
+    "description": "instanceGroups resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "addInstances",
+      "aggregatedList",
+      "get",
+      "listInstances",
+      "removeInstances",
+      "setNamedPorts"
+    ]
+  },
+  "regionInstanceGroups": {
+    "description": "regionInstanceGroups resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "listInstances",
+      "setNamedPorts"
+    ]
+  },
+  "instanceGroupManagers": {
+    "description": "instanceGroupManagers resource",
+    "operations_count": 24,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "abandonInstances",
+      "aggregatedList",
+      "applyUpdatesToInstances",
+      "createInstances",
+      "deleteInstances",
+      "deletePerInstanceConfigs",
+      "get",
+      "listErrors",
+      "listManagedInstances",
+      "listPerInstanceConfigs",
+      "patchPerInstanceConfigs",
+      "recreateInstances",
+      "resize",
+      "resumeInstances",
+      "setInstanceTemplate",
+      "setTargetPools",
+      "startInstances",
+      "stopInstances",
+      "suspendInstances",
+      "updatePerInstanceConfigs"
+    ]
+  },
+  "instanceGroupManagerResizeRequests": {
+    "description": "instanceGroupManagerResizeRequests resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "cancel",
+      "get"
+    ]
+  },
+  "regionInstanceGroupManagers": {
+    "description": "regionInstanceGroupManagers resource",
+    "operations_count": 23,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "abandonInstances",
+      "applyUpdatesToInstances",
+      "createInstances",
+      "deleteInstances",
+      "deletePerInstanceConfigs",
+      "get",
+      "listErrors",
+      "listManagedInstances",
+      "listPerInstanceConfigs",
+      "patchPerInstanceConfigs",
+      "recreateInstances",
+      "resize",
+      "resumeInstances",
+      "setInstanceTemplate",
+      "setTargetPools",
+      "startInstances",
+      "stopInstances",
+      "suspendInstances",
+      "updatePerInstanceConfigs"
+    ]
+  },
+  "autoscalers": {
+    "description": "autoscalers resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "regionAutoscalers": {
+    "description": "regionAutoscalers resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "backendBuckets": {
+    "description": "backendBuckets resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addSignedUrlKey",
+      "deleteSignedUrlKey",
+      "get",
+      "getIamPolicy",
+      "setEdgeSecurityPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "backendServices": {
+    "description": "backendServices resource",
+    "operations_count": 16,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addSignedUrlKey",
+      "aggregatedList",
+      "deleteSignedUrlKey",
+      "get",
+      "getHealth",
+      "getIamPolicy",
+      "listUsable",
+      "setEdgeSecurityPolicy",
+      "setIamPolicy",
+      "setSecurityPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "regionBackendServices": {
+    "description": "regionBackendServices resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "getHealth",
+      "getIamPolicy",
+      "listUsable",
+      "setIamPolicy",
+      "setSecurityPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "regionCommitments": {
+    "description": "regionCommitments resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "diskTypes": {
+    "description": "diskTypes resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "regionDiskTypes": {
+    "description": "regionDiskTypes resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "interconnectAttachments": {
+    "description": "interconnectAttachments resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setLabels"
+    ]
+  },
+  "interconnectAttachmentGroups": {
+    "description": "interconnectAttachmentGroups resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "getOperationalStatus",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "interconnects": {
+    "description": "interconnects resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "getDiagnostics",
+      "getMacsecConfig",
+      "setLabels"
+    ]
+  },
+  "interconnectGroups": {
+    "description": "interconnectGroups resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "createMembers",
+      "get",
+      "getIamPolicy",
+      "getOperationalStatus",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "externalVpnGateways": {
+    "description": "externalVpnGateways resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "globalForwardingRules": {
+    "description": "globalForwardingRules resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "setLabels",
+      "setTarget"
+    ]
+  },
+  "forwardingRules": {
+    "description": "forwardingRules resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setLabels",
+      "setTarget"
+    ]
+  },
+  "regionHealthCheckServices": {
+    "description": "regionHealthCheckServices resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "healthChecks": {
+    "description": "healthChecks resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "regionHealthChecks": {
+    "description": "regionHealthChecks resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "httpHealthChecks": {
+    "description": "httpHealthChecks resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "httpsHealthChecks": {
+    "description": "httpsHealthChecks resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "instanceTemplates": {
+    "description": "instanceTemplates resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "regionInstanceTemplates": {
+    "description": "regionInstanceTemplates resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "instanceSettings": {
+    "description": "instanceSettings resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "instantSnapshots": {
+    "description": "instantSnapshots resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "regionInstantSnapshots": {
+    "description": "regionInstantSnapshots resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "interconnectLocations": {
+    "description": "interconnectLocations resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "interconnectRemoteLocations": {
+    "description": "interconnectRemoteLocations resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "licenseCodes": {
+    "description": "licenseCodes resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "testIamPermissions"
+    ]
+  },
+  "licenses": {
+    "description": "licenses resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "machineImages": {
+    "description": "machineImages resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "machineTypes": {
+    "description": "machineTypes resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "networkAttachments": {
+    "description": "networkAttachments resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "networkEdgeSecurityServices": {
+    "description": "networkEdgeSecurityServices resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": false,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "networkEndpointGroups": {
+    "description": "networkEndpointGroups resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "attachNetworkEndpoints",
+      "detachNetworkEndpoints",
+      "get",
+      "listNetworkEndpoints",
+      "testIamPermissions"
+    ]
+  },
+  "globalNetworkEndpointGroups": {
+    "description": "globalNetworkEndpointGroups resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "attachNetworkEndpoints",
+      "detachNetworkEndpoints",
+      "get",
+      "listNetworkEndpoints"
+    ]
+  },
+  "regionNetworkEndpointGroups": {
+    "description": "regionNetworkEndpointGroups resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "attachNetworkEndpoints",
+      "detachNetworkEndpoints",
+      "get",
+      "listNetworkEndpoints"
+    ]
+  },
+  "networks": {
+    "description": "networks resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addPeering",
+      "get",
+      "getEffectiveFirewalls",
+      "listPeeringRoutes",
+      "removePeering",
+      "switchToCustomMode",
+      "updatePeering"
+    ]
+  },
+  "nodeGroups": {
+    "description": "nodeGroups resource",
+    "operations_count": 15,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "addNodes",
+      "aggregatedList",
+      "deleteNodes",
+      "get",
+      "getIamPolicy",
+      "listNodes",
+      "performMaintenance",
+      "setIamPolicy",
+      "setNodeTemplate",
+      "simulateMaintenanceEvent",
+      "testIamPermissions"
+    ]
+  },
+  "nodeTemplates": {
+    "description": "nodeTemplates resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "nodeTypes": {
+    "description": "nodeTypes resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "regionNotificationEndpoints": {
+    "description": "regionNotificationEndpoints resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "packetMirrorings": {
+    "description": "packetMirrorings resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "testIamPermissions"
+    ]
+  },
+  "projects": {
+    "description": "projects resource",
+    "operations_count": 14,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "disableXpnHost",
+      "disableXpnResource",
+      "enableXpnHost",
+      "enableXpnResource",
+      "get",
+      "getXpnHost",
+      "getXpnResources",
+      "listXpnHosts",
+      "moveDisk",
+      "moveInstance",
+      "setCloudArmorTier",
+      "setCommonInstanceMetadata",
+      "setDefaultNetworkTier",
+      "setUsageExportBucket"
+    ]
+  },
+  "publicAdvertisedPrefixes": {
+    "description": "publicAdvertisedPrefixes resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "announce",
+      "get",
+      "withdraw"
+    ]
+  },
+  "globalPublicDelegatedPrefixes": {
+    "description": "globalPublicDelegatedPrefixes resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "publicDelegatedPrefixes": {
+    "description": "publicDelegatedPrefixes resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "announce",
+      "get",
+      "withdraw"
+    ]
+  },
+  "regions": {
+    "description": "regions resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "subnetworks": {
+    "description": "subnetworks resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "expandIpCidrRange",
+      "get",
+      "getIamPolicy",
+      "listUsable",
+      "setIamPolicy",
+      "setPrivateIpGoogleAccess",
+      "testIamPermissions"
+    ]
+  },
+  "networkProfiles": {
+    "description": "networkProfiles resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "reservationBlocks": {
+    "description": "reservationBlocks resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "performMaintenance"
+    ]
+  },
+  "reservationSubBlocks": {
+    "description": "reservationSubBlocks resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "performMaintenance"
+    ]
+  },
+  "resourcePolicies": {
+    "description": "resourcePolicies resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "routes": {
+    "description": "routes resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "routers": {
+    "description": "routers resource",
+    "operations_count": 17,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "deleteRoutePolicy",
+      "get",
+      "getNatIpInfo",
+      "getNatMappingInfo",
+      "getRoutePolicy",
+      "getRouterStatus",
+      "listBgpRoutes",
+      "listRoutePolicies",
+      "patchRoutePolicy",
+      "preview",
+      "updateRoutePolicy"
+    ]
+  },
+  "serviceAttachments": {
+    "description": "serviceAttachments resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "snapshotSettings": {
+    "description": "snapshotSettings resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "sslCertificates": {
+    "description": "sslCertificates resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "regionSslCertificates": {
+    "description": "regionSslCertificates resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "sslPolicies": {
+    "description": "sslPolicies resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "listAvailableFeatures"
+    ]
+  },
+  "regionSslPolicies": {
+    "description": "regionSslPolicies resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "listAvailableFeatures"
+    ]
+  },
+  "storagePoolTypes": {
+    "description": "storagePoolTypes resource",
+    "operations_count": 3,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get"
+    ]
+  },
+  "storagePools": {
+    "description": "storagePools resource",
+    "operations_count": 10,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getIamPolicy",
+      "listDisks",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "targetGrpcProxies": {
+    "description": "targetGrpcProxies resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "targetHttpProxies": {
+    "description": "targetHttpProxies resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setUrlMap"
+    ]
+  },
+  "regionTargetHttpProxies": {
+    "description": "regionTargetHttpProxies resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "setUrlMap"
+    ]
+  },
+  "targetHttpsProxies": {
+    "description": "targetHttpsProxies resource",
+    "operations_count": 11,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setCertificateMap",
+      "setQuicOverride",
+      "setSslCertificates",
+      "setSslPolicy",
+      "setUrlMap"
+    ]
+  },
+  "regionTargetHttpsProxies": {
+    "description": "regionTargetHttpsProxies resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "setSslCertificates",
+      "setUrlMap"
+    ]
+  },
+  "targetInstances": {
+    "description": "targetInstances resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setSecurityPolicy"
+    ]
+  },
+  "targetPools": {
+    "description": "targetPools resource",
+    "operations_count": 12,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "addHealthCheck",
+      "addInstance",
+      "aggregatedList",
+      "get",
+      "getHealth",
+      "removeHealthCheck",
+      "removeInstance",
+      "setBackup",
+      "setSecurityPolicy"
+    ]
+  },
+  "targetSslProxies": {
+    "description": "targetSslProxies resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "setBackendService",
+      "setCertificateMap",
+      "setProxyHeader",
+      "setSslCertificates",
+      "setSslPolicy"
+    ]
+  },
+  "targetTcpProxies": {
+    "description": "targetTcpProxies resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setBackendService",
+      "setProxyHeader"
+    ]
+  },
+  "regionTargetTcpProxies": {
+    "description": "regionTargetTcpProxies resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "targetVpnGateways": {
+    "description": "targetVpnGateways resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setLabels"
+    ]
+  },
+  "urlMaps": {
+    "description": "urlMaps resource",
+    "operations_count": 9,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "invalidateCache",
+      "validate"
+    ]
+  },
+  "regionUrlMaps": {
+    "description": "regionUrlMaps resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "validate"
+    ]
+  },
+  "vpnGateways": {
+    "description": "vpnGateways resource",
+    "operations_count": 8,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "getStatus",
+      "setLabels",
+      "testIamPermissions"
+    ]
+  },
+  "vpnTunnels": {
+    "description": "vpnTunnels resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "aggregatedList",
+      "get",
+      "setLabels"
+    ]
+  },
+  "zones": {
+    "description": "zones resource",
+    "operations_count": 2,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "regionZones": {
+    "description": "regionZones resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": []
+  }
+}

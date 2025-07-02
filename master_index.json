@@ -3,5 +3,10 @@
     "base_url": "https://storage.googleapis.com/storage/v1/",
     "discovery_file": "storage_discovery.json",
     "endpoint_count": 81
+  },
+  "compute": {
+    "base_url": "https://compute.googleapis.com/compute/v1/",
+    "discovery_file": "compute_discovery.json",
+    "endpoint_count": 831
   }
 }

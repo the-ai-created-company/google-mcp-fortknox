@@ -1,0 +1,2705 @@
+{
+  "globalOperations_management": {
+    "list_globalOperations": [
+      "compute.globalOperations.list"
+    ],
+    "aggregatedList_globalOperations": [
+      "compute.globalOperations.aggregatedList"
+    ],
+    "get_globalOperations": [
+      "compute.globalOperations.get"
+    ],
+    "wait_globalOperations": [
+      "compute.globalOperations.wait"
+    ],
+    "delete_globalOperations": [
+      "compute.globalOperations.delete"
+    ]
+  },
+  "globalOrganizationOperations_management": {
+    "list_globalOrganizationOperations": [
+      "compute.globalOrganizationOperations.list"
+    ],
+    "get_globalOrganizationOperations": [
+      "compute.globalOrganizationOperations.get"
+    ],
+    "delete_globalOrganizationOperations": [
+      "compute.globalOrganizationOperations.delete"
+    ]
+  },
+  "zoneOperations_management": {
+    "list_zoneOperations": [
+      "compute.zoneOperations.list"
+    ],
+    "get_zoneOperations": [
+      "compute.zoneOperations.get"
+    ],
+    "wait_zoneOperations": [
+      "compute.zoneOperations.wait"
+    ],
+    "delete_zoneOperations": [
+      "compute.zoneOperations.delete"
+    ]
+  },
+  "regionOperations_management": {
+    "list_regionOperations": [
+      "compute.regionOperations.list"
+    ],
+    "get_regionOperations": [
+      "compute.regionOperations.get"
+    ],
+    "wait_regionOperations": [
+      "compute.regionOperations.wait"
+    ],
+    "delete_regionOperations": [
+      "compute.regionOperations.delete"
+    ]
+  },
+  "acceleratorTypes_management": {
+    "list_acceleratorTypes": [
+      "compute.acceleratorTypes.list"
+    ],
+    "aggregatedList_acceleratorTypes": [
+      "compute.acceleratorTypes.aggregatedList"
+    ],
+    "get_acceleratorTypes": [
+      "compute.acceleratorTypes.get"
+    ]
+  },
+  "globalAddresses_management": {
+    "list_globalAddresses": [
+      "compute.globalAddresses.list"
+    ],
+    "get_globalAddresses": [
+      "compute.globalAddresses.get"
+    ],
+    "insert_globalAddresses": [
+      "compute.globalAddresses.insert"
+    ],
+    "delete_globalAddresses": [
+      "compute.globalAddresses.delete"
+    ],
+    "move_globalAddresses": [
+      "compute.globalAddresses.move"
+    ],
+    "setLabels_globalAddresses": [
+      "compute.globalAddresses.setLabels"
+    ]
+  },
+  "addresses_management": {
+    "list_addresses": [
+      "compute.addresses.list"
+    ],
+    "aggregatedList_addresses": [
+      "compute.addresses.aggregatedList"
+    ],
+    "get_addresses": [
+      "compute.addresses.get"
+    ],
+    "insert_addresses": [
+      "compute.addresses.insert"
+    ],
+    "delete_addresses": [
+      "compute.addresses.delete"
+    ],
+    "move_addresses": [
+      "compute.addresses.move"
+    ],
+    "setLabels_addresses": [
+      "compute.addresses.setLabels"
+    ]
+  },
+  "images_management": {
+    "list_images": [
+      "compute.images.list"
+    ],
+    "get_images": [
+      "compute.images.get"
+    ],
+    "getFromFamily_images": [
+      "compute.images.getFromFamily"
+    ],
+    "insert_images": [
+      "compute.images.insert"
+    ],
+    "setLabels_images": [
+      "compute.images.setLabels"
+    ],
+    "delete_images": [
+      "compute.images.delete"
+    ],
+    "deprecate_images": [
+      "compute.images.deprecate"
+    ],
+    "getIamPolicy_images": [
+      "compute.images.getIamPolicy"
+    ],
+    "patch_images": [
+      "compute.images.patch"
+    ],
+    "setIamPolicy_images": [
+      "compute.images.setIamPolicy"
+    ],
+    "testIamPermissions_images": [
+      "compute.images.testIamPermissions"
+    ]
+  },
+  "imageFamilyViews_management": {
+    "get_imageFamilyViews": [
+      "compute.imageFamilyViews.get"
+    ]
+  },
+  "snapshots_management": {
+    "list_snapshots": [
+      "compute.snapshots.list"
+    ],
+    "get_snapshots": [
+      "compute.snapshots.get"
+    ],
+    "insert_snapshots": [
+      "compute.snapshots.insert"
+    ],
+    "setLabels_snapshots": [
+      "compute.snapshots.setLabels"
+    ],
+    "delete_snapshots": [
+      "compute.snapshots.delete"
+    ],
+    "getIamPolicy_snapshots": [
+      "compute.snapshots.getIamPolicy"
+    ],
+    "setIamPolicy_snapshots": [
+      "compute.snapshots.setIamPolicy"
+    ],
+    "testIamPermissions_snapshots": [
+      "compute.snapshots.testIamPermissions"
+    ]
+  },
+  "disks_management": {
+    "list_disks": [
+      "compute.disks.list"
+    ],
+    "aggregatedList_disks": [
+      "compute.disks.aggregatedList"
+    ],
+    "get_disks": [
+      "compute.disks.get"
+    ],
+    "insert_disks": [
+      "compute.disks.insert"
+    ],
+    "setLabels_disks": [
+      "compute.disks.setLabels"
+    ],
+    "bulkSetLabels_disks": [
+      "compute.disks.bulkSetLabels"
+    ],
+    "delete_disks": [
+      "compute.disks.delete"
+    ],
+    "createSnapshot_disks": [
+      "compute.disks.createSnapshot"
+    ],
+    "resize_disks": [
+      "compute.disks.resize"
+    ],
+    "addResourcePolicies_disks": [
+      "compute.disks.addResourcePolicies"
+    ],
+    "removeResourcePolicies_disks": [
+      "compute.disks.removeResourcePolicies"
+    ],
+    "getIamPolicy_disks": [
+      "compute.disks.getIamPolicy"
+    ],
+    "setIamPolicy_disks": [
+      "compute.disks.setIamPolicy"
+    ],
+    "testIamPermissions_disks": [
+      "compute.disks.testIamPermissions"
+    ],
+    "update_disks": [
+      "compute.disks.update"
+    ],
+    "startAsyncReplication_disks": [
+      "compute.disks.startAsyncReplication"
+    ],
+    "stopAsyncReplication_disks": [
+      "compute.disks.stopAsyncReplication"
+    ],
+    "stopGroupAsyncReplication_disks": [
+      "compute.disks.stopGroupAsyncReplication"
+    ],
+    "bulkInsert_disks": [
+      "compute.disks.bulkInsert"
+    ]
+  },
+  "regionDisks_management": {
+    "list_regionDisks": [
+      "compute.regionDisks.list"
+    ],
+    "get_regionDisks": [
+      "compute.regionDisks.get"
+    ],
+    "insert_regionDisks": [
+      "compute.regionDisks.insert"
+    ],
+    "setLabels_regionDisks": [
+      "compute.regionDisks.setLabels"
+    ],
+    "delete_regionDisks": [
+      "compute.regionDisks.delete"
+    ],
+    "createSnapshot_regionDisks": [
+      "compute.regionDisks.createSnapshot"
+    ],
+    "resize_regionDisks": [
+      "compute.regionDisks.resize"
+    ],
+    "addResourcePolicies_regionDisks": [
+      "compute.regionDisks.addResourcePolicies"
+    ],
+    "removeResourcePolicies_regionDisks": [
+      "compute.regionDisks.removeResourcePolicies"
+    ],
+    "getIamPolicy_regionDisks": [
+      "compute.regionDisks.getIamPolicy"
+    ],
+    "setIamPolicy_regionDisks": [
+      "compute.regionDisks.setIamPolicy"
+    ],
+    "testIamPermissions_regionDisks": [
+      "compute.regionDisks.testIamPermissions"
+    ],
+    "update_regionDisks": [
+      "compute.regionDisks.update"
+    ],
+    "startAsyncReplication_regionDisks": [
+      "compute.regionDisks.startAsyncReplication"
+    ],
+    "stopAsyncReplication_regionDisks": [
+      "compute.regionDisks.stopAsyncReplication"
+    ],
+    "stopGroupAsyncReplication_regionDisks": [
+      "compute.regionDisks.stopGroupAsyncReplication"
+    ],
+    "bulkInsert_regionDisks": [
+      "compute.regionDisks.bulkInsert"
+    ]
+  },
+  "firewalls_management": {
+    "list_firewalls": [
+      "compute.firewalls.list"
+    ],
+    "get_firewalls": [
+      "compute.firewalls.get"
+    ],
+    "insert_firewalls": [
+      "compute.firewalls.insert"
+    ],
+    "delete_firewalls": [
+      "compute.firewalls.delete"
+    ],
+    "update_firewalls": [
+      "compute.firewalls.update"
+    ],
+    "patch_firewalls": [
+      "compute.firewalls.patch"
+    ]
+  },
+  "firewallPolicies_management": {
+    "list_firewallPolicies": [
+      "compute.firewallPolicies.list"
+    ],
+    "get_firewallPolicies": [
+      "compute.firewallPolicies.get"
+    ],
+    "insert_firewallPolicies": [
+      "compute.firewallPolicies.insert"
+    ],
+    "delete_firewallPolicies": [
+      "compute.firewallPolicies.delete"
+    ],
+    "patch_firewallPolicies": [
+      "compute.firewallPolicies.patch"
+    ],
+    "getRule_firewallPolicies": [
+      "compute.firewallPolicies.getRule"
+    ],
+    "addRule_firewallPolicies": [
+      "compute.firewallPolicies.addRule"
+    ],
+    "removeRule_firewallPolicies": [
+      "compute.firewallPolicies.removeRule"
+    ],
+    "patchRule_firewallPolicies": [
+      "compute.firewallPolicies.patchRule"
+    ],
+    "addAssociation_firewallPolicies": [
+      "compute.firewallPolicies.addAssociation"
+    ],
+    "removeAssociation_firewallPolicies": [
+      "compute.firewallPolicies.removeAssociation"
+    ],
+    "listAssociations_firewallPolicies": [
+      "compute.firewallPolicies.listAssociations"
+    ],
+    "getAssociation_firewallPolicies": [
+      "compute.firewallPolicies.getAssociation"
+    ],
+    "cloneRules_firewallPolicies": [
+      "compute.firewallPolicies.cloneRules"
+    ],
+    "move_firewallPolicies": [
+      "compute.firewallPolicies.move"
+    ],
+    "getIamPolicy_firewallPolicies": [
+      "compute.firewallPolicies.getIamPolicy"
+    ],
+    "setIamPolicy_firewallPolicies": [
+      "compute.firewallPolicies.setIamPolicy"
+    ],
+    "testIamPermissions_firewallPolicies": [
+      "compute.firewallPolicies.testIamPermissions"
+    ]
+  },
+  "networkFirewallPolicies_management": {
+    "list_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.list"
+    ],
+    "get_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.get"
+    ],
+    "insert_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.insert"
+    ],
+    "delete_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.delete"
+    ],
+    "patch_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.patch"
+    ],
+    "getRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.getRule"
+    ],
+    "getPacketMirroringRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.getPacketMirroringRule"
+    ],
+    "addRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.addRule"
+    ],
+    "addPacketMirroringRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.addPacketMirroringRule"
+    ],
+    "removeRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.removeRule"
+    ],
+    "removePacketMirroringRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.removePacketMirroringRule"
+    ],
+    "patchRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.patchRule"
+    ],
+    "patchPacketMirroringRule_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.patchPacketMirroringRule"
+    ],
+    "getIamPolicy_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.getIamPolicy"
+    ],
+    "setIamPolicy_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.setIamPolicy"
+    ],
+    "testIamPermissions_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.testIamPermissions"
+    ],
+    "addAssociation_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.addAssociation"
+    ],
+    "removeAssociation_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.removeAssociation"
+    ],
+    "getAssociation_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.getAssociation"
+    ],
+    "cloneRules_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.cloneRules"
+    ],
+    "aggregatedList_networkFirewallPolicies": [
+      "compute.networkFirewallPolicies.aggregatedList"
+    ]
+  },
+  "regionNetworkFirewallPolicies_management": {
+    "list_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.list"
+    ],
+    "get_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.get"
+    ],
+    "insert_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.insert"
+    ],
+    "delete_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.delete"
+    ],
+    "patch_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.patch"
+    ],
+    "getRule_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.getRule"
+    ],
+    "addRule_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.addRule"
+    ],
+    "removeRule_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.removeRule"
+    ],
+    "patchRule_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.patchRule"
+    ],
+    "cloneRules_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.cloneRules"
+    ],
+    "getAssociation_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.getAssociation"
+    ],
+    "addAssociation_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.addAssociation"
+    ],
+    "removeAssociation_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.removeAssociation"
+    ],
+    "getEffectiveFirewalls_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.getEffectiveFirewalls"
+    ],
+    "getIamPolicy_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.getIamPolicy"
+    ],
+    "setIamPolicy_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.setIamPolicy"
+    ],
+    "testIamPermissions_regionNetworkFirewallPolicies": [
+      "compute.regionNetworkFirewallPolicies.testIamPermissions"
+    ]
+  },
+  "securityPolicies_management": {
+    "list_securityPolicies": [
+      "compute.securityPolicies.list"
+    ],
+    "get_securityPolicies": [
+      "compute.securityPolicies.get"
+    ],
+    "insert_securityPolicies": [
+      "compute.securityPolicies.insert"
+    ],
+    "delete_securityPolicies": [
+      "compute.securityPolicies.delete"
+    ],
+    "patch_securityPolicies": [
+      "compute.securityPolicies.patch"
+    ],
+    "getRule_securityPolicies": [
+      "compute.securityPolicies.getRule"
+    ],
+    "addRule_securityPolicies": [
+      "compute.securityPolicies.addRule"
+    ],
+    "removeRule_securityPolicies": [
+      "compute.securityPolicies.removeRule"
+    ],
+    "patchRule_securityPolicies": [
+      "compute.securityPolicies.patchRule"
+    ],
+    "listPreconfiguredExpressionSets_securityPolicies": [
+      "compute.securityPolicies.listPreconfiguredExpressionSets"
+    ],
+    "setLabels_securityPolicies": [
+      "compute.securityPolicies.setLabels"
+    ],
+    "aggregatedList_securityPolicies": [
+      "compute.securityPolicies.aggregatedList"
+    ]
+  },
+  "regionSecurityPolicies_management": {
+    "list_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.list"
+    ],
+    "get_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.get"
+    ],
+    "insert_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.insert"
+    ],
+    "delete_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.delete"
+    ],
+    "patch_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.patch"
+    ],
+    "getRule_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.getRule"
+    ],
+    "addRule_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.addRule"
+    ],
+    "removeRule_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.removeRule"
+    ],
+    "patchRule_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.patchRule"
+    ],
+    "setLabels_regionSecurityPolicies": [
+      "compute.regionSecurityPolicies.setLabels"
+    ]
+  },
+  "instances_management": {
+    "list_instances": [
+      "compute.instances.list"
+    ],
+    "aggregatedList_instances": [
+      "compute.instances.aggregatedList"
+    ],
+    "listReferrers_instances": [
+      "compute.instances.listReferrers"
+    ],
+    "get_instances": [
+      "compute.instances.get"
+    ],
+    "insert_instances": [
+      "compute.instances.insert"
+    ],
+    "delete_instances": [
+      "compute.instances.delete"
+    ],
+    "reset_instances": [
+      "compute.instances.reset"
+    ],
+    "simulateMaintenanceEvent_instances": [
+      "compute.instances.simulateMaintenanceEvent"
+    ],
+    "performMaintenance_instances": [
+      "compute.instances.performMaintenance"
+    ],
+    "reportHostAsFaulty_instances": [
+      "compute.instances.reportHostAsFaulty"
+    ],
+    "addAccessConfig_instances": [
+      "compute.instances.addAccessConfig"
+    ],
+    "deleteAccessConfig_instances": [
+      "compute.instances.deleteAccessConfig"
+    ],
+    "updateAccessConfig_instances": [
+      "compute.instances.updateAccessConfig"
+    ],
+    "updateNetworkInterface_instances": [
+      "compute.instances.updateNetworkInterface"
+    ],
+    "setScheduling_instances": [
+      "compute.instances.setScheduling"
+    ],
+    "getSerialPortOutput_instances": [
+      "compute.instances.getSerialPortOutput"
+    ],
+    "getScreenshot_instances": [
+      "compute.instances.getScreenshot"
+    ],
+    "sendDiagnosticInterrupt_instances": [
+      "compute.instances.sendDiagnosticInterrupt"
+    ],
+    "getGuestAttributes_instances": [
+      "compute.instances.getGuestAttributes"
+    ],
+    "attachDisk_instances": [
+      "compute.instances.attachDisk"
+    ],
+    "detachDisk_instances": [
+      "compute.instances.detachDisk"
+    ],
+    "setMachineResources_instances": [
+      "compute.instances.setMachineResources"
+    ],
+    "setMachineType_instances": [
+      "compute.instances.setMachineType"
+    ],
+    "setMetadata_instances": [
+      "compute.instances.setMetadata"
+    ],
+    "setMinCpuPlatform_instances": [
+      "compute.instances.setMinCpuPlatform"
+    ],
+    "setTags_instances": [
+      "compute.instances.setTags"
+    ],
+    "setLabels_instances": [
+      "compute.instances.setLabels"
+    ],
+    "setName_instances": [
+      "compute.instances.setName"
+    ],
+    "setDiskAutoDelete_instances": [
+      "compute.instances.setDiskAutoDelete"
+    ],
+    "start_instances": [
+      "compute.instances.start"
+    ],
+    "startWithEncryptionKey_instances": [
+      "compute.instances.startWithEncryptionKey"
+    ],
+    "stop_instances": [
+      "compute.instances.stop"
+    ],
+    "getIamPolicy_instances": [
+      "compute.instances.getIamPolicy"
+    ],
+    "setIamPolicy_instances": [
+      "compute.instances.setIamPolicy"
+    ],
+    "testIamPermissions_instances": [
+      "compute.instances.testIamPermissions"
+    ],
+    "setServiceAccount_instances": [
+      "compute.instances.setServiceAccount"
+    ],
+    "setDeletionProtection_instances": [
+      "compute.instances.setDeletionProtection"
+    ],
+    "suspend_instances": [
+      "compute.instances.suspend"
+    ],
+    "resume_instances": [
+      "compute.instances.resume"
+    ],
+    "addResourcePolicies_instances": [
+      "compute.instances.addResourcePolicies"
+    ],
+    "removeResourcePolicies_instances": [
+      "compute.instances.removeResourcePolicies"
+    ],
+    "update_instances": [
+      "compute.instances.update"
+    ],
+    "updateShieldedInstanceConfig_instances": [
+      "compute.instances.updateShieldedInstanceConfig"
+    ],
+    "updateDisplayDevice_instances": [
+      "compute.instances.updateDisplayDevice"
+    ],
+    "setShieldedInstanceIntegrityPolicy_instances": [
+      "compute.instances.setShieldedInstanceIntegrityPolicy"
+    ],
+    "setSecurityPolicy_instances": [
+      "compute.instances.setSecurityPolicy"
+    ],
+    "getShieldedInstanceIdentity_instances": [
+      "compute.instances.getShieldedInstanceIdentity"
+    ],
+    "bulkInsert_instances": [
+      "compute.instances.bulkInsert"
+    ],
+    "getEffectiveFirewalls_instances": [
+      "compute.instances.getEffectiveFirewalls"
+    ]
+  },
+  "regionInstances_management": {
+    "bulkInsert_regionInstances": [
+      "compute.regionInstances.bulkInsert"
+    ]
+  },
+  "reservations_management": {
+    "list_reservations": [
+      "compute.reservations.list"
+    ],
+    "aggregatedList_reservations": [
+      "compute.reservations.aggregatedList"
+    ],
+    "get_reservations": [
+      "compute.reservations.get"
+    ],
+    "insert_reservations": [
+      "compute.reservations.insert"
+    ],
+    "delete_reservations": [
+      "compute.reservations.delete"
+    ],
+    "resize_reservations": [
+      "compute.reservations.resize"
+    ],
+    "update_reservations": [
+      "compute.reservations.update"
+    ],
+    "getIamPolicy_reservations": [
+      "compute.reservations.getIamPolicy"
+    ],
+    "setIamPolicy_reservations": [
+      "compute.reservations.setIamPolicy"
+    ],
+    "testIamPermissions_reservations": [
+      "compute.reservations.testIamPermissions"
+    ],
+    "performMaintenance_reservations": [
+      "compute.reservations.performMaintenance"
+    ]
+  },
+  "instanceGroups_management": {
+    "list_instanceGroups": [
+      "compute.instanceGroups.list"
+    ],
+    "aggregatedList_instanceGroups": [
+      "compute.instanceGroups.aggregatedList"
+    ],
+    "get_instanceGroups": [
+      "compute.instanceGroups.get"
+    ],
+    "insert_instanceGroups": [
+      "compute.instanceGroups.insert"
+    ],
+    "delete_instanceGroups": [
+      "compute.instanceGroups.delete"
+    ],
+    "addInstances_instanceGroups": [
+      "compute.instanceGroups.addInstances"
+    ],
+    "removeInstances_instanceGroups": [
+      "compute.instanceGroups.removeInstances"
+    ],
+    "listInstances_instanceGroups": [
+      "compute.instanceGroups.listInstances"
+    ],
+    "setNamedPorts_instanceGroups": [
+      "compute.instanceGroups.setNamedPorts"
+    ]
+  },
+  "regionInstanceGroups_management": {
+    "list_regionInstanceGroups": [
+      "compute.regionInstanceGroups.list"
+    ],
+    "get_regionInstanceGroups": [
+      "compute.regionInstanceGroups.get"
+    ],
+    "listInstances_regionInstanceGroups": [
+      "compute.regionInstanceGroups.listInstances"
+    ],
+    "setNamedPorts_regionInstanceGroups": [
+      "compute.regionInstanceGroups.setNamedPorts"
+    ]
+  },
+  "instanceGroupManagers_management": {
+    "list_instanceGroupManagers": [
+      "compute.instanceGroupManagers.list"
+    ],
+    "aggregatedList_instanceGroupManagers": [
+      "compute.instanceGroupManagers.aggregatedList"
+    ],
+    "get_instanceGroupManagers": [
+      "compute.instanceGroupManagers.get"
+    ],
+    "insert_instanceGroupManagers": [
+      "compute.instanceGroupManagers.insert"
+    ],
+    "patch_instanceGroupManagers": [
+      "compute.instanceGroupManagers.patch"
+    ],
+    "delete_instanceGroupManagers": [
+      "compute.instanceGroupManagers.delete"
+    ],
+    "deleteInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.deleteInstances"
+    ],
+    "suspendInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.suspendInstances"
+    ],
+    "resumeInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.resumeInstances"
+    ],
+    "stopInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.stopInstances"
+    ],
+    "startInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.startInstances"
+    ],
+    "abandonInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.abandonInstances"
+    ],
+    "recreateInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.recreateInstances"
+    ],
+    "resize_instanceGroupManagers": [
+      "compute.instanceGroupManagers.resize"
+    ],
+    "setInstanceTemplate_instanceGroupManagers": [
+      "compute.instanceGroupManagers.setInstanceTemplate"
+    ],
+    "setTargetPools_instanceGroupManagers": [
+      "compute.instanceGroupManagers.setTargetPools"
+    ],
+    "listManagedInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.listManagedInstances"
+    ],
+    "listErrors_instanceGroupManagers": [
+      "compute.instanceGroupManagers.listErrors"
+    ],
+    "listPerInstanceConfigs_instanceGroupManagers": [
+      "compute.instanceGroupManagers.listPerInstanceConfigs"
+    ],
+    "updatePerInstanceConfigs_instanceGroupManagers": [
+      "compute.instanceGroupManagers.updatePerInstanceConfigs"
+    ],
+    "patchPerInstanceConfigs_instanceGroupManagers": [
+      "compute.instanceGroupManagers.patchPerInstanceConfigs"
+    ],
+    "deletePerInstanceConfigs_instanceGroupManagers": [
+      "compute.instanceGroupManagers.deletePerInstanceConfigs"
+    ],
+    "applyUpdatesToInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.applyUpdatesToInstances"
+    ],
+    "createInstances_instanceGroupManagers": [
+      "compute.instanceGroupManagers.createInstances"
+    ]
+  },
+  "instanceGroupManagerResizeRequests_management": {
+    "get_instanceGroupManagerResizeRequests": [
+      "compute.instanceGroupManagerResizeRequests.get"
+    ],
+    "insert_instanceGroupManagerResizeRequests": [
+      "compute.instanceGroupManagerResizeRequests.insert"
+    ],
+    "list_instanceGroupManagerResizeRequests": [
+      "compute.instanceGroupManagerResizeRequests.list"
+    ],
+    "cancel_instanceGroupManagerResizeRequests": [
+      "compute.instanceGroupManagerResizeRequests.cancel"
+    ],
+    "delete_instanceGroupManagerResizeRequests": [
+      "compute.instanceGroupManagerResizeRequests.delete"
+    ]
+  },
+  "regionInstanceGroupManagers_management": {
+    "list_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.list"
+    ],
+    "get_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.get"
+    ],
+    "insert_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.insert"
+    ],
+    "patch_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.patch"
+    ],
+    "delete_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.delete"
+    ],
+    "deleteInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.deleteInstances"
+    ],
+    "suspendInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.suspendInstances"
+    ],
+    "resumeInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.resumeInstances"
+    ],
+    "stopInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.stopInstances"
+    ],
+    "startInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.startInstances"
+    ],
+    "abandonInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.abandonInstances"
+    ],
+    "recreateInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.recreateInstances"
+    ],
+    "resize_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.resize"
+    ],
+    "setInstanceTemplate_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.setInstanceTemplate"
+    ],
+    "setTargetPools_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.setTargetPools"
+    ],
+    "listManagedInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.listManagedInstances"
+    ],
+    "listErrors_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.listErrors"
+    ],
+    "listPerInstanceConfigs_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.listPerInstanceConfigs"
+    ],
+    "updatePerInstanceConfigs_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.updatePerInstanceConfigs"
+    ],
+    "patchPerInstanceConfigs_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.patchPerInstanceConfigs"
+    ],
+    "deletePerInstanceConfigs_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.deletePerInstanceConfigs"
+    ],
+    "applyUpdatesToInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.applyUpdatesToInstances"
+    ],
+    "createInstances_regionInstanceGroupManagers": [
+      "compute.regionInstanceGroupManagers.createInstances"
+    ]
+  },
+  "autoscalers_management": {
+    "list_autoscalers": [
+      "compute.autoscalers.list"
+    ],
+    "aggregatedList_autoscalers": [
+      "compute.autoscalers.aggregatedList"
+    ],
+    "get_autoscalers": [
+      "compute.autoscalers.get"
+    ],
+    "insert_autoscalers": [
+      "compute.autoscalers.insert"
+    ],
+    "update_autoscalers": [
+      "compute.autoscalers.update"
+    ],
+    "patch_autoscalers": [
+      "compute.autoscalers.patch"
+    ],
+    "delete_autoscalers": [
+      "compute.autoscalers.delete"
+    ]
+  },
+  "regionAutoscalers_management": {
+    "list_regionAutoscalers": [
+      "compute.regionAutoscalers.list"
+    ],
+    "get_regionAutoscalers": [
+      "compute.regionAutoscalers.get"
+    ],
+    "insert_regionAutoscalers": [
+      "compute.regionAutoscalers.insert"
+    ],
+    "update_regionAutoscalers": [
+      "compute.regionAutoscalers.update"
+    ],
+    "patch_regionAutoscalers": [
+      "compute.regionAutoscalers.patch"
+    ],
+    "delete_regionAutoscalers": [
+      "compute.regionAutoscalers.delete"
+    ]
+  },
+  "backendBuckets_management": {
+    "list_backendBuckets": [
+      "compute.backendBuckets.list"
+    ],
+    "get_backendBuckets": [
+      "compute.backendBuckets.get"
+    ],
+    "insert_backendBuckets": [
+      "compute.backendBuckets.insert"
+    ],
+    "delete_backendBuckets": [
+      "compute.backendBuckets.delete"
+    ],
+    "update_backendBuckets": [
+      "compute.backendBuckets.update"
+    ],
+    "patch_backendBuckets": [
+      "compute.backendBuckets.patch"
+    ],
+    "addSignedUrlKey_backendBuckets": [
+      "compute.backendBuckets.addSignedUrlKey"
+    ],
+    "deleteSignedUrlKey_backendBuckets": [
+      "compute.backendBuckets.deleteSignedUrlKey"
+    ],
+    "setEdgeSecurityPolicy_backendBuckets": [
+      "compute.backendBuckets.setEdgeSecurityPolicy"
+    ],
+    "getIamPolicy_backendBuckets": [
+      "compute.backendBuckets.getIamPolicy"
+    ],
+    "setIamPolicy_backendBuckets": [
+      "compute.backendBuckets.setIamPolicy"
+    ],
+    "testIamPermissions_backendBuckets": [
+      "compute.backendBuckets.testIamPermissions"
+    ]
+  },
+  "backendServices_management": {
+    "list_backendServices": [
+      "compute.backendServices.list"
+    ],
+    "aggregatedList_backendServices": [
+      "compute.backendServices.aggregatedList"
+    ],
+    "listUsable_backendServices": [
+      "compute.backendServices.listUsable"
+    ],
+    "get_backendServices": [
+      "compute.backendServices.get"
+    ],
+    "insert_backendServices": [
+      "compute.backendServices.insert"
+    ],
+    "delete_backendServices": [
+      "compute.backendServices.delete"
+    ],
+    "update_backendServices": [
+      "compute.backendServices.update"
+    ],
+    "patch_backendServices": [
+      "compute.backendServices.patch"
+    ],
+    "addSignedUrlKey_backendServices": [
+      "compute.backendServices.addSignedUrlKey"
+    ],
+    "deleteSignedUrlKey_backendServices": [
+      "compute.backendServices.deleteSignedUrlKey"
+    ],
+    "setSecurityPolicy_backendServices": [
+      "compute.backendServices.setSecurityPolicy"
+    ],
+    "setEdgeSecurityPolicy_backendServices": [
+      "compute.backendServices.setEdgeSecurityPolicy"
+    ],
+    "getHealth_backendServices": [
+      "compute.backendServices.getHealth"
+    ],
+    "getIamPolicy_backendServices": [
+      "compute.backendServices.getIamPolicy"
+    ],
+    "setIamPolicy_backendServices": [
+      "compute.backendServices.setIamPolicy"
+    ],
+    "testIamPermissions_backendServices": [
+      "compute.backendServices.testIamPermissions"
+    ]
+  },
+  "regionBackendServices_management": {
+    "list_regionBackendServices": [
+      "compute.regionBackendServices.list"
+    ],
+    "listUsable_regionBackendServices": [
+      "compute.regionBackendServices.listUsable"
+    ],
+    "get_regionBackendServices": [
+      "compute.regionBackendServices.get"
+    ],
+    "insert_regionBackendServices": [
+      "compute.regionBackendServices.insert"
+    ],
+    "delete_regionBackendServices": [
+      "compute.regionBackendServices.delete"
+    ],
+    "update_regionBackendServices": [
+      "compute.regionBackendServices.update"
+    ],
+    "patch_regionBackendServices": [
+      "compute.regionBackendServices.patch"
+    ],
+    "setSecurityPolicy_regionBackendServices": [
+      "compute.regionBackendServices.setSecurityPolicy"
+    ],
+    "getHealth_regionBackendServices": [
+      "compute.regionBackendServices.getHealth"
+    ],
+    "getIamPolicy_regionBackendServices": [
+      "compute.regionBackendServices.getIamPolicy"
+    ],
+    "setIamPolicy_regionBackendServices": [
+      "compute.regionBackendServices.setIamPolicy"
+    ],
+    "testIamPermissions_regionBackendServices": [
+      "compute.regionBackendServices.testIamPermissions"
+    ]
+  },
+  "regionCommitments_management": {
+    "list_regionCommitments": [
+      "compute.regionCommitments.list"
+    ],
+    "aggregatedList_regionCommitments": [
+      "compute.regionCommitments.aggregatedList"
+    ],
+    "get_regionCommitments": [
+      "compute.regionCommitments.get"
+    ],
+    "insert_regionCommitments": [
+      "compute.regionCommitments.insert"
+    ],
+    "update_regionCommitments": [
+      "compute.regionCommitments.update"
+    ]
+  },
+  "diskTypes_management": {
+    "list_diskTypes": [
+      "compute.diskTypes.list"
+    ],
+    "aggregatedList_diskTypes": [
+      "compute.diskTypes.aggregatedList"
+    ],
+    "get_diskTypes": [
+      "compute.diskTypes.get"
+    ]
+  },
+  "regionDiskTypes_management": {
+    "list_regionDiskTypes": [
+      "compute.regionDiskTypes.list"
+    ],
+    "get_regionDiskTypes": [
+      "compute.regionDiskTypes.get"
+    ]
+  },
+  "interconnectAttachments_management": {
+    "list_interconnectAttachments": [
+      "compute.interconnectAttachments.list"
+    ],
+    "aggregatedList_interconnectAttachments": [
+      "compute.interconnectAttachments.aggregatedList"
+    ],
+    "get_interconnectAttachments": [
+      "compute.interconnectAttachments.get"
+    ],
+    "insert_interconnectAttachments": [
+      "compute.interconnectAttachments.insert"
+    ],
+    "patch_interconnectAttachments": [
+      "compute.interconnectAttachments.patch"
+    ],
+    "delete_interconnectAttachments": [
+      "compute.interconnectAttachments.delete"
+    ],
+    "setLabels_interconnectAttachments": [
+      "compute.interconnectAttachments.setLabels"
+    ]
+  },
+  "interconnectAttachmentGroups_management": {
+    "list_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.list"
+    ],
+    "get_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.get"
+    ],
+    "insert_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.insert"
+    ],
+    "delete_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.delete"
+    ],
+    "patch_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.patch"
+    ],
+    "getIamPolicy_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.getIamPolicy"
+    ],
+    "setIamPolicy_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.setIamPolicy"
+    ],
+    "testIamPermissions_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.testIamPermissions"
+    ],
+    "getOperationalStatus_interconnectAttachmentGroups": [
+      "compute.interconnectAttachmentGroups.getOperationalStatus"
+    ]
+  },
+  "interconnects_management": {
+    "insert_interconnects": [
+      "compute.interconnects.insert"
+    ],
+    "list_interconnects": [
+      "compute.interconnects.list"
+    ],
+    "getDiagnostics_interconnects": [
+      "compute.interconnects.getDiagnostics"
+    ],
+    "getMacsecConfig_interconnects": [
+      "compute.interconnects.getMacsecConfig"
+    ],
+    "get_interconnects": [
+      "compute.interconnects.get"
+    ],
+    "delete_interconnects": [
+      "compute.interconnects.delete"
+    ],
+    "patch_interconnects": [
+      "compute.interconnects.patch"
+    ],
+    "setLabels_interconnects": [
+      "compute.interconnects.setLabels"
+    ]
+  },
+  "interconnectGroups_management": {
+    "list_interconnectGroups": [
+      "compute.interconnectGroups.list"
+    ],
+    "get_interconnectGroups": [
+      "compute.interconnectGroups.get"
+    ],
+    "insert_interconnectGroups": [
+      "compute.interconnectGroups.insert"
+    ],
+    "delete_interconnectGroups": [
+      "compute.interconnectGroups.delete"
+    ],
+    "patch_interconnectGroups": [
+      "compute.interconnectGroups.patch"
+    ],
+    "getOperationalStatus_interconnectGroups": [
+      "compute.interconnectGroups.getOperationalStatus"
+    ],
+    "getIamPolicy_interconnectGroups": [
+      "compute.interconnectGroups.getIamPolicy"
+    ],
+    "setIamPolicy_interconnectGroups": [
+      "compute.interconnectGroups.setIamPolicy"
+    ],
+    "testIamPermissions_interconnectGroups": [
+      "compute.interconnectGroups.testIamPermissions"
+    ],
+    "createMembers_interconnectGroups": [
+      "compute.interconnectGroups.createMembers"
+    ]
+  },
+  "externalVpnGateways_management": {
+    "insert_externalVpnGateways": [
+      "compute.externalVpnGateways.insert"
+    ],
+    "list_externalVpnGateways": [
+      "compute.externalVpnGateways.list"
+    ],
+    "get_externalVpnGateways": [
+      "compute.externalVpnGateways.get"
+    ],
+    "delete_externalVpnGateways": [
+      "compute.externalVpnGateways.delete"
+    ],
+    "testIamPermissions_externalVpnGateways": [
+      "compute.externalVpnGateways.testIamPermissions"
+    ],
+    "setLabels_externalVpnGateways": [
+      "compute.externalVpnGateways.setLabels"
+    ]
+  },
+  "globalForwardingRules_management": {
+    "list_globalForwardingRules": [
+      "compute.globalForwardingRules.list"
+    ],
+    "get_globalForwardingRules": [
+      "compute.globalForwardingRules.get"
+    ],
+    "insert_globalForwardingRules": [
+      "compute.globalForwardingRules.insert"
+    ],
+    "delete_globalForwardingRules": [
+      "compute.globalForwardingRules.delete"
+    ],
+    "setTarget_globalForwardingRules": [
+      "compute.globalForwardingRules.setTarget"
+    ],
+    "patch_globalForwardingRules": [
+      "compute.globalForwardingRules.patch"
+    ],
+    "setLabels_globalForwardingRules": [
+      "compute.globalForwardingRules.setLabels"
+    ]
+  },
+  "forwardingRules_management": {
+    "list_forwardingRules": [
+      "compute.forwardingRules.list"
+    ],
+    "aggregatedList_forwardingRules": [
+      "compute.forwardingRules.aggregatedList"
+    ],
+    "get_forwardingRules": [
+      "compute.forwardingRules.get"
+    ],
+    "insert_forwardingRules": [
+      "compute.forwardingRules.insert"
+    ],
+    "delete_forwardingRules": [
+      "compute.forwardingRules.delete"
+    ],
+    "setTarget_forwardingRules": [
+      "compute.forwardingRules.setTarget"
+    ],
+    "patch_forwardingRules": [
+      "compute.forwardingRules.patch"
+    ],
+    "setLabels_forwardingRules": [
+      "compute.forwardingRules.setLabels"
+    ]
+  },
+  "regionHealthCheckServices_management": {
+    "list_regionHealthCheckServices": [
+      "compute.regionHealthCheckServices.list"
+    ],
+    "get_regionHealthCheckServices": [
+      "compute.regionHealthCheckServices.get"
+    ],
+    "insert_regionHealthCheckServices": [
+      "compute.regionHealthCheckServices.insert"
+    ],
+    "delete_regionHealthCheckServices": [
+      "compute.regionHealthCheckServices.delete"
+    ],
+    "patch_regionHealthCheckServices": [
+      "compute.regionHealthCheckServices.patch"
+    ]
+  },
+  "healthChecks_management": {
+    "list_healthChecks": [
+      "compute.healthChecks.list"
+    ],
+    "aggregatedList_healthChecks": [
+      "compute.healthChecks.aggregatedList"
+    ],
+    "get_healthChecks": [
+      "compute.healthChecks.get"
+    ],
+    "insert_healthChecks": [
+      "compute.healthChecks.insert"
+    ],
+    "delete_healthChecks": [
+      "compute.healthChecks.delete"
+    ],
+    "update_healthChecks": [
+      "compute.healthChecks.update"
+    ],
+    "patch_healthChecks": [
+      "compute.healthChecks.patch"
+    ]
+  },
+  "regionHealthChecks_management": {
+    "list_regionHealthChecks": [
+      "compute.regionHealthChecks.list"
+    ],
+    "get_regionHealthChecks": [
+      "compute.regionHealthChecks.get"
+    ],
+    "insert_regionHealthChecks": [
+      "compute.regionHealthChecks.insert"
+    ],
+    "delete_regionHealthChecks": [
+      "compute.regionHealthChecks.delete"
+    ],
+    "update_regionHealthChecks": [
+      "compute.regionHealthChecks.update"
+    ],
+    "patch_regionHealthChecks": [
+      "compute.regionHealthChecks.patch"
+    ]
+  },
+  "httpHealthChecks_management": {
+    "list_httpHealthChecks": [
+      "compute.httpHealthChecks.list"
+    ],
+    "get_httpHealthChecks": [
+      "compute.httpHealthChecks.get"
+    ],
+    "insert_httpHealthChecks": [
+      "compute.httpHealthChecks.insert"
+    ],
+    "delete_httpHealthChecks": [
+      "compute.httpHealthChecks.delete"
+    ],
+    "update_httpHealthChecks": [
+      "compute.httpHealthChecks.update"
+    ],
+    "patch_httpHealthChecks": [
+      "compute.httpHealthChecks.patch"
+    ]
+  },
+  "httpsHealthChecks_management": {
+    "list_httpsHealthChecks": [
+      "compute.httpsHealthChecks.list"
+    ],
+    "get_httpsHealthChecks": [
+      "compute.httpsHealthChecks.get"
+    ],
+    "insert_httpsHealthChecks": [
+      "compute.httpsHealthChecks.insert"
+    ],
+    "delete_httpsHealthChecks": [
+      "compute.httpsHealthChecks.delete"
+    ],
+    "update_httpsHealthChecks": [
+      "compute.httpsHealthChecks.update"
+    ],
+    "patch_httpsHealthChecks": [
+      "compute.httpsHealthChecks.patch"
+    ]
+  },
+  "instanceTemplates_management": {
+    "list_instanceTemplates": [
+      "compute.instanceTemplates.list"
+    ],
+    "get_instanceTemplates": [
+      "compute.instanceTemplates.get"
+    ],
+    "insert_instanceTemplates": [
+      "compute.instanceTemplates.insert"
+    ],
+    "delete_instanceTemplates": [
+      "compute.instanceTemplates.delete"
+    ],
+    "aggregatedList_instanceTemplates": [
+      "compute.instanceTemplates.aggregatedList"
+    ],
+    "getIamPolicy_instanceTemplates": [
+      "compute.instanceTemplates.getIamPolicy"
+    ],
+    "setIamPolicy_instanceTemplates": [
+      "compute.instanceTemplates.setIamPolicy"
+    ],
+    "testIamPermissions_instanceTemplates": [
+      "compute.instanceTemplates.testIamPermissions"
+    ]
+  },
+  "regionInstanceTemplates_management": {
+    "list_regionInstanceTemplates": [
+      "compute.regionInstanceTemplates.list"
+    ],
+    "get_regionInstanceTemplates": [
+      "compute.regionInstanceTemplates.get"
+    ],
+    "insert_regionInstanceTemplates": [
+      "compute.regionInstanceTemplates.insert"
+    ],
+    "delete_regionInstanceTemplates": [
+      "compute.regionInstanceTemplates.delete"
+    ]
+  },
+  "instanceSettings_management": {
+    "get_instanceSettings": [
+      "compute.instanceSettings.get"
+    ],
+    "patch_instanceSettings": [
+      "compute.instanceSettings.patch"
+    ]
+  },
+  "instantSnapshots_management": {
+    "list_instantSnapshots": [
+      "compute.instantSnapshots.list"
+    ],
+    "get_instantSnapshots": [
+      "compute.instantSnapshots.get"
+    ],
+    "insert_instantSnapshots": [
+      "compute.instantSnapshots.insert"
+    ],
+    "setLabels_instantSnapshots": [
+      "compute.instantSnapshots.setLabels"
+    ],
+    "delete_instantSnapshots": [
+      "compute.instantSnapshots.delete"
+    ],
+    "getIamPolicy_instantSnapshots": [
+      "compute.instantSnapshots.getIamPolicy"
+    ],
+    "setIamPolicy_instantSnapshots": [
+      "compute.instantSnapshots.setIamPolicy"
+    ],
+    "testIamPermissions_instantSnapshots": [
+      "compute.instantSnapshots.testIamPermissions"
+    ],
+    "aggregatedList_instantSnapshots": [
+      "compute.instantSnapshots.aggregatedList"
+    ]
+  },
+  "regionInstantSnapshots_management": {
+    "list_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.list"
+    ],
+    "get_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.get"
+    ],
+    "insert_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.insert"
+    ],
+    "setLabels_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.setLabels"
+    ],
+    "delete_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.delete"
+    ],
+    "getIamPolicy_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.getIamPolicy"
+    ],
+    "setIamPolicy_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.setIamPolicy"
+    ],
+    "testIamPermissions_regionInstantSnapshots": [
+      "compute.regionInstantSnapshots.testIamPermissions"
+    ]
+  },
+  "interconnectLocations_management": {
+    "list_interconnectLocations": [
+      "compute.interconnectLocations.list"
+    ],
+    "get_interconnectLocations": [
+      "compute.interconnectLocations.get"
+    ]
+  },
+  "interconnectRemoteLocations_management": {
+    "list_interconnectRemoteLocations": [
+      "compute.interconnectRemoteLocations.list"
+    ],
+    "get_interconnectRemoteLocations": [
+      "compute.interconnectRemoteLocations.get"
+    ]
+  },
+  "licenseCodes_management": {
+    "get_licenseCodes": [
+      "compute.licenseCodes.get"
+    ],
+    "testIamPermissions_licenseCodes": [
+      "compute.licenseCodes.testIamPermissions"
+    ]
+  },
+  "licenses_management": {
+    "get_licenses": [
+      "compute.licenses.get"
+    ],
+    "list_licenses": [
+      "compute.licenses.list"
+    ],
+    "delete_licenses": [
+      "compute.licenses.delete"
+    ],
+    "insert_licenses": [
+      "compute.licenses.insert"
+    ],
+    "update_licenses": [
+      "compute.licenses.update"
+    ],
+    "getIamPolicy_licenses": [
+      "compute.licenses.getIamPolicy"
+    ],
+    "setIamPolicy_licenses": [
+      "compute.licenses.setIamPolicy"
+    ],
+    "testIamPermissions_licenses": [
+      "compute.licenses.testIamPermissions"
+    ]
+  },
+  "machineImages_management": {
+    "list_machineImages": [
+      "compute.machineImages.list"
+    ],
+    "get_machineImages": [
+      "compute.machineImages.get"
+    ],
+    "insert_machineImages": [
+      "compute.machineImages.insert"
+    ],
+    "setLabels_machineImages": [
+      "compute.machineImages.setLabels"
+    ],
+    "delete_machineImages": [
+      "compute.machineImages.delete"
+    ],
+    "getIamPolicy_machineImages": [
+      "compute.machineImages.getIamPolicy"
+    ],
+    "setIamPolicy_machineImages": [
+      "compute.machineImages.setIamPolicy"
+    ],
+    "testIamPermissions_machineImages": [
+      "compute.machineImages.testIamPermissions"
+    ]
+  },
+  "machineTypes_management": {
+    "list_machineTypes": [
+      "compute.machineTypes.list"
+    ],
+    "aggregatedList_machineTypes": [
+      "compute.machineTypes.aggregatedList"
+    ],
+    "get_machineTypes": [
+      "compute.machineTypes.get"
+    ]
+  },
+  "networkAttachments_management": {
+    "aggregatedList_networkAttachments": [
+      "compute.networkAttachments.aggregatedList"
+    ],
+    "list_networkAttachments": [
+      "compute.networkAttachments.list"
+    ],
+    "get_networkAttachments": [
+      "compute.networkAttachments.get"
+    ],
+    "insert_networkAttachments": [
+      "compute.networkAttachments.insert"
+    ],
+    "delete_networkAttachments": [
+      "compute.networkAttachments.delete"
+    ],
+    "patch_networkAttachments": [
+      "compute.networkAttachments.patch"
+    ],
+    "getIamPolicy_networkAttachments": [
+      "compute.networkAttachments.getIamPolicy"
+    ],
+    "setIamPolicy_networkAttachments": [
+      "compute.networkAttachments.setIamPolicy"
+    ],
+    "testIamPermissions_networkAttachments": [
+      "compute.networkAttachments.testIamPermissions"
+    ]
+  },
+  "networkEdgeSecurityServices_management": {
+    "get_networkEdgeSecurityServices": [
+      "compute.networkEdgeSecurityServices.get"
+    ],
+    "insert_networkEdgeSecurityServices": [
+      "compute.networkEdgeSecurityServices.insert"
+    ],
+    "delete_networkEdgeSecurityServices": [
+      "compute.networkEdgeSecurityServices.delete"
+    ],
+    "patch_networkEdgeSecurityServices": [
+      "compute.networkEdgeSecurityServices.patch"
+    ],
+    "aggregatedList_networkEdgeSecurityServices": [
+      "compute.networkEdgeSecurityServices.aggregatedList"
+    ]
+  },
+  "networkEndpointGroups_management": {
+    "list_networkEndpointGroups": [
+      "compute.networkEndpointGroups.list"
+    ],
+    "aggregatedList_networkEndpointGroups": [
+      "compute.networkEndpointGroups.aggregatedList"
+    ],
+    "get_networkEndpointGroups": [
+      "compute.networkEndpointGroups.get"
+    ],
+    "insert_networkEndpointGroups": [
+      "compute.networkEndpointGroups.insert"
+    ],
+    "delete_networkEndpointGroups": [
+      "compute.networkEndpointGroups.delete"
+    ],
+    "attachNetworkEndpoints_networkEndpointGroups": [
+      "compute.networkEndpointGroups.attachNetworkEndpoints"
+    ],
+    "detachNetworkEndpoints_networkEndpointGroups": [
+      "compute.networkEndpointGroups.detachNetworkEndpoints"
+    ],
+    "listNetworkEndpoints_networkEndpointGroups": [
+      "compute.networkEndpointGroups.listNetworkEndpoints"
+    ],
+    "testIamPermissions_networkEndpointGroups": [
+      "compute.networkEndpointGroups.testIamPermissions"
+    ]
+  },
+  "globalNetworkEndpointGroups_management": {
+    "list_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.list"
+    ],
+    "get_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.get"
+    ],
+    "insert_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.insert"
+    ],
+    "delete_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.delete"
+    ],
+    "attachNetworkEndpoints_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.attachNetworkEndpoints"
+    ],
+    "detachNetworkEndpoints_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.detachNetworkEndpoints"
+    ],
+    "listNetworkEndpoints_globalNetworkEndpointGroups": [
+      "compute.globalNetworkEndpointGroups.listNetworkEndpoints"
+    ]
+  },
+  "regionNetworkEndpointGroups_management": {
+    "list_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.list"
+    ],
+    "get_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.get"
+    ],
+    "insert_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.insert"
+    ],
+    "delete_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.delete"
+    ],
+    "attachNetworkEndpoints_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.attachNetworkEndpoints"
+    ],
+    "detachNetworkEndpoints_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.detachNetworkEndpoints"
+    ],
+    "listNetworkEndpoints_regionNetworkEndpointGroups": [
+      "compute.regionNetworkEndpointGroups.listNetworkEndpoints"
+    ]
+  },
+  "networks_management": {
+    "list_networks": [
+      "compute.networks.list"
+    ],
+    "get_networks": [
+      "compute.networks.get"
+    ],
+    "insert_networks": [
+      "compute.networks.insert"
+    ],
+    "delete_networks": [
+      "compute.networks.delete"
+    ],
+    "patch_networks": [
+      "compute.networks.patch"
+    ],
+    "updatePeering_networks": [
+      "compute.networks.updatePeering"
+    ],
+    "addPeering_networks": [
+      "compute.networks.addPeering"
+    ],
+    "removePeering_networks": [
+      "compute.networks.removePeering"
+    ],
+    "switchToCustomMode_networks": [
+      "compute.networks.switchToCustomMode"
+    ],
+    "getEffectiveFirewalls_networks": [
+      "compute.networks.getEffectiveFirewalls"
+    ],
+    "listPeeringRoutes_networks": [
+      "compute.networks.listPeeringRoutes"
+    ]
+  },
+  "nodeGroups_management": {
+    "list_nodeGroups": [
+      "compute.nodeGroups.list"
+    ],
+    "aggregatedList_nodeGroups": [
+      "compute.nodeGroups.aggregatedList"
+    ],
+    "get_nodeGroups": [
+      "compute.nodeGroups.get"
+    ],
+    "insert_nodeGroups": [
+      "compute.nodeGroups.insert"
+    ],
+    "delete_nodeGroups": [
+      "compute.nodeGroups.delete"
+    ],
+    "addNodes_nodeGroups": [
+      "compute.nodeGroups.addNodes"
+    ],
+    "deleteNodes_nodeGroups": [
+      "compute.nodeGroups.deleteNodes"
+    ],
+    "listNodes_nodeGroups": [
+      "compute.nodeGroups.listNodes"
+    ],
+    "setNodeTemplate_nodeGroups": [
+      "compute.nodeGroups.setNodeTemplate"
+    ],
+    "patch_nodeGroups": [
+      "compute.nodeGroups.patch"
+    ],
+    "simulateMaintenanceEvent_nodeGroups": [
+      "compute.nodeGroups.simulateMaintenanceEvent"
+    ],
+    "performMaintenance_nodeGroups": [
+      "compute.nodeGroups.performMaintenance"
+    ],
+    "getIamPolicy_nodeGroups": [
+      "compute.nodeGroups.getIamPolicy"
+    ],
+    "setIamPolicy_nodeGroups": [
+      "compute.nodeGroups.setIamPolicy"
+    ],
+    "testIamPermissions_nodeGroups": [
+      "compute.nodeGroups.testIamPermissions"
+    ]
+  },
+  "nodeTemplates_management": {
+    "list_nodeTemplates": [
+      "compute.nodeTemplates.list"
+    ],
+    "aggregatedList_nodeTemplates": [
+      "compute.nodeTemplates.aggregatedList"
+    ],
+    "get_nodeTemplates": [
+      "compute.nodeTemplates.get"
+    ],
+    "insert_nodeTemplates": [
+      "compute.nodeTemplates.insert"
+    ],
+    "delete_nodeTemplates": [
+      "compute.nodeTemplates.delete"
+    ],
+    "getIamPolicy_nodeTemplates": [
+      "compute.nodeTemplates.getIamPolicy"
+    ],
+    "setIamPolicy_nodeTemplates": [
+      "compute.nodeTemplates.setIamPolicy"
+    ],
+    "testIamPermissions_nodeTemplates": [
+      "compute.nodeTemplates.testIamPermissions"
+    ]
+  },
+  "nodeTypes_management": {
+    "list_nodeTypes": [
+      "compute.nodeTypes.list"
+    ],
+    "aggregatedList_nodeTypes": [
+      "compute.nodeTypes.aggregatedList"
+    ],
+    "get_nodeTypes": [
+      "compute.nodeTypes.get"
+    ]
+  },
+  "regionNotificationEndpoints_management": {
+    "list_regionNotificationEndpoints": [
+      "compute.regionNotificationEndpoints.list"
+    ],
+    "get_regionNotificationEndpoints": [
+      "compute.regionNotificationEndpoints.get"
+    ],
+    "insert_regionNotificationEndpoints": [
+      "compute.regionNotificationEndpoints.insert"
+    ],
+    "delete_regionNotificationEndpoints": [
+      "compute.regionNotificationEndpoints.delete"
+    ]
+  },
+  "packetMirrorings_management": {
+    "get_packetMirrorings": [
+      "compute.packetMirrorings.get"
+    ],
+    "insert_packetMirrorings": [
+      "compute.packetMirrorings.insert"
+    ],
+    "patch_packetMirrorings": [
+      "compute.packetMirrorings.patch"
+    ],
+    "delete_packetMirrorings": [
+      "compute.packetMirrorings.delete"
+    ],
+    "list_packetMirrorings": [
+      "compute.packetMirrorings.list"
+    ],
+    "aggregatedList_packetMirrorings": [
+      "compute.packetMirrorings.aggregatedList"
+    ],
+    "testIamPermissions_packetMirrorings": [
+      "compute.packetMirrorings.testIamPermissions"
+    ]
+  },
+  "projects_management": {
+    "get_projects": [
+      "compute.projects.get"
+    ],
+    "setCommonInstanceMetadata_projects": [
+      "compute.projects.setCommonInstanceMetadata"
+    ],
+    "setUsageExportBucket_projects": [
+      "compute.projects.setUsageExportBucket"
+    ],
+    "moveInstance_projects": [
+      "compute.projects.moveInstance"
+    ],
+    "moveDisk_projects": [
+      "compute.projects.moveDisk"
+    ],
+    "listXpnHosts_projects": [
+      "compute.projects.listXpnHosts"
+    ],
+    "enableXpnHost_projects": [
+      "compute.projects.enableXpnHost"
+    ],
+    "disableXpnHost_projects": [
+      "compute.projects.disableXpnHost"
+    ],
+    "enableXpnResource_projects": [
+      "compute.projects.enableXpnResource"
+    ],
+    "disableXpnResource_projects": [
+      "compute.projects.disableXpnResource"
+    ],
+    "getXpnHost_projects": [
+      "compute.projects.getXpnHost"
+    ],
+    "getXpnResources_projects": [
+      "compute.projects.getXpnResources"
+    ],
+    "setDefaultNetworkTier_projects": [
+      "compute.projects.setDefaultNetworkTier"
+    ],
+    "setCloudArmorTier_projects": [
+      "compute.projects.setCloudArmorTier"
+    ]
+  },
+  "publicAdvertisedPrefixes_management": {
+    "list_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.list"
+    ],
+    "get_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.get"
+    ],
+    "insert_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.insert"
+    ],
+    "delete_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.delete"
+    ],
+    "patch_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.patch"
+    ],
+    "announce_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.announce"
+    ],
+    "withdraw_publicAdvertisedPrefixes": [
+      "compute.publicAdvertisedPrefixes.withdraw"
+    ]
+  },
+  "globalPublicDelegatedPrefixes_management": {
+    "list_globalPublicDelegatedPrefixes": [
+      "compute.globalPublicDelegatedPrefixes.list"
+    ],
+    "get_globalPublicDelegatedPrefixes": [
+      "compute.globalPublicDelegatedPrefixes.get"
+    ],
+    "insert_globalPublicDelegatedPrefixes": [
+      "compute.globalPublicDelegatedPrefixes.insert"
+    ],
+    "delete_globalPublicDelegatedPrefixes": [
+      "compute.globalPublicDelegatedPrefixes.delete"
+    ],
+    "patch_globalPublicDelegatedPrefixes": [
+      "compute.globalPublicDelegatedPrefixes.patch"
+    ]
+  },
+  "publicDelegatedPrefixes_management": {
+    "list_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.list"
+    ],
+    "get_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.get"
+    ],
+    "insert_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.insert"
+    ],
+    "delete_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.delete"
+    ],
+    "patch_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.patch"
+    ],
+    "announce_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.announce"
+    ],
+    "withdraw_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.withdraw"
+    ],
+    "aggregatedList_publicDelegatedPrefixes": [
+      "compute.publicDelegatedPrefixes.aggregatedList"
+    ]
+  },
+  "regions_management": {
+    "list_regions": [
+      "compute.regions.list"
+    ],
+    "get_regions": [
+      "compute.regions.get"
+    ]
+  },
+  "subnetworks_management": {
+    "list_subnetworks": [
+      "compute.subnetworks.list"
+    ],
+    "aggregatedList_subnetworks": [
+      "compute.subnetworks.aggregatedList"
+    ],
+    "listUsable_subnetworks": [
+      "compute.subnetworks.listUsable"
+    ],
+    "get_subnetworks": [
+      "compute.subnetworks.get"
+    ],
+    "insert_subnetworks": [
+      "compute.subnetworks.insert"
+    ],
+    "delete_subnetworks": [
+      "compute.subnetworks.delete"
+    ],
+    "expandIpCidrRange_subnetworks": [
+      "compute.subnetworks.expandIpCidrRange"
+    ],
+    "patch_subnetworks": [
+      "compute.subnetworks.patch"
+    ],
+    "getIamPolicy_subnetworks": [
+      "compute.subnetworks.getIamPolicy"
+    ],
+    "setIamPolicy_subnetworks": [
+      "compute.subnetworks.setIamPolicy"
+    ],
+    "testIamPermissions_subnetworks": [
+      "compute.subnetworks.testIamPermissions"
+    ],
+    "setPrivateIpGoogleAccess_subnetworks": [
+      "compute.subnetworks.setPrivateIpGoogleAccess"
+    ]
+  },
+  "networkProfiles_management": {
+    "list_networkProfiles": [
+      "compute.networkProfiles.list"
+    ],
+    "get_networkProfiles": [
+      "compute.networkProfiles.get"
+    ]
+  },
+  "reservationBlocks_management": {
+    "get_reservationBlocks": [
+      "compute.reservationBlocks.get"
+    ],
+    "list_reservationBlocks": [
+      "compute.reservationBlocks.list"
+    ],
+    "performMaintenance_reservationBlocks": [
+      "compute.reservationBlocks.performMaintenance"
+    ]
+  },
+  "reservationSubBlocks_management": {
+    "get_reservationSubBlocks": [
+      "compute.reservationSubBlocks.get"
+    ],
+    "list_reservationSubBlocks": [
+      "compute.reservationSubBlocks.list"
+    ],
+    "performMaintenance_reservationSubBlocks": [
+      "compute.reservationSubBlocks.performMaintenance"
+    ]
+  },
+  "resourcePolicies_management": {
+    "list_resourcePolicies": [
+      "compute.resourcePolicies.list"
+    ],
+    "aggregatedList_resourcePolicies": [
+      "compute.resourcePolicies.aggregatedList"
+    ],
+    "get_resourcePolicies": [
+      "compute.resourcePolicies.get"
+    ],
+    "insert_resourcePolicies": [
+      "compute.resourcePolicies.insert"
+    ],
+    "delete_resourcePolicies": [
+      "compute.resourcePolicies.delete"
+    ],
+    "patch_resourcePolicies": [
+      "compute.resourcePolicies.patch"
+    ],
+    "getIamPolicy_resourcePolicies": [
+      "compute.resourcePolicies.getIamPolicy"
+    ],
+    "setIamPolicy_resourcePolicies": [
+      "compute.resourcePolicies.setIamPolicy"
+    ],
+    "testIamPermissions_resourcePolicies": [
+      "compute.resourcePolicies.testIamPermissions"
+    ]
+  },
+  "routes_management": {
+    "list_routes": [
+      "compute.routes.list"
+    ],
+    "get_routes": [
+      "compute.routes.get"
+    ],
+    "insert_routes": [
+      "compute.routes.insert"
+    ],
+    "delete_routes": [
+      "compute.routes.delete"
+    ]
+  },
+  "routers_management": {
+    "get_routers": [
+      "compute.routers.get"
+    ],
+    "insert_routers": [
+      "compute.routers.insert"
+    ],
+    "update_routers": [
+      "compute.routers.update"
+    ],
+    "patch_routers": [
+      "compute.routers.patch"
+    ],
+    "delete_routers": [
+      "compute.routers.delete"
+    ],
+    "list_routers": [
+      "compute.routers.list"
+    ],
+    "aggregatedList_routers": [
+      "compute.routers.aggregatedList"
+    ],
+    "getRouterStatus_routers": [
+      "compute.routers.getRouterStatus"
+    ],
+    "getNatMappingInfo_routers": [
+      "compute.routers.getNatMappingInfo"
+    ],
+    "getNatIpInfo_routers": [
+      "compute.routers.getNatIpInfo"
+    ],
+    "preview_routers": [
+      "compute.routers.preview"
+    ],
+    "updateRoutePolicy_routers": [
+      "compute.routers.updateRoutePolicy"
+    ],
+    "patchRoutePolicy_routers": [
+      "compute.routers.patchRoutePolicy"
+    ],
+    "deleteRoutePolicy_routers": [
+      "compute.routers.deleteRoutePolicy"
+    ],
+    "getRoutePolicy_routers": [
+      "compute.routers.getRoutePolicy"
+    ],
+    "listRoutePolicies_routers": [
+      "compute.routers.listRoutePolicies"
+    ],
+    "listBgpRoutes_routers": [
+      "compute.routers.listBgpRoutes"
+    ]
+  },
+  "serviceAttachments_management": {
+    "aggregatedList_serviceAttachments": [
+      "compute.serviceAttachments.aggregatedList"
+    ],
+    "list_serviceAttachments": [
+      "compute.serviceAttachments.list"
+    ],
+    "get_serviceAttachments": [
+      "compute.serviceAttachments.get"
+    ],
+    "insert_serviceAttachments": [
+      "compute.serviceAttachments.insert"
+    ],
+    "delete_serviceAttachments": [
+      "compute.serviceAttachments.delete"
+    ],
+    "patch_serviceAttachments": [
+      "compute.serviceAttachments.patch"
+    ],
+    "getIamPolicy_serviceAttachments": [
+      "compute.serviceAttachments.getIamPolicy"
+    ],
+    "setIamPolicy_serviceAttachments": [
+      "compute.serviceAttachments.setIamPolicy"
+    ],
+    "testIamPermissions_serviceAttachments": [
+      "compute.serviceAttachments.testIamPermissions"
+    ]
+  },
+  "snapshotSettings_management": {
+    "get_snapshotSettings": [
+      "compute.snapshotSettings.get"
+    ],
+    "patch_snapshotSettings": [
+      "compute.snapshotSettings.patch"
+    ]
+  },
+  "sslCertificates_management": {
+    "list_sslCertificates": [
+      "compute.sslCertificates.list"
+    ],
+    "get_sslCertificates": [
+      "compute.sslCertificates.get"
+    ],
+    "insert_sslCertificates": [
+      "compute.sslCertificates.insert"
+    ],
+    "delete_sslCertificates": [
+      "compute.sslCertificates.delete"
+    ],
+    "aggregatedList_sslCertificates": [
+      "compute.sslCertificates.aggregatedList"
+    ]
+  },
+  "regionSslCertificates_management": {
+    "list_regionSslCertificates": [
+      "compute.regionSslCertificates.list"
+    ],
+    "get_regionSslCertificates": [
+      "compute.regionSslCertificates.get"
+    ],
+    "insert_regionSslCertificates": [
+      "compute.regionSslCertificates.insert"
+    ],
+    "delete_regionSslCertificates": [
+      "compute.regionSslCertificates.delete"
+    ]
+  },
+  "sslPolicies_management": {
+    "list_sslPolicies": [
+      "compute.sslPolicies.list"
+    ],
+    "get_sslPolicies": [
+      "compute.sslPolicies.get"
+    ],
+    "insert_sslPolicies": [
+      "compute.sslPolicies.insert"
+    ],
+    "delete_sslPolicies": [
+      "compute.sslPolicies.delete"
+    ],
+    "patch_sslPolicies": [
+      "compute.sslPolicies.patch"
+    ],
+    "listAvailableFeatures_sslPolicies": [
+      "compute.sslPolicies.listAvailableFeatures"
+    ],
+    "aggregatedList_sslPolicies": [
+      "compute.sslPolicies.aggregatedList"
+    ]
+  },
+  "regionSslPolicies_management": {
+    "list_regionSslPolicies": [
+      "compute.regionSslPolicies.list"
+    ],
+    "get_regionSslPolicies": [
+      "compute.regionSslPolicies.get"
+    ],
+    "insert_regionSslPolicies": [
+      "compute.regionSslPolicies.insert"
+    ],
+    "delete_regionSslPolicies": [
+      "compute.regionSslPolicies.delete"
+    ],
+    "patch_regionSslPolicies": [
+      "compute.regionSslPolicies.patch"
+    ],
+    "listAvailableFeatures_regionSslPolicies": [
+      "compute.regionSslPolicies.listAvailableFeatures"
+    ]
+  },
+  "storagePoolTypes_management": {
+    "list_storagePoolTypes": [
+      "compute.storagePoolTypes.list"
+    ],
+    "aggregatedList_storagePoolTypes": [
+      "compute.storagePoolTypes.aggregatedList"
+    ],
+    "get_storagePoolTypes": [
+      "compute.storagePoolTypes.get"
+    ]
+  },
+  "storagePools_management": {
+    "list_storagePools": [
+      "compute.storagePools.list"
+    ],
+    "aggregatedList_storagePools": [
+      "compute.storagePools.aggregatedList"
+    ],
+    "get_storagePools": [
+      "compute.storagePools.get"
+    ],
+    "insert_storagePools": [
+      "compute.storagePools.insert"
+    ],
+    "delete_storagePools": [
+      "compute.storagePools.delete"
+    ],
+    "getIamPolicy_storagePools": [
+      "compute.storagePools.getIamPolicy"
+    ],
+    "setIamPolicy_storagePools": [
+      "compute.storagePools.setIamPolicy"
+    ],
+    "testIamPermissions_storagePools": [
+      "compute.storagePools.testIamPermissions"
+    ],
+    "update_storagePools": [
+      "compute.storagePools.update"
+    ],
+    "listDisks_storagePools": [
+      "compute.storagePools.listDisks"
+    ]
+  },
+  "targetGrpcProxies_management": {
+    "list_targetGrpcProxies": [
+      "compute.targetGrpcProxies.list"
+    ],
+    "get_targetGrpcProxies": [
+      "compute.targetGrpcProxies.get"
+    ],
+    "insert_targetGrpcProxies": [
+      "compute.targetGrpcProxies.insert"
+    ],
+    "delete_targetGrpcProxies": [
+      "compute.targetGrpcProxies.delete"
+    ],
+    "patch_targetGrpcProxies": [
+      "compute.targetGrpcProxies.patch"
+    ]
+  },
+  "targetHttpProxies_management": {
+    "list_targetHttpProxies": [
+      "compute.targetHttpProxies.list"
+    ],
+    "get_targetHttpProxies": [
+      "compute.targetHttpProxies.get"
+    ],
+    "insert_targetHttpProxies": [
+      "compute.targetHttpProxies.insert"
+    ],
+    "delete_targetHttpProxies": [
+      "compute.targetHttpProxies.delete"
+    ],
+    "patch_targetHttpProxies": [
+      "compute.targetHttpProxies.patch"
+    ],
+    "setUrlMap_targetHttpProxies": [
+      "compute.targetHttpProxies.setUrlMap"
+    ],
+    "aggregatedList_targetHttpProxies": [
+      "compute.targetHttpProxies.aggregatedList"
+    ]
+  },
+  "regionTargetHttpProxies_management": {
+    "list_regionTargetHttpProxies": [
+      "compute.regionTargetHttpProxies.list"
+    ],
+    "get_regionTargetHttpProxies": [
+      "compute.regionTargetHttpProxies.get"
+    ],
+    "insert_regionTargetHttpProxies": [
+      "compute.regionTargetHttpProxies.insert"
+    ],
+    "delete_regionTargetHttpProxies": [
+      "compute.regionTargetHttpProxies.delete"
+    ],
+    "setUrlMap_regionTargetHttpProxies": [
+      "compute.regionTargetHttpProxies.setUrlMap"
+    ]
+  },
+  "targetHttpsProxies_management": {
+    "list_targetHttpsProxies": [
+      "compute.targetHttpsProxies.list"
+    ],
+    "aggregatedList_targetHttpsProxies": [
+      "compute.targetHttpsProxies.aggregatedList"
+    ],
+    "get_targetHttpsProxies": [
+      "compute.targetHttpsProxies.get"
+    ],
+    "insert_targetHttpsProxies": [
+      "compute.targetHttpsProxies.insert"
+    ],
+    "patch_targetHttpsProxies": [
+      "compute.targetHttpsProxies.patch"
+    ],
+    "delete_targetHttpsProxies": [
+      "compute.targetHttpsProxies.delete"
+    ],
+    "setUrlMap_targetHttpsProxies": [
+      "compute.targetHttpsProxies.setUrlMap"
+    ],
+    "setSslCertificates_targetHttpsProxies": [
+      "compute.targetHttpsProxies.setSslCertificates"
+    ],
+    "setCertificateMap_targetHttpsProxies": [
+      "compute.targetHttpsProxies.setCertificateMap"
+    ],
+    "setSslPolicy_targetHttpsProxies": [
+      "compute.targetHttpsProxies.setSslPolicy"
+    ],
+    "setQuicOverride_targetHttpsProxies": [
+      "compute.targetHttpsProxies.setQuicOverride"
+    ]
+  },
+  "regionTargetHttpsProxies_management": {
+    "list_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.list"
+    ],
+    "get_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.get"
+    ],
+    "insert_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.insert"
+    ],
+    "delete_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.delete"
+    ],
+    "patch_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.patch"
+    ],
+    "setUrlMap_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.setUrlMap"
+    ],
+    "setSslCertificates_regionTargetHttpsProxies": [
+      "compute.regionTargetHttpsProxies.setSslCertificates"
+    ]
+  },
+  "targetInstances_management": {
+    "list_targetInstances": [
+      "compute.targetInstances.list"
+    ],
+    "aggregatedList_targetInstances": [
+      "compute.targetInstances.aggregatedList"
+    ],
+    "get_targetInstances": [
+      "compute.targetInstances.get"
+    ],
+    "insert_targetInstances": [
+      "compute.targetInstances.insert"
+    ],
+    "delete_targetInstances": [
+      "compute.targetInstances.delete"
+    ],
+    "setSecurityPolicy_targetInstances": [
+      "compute.targetInstances.setSecurityPolicy"
+    ]
+  },
+  "targetPools_management": {
+    "list_targetPools": [
+      "compute.targetPools.list"
+    ],
+    "aggregatedList_targetPools": [
+      "compute.targetPools.aggregatedList"
+    ],
+    "get_targetPools": [
+      "compute.targetPools.get"
+    ],
+    "insert_targetPools": [
+      "compute.targetPools.insert"
+    ],
+    "delete_targetPools": [
+      "compute.targetPools.delete"
+    ],
+    "getHealth_targetPools": [
+      "compute.targetPools.getHealth"
+    ],
+    "addHealthCheck_targetPools": [
+      "compute.targetPools.addHealthCheck"
+    ],
+    "removeHealthCheck_targetPools": [
+      "compute.targetPools.removeHealthCheck"
+    ],
+    "addInstance_targetPools": [
+      "compute.targetPools.addInstance"
+    ],
+    "removeInstance_targetPools": [
+      "compute.targetPools.removeInstance"
+    ],
+    "setBackup_targetPools": [
+      "compute.targetPools.setBackup"
+    ],
+    "setSecurityPolicy_targetPools": [
+      "compute.targetPools.setSecurityPolicy"
+    ]
+  },
+  "targetSslProxies_management": {
+    "list_targetSslProxies": [
+      "compute.targetSslProxies.list"
+    ],
+    "get_targetSslProxies": [
+      "compute.targetSslProxies.get"
+    ],
+    "insert_targetSslProxies": [
+      "compute.targetSslProxies.insert"
+    ],
+    "delete_targetSslProxies": [
+      "compute.targetSslProxies.delete"
+    ],
+    "setBackendService_targetSslProxies": [
+      "compute.targetSslProxies.setBackendService"
+    ],
+    "setSslCertificates_targetSslProxies": [
+      "compute.targetSslProxies.setSslCertificates"
+    ],
+    "setCertificateMap_targetSslProxies": [
+      "compute.targetSslProxies.setCertificateMap"
+    ],
+    "setProxyHeader_targetSslProxies": [
+      "compute.targetSslProxies.setProxyHeader"
+    ],
+    "setSslPolicy_targetSslProxies": [
+      "compute.targetSslProxies.setSslPolicy"
+    ]
+  },
+  "targetTcpProxies_management": {
+    "list_targetTcpProxies": [
+      "compute.targetTcpProxies.list"
+    ],
+    "aggregatedList_targetTcpProxies": [
+      "compute.targetTcpProxies.aggregatedList"
+    ],
+    "get_targetTcpProxies": [
+      "compute.targetTcpProxies.get"
+    ],
+    "insert_targetTcpProxies": [
+      "compute.targetTcpProxies.insert"
+    ],
+    "delete_targetTcpProxies": [
+      "compute.targetTcpProxies.delete"
+    ],
+    "setBackendService_targetTcpProxies": [
+      "compute.targetTcpProxies.setBackendService"
+    ],
+    "setProxyHeader_targetTcpProxies": [
+      "compute.targetTcpProxies.setProxyHeader"
+    ]
+  },
+  "regionTargetTcpProxies_management": {
+    "list_regionTargetTcpProxies": [
+      "compute.regionTargetTcpProxies.list"
+    ],
+    "get_regionTargetTcpProxies": [
+      "compute.regionTargetTcpProxies.get"
+    ],
+    "insert_regionTargetTcpProxies": [
+      "compute.regionTargetTcpProxies.insert"
+    ],
+    "delete_regionTargetTcpProxies": [
+      "compute.regionTargetTcpProxies.delete"
+    ]
+  },
+  "targetVpnGateways_management": {
+    "list_targetVpnGateways": [
+      "compute.targetVpnGateways.list"
+    ],
+    "aggregatedList_targetVpnGateways": [
+      "compute.targetVpnGateways.aggregatedList"
+    ],
+    "get_targetVpnGateways": [
+      "compute.targetVpnGateways.get"
+    ],
+    "insert_targetVpnGateways": [
+      "compute.targetVpnGateways.insert"
+    ],
+    "delete_targetVpnGateways": [
+      "compute.targetVpnGateways.delete"
+    ],
+    "setLabels_targetVpnGateways": [
+      "compute.targetVpnGateways.setLabels"
+    ]
+  },
+  "urlMaps_management": {
+    "list_urlMaps": [
+      "compute.urlMaps.list"
+    ],
+    "aggregatedList_urlMaps": [
+      "compute.urlMaps.aggregatedList"
+    ],
+    "get_urlMaps": [
+      "compute.urlMaps.get"
+    ],
+    "insert_urlMaps": [
+      "compute.urlMaps.insert"
+    ],
+    "delete_urlMaps": [
+      "compute.urlMaps.delete"
+    ],
+    "update_urlMaps": [
+      "compute.urlMaps.update"
+    ],
+    "patch_urlMaps": [
+      "compute.urlMaps.patch"
+    ],
+    "validate_urlMaps": [
+      "compute.urlMaps.validate"
+    ],
+    "invalidateCache_urlMaps": [
+      "compute.urlMaps.invalidateCache"
+    ]
+  },
+  "regionUrlMaps_management": {
+    "list_regionUrlMaps": [
+      "compute.regionUrlMaps.list"
+    ],
+    "get_regionUrlMaps": [
+      "compute.regionUrlMaps.get"
+    ],
+    "insert_regionUrlMaps": [
+      "compute.regionUrlMaps.insert"
+    ],
+    "delete_regionUrlMaps": [
+      "compute.regionUrlMaps.delete"
+    ],
+    "update_regionUrlMaps": [
+      "compute.regionUrlMaps.update"
+    ],
+    "patch_regionUrlMaps": [
+      "compute.regionUrlMaps.patch"
+    ],
+    "validate_regionUrlMaps": [
+      "compute.regionUrlMaps.validate"
+    ]
+  },
+  "vpnGateways_management": {
+    "list_vpnGateways": [
+      "compute.vpnGateways.list"
+    ],
+    "aggregatedList_vpnGateways": [
+      "compute.vpnGateways.aggregatedList"
+    ],
+    "get_vpnGateways": [
+      "compute.vpnGateways.get"
+    ],
+    "getStatus_vpnGateways": [
+      "compute.vpnGateways.getStatus"
+    ],
+    "insert_vpnGateways": [
+      "compute.vpnGateways.insert"
+    ],
+    "delete_vpnGateways": [
+      "compute.vpnGateways.delete"
+    ],
+    "testIamPermissions_vpnGateways": [
+      "compute.vpnGateways.testIamPermissions"
+    ],
+    "setLabels_vpnGateways": [
+      "compute.vpnGateways.setLabels"
+    ]
+  },
+  "vpnTunnels_management": {
+    "list_vpnTunnels": [
+      "compute.vpnTunnels.list"
+    ],
+    "aggregatedList_vpnTunnels": [
+      "compute.vpnTunnels.aggregatedList"
+    ],
+    "get_vpnTunnels": [
+      "compute.vpnTunnels.get"
+    ],
+    "insert_vpnTunnels": [
+      "compute.vpnTunnels.insert"
+    ],
+    "delete_vpnTunnels": [
+      "compute.vpnTunnels.delete"
+    ],
+    "setLabels_vpnTunnels": [
+      "compute.vpnTunnels.setLabels"
+    ]
+  },
+  "zones_management": {
+    "list_zones": [
+      "compute.zones.list"
+    ],
+    "get_zones": [
+      "compute.zones.get"
+    ]
+  },
+  "regionZones_management": {
+    "list_regionZones": [
+      "compute.regionZones.list"
+    ]
+  }
+}
