@@ -1,0 +1,47 @@
+# Additional Python dependencies for MCP Factory and Autonomous Engine
+# These are added on top of Open WebUI's base dependencies
+
+# Google Cloud SDK
+google-cloud-storage==2.19.0
+google-cloud-run==0.10.0
+google-cloud-sql-connector==1.11.0
+google-cloud-secret-manager==2.21.0
+google-cloud-monitoring==2.23.0
+google-cloud-logging==3.11.0
+
+# MCP Factory Core
+fastapi==0.115.7
+fastmcp==0.1.0
+httpx==0.28.1
+jinja2==3.1.5
+
+# Database
+sqlalchemy==2.0.38
+psycopg2-binary==2.9.9
+alembic==1.14.0
+
+# AI/ML Extensions
+openai
+anthropic
+langchain==0.3.24
+langchain-community==0.3.23
+
+# Async Support
+aiofiles==24.1.0
+asyncpg==0.30.0
+
+# Monitoring and Observability
+prometheus-client==0.21.5
+opentelemetry-api==1.32.1
+opentelemetry-sdk==1.32.1
+opentelemetry-instrumentation-fastapi==0.53b1
+
+# Security
+cryptography==43.0.3
+python-jose[cryptography]==3.4.0
+
+# Utilities
+pydantic==2.10.6
+python-dotenv==1.0.1
+structlog==25.1.0
+tenacity==9.0.0
