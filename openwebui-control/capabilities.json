@@ -1,0 +1,112 @@
+{
+  "service": "openwebui",
+  "version": "2.0",
+  "capabilities": {
+    "self_modification": {
+      "description": "Tools that enable AI to modify itself",
+      "operations": [
+        "create_function",
+        "update_function",
+        "delete_function",
+        "list_functions",
+        "update_function_valves",
+        "execute_script",
+        "write_file",
+        "read_file"
+      ]
+    },
+    "agent_management": {
+      "description": "Tools for creating and managing AI agents",
+      "operations": [
+        "deploy_agent",
+        "list_running_agents",
+        "stop_agent",
+        "restart_agent",
+        "get_agent_logs",
+        "create_agent_endpoint",
+        "spawn_agent",
+        "terminate_agent"
+      ]
+    },
+    "user_control": {
+      "description": "Complete user management capabilities",
+      "operations": [
+        "get_all_users",
+        "create_user",
+        "update_user",
+        "delete_user",
+        "get_user_permissions",
+        "update_user_settings",
+        "get_active_users"
+      ]
+    },
+    "chat_control": {
+      "description": "Full chat management system",
+      "operations": [
+        "create_chat",
+        "list_chats",
+        "get_chat_by_id",
+        "update_chat",
+        "delete_chat",
+        "archive_chat",
+        "pin_chat",
+        "share_chat",
+        "clone_chat",
+        "search_chats"
+      ]
+    },
+    "knowledge_management": {
+      "description": "RAG and knowledge base control",
+      "operations": [
+        "list_knowledge_collections",
+        "create_knowledge_collection",
+        "update_knowledge_collection",
+        "delete_knowledge_collection",
+        "process_file_for_rag",
+        "query_rag_collection",
+        "reset_rag_database"
+      ]
+    },
+    "model_orchestration": {
+      "description": "AI model management and control",
+      "operations": [
+        "list_models",
+        "ollama_pull_model",
+        "ollama_delete_model",
+        "ollama_create_model",
+        "ollama_generate_completion",
+        "ollama_chat_completion"
+      ]
+    },
+    "workspace_control": {
+      "description": "File and workspace management",
+      "operations": [
+        "create_workspace",
+        "list_workspaces",
+        "write_file",
+        "read_file",
+        "list_files",
+        "upload_file",
+        "delete_file"
+      ]
+    },
+    "system_configuration": {
+      "description": "System-wide configuration control",
+      "operations": [
+        "export_config",
+        "import_config",
+        "get_model_config",
+        "update_model_config",
+        "get_tool_servers",
+        "update_tool_servers"
+      ]
+    }
+  },
+  "meta_capabilities": {
+    "recursive_improvement": "Agents can create better versions of themselves",
+    "api_integration": "Can integrate any external API automatically",
+    "autonomous_deployment": "Deploy without human intervention",
+    "self_healing": "Monitor and fix own issues",
+    "knowledge_accumulation": "Build and query knowledge bases"
+  }
+}
