@@ -1,0 +1,172 @@
+{
+  "anywhereCaches": {
+    "description": "anywhereCaches resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "disable",
+      "get",
+      "pause",
+      "resume"
+    ]
+  },
+  "bucketAccessControls": {
+    "description": "bucketAccessControls resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "buckets": {
+    "description": "buckets resource",
+    "operations_count": 13,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "getStorageLayout",
+      "lockRetentionPolicy",
+      "relocate",
+      "restore",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "operations": {
+    "description": "operations resource",
+    "operations_count": 4,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "advanceRelocateBucket",
+      "cancel",
+      "get"
+    ]
+  },
+  "channels": {
+    "description": "channels resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "stop"
+    ]
+  },
+  "defaultObjectAccessControls": {
+    "description": "defaultObjectAccessControls resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "folders": {
+    "description": "folders resource",
+    "operations_count": 5,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "rename"
+    ]
+  },
+  "managedFolders": {
+    "description": "managedFolders resource",
+    "operations_count": 7,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get",
+      "getIamPolicy",
+      "setIamPolicy",
+      "testIamPermissions"
+    ]
+  },
+  "notifications": {
+    "description": "notifications resource",
+    "operations_count": 4,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "objectAccessControls": {
+    "description": "objectAccessControls resource",
+    "operations_count": 6,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "get"
+    ]
+  },
+  "objects": {
+    "description": "objects resource",
+    "operations_count": 16,
+    "can_create": true,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "bulkRestore",
+      "compose",
+      "copy",
+      "get",
+      "getIamPolicy",
+      "move",
+      "restore",
+      "rewrite",
+      "setIamPolicy",
+      "testIamPermissions",
+      "watchAll"
+    ]
+  },
+  "hmacKeys": {
+    "description": "hmacKeys resource",
+    "operations_count": 5,
+    "can_create": false,
+    "can_delete": true,
+    "can_list": true,
+    "can_update": true,
+    "special_operations": [
+      "create",
+      "get"
+    ]
+  },
+  "serviceAccount": {
+    "description": "serviceAccount resource",
+    "operations_count": 1,
+    "can_create": false,
+    "can_delete": false,
+    "can_list": false,
+    "can_update": false,
+    "special_operations": [
+      "get"
+    ]
+  }
+}
