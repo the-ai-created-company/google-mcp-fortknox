@@ -1,0 +1,23 @@
+name: Generate folder tree
+on: [push]  # runs on every commit to any branch
+
+jobs:
+  tree:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1-liner that prints the tree and writes it to TREE.md
+      - uses: jaywcjlove/github-action-folder-tree@v1  # < 15 s runtime
+        id: tree
+        with:
+          path: .              # repo root
+          depth: 4             # levels you care about
+          exclude: ".git|node_modules|dist|.venv"  # skip these
+
+      # Commit the updated TREE.md back so your agent can fetch it
+      - name: Commit updated tree
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update file tree"
+          file_pattern: TREE.md
