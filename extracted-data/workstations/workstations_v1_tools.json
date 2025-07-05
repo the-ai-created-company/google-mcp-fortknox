@@ -1,0 +1,1163 @@
+{
+  "workstations_projects_locations_list": {
+    "name": "workstations_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_get": {
+    "name": "workstations_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_operations_list": {
+    "name": "workstations_projects_locations_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}/operations",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_operations_get": {
+    "name": "workstations_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_operations_delete": {
+    "name": "workstations_projects_locations_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleProtobufEmpty"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_operations_cancel": {
+    "name": "workstations_projects_locations_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleProtobufEmpty"
+    },
+    "request": {
+      "$ref": "CancelOperationRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_get": {
+    "name": "workstations_projects_locations_workstationClusters_get",
+    "description": "Returns the requested workstation cluster.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the requested resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "WorkstationCluster"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_list": {
+    "name": "workstations_projects_locations_workstationClusters_list",
+    "description": "Returns all workstation clusters in the specified location.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstationClusters",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of items to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filter the WorkstationClusters to be listed. Possible filters are described in https://google.aip.dev/160.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListWorkstationClustersResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_create": {
+    "name": "workstations_projects_locations_workstationClusters_create",
+    "description": "Creates a new workstation cluster.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstationClusters",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "workstationClusterId": {
+        "description": "Required. ID to use for the workstation cluster.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "workstationClusterId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WorkstationCluster"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_patch": {
+    "name": "workstations_projects_locations_workstationClusters_patch",
+    "description": "Updates an existing workstation cluster.",
+    "http_method": "PATCH",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. Full name of this workstation cluster.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Mask that specifies which fields in the workstation cluster should be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "allowMissing": {
+        "description": "Optional. If set, and the workstation cluster is not found, a new workstation cluster will be created. In this situation, update_mask is ignored.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "validateOnly",
+      "allowMissing"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WorkstationCluster"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_delete": {
+    "name": "workstations_projects_locations_workstationClusters_delete",
+    "description": "Deletes the specified workstation cluster.",
+    "http_method": "DELETE",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the workstation cluster to delete.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not apply it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "Optional. If set, the request will be rejected if the latest version of the workstation cluster on the server does not have this ETag.",
+        "location": "query",
+        "type": "string"
+      },
+      "force": {
+        "description": "Optional. If set, any workstation configurations and workstations in the workstation cluster are also deleted. Otherwise, the request only works if the workstation cluster has no configurations or workstations.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag",
+      "force"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_get": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_get",
+    "description": "Returns the requested workstation configuration.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the requested resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "WorkstationConfig"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_list": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_list",
+    "description": "Returns all workstation configurations in the specified cluster.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstationConfigs",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of items to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filter the WorkstationConfigs to be listed. Possible filters are described in https://google.aip.dev/160.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListWorkstationConfigsResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_listUsable": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_listUsable",
+    "description": "Returns all workstation configurations in the specified cluster on which the caller has the \"workstations.workstation.create\" permission.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstationConfigs:listUsable",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of items to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListUsableWorkstationConfigsResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_create": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_create",
+    "description": "Creates a new workstation configuration.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstationConfigs",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "workstationConfigId": {
+        "description": "Required. ID to use for the workstation configuration.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "workstationConfigId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WorkstationConfig"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_patch": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_patch",
+    "description": "Updates an existing workstation configuration.",
+    "http_method": "PATCH",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. Full name of this workstation configuration.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Mask specifying which fields in the workstation configuration should be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "allowMissing": {
+        "description": "Optional. If set and the workstation configuration is not found, a new workstation configuration will be created. In this situation, update_mask is ignored.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "validateOnly",
+      "allowMissing"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WorkstationConfig"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_delete": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_delete",
+    "description": "Deletes the specified workstation configuration.",
+    "http_method": "DELETE",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the workstation configuration to delete.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "Optional. If set, the request is rejected if the latest version of the workstation configuration on the server does not have this ETag.",
+        "location": "query",
+        "type": "string"
+      },
+      "force": {
+        "description": "Optional. If set, any workstations in the workstation configuration are also deleted. Otherwise, the request works only if the workstation configuration has no workstations.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag",
+      "force"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_setIamPolicy": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_getIamPolicy": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_testIamPermissions": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_get": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_get",
+    "description": "Returns the requested workstation.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the requested resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Workstation"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_list": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_list",
+    "description": "Returns all Workstations using the specified workstation configuration.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstations",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of items to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filter the Workstations to be listed. Possible filters are described in https://google.aip.dev/160.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListWorkstationsResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_listUsable": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_listUsable",
+    "description": "Returns all workstations using the specified workstation configuration on which the caller has the \"workstations.workstations.use\" permission.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstations:listUsable",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of items to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListUsableWorkstationsResponse"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_create": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_create",
+    "description": "Creates a new workstation.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+parent}/workstations",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "workstationId": {
+        "description": "Required. ID to use for the workstation.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "workstationId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Workstation"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_patch": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_patch",
+    "description": "Updates an existing workstation.",
+    "http_method": "PATCH",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. Full name of this workstation.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Mask specifying which fields in the workstation configuration should be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "allowMissing": {
+        "description": "Optional. If set and the workstation configuration is not found, a new workstation configuration is created. In this situation, update_mask is ignored.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "validateOnly",
+      "allowMissing"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Workstation"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_delete": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_delete",
+    "description": "Deletes the specified workstation.",
+    "http_method": "DELETE",
+    "path": "https://workstations.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the workstation to delete.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. If set, validate the request and preview the review, but do not actually apply it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "Optional. If set, the request will be rejected if the latest version of the workstation on the server does not have this ETag.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_start": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_start",
+    "description": "Starts running a workstation so that users can connect to it.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+name}:start",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the workstation to start.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "StartWorkstationRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_stop": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_stop",
+    "description": "Stops running a workstation, reducing costs.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+name}:stop",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the workstation to stop.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "StopWorkstationRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_generateAccessToken": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_generateAccessToken",
+    "description": "Returns a short-lived credential that can be used to send authenticated and authorized traffic to a workstation. Once generated this token cannot be revoked and is good for the lifetime of the token.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+workstation}:generateAccessToken",
+    "parameters": {
+      "workstation": {
+        "description": "Required. Name of the workstation for which the access token should be generated.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "workstation"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GenerateAccessTokenResponse"
+    },
+    "request": {
+      "$ref": "GenerateAccessTokenRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_setIamPolicy": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_getIamPolicy": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://workstations.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_testIamPermissions": {
+    "name": "workstations_projects_locations_workstationClusters_workstationConfigs_workstations_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://workstations.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workstationClusters/[^/]+/workstationConfigs/[^/]+/workstations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  }
+}

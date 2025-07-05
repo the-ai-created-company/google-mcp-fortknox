@@ -1,0 +1,9 @@
+{
+  "api_name": "androiddeviceprovisioning",
+  "api_version": "v1",
+  "api_title": "Android Device Provisioning Partner API",
+  "api_description": "Automates Android zero-touch enrollment for device resellers, customers, and EMMs.",
+  "base_url": "https://androiddeviceprovisioning.googleapis.com/",
+  "tool_count": 27,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\androiddeviceprovisioning\\androiddeviceprovisioning_v1_tools.json"
+}

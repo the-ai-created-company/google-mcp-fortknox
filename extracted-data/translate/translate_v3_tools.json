@@ -1,0 +1,1625 @@
+{
+  "translate_projects_translateText": {
+    "name": "translate_projects_translateText",
+    "description": "Translates input text and returns translated text.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:translateText",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for requests using AutoML models or custom glossaries. Models and glossaries must be within the same region (have same location-id), otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "TranslateTextResponse"
+    },
+    "request": {
+      "$ref": "TranslateTextRequest"
+    }
+  },
+  "translate_projects_romanizeText": {
+    "name": "translate_projects_romanizeText",
+    "description": "Romanize input text written in non-Latin scripts to Latin text.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:romanizeText",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}` or `projects/{project-number-or-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "RomanizeTextResponse"
+    },
+    "request": {
+      "$ref": "RomanizeTextRequest"
+    }
+  },
+  "translate_projects_detectLanguage": {
+    "name": "translate_projects_detectLanguage",
+    "description": "Detects the language of text within a request.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:detectLanguage",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}` or `projects/{project-number-or-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Only models within the same region (has same location-id) can be used. Otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "DetectLanguageResponse"
+    },
+    "request": {
+      "$ref": "DetectLanguageRequest"
+    }
+  },
+  "translate_projects_getSupportedLanguages": {
+    "name": "translate_projects_getSupportedLanguages",
+    "description": "Returns a list of supported languages for translation.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/supportedLanguages",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for AutoML models. Only models within the same region (have same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "displayLanguageCode": {
+        "description": "Optional. The language to use to return localized, human readable names of supported languages. If missing, then display names are not returned in a response.",
+        "location": "query",
+        "type": "string"
+      },
+      "model": {
+        "description": "Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, Returns languages supported by the specified model. If missing, we get supported languages of Google general NMT model.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "displayLanguageCode",
+      "model"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "SupportedLanguages"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_list": {
+    "name": "translate_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_get": {
+    "name": "translate_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_translateText": {
+    "name": "translate_projects_locations_translateText",
+    "description": "Translates input text and returns translated text.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:translateText",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for requests using AutoML models or custom glossaries. Models and glossaries must be within the same region (have same location-id), otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "TranslateTextResponse"
+    },
+    "request": {
+      "$ref": "TranslateTextRequest"
+    }
+  },
+  "translate_projects_locations_romanizeText": {
+    "name": "translate_projects_locations_romanizeText",
+    "description": "Romanize input text written in non-Latin scripts to Latin text.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:romanizeText",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}` or `projects/{project-number-or-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "RomanizeTextResponse"
+    },
+    "request": {
+      "$ref": "RomanizeTextRequest"
+    }
+  },
+  "translate_projects_locations_detectLanguage": {
+    "name": "translate_projects_locations_detectLanguage",
+    "description": "Detects the language of text within a request.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:detectLanguage",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}` or `projects/{project-number-or-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Only models within the same region (has same location-id) can be used. Otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "DetectLanguageResponse"
+    },
+    "request": {
+      "$ref": "DetectLanguageRequest"
+    }
+  },
+  "translate_projects_locations_getSupportedLanguages": {
+    "name": "translate_projects_locations_getSupportedLanguages",
+    "description": "Returns a list of supported languages for translation.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/supportedLanguages",
+    "parameters": {
+      "parent": {
+        "description": "Required. Project or location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}` or `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for AutoML models. Only models within the same region (have same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "displayLanguageCode": {
+        "description": "Optional. The language to use to return localized, human readable names of supported languages. If missing, then display names are not returned in a response.",
+        "location": "query",
+        "type": "string"
+      },
+      "model": {
+        "description": "Optional. Get supported languages of this model. The format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, Returns languages supported by the specified model. If missing, we get supported languages of Google general NMT model.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "displayLanguageCode",
+      "model"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "SupportedLanguages"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_translateDocument": {
+    "name": "translate_projects_locations_translateDocument",
+    "description": "Translates documents in synchronous mode.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:translateDocument",
+    "parameters": {
+      "parent": {
+        "description": "Required. Location to make a regional call. Format: `projects/{project-number-or-id}/locations/{location-id}`. For global calls, use `projects/{project-number-or-id}/locations/global` or `projects/{project-number-or-id}`. Non-global location is required for requests using AutoML models or custom glossaries. Models and glossaries must be within the same region (have the same location-id), otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "TranslateDocumentResponse"
+    },
+    "request": {
+      "$ref": "TranslateDocumentRequest"
+    }
+  },
+  "translate_projects_locations_batchTranslateText": {
+    "name": "translate_projects_locations_batchTranslateText",
+    "description": "Translates a large volume of text in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:batchTranslateText",
+    "parameters": {
+      "parent": {
+        "description": "Required. Location to make a call. Must refer to a caller's project. Format: `projects/{project-number-or-id}/locations/{location-id}`. The `global` location is not supported for batch translation. Only AutoML Translation models or glossaries within the same region (have the same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BatchTranslateTextRequest"
+    }
+  },
+  "translate_projects_locations_batchTranslateDocument": {
+    "name": "translate_projects_locations_batchTranslateDocument",
+    "description": "Translates a large volume of document in asynchronous batch mode. This function provides real-time output as the inputs are being processed. If caller cancels a request, the partial results (for an input file, it's all or nothing) may still be available on the specified output location. This call returns immediately and you can use google.longrunning.Operation.name to poll the status of the call.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:batchTranslateDocument",
+    "parameters": {
+      "parent": {
+        "description": "Required. Location to make a regional call. Format: `projects/{project-number-or-id}/locations/{location-id}`. The `global` location is not supported for batch translation. Only AutoML Translation models or glossaries within the same region (have the same location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BatchTranslateDocumentRequest"
+    }
+  },
+  "translate_projects_locations_adaptiveMtTranslate": {
+    "name": "translate_projects_locations_adaptiveMtTranslate",
+    "description": "Translate text using Adaptive MT.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:adaptiveMtTranslate",
+    "parameters": {
+      "parent": {
+        "description": "Required. Location to make a regional call. Format: `projects/{project-number-or-id}/locations/{location-id}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "AdaptiveMtTranslateResponse"
+    },
+    "request": {
+      "$ref": "AdaptiveMtTranslateRequest"
+    }
+  },
+  "translate_projects_locations_operations_list": {
+    "name": "translate_projects_locations_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}/operations",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_operations_get": {
+    "name": "translate_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_operations_delete": {
+    "name": "translate_projects_locations_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_operations_cancel": {
+    "name": "translate_projects_locations_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CancelOperationRequest"
+    }
+  },
+  "translate_projects_locations_operations_wait": {
+    "name": "translate_projects_locations_operations_wait",
+    "description": "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+name}:wait",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to wait on.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WaitOperationRequest"
+    }
+  },
+  "translate_projects_locations_glossaries_create": {
+    "name": "translate_projects_locations_glossaries_create",
+    "description": "Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project doesn't exist.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}/glossaries",
+    "parameters": {
+      "parent": {
+        "description": "Required. The project name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Glossary"
+    }
+  },
+  "translate_projects_locations_glossaries_patch": {
+    "name": "translate_projects_locations_glossaries_patch",
+    "description": "Updates a glossary. A LRO is used since the update can be async if the glossary's entry file is updated.",
+    "http_method": "PATCH",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "The list of fields to be updated. Currently only `display_name` and 'input_config'",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Glossary"
+    }
+  },
+  "translate_projects_locations_glossaries_list": {
+    "name": "translate_projects_locations_glossaries_list",
+    "description": "Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/glossaries",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the project from which to list all of the glossaries.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Requested page size. The server may return fewer glossaries than requested. If unspecified, the server picks an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results the server should return. Typically, this is the value of [ListGlossariesResponse.next_page_token] returned from the previous call to `ListGlossaries` method. The first page is returned if `page_token`is empty or missing.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filter specifying constraints of a list operation. Specify the constraint by the format of \"key=value\", where key must be \"src\" or \"tgt\", and the value must be a valid language code. For multiple restrictions, concatenate them by \"AND\" (uppercase only), such as: \"src=en-US AND tgt=zh-CN\". Notice that the exact match is used here, which means using 'en-US' and 'en' can lead to different results, which depends on the language code you used when you create the glossary. For the unidirectional glossaries, the \"src\" and \"tgt\" add restrictions on the source and target language code separately. For the equivalent term set glossaries, the \"src\" and/or \"tgt\" add restrictions on the term set. For example: \"src=en-US AND tgt=zh-CN\" will only pick the unidirectional glossaries which exactly match the source language code as \"en-US\" and the target language code \"zh-CN\", but all equivalent term set glossaries which contain \"en-US\" and \"zh-CN\" in their language set will be picked. If missing, no filtering is performed.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListGlossariesResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_glossaries_get": {
+    "name": "translate_projects_locations_glossaries_get",
+    "description": "Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the glossary to retrieve.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Glossary"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_glossaries_delete": {
+    "name": "translate_projects_locations_glossaries_delete",
+    "description": "Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns NOT_FOUND, if the glossary doesn't exist.",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the glossary to delete.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_glossaries_glossaryEntries_get": {
+    "name": "translate_projects_locations_glossaries_glossaryEntries_get",
+    "description": "Gets a single glossary entry by the given id.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the glossary entry to get",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+/glossaryEntries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "GlossaryEntry"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_glossaries_glossaryEntries_list": {
+    "name": "translate_projects_locations_glossaries_glossaryEntries_list",
+    "description": "List the entries for the glossary.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/glossaryEntries",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent glossary resource name for listing the glossary's entries.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Requested page size. The server may return fewer glossary entries than requested. If unspecified, the server picks an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results the server should return. Typically, this is the value of [ListGlossaryEntriesResponse.next_page_token] returned from the previous call. The first page is returned if `page_token`is empty or missing.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListGlossaryEntriesResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_glossaries_glossaryEntries_create": {
+    "name": "translate_projects_locations_glossaries_glossaryEntries_create",
+    "description": "Creates a glossary entry.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}/glossaryEntries",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the glossary to create the entry under.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "GlossaryEntry"
+    },
+    "request": {
+      "$ref": "GlossaryEntry"
+    }
+  },
+  "translate_projects_locations_glossaries_glossaryEntries_patch": {
+    "name": "translate_projects_locations_glossaries_glossaryEntries_patch",
+    "description": "Updates a glossary entry.",
+    "http_method": "PATCH",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The resource name of the entry. Format: `projects/*/locations/*/glossaries/*/glossaryEntries/*`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+/glossaryEntries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "GlossaryEntry"
+    },
+    "request": {
+      "$ref": "GlossaryEntry"
+    }
+  },
+  "translate_projects_locations_glossaries_glossaryEntries_delete": {
+    "name": "translate_projects_locations_glossaries_glossaryEntries_delete",
+    "description": "Deletes a single entry from the glossary",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the glossary entry to delete",
+        "pattern": "^projects/[^/]+/locations/[^/]+/glossaries/[^/]+/glossaryEntries/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_datasets_create": {
+    "name": "translate_projects_locations_datasets_create",
+    "description": "Creates a Dataset.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}/datasets",
+    "parameters": {
+      "parent": {
+        "description": "Required. The project name.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Dataset"
+    }
+  },
+  "translate_projects_locations_datasets_get": {
+    "name": "translate_projects_locations_datasets_get",
+    "description": "Gets a Dataset.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the dataset to retrieve.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/datasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Dataset"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_datasets_list": {
+    "name": "translate_projects_locations_datasets_list",
+    "description": "Lists datasets.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/datasets",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the parent project. In form of `projects/{project-number-or-id}/locations/{location-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Requested page size. The server can return fewer results than requested.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results for the server to return. Typically obtained from next_page_token field in the response of a ListDatasets call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListDatasetsResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_datasets_delete": {
+    "name": "translate_projects_locations_datasets_delete",
+    "description": "Deletes a dataset and all of its contents.",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the dataset to delete.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/datasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_datasets_importData": {
+    "name": "translate_projects_locations_datasets_importData",
+    "description": "Import sentence pairs into translation Dataset.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+dataset}:importData",
+    "parameters": {
+      "dataset": {
+        "description": "Required. Name of the dataset. In form of `projects/{project-number-or-id}/locations/{location-id}/datasets/{dataset-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/datasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "dataset"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ImportDataRequest"
+    }
+  },
+  "translate_projects_locations_datasets_exportData": {
+    "name": "translate_projects_locations_datasets_exportData",
+    "description": "Exports dataset's data to the provided output location.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+dataset}:exportData",
+    "parameters": {
+      "dataset": {
+        "description": "Required. Name of the dataset. In form of `projects/{project-number-or-id}/locations/{location-id}/datasets/{dataset-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/datasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "dataset"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ExportDataRequest"
+    }
+  },
+  "translate_projects_locations_datasets_examples_list": {
+    "name": "translate_projects_locations_datasets_examples_list",
+    "description": "Lists sentence pairs in the dataset.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/examples",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the parent dataset. In form of `projects/{project-number-or-id}/locations/{location-id}/datasets/{dataset-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/datasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. An expression for filtering the examples that will be returned. Example filter: * `usage=TRAIN`",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Requested page size. The server can return fewer results than requested.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results for the server to return. Typically obtained from next_page_token field in the response of a ListExamples call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListExamplesResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_create": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_create",
+    "description": "Creates an Adaptive MT dataset.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}/adaptiveMtDatasets",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the parent project. In form of `projects/{project-number-or-id}/locations/{location-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "AdaptiveMtDataset"
+    },
+    "request": {
+      "$ref": "AdaptiveMtDataset"
+    }
+  },
+  "translate_projects_locations_adaptiveMtDatasets_delete": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_delete",
+    "description": "Deletes an Adaptive MT dataset, including all its entries and associated metadata.",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the dataset. In the form of `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_get": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_get",
+    "description": "Gets the Adaptive MT dataset.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the dataset. In the form of `projects/{project-number-or-id}/locations/{location-id}/adaptiveMtDatasets/{adaptive-mt-dataset-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "AdaptiveMtDataset"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_list": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_list",
+    "description": "Lists all Adaptive MT datasets for which the caller has read permission.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/adaptiveMtDatasets",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the project from which to list the Adaptive MT datasets. `projects/{project-number-or-id}/locations/{location-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Requested page size. The server may return fewer results than requested. If unspecified, the server picks an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtDatasetsResponse.next_page_token returned from the previous call to `ListAdaptiveMtDatasets` method. The first page is returned if `page_token`is empty or missing.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. An expression for filtering the results of the request. Filter is not supported yet.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListAdaptiveMtDatasetsResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_importAdaptiveMtFile": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_importAdaptiveMtFile",
+    "description": "Imports an AdaptiveMtFile and adds all of its sentences into the AdaptiveMtDataset.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}:importAdaptiveMtFile",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the file, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ImportAdaptiveMtFileResponse"
+    },
+    "request": {
+      "$ref": "ImportAdaptiveMtFileRequest"
+    }
+  },
+  "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_get": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_get",
+    "description": "Gets and AdaptiveMtFile",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the file, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+/adaptiveMtFiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "AdaptiveMtFile"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_delete": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_delete",
+    "description": "Deletes an AdaptiveMtFile along with its sentences.",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the file to delete, in form of `projects/{project-number-or-id}/locations/{location_id}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+/adaptiveMtFiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_list": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_list",
+    "description": "Lists all AdaptiveMtFiles associated to an AdaptiveMtDataset.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/adaptiveMtFiles",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the project from which to list the Adaptive MT files. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. ",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtFilesResponse.next_page_token returned from the previous call to `ListAdaptiveMtFiles` method. The first page is returned if `page_token`is empty or missing.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListAdaptiveMtFilesResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_adaptiveMtSentences_list": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_adaptiveMtFiles_adaptiveMtSentences_list",
+    "description": "Lists all AdaptiveMtSentences under a given file/dataset.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/adaptiveMtSentences",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the project from which to list the Adaptive MT files. The following format lists all sentences under a file. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}` The following format lists all sentences within a dataset. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+/adaptiveMtFiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtSentencesRequest.next_page_token returned from the previous call to `ListTranslationMemories` method. The first page is returned if `page_token` is empty or missing.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListAdaptiveMtSentencesResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_adaptiveMtDatasets_adaptiveMtSentences_list": {
+    "name": "translate_projects_locations_adaptiveMtDatasets_adaptiveMtSentences_list",
+    "description": "Lists all AdaptiveMtSentences under a given file/dataset.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/adaptiveMtSentences",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the project from which to list the Adaptive MT files. The following format lists all sentences under a file. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}/adaptiveMtFiles/{file}` The following format lists all sentences within a dataset. `projects/{project}/locations/{location}/adaptiveMtDatasets/{dataset}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/adaptiveMtDatasets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token identifying a page of results the server should return. Typically, this is the value of ListAdaptiveMtSentencesRequest.next_page_token returned from the previous call to `ListTranslationMemories` method. The first page is returned if `page_token` is empty or missing.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListAdaptiveMtSentencesResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_models_create": {
+    "name": "translate_projects_locations_models_create",
+    "description": "Creates a Model.",
+    "http_method": "POST",
+    "path": "https://translation.googleapis.com/v3/{+parent}/models",
+    "parameters": {
+      "parent": {
+        "description": "Required. The project name, in form of `projects/{project}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Model"
+    }
+  },
+  "translate_projects_locations_models_list": {
+    "name": "translate_projects_locations_models_list",
+    "description": "Lists models.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+parent}/models",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the parent project. In form of `projects/{project-number-or-id}/locations/{location-id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. An expression for filtering the models that will be returned. Supported filter: `dataset_id=${dataset_id}`",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Requested page size. The server can return fewer results than requested.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results for the server to return. Typically obtained from next_page_token field in the response of a ListModels call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "ListModelsResponse"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_models_get": {
+    "name": "translate_projects_locations_models_get",
+    "description": "Gets a model.",
+    "http_method": "GET",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the model to retrieve.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/models/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Model"
+    },
+    "request": {}
+  },
+  "translate_projects_locations_models_delete": {
+    "name": "translate_projects_locations_models_delete",
+    "description": "Deletes a model.",
+    "http_method": "DELETE",
+    "path": "https://translation.googleapis.com/v3/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the model to delete.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/models/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-translation"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  }
+}

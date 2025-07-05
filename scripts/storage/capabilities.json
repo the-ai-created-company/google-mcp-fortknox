@@ -1,0 +1,271 @@
+{
+  "anywhereCaches_management": {
+    "insert_anywhereCaches": [
+      "storage.anywhereCaches.insert"
+    ],
+    "update_anywhereCaches": [
+      "storage.anywhereCaches.update"
+    ],
+    "get_anywhereCaches": [
+      "storage.anywhereCaches.get"
+    ],
+    "list_anywhereCaches": [
+      "storage.anywhereCaches.list"
+    ],
+    "pause_anywhereCaches": [
+      "storage.anywhereCaches.pause"
+    ],
+    "resume_anywhereCaches": [
+      "storage.anywhereCaches.resume"
+    ],
+    "disable_anywhereCaches": [
+      "storage.anywhereCaches.disable"
+    ]
+  },
+  "bucketAccessControls_management": {
+    "delete_bucketAccessControls": [
+      "storage.bucketAccessControls.delete"
+    ],
+    "get_bucketAccessControls": [
+      "storage.bucketAccessControls.get"
+    ],
+    "insert_bucketAccessControls": [
+      "storage.bucketAccessControls.insert"
+    ],
+    "list_bucketAccessControls": [
+      "storage.bucketAccessControls.list"
+    ],
+    "patch_bucketAccessControls": [
+      "storage.bucketAccessControls.patch"
+    ],
+    "update_bucketAccessControls": [
+      "storage.bucketAccessControls.update"
+    ]
+  },
+  "buckets_management": {
+    "delete_buckets": [
+      "storage.buckets.delete"
+    ],
+    "restore_buckets": [
+      "storage.buckets.restore"
+    ],
+    "relocate_buckets": [
+      "storage.buckets.relocate"
+    ],
+    "get_buckets": [
+      "storage.buckets.get"
+    ],
+    "getIamPolicy_buckets": [
+      "storage.buckets.getIamPolicy"
+    ],
+    "getStorageLayout_buckets": [
+      "storage.buckets.getStorageLayout"
+    ],
+    "insert_buckets": [
+      "storage.buckets.insert"
+    ],
+    "list_buckets": [
+      "storage.buckets.list"
+    ],
+    "lockRetentionPolicy_buckets": [
+      "storage.buckets.lockRetentionPolicy"
+    ],
+    "patch_buckets": [
+      "storage.buckets.patch"
+    ],
+    "setIamPolicy_buckets": [
+      "storage.buckets.setIamPolicy"
+    ],
+    "testIamPermissions_buckets": [
+      "storage.buckets.testIamPermissions"
+    ],
+    "update_buckets": [
+      "storage.buckets.update"
+    ]
+  },
+  "operations_management": {
+    "cancel_operations": [
+      "storage.buckets.operations.cancel"
+    ],
+    "get_operations": [
+      "storage.buckets.operations.get"
+    ],
+    "advanceRelocateBucket_operations": [
+      "storage.buckets.operations.advanceRelocateBucket"
+    ],
+    "list_operations": [
+      "storage.buckets.operations.list"
+    ]
+  },
+  "channels_management": {
+    "stop_channels": [
+      "storage.channels.stop"
+    ]
+  },
+  "defaultObjectAccessControls_management": {
+    "delete_defaultObjectAccessControls": [
+      "storage.defaultObjectAccessControls.delete"
+    ],
+    "get_defaultObjectAccessControls": [
+      "storage.defaultObjectAccessControls.get"
+    ],
+    "insert_defaultObjectAccessControls": [
+      "storage.defaultObjectAccessControls.insert"
+    ],
+    "list_defaultObjectAccessControls": [
+      "storage.defaultObjectAccessControls.list"
+    ],
+    "patch_defaultObjectAccessControls": [
+      "storage.defaultObjectAccessControls.patch"
+    ],
+    "update_defaultObjectAccessControls": [
+      "storage.defaultObjectAccessControls.update"
+    ]
+  },
+  "folders_management": {
+    "delete_folders": [
+      "storage.folders.delete"
+    ],
+    "get_folders": [
+      "storage.folders.get"
+    ],
+    "insert_folders": [
+      "storage.folders.insert"
+    ],
+    "list_folders": [
+      "storage.folders.list"
+    ],
+    "rename_folders": [
+      "storage.folders.rename"
+    ]
+  },
+  "managedFolders_management": {
+    "delete_managedFolders": [
+      "storage.managedFolders.delete"
+    ],
+    "get_managedFolders": [
+      "storage.managedFolders.get"
+    ],
+    "getIamPolicy_managedFolders": [
+      "storage.managedFolders.getIamPolicy"
+    ],
+    "insert_managedFolders": [
+      "storage.managedFolders.insert"
+    ],
+    "list_managedFolders": [
+      "storage.managedFolders.list"
+    ],
+    "setIamPolicy_managedFolders": [
+      "storage.managedFolders.setIamPolicy"
+    ],
+    "testIamPermissions_managedFolders": [
+      "storage.managedFolders.testIamPermissions"
+    ]
+  },
+  "notifications_management": {
+    "delete_notifications": [
+      "storage.notifications.delete"
+    ],
+    "get_notifications": [
+      "storage.notifications.get"
+    ],
+    "insert_notifications": [
+      "storage.notifications.insert"
+    ],
+    "list_notifications": [
+      "storage.notifications.list"
+    ]
+  },
+  "objectAccessControls_management": {
+    "delete_objectAccessControls": [
+      "storage.objectAccessControls.delete"
+    ],
+    "get_objectAccessControls": [
+      "storage.objectAccessControls.get"
+    ],
+    "insert_objectAccessControls": [
+      "storage.objectAccessControls.insert"
+    ],
+    "list_objectAccessControls": [
+      "storage.objectAccessControls.list"
+    ],
+    "patch_objectAccessControls": [
+      "storage.objectAccessControls.patch"
+    ],
+    "update_objectAccessControls": [
+      "storage.objectAccessControls.update"
+    ]
+  },
+  "objects_management": {
+    "compose_objects": [
+      "storage.objects.compose"
+    ],
+    "copy_objects": [
+      "storage.objects.copy"
+    ],
+    "delete_objects": [
+      "storage.objects.delete"
+    ],
+    "get_objects": [
+      "storage.objects.get"
+    ],
+    "getIamPolicy_objects": [
+      "storage.objects.getIamPolicy"
+    ],
+    "insert_objects": [
+      "storage.objects.insert"
+    ],
+    "list_objects": [
+      "storage.objects.list"
+    ],
+    "patch_objects": [
+      "storage.objects.patch"
+    ],
+    "rewrite_objects": [
+      "storage.objects.rewrite"
+    ],
+    "move_objects": [
+      "storage.objects.move"
+    ],
+    "setIamPolicy_objects": [
+      "storage.objects.setIamPolicy"
+    ],
+    "testIamPermissions_objects": [
+      "storage.objects.testIamPermissions"
+    ],
+    "update_objects": [
+      "storage.objects.update"
+    ],
+    "watchAll_objects": [
+      "storage.objects.watchAll"
+    ],
+    "restore_objects": [
+      "storage.objects.restore"
+    ],
+    "bulkRestore_objects": [
+      "storage.objects.bulkRestore"
+    ]
+  },
+  "hmacKeys_management": {
+    "create_hmacKeys": [
+      "storage.projects.hmacKeys.create"
+    ],
+    "delete_hmacKeys": [
+      "storage.projects.hmacKeys.delete"
+    ],
+    "get_hmacKeys": [
+      "storage.projects.hmacKeys.get"
+    ],
+    "list_hmacKeys": [
+      "storage.projects.hmacKeys.list"
+    ],
+    "update_hmacKeys": [
+      "storage.projects.hmacKeys.update"
+    ]
+  },
+  "serviceAccount_management": {
+    "get_serviceAccount": [
+      "storage.projects.serviceAccount.get"
+    ]
+  }
+}

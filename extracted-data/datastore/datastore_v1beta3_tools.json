@@ -1,0 +1,226 @@
+{
+  "datastore_projects_lookup": {
+    "name": "datastore_projects_lookup",
+    "description": "Looks up entities by key.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:lookup",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "LookupResponse"
+    },
+    "request": {
+      "$ref": "LookupRequest"
+    }
+  },
+  "datastore_projects_runQuery": {
+    "name": "datastore_projects_runQuery",
+    "description": "Queries for entities.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:runQuery",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "RunQueryResponse"
+    },
+    "request": {
+      "$ref": "RunQueryRequest"
+    }
+  },
+  "datastore_projects_runAggregationQuery": {
+    "name": "datastore_projects_runAggregationQuery",
+    "description": "Runs an aggregation query.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:runAggregationQuery",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "RunAggregationQueryResponse"
+    },
+    "request": {
+      "$ref": "RunAggregationQueryRequest"
+    }
+  },
+  "datastore_projects_beginTransaction": {
+    "name": "datastore_projects_beginTransaction",
+    "description": "Begins a new transaction.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:beginTransaction",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "BeginTransactionResponse"
+    },
+    "request": {
+      "$ref": "BeginTransactionRequest"
+    }
+  },
+  "datastore_projects_commit": {
+    "name": "datastore_projects_commit",
+    "description": "Commits a transaction, optionally creating, deleting or modifying some entities.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:commit",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "CommitResponse"
+    },
+    "request": {
+      "$ref": "CommitRequest"
+    }
+  },
+  "datastore_projects_rollback": {
+    "name": "datastore_projects_rollback",
+    "description": "Rolls back a transaction.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:rollback",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "RollbackResponse"
+    },
+    "request": {
+      "$ref": "RollbackRequest"
+    }
+  },
+  "datastore_projects_allocateIds": {
+    "name": "datastore_projects_allocateIds",
+    "description": "Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:allocateIds",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "AllocateIdsResponse"
+    },
+    "request": {
+      "$ref": "AllocateIdsRequest"
+    }
+  },
+  "datastore_projects_reserveIds": {
+    "name": "datastore_projects_reserveIds",
+    "description": "Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta3/projects/{projectId}:reserveIds",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "ReserveIdsResponse"
+    },
+    "request": {
+      "$ref": "ReserveIdsRequest"
+    }
+  }
+}

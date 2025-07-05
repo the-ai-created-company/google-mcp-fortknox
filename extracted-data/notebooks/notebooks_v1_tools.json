@@ -1,0 +1,1954 @@
+{
+  "notebooks_projects_locations_list": {
+    "name": "notebooks_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_get": {
+    "name": "notebooks_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_operations_list": {
+    "name": "notebooks_projects_locations_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}/operations",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_operations_get": {
+    "name": "notebooks_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_operations_delete": {
+    "name": "notebooks_projects_locations_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_operations_cancel": {
+    "name": "notebooks_projects_locations_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CancelOperationRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_list": {
+    "name": "notebooks_projects_locations_runtimes_list",
+    "description": "Lists Runtimes in a given project and location.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/runtimes",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum return size of the list call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A previous returned page token that can be used to continue listing from the last result.",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Sort results. Supported values are \"name\", \"name desc\" or \"\" (unsorted).",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. List filter.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "orderBy",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListRuntimesResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_runtimes_get": {
+    "name": "notebooks_projects_locations_runtimes_get",
+    "description": "Gets details of a single Runtime. The location must be a regional endpoint rather than zonal.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Runtime"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_runtimes_create": {
+    "name": "notebooks_projects_locations_runtimes_create",
+    "description": "Creates a new Runtime in a given project and location.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/runtimes",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "runtimeId": {
+        "description": "Required. User-defined unique ID of this Runtime.",
+        "location": "query",
+        "type": "string"
+      },
+      "requestId": {
+        "description": "Idempotent request UUID.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "runtimeId",
+      "requestId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Runtime"
+    }
+  },
+  "notebooks_projects_locations_runtimes_patch": {
+    "name": "notebooks_projects_locations_runtimes_patch",
+    "description": "Update Notebook Runtime configuration.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name of the runtime. Format: `projects/{project}/locations/{location}/runtimes/{runtimeId}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Specifies the path, relative to `Runtime`, of the field to update. For example, to change the software configuration kernels, the `update_mask` parameter would be specified as `software_config.kernels`, and the `PATCH` request body would specify the new value, as follows: { \"software_config\":{ \"kernels\": [{ 'repository': 'gcr.io/deeplearning-platform-release/pytorch-gpu', 'tag': 'latest' }], } } Currently, only the following fields can be updated: - `software_config.kernels` - `software_config.post_startup_script` - `software_config.custom_gpu_driver_path` - `software_config.idle_shutdown` - `software_config.idle_shutdown_timeout` - `software_config.disable_terminal` - `labels`",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "requestId": {
+        "description": "Idempotent request UUID.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "requestId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Runtime"
+    }
+  },
+  "notebooks_projects_locations_runtimes_delete": {
+    "name": "notebooks_projects_locations_runtimes_delete",
+    "description": "Deletes a single Runtime.",
+    "http_method": "DELETE",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "requestId": {
+        "description": "Idempotent request UUID.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "requestId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_runtimes_start": {
+    "name": "notebooks_projects_locations_runtimes_start",
+    "description": "Starts a Managed Notebook Runtime. Perform \"Start\" on GPU instances; \"Resume\" on CPU instances See: https://cloud.google.com/compute/docs/instances/stop-start-instance https://cloud.google.com/compute/docs/instances/suspend-resume-instance",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:start",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "StartRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_stop": {
+    "name": "notebooks_projects_locations_runtimes_stop",
+    "description": "Stops a Managed Notebook Runtime. Perform \"Stop\" on GPU instances; \"Suspend\" on CPU instances See: https://cloud.google.com/compute/docs/instances/stop-start-instance https://cloud.google.com/compute/docs/instances/suspend-resume-instance",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:stop",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "StopRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_switch": {
+    "name": "notebooks_projects_locations_runtimes_switch",
+    "description": "Switch a Managed Notebook Runtime.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:switch",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SwitchRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_reset": {
+    "name": "notebooks_projects_locations_runtimes_reset",
+    "description": "Resets a Managed Notebook Runtime.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:reset",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ResetRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_upgrade": {
+    "name": "notebooks_projects_locations_runtimes_upgrade",
+    "description": "Upgrades a Managed Notebook Runtime to the latest version.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:upgrade",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpgradeRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_reportEvent": {
+    "name": "notebooks_projects_locations_runtimes_reportEvent",
+    "description": "Reports and processes a runtime event.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:reportEvent",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ReportRuntimeEventRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_refreshRuntimeTokenInternal": {
+    "name": "notebooks_projects_locations_runtimes_refreshRuntimeTokenInternal",
+    "description": "Gets an access token for the consumer service account that the customer attached to the runtime. Only accessible from the tenant instance.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:refreshRuntimeTokenInternal",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "RefreshRuntimeTokenInternalResponse"
+    },
+    "request": {
+      "$ref": "RefreshRuntimeTokenInternalRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_diagnose": {
+    "name": "notebooks_projects_locations_runtimes_diagnose",
+    "description": "Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:diagnose",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtimes_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DiagnoseRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_migrate": {
+    "name": "notebooks_projects_locations_runtimes_migrate",
+    "description": "Migrate an existing Runtime to a new Workbench Instance.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:migrate",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "MigrateRuntimeRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_setIamPolicy": {
+    "name": "notebooks_projects_locations_runtimes_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "notebooks_projects_locations_runtimes_getIamPolicy": {
+    "name": "notebooks_projects_locations_runtimes_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_runtimes_testIamPermissions": {
+    "name": "notebooks_projects_locations_runtimes_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/runtimes/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_list": {
+    "name": "notebooks_projects_locations_instances_list",
+    "description": "Lists instances in a given project and location.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/instances",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum return size of the list call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A previous returned page token that can be used to continue listing from the last result.",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Sort results. Supported values are \"name\", \"name desc\" or \"\" (unsorted).",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. List filter.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "orderBy",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListInstancesResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_instances_get": {
+    "name": "notebooks_projects_locations_instances_get",
+    "description": "Gets details of a single Instance.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Instance"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_instances_create": {
+    "name": "notebooks_projects_locations_instances_create",
+    "description": "Creates a new Instance in a given project and location.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/instances",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instanceId": {
+        "description": "Required. User-defined unique ID of this instance.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "instanceId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Instance"
+    }
+  },
+  "notebooks_projects_locations_instances_register": {
+    "name": "notebooks_projects_locations_instances_register",
+    "description": "Registers an existing legacy notebook instance to the Notebooks API server. Legacy instances are instances created with the legacy Compute Engine calls. They are not manageable by the Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/instances:register",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RegisterInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_setAccelerator": {
+    "name": "notebooks_projects_locations_instances_setAccelerator",
+    "description": "Updates the guest accelerators of a single Instance.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:setAccelerator",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SetInstanceAcceleratorRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_setMachineType": {
+    "name": "notebooks_projects_locations_instances_setMachineType",
+    "description": "Updates the machine type of a single Instance.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:setMachineType",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SetInstanceMachineTypeRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_updateConfig": {
+    "name": "notebooks_projects_locations_instances_updateConfig",
+    "description": "Update Notebook Instance configurations.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:updateConfig",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpdateInstanceConfigRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_updateShieldedInstanceConfig": {
+    "name": "notebooks_projects_locations_instances_updateShieldedInstanceConfig",
+    "description": "Updates the Shielded instance configuration of a single Instance.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:updateShieldedInstanceConfig",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpdateShieldedInstanceConfigRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_setLabels": {
+    "name": "notebooks_projects_locations_instances_setLabels",
+    "description": "Replaces all the labels of an Instance.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:setLabels",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SetInstanceLabelsRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_updateMetadataItems": {
+    "name": "notebooks_projects_locations_instances_updateMetadataItems",
+    "description": "Add/update metadata items for an instance.",
+    "http_method": "PATCH",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:updateMetadataItems",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "UpdateInstanceMetadataItemsResponse"
+    },
+    "request": {
+      "$ref": "UpdateInstanceMetadataItemsRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_delete": {
+    "name": "notebooks_projects_locations_instances_delete",
+    "description": "Deletes a single Instance.",
+    "http_method": "DELETE",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_instances_start": {
+    "name": "notebooks_projects_locations_instances_start",
+    "description": "Starts a notebook instance.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:start",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "StartInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_stop": {
+    "name": "notebooks_projects_locations_instances_stop",
+    "description": "Stops a notebook instance.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:stop",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "StopInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_reset": {
+    "name": "notebooks_projects_locations_instances_reset",
+    "description": "Resets a notebook instance.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:reset",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ResetInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_report": {
+    "name": "notebooks_projects_locations_instances_report",
+    "description": "Allows notebook instances to report their latest instance information to the Notebooks API server. The server will merge the reported information to the instance metadata store. Do not use this method directly.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:report",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ReportInstanceInfoRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_isUpgradeable": {
+    "name": "notebooks_projects_locations_instances_isUpgradeable",
+    "description": "Checks whether a notebook instance is upgradable.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+notebookInstance}:isUpgradeable",
+    "parameters": {
+      "notebookInstance": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "type": {
+        "description": "Optional. The optional UpgradeType. Setting this field will search for additional compute images to upgrade this instance.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Upgrade type is not specified.",
+          "Upgrade ML framework.",
+          "Upgrade Operating System.",
+          "Upgrade CUDA.",
+          "Upgrade All (OS, Framework and CUDA)."
+        ],
+        "enum": [
+          "UPGRADE_TYPE_UNSPECIFIED",
+          "UPGRADE_FRAMEWORK",
+          "UPGRADE_OS",
+          "UPGRADE_CUDA",
+          "UPGRADE_ALL"
+        ]
+      }
+    },
+    "required_parameters": [
+      "notebookInstance"
+    ],
+    "optional_parameters": [
+      "type"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "IsInstanceUpgradeableResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_instances_getInstanceHealth": {
+    "name": "notebooks_projects_locations_instances_getInstanceHealth",
+    "description": "Checks whether a notebook instance is healthy.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:getInstanceHealth",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GetInstanceHealthResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_instances_upgrade": {
+    "name": "notebooks_projects_locations_instances_upgrade",
+    "description": "Upgrades a notebook instance to the latest version.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:upgrade",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpgradeInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_rollback": {
+    "name": "notebooks_projects_locations_instances_rollback",
+    "description": "Rollbacks a notebook instance to the previous version.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:rollback",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RollbackInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_diagnose": {
+    "name": "notebooks_projects_locations_instances_diagnose",
+    "description": "Creates a Diagnostic File and runs Diagnostic Tool given an Instance.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:diagnose",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DiagnoseInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_upgradeInternal": {
+    "name": "notebooks_projects_locations_instances_upgradeInternal",
+    "description": "Allows notebook instances to call this endpoint to upgrade themselves. Do not use this method directly.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:upgradeInternal",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpgradeInstanceInternalRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_reportEvent": {
+    "name": "notebooks_projects_locations_instances_reportEvent",
+    "description": "Reports and processes an instance event.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:reportEvent",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ReportInstanceEventRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_migrate": {
+    "name": "notebooks_projects_locations_instances_migrate",
+    "description": "Migrates an existing User-Managed Notebook to Workbench Instances.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:migrate",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "MigrateInstanceRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_setIamPolicy": {
+    "name": "notebooks_projects_locations_instances_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "notebooks_projects_locations_instances_getIamPolicy": {
+    "name": "notebooks_projects_locations_instances_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_instances_testIamPermissions": {
+    "name": "notebooks_projects_locations_instances_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "notebooks_projects_locations_environments_list": {
+    "name": "notebooks_projects_locations_environments_list",
+    "description": "Lists environments in a project.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/environments",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum return size of the list call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A previous returned page token that can be used to continue listing from the last result.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListEnvironmentsResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_environments_get": {
+    "name": "notebooks_projects_locations_environments_get",
+    "description": "Gets details of a single Environment.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/environments/{environment_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/environments/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Environment"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_environments_create": {
+    "name": "notebooks_projects_locations_environments_create",
+    "description": "Creates a new Environment.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/environments",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "environmentId": {
+        "description": "Required. User-defined unique ID of this environment. The `environment_id` must be 1 to 63 characters long and contain only lowercase letters, numeric characters, and dashes. The first character must be a lowercase letter and the last character cannot be a dash.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "environmentId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Environment"
+    }
+  },
+  "notebooks_projects_locations_environments_delete": {
+    "name": "notebooks_projects_locations_environments_delete",
+    "description": "Deletes a single Environment.",
+    "http_method": "DELETE",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/environments/{environment_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/environments/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_schedules_list": {
+    "name": "notebooks_projects_locations_schedules_list",
+    "description": "Lists schedules in a given project and location.",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/schedules",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum return size of the list call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A previous returned page token that can be used to continue listing from the last result.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Filter applied to resulting schedules.",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Field to order results by.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListSchedulesResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_schedules_get": {
+    "name": "notebooks_projects_locations_schedules_get",
+    "description": "Gets details of schedule",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/schedules/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Schedule"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_schedules_delete": {
+    "name": "notebooks_projects_locations_schedules_delete",
+    "description": "Deletes schedule and all underlying jobs",
+    "http_method": "DELETE",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/schedules/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_schedules_create": {
+    "name": "notebooks_projects_locations_schedules_create",
+    "description": "Creates a new Scheduled Notebook in a given project and location.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/schedules",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "scheduleId": {
+        "description": "Required. User-defined unique ID of this schedule.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "scheduleId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Schedule"
+    }
+  },
+  "notebooks_projects_locations_schedules_trigger": {
+    "name": "notebooks_projects_locations_schedules_trigger",
+    "description": "Triggers execution of an existing schedule.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+name}:trigger",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}/schedules/{schedule_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/schedules/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "TriggerScheduleRequest"
+    }
+  },
+  "notebooks_projects_locations_executions_list": {
+    "name": "notebooks_projects_locations_executions_list",
+    "description": "Lists executions in a given project and location",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/executions",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum return size of the list call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A previous returned page token that can be used to continue listing from the last result.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Filter applied to resulting executions. Currently only supports filtering executions by a specified `schedule_id`. Format: `schedule_id=`",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Sort by field.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListExecutionsResponse"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_executions_get": {
+    "name": "notebooks_projects_locations_executions_get",
+    "description": "Gets details of executions",
+    "http_method": "GET",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/executions/{execution_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Execution"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_executions_delete": {
+    "name": "notebooks_projects_locations_executions_delete",
+    "description": "Deletes execution",
+    "http_method": "DELETE",
+    "path": "https://notebooks.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `projects/{project_id}/locations/{location}/executions/{execution_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "notebooks_projects_locations_executions_create": {
+    "name": "notebooks_projects_locations_executions_create",
+    "description": "Creates a new Execution in a given project and location.",
+    "http_method": "POST",
+    "path": "https://notebooks.googleapis.com/v1/{+parent}/executions",
+    "parameters": {
+      "parent": {
+        "description": "Required. Format: `parent=projects/{project_id}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "executionId": {
+        "description": "Required. User-defined unique ID of this execution.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "executionId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Execution"
+    }
+  }
+}

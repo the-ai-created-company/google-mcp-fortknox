@@ -1,0 +1,9 @@
+{
+  "api_name": "vision",
+  "api_version": "v1p2beta1",
+  "api_title": "Cloud Vision API",
+  "api_description": "Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.",
+  "base_url": "https://vision.googleapis.com/",
+  "tool_count": 12,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\vision\\vision_v1p2beta1_tools.json"
+}

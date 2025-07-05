@@ -1,0 +1,2312 @@
+{
+  "cloudbuild_v1_webhook": {
+    "name": "cloudbuild_v1_webhook",
+    "description": "ReceiveWebhook is called when the API receives a GitHub webhook.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/webhook",
+    "parameters": {
+      "webhookKey": {
+        "location": "query",
+        "description": "For GitHub Enterprise webhooks, this key is used to associate the webhook request with the GitHubEnterpriseConfig to use for validation.",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "webhookKey"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "HttpBody"
+    }
+  },
+  "cloudbuild_locations_regionalWebhook": {
+    "name": "cloudbuild_locations_regionalWebhook",
+    "description": "ReceiveRegionalWebhook is called when the API receives a regional GitHub webhook.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+location}/regionalWebhook",
+    "parameters": {
+      "webhookKey": {
+        "description": "For GitHub Enterprise webhooks, this key is used to associate the webhook request with the GitHubEnterpriseConfig to use for validation.",
+        "location": "query",
+        "type": "string"
+      },
+      "location": {
+        "location": "path",
+        "pattern": "^locations/[^/]+$",
+        "type": "string",
+        "description": "Required. The location where the webhook should be sent.",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "location"
+    ],
+    "optional_parameters": [
+      "webhookKey"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "HttpBody"
+    }
+  },
+  "cloudbuild_githubDotComWebhook_receive": {
+    "name": "cloudbuild_githubDotComWebhook_receive",
+    "description": "ReceiveGitHubDotComWebhook is called when the API receives a github.com webhook.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/githubDotComWebhook:receive",
+    "parameters": {
+      "webhookKey": {
+        "description": "For GitHub Enterprise webhooks, this key is used to associate the webhook request with the GitHubEnterpriseConfig to use for validation.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "webhookKey"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "HttpBody"
+    }
+  },
+  "cloudbuild_operations_get": {
+    "name": "cloudbuild_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "required": true,
+        "location": "path",
+        "pattern": "^operations/.*$",
+        "type": "string",
+        "description": "The name of the operation resource."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudbuild_operations_cancel": {
+    "name": "cloudbuild_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "pattern": "^operations/.*$",
+        "required": true,
+        "type": "string",
+        "description": "The name of the operation resource to be cancelled."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CancelOperationRequest"
+    }
+  },
+  "cloudbuild_projects_locations_getDefaultServiceAccount": {
+    "name": "cloudbuild_projects_locations_getDefaultServiceAccount",
+    "description": "Returns the `DefaultServiceAccount` used by the project.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the `DefaultServiceAccount` to retrieve. Format: `projects/{project}/locations/{location}/defaultServiceAccount`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/defaultServiceAccount$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "DefaultServiceAccount"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_triggers_webhook": {
+    "name": "cloudbuild_projects_locations_triggers_webhook",
+    "description": "ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted at a specific trigger.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:webhook",
+    "parameters": {
+      "projectId": {
+        "location": "query",
+        "type": "string",
+        "description": "Project in which the specified trigger lives"
+      },
+      "name": {
+        "description": "The name of the `ReceiveTriggerWebhook` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+/triggers/[^/]+$",
+        "type": "string",
+        "required": true
+      },
+      "trigger": {
+        "type": "string",
+        "description": "Name of the trigger to run the payload against",
+        "location": "query"
+      },
+      "secret": {
+        "type": "string",
+        "location": "query",
+        "description": "Secret token used for authorization if an OAuth token isn't provided."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "trigger",
+      "secret"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "ReceiveTriggerWebhookResponse"
+    },
+    "request": {
+      "$ref": "HttpBody"
+    }
+  },
+  "cloudbuild_projects_locations_triggers_run": {
+    "name": "cloudbuild_projects_locations_triggers_run",
+    "description": "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:run",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "description": "The name of the `Trigger` to run. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "location": "path",
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+/triggers/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RunBuildTriggerRequest"
+    }
+  },
+  "cloudbuild_projects_locations_triggers_create": {
+    "name": "cloudbuild_projects_locations_triggers_create",
+    "description": "Creates a new `BuildTrigger`.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/triggers",
+    "parameters": {
+      "parent": {
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "description": "The parent resource where this trigger will be created. Format: `projects/{project}/locations/{location}`"
+      },
+      "projectId": {
+        "type": "string",
+        "description": "Required. ID of the project for which to configure automatic builds.",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BuildTrigger"
+    },
+    "request": {
+      "$ref": "BuildTrigger"
+    }
+  },
+  "cloudbuild_projects_locations_triggers_patch": {
+    "name": "cloudbuild_projects_locations_triggers_patch",
+    "description": "Updates a `BuildTrigger` by its project ID and trigger ID.",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/{+resourceName}",
+    "parameters": {
+      "triggerId": {
+        "description": "Required. ID of the `BuildTrigger` to update.",
+        "type": "string",
+        "location": "query"
+      },
+      "resourceName": {
+        "required": true,
+        "description": "The `Trigger` name with format: `projects/{project}/locations/{location}/triggers/{trigger}`, where {trigger} is a unique identifier generated by the service.",
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/triggers/[^/]+$"
+      },
+      "projectId": {
+        "location": "query",
+        "type": "string",
+        "description": "Required. ID of the project that owns the trigger."
+      },
+      "updateMask": {
+        "location": "query",
+        "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed.",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "resourceName"
+    ],
+    "optional_parameters": [
+      "triggerId",
+      "projectId",
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BuildTrigger"
+    },
+    "request": {
+      "$ref": "BuildTrigger"
+    }
+  },
+  "cloudbuild_projects_locations_triggers_get": {
+    "name": "cloudbuild_projects_locations_triggers_get",
+    "description": "Returns information about a `BuildTrigger`.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "triggerId": {
+        "type": "string",
+        "location": "query",
+        "description": "Required. Identifier (`id` or `name`) of the `BuildTrigger` to get."
+      },
+      "projectId": {
+        "description": "Required. ID of the project that owns the trigger.",
+        "location": "query",
+        "type": "string"
+      },
+      "name": {
+        "description": "The name of the `Trigger` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+/triggers/[^/]+$",
+        "type": "string",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "triggerId",
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BuildTrigger"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_triggers_delete": {
+    "name": "cloudbuild_projects_locations_triggers_delete",
+    "description": "Deletes a `BuildTrigger` by its project ID and trigger ID.",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/triggers/[^/]+$",
+        "location": "path",
+        "description": "The name of the `Trigger` to delete. Format: `projects/{project}/locations/{location}/triggers/{trigger}`"
+      },
+      "triggerId": {
+        "type": "string",
+        "description": "Required. ID of the `BuildTrigger` to delete.",
+        "location": "query"
+      },
+      "projectId": {
+        "location": "query",
+        "type": "string",
+        "description": "Required. ID of the project that owns the trigger."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "triggerId",
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_triggers_list": {
+    "name": "cloudbuild_projects_locations_triggers_list",
+    "description": "Lists existing `BuildTrigger`s.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/triggers",
+    "parameters": {
+      "parent": {
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "description": "The parent of the collection of `Triggers`. Format: `projects/{project}/locations/{location}`",
+        "type": "string",
+        "location": "path",
+        "required": true
+      },
+      "pageSize": {
+        "location": "query",
+        "format": "int32",
+        "description": "Number of results to return in the list.",
+        "type": "integer"
+      },
+      "projectId": {
+        "description": "Required. ID of the project for which to list BuildTriggers.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageToken": {
+        "location": "query",
+        "description": "Token to provide to skip to a particular spot in the list.",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "projectId",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBuildTriggersResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_githubEnterpriseConfigs_list": {
+    "name": "cloudbuild_projects_locations_githubEnterpriseConfigs_list",
+    "description": "List all GitHubEnterpriseConfigs for a given project.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/githubEnterpriseConfigs",
+    "parameters": {
+      "parent": {
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "type": "string",
+        "description": "Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}"
+      },
+      "projectId": {
+        "location": "query",
+        "description": "ID of the project",
+        "type": "string",
+        "deprecated": true
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListGithubEnterpriseConfigsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_githubEnterpriseConfigs_patch": {
+    "name": "cloudbuild_projects_locations_githubEnterpriseConfigs_patch",
+    "description": "Update an association between a GCP project and a GitHub Enterprise server.",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+/githubEnterpriseConfigs/[^/]+$",
+        "required": true,
+        "description": "The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\""
+      },
+      "updateMask": {
+        "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed.",
+        "type": "string",
+        "format": "google-fieldmask",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "GitHubEnterpriseConfig"
+    }
+  },
+  "cloudbuild_projects_locations_githubEnterpriseConfigs_create": {
+    "name": "cloudbuild_projects_locations_githubEnterpriseConfigs_create",
+    "description": "Create an association between a GCP project and a GitHub Enterprise server.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/githubEnterpriseConfigs",
+    "parameters": {
+      "parent": {
+        "description": "Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}",
+        "required": true,
+        "type": "string",
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+$"
+      },
+      "projectId": {
+        "type": "string",
+        "location": "query",
+        "deprecated": true,
+        "description": "ID of the project."
+      },
+      "gheConfigId": {
+        "description": "Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig's resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "gheConfigId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "GitHubEnterpriseConfig"
+    }
+  },
+  "cloudbuild_projects_locations_githubEnterpriseConfigs_delete": {
+    "name": "cloudbuild_projects_locations_githubEnterpriseConfigs_delete",
+    "description": "Delete an association between a GCP project and a GitHub Enterprise server.",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "configId": {
+        "deprecated": true,
+        "description": "Unique identifier of the `GitHubEnterpriseConfig`",
+        "location": "query",
+        "type": "string"
+      },
+      "name": {
+        "required": true,
+        "type": "string",
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+/githubEnterpriseConfigs/[^/]+$",
+        "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\""
+      },
+      "projectId": {
+        "description": "ID of the project",
+        "location": "query",
+        "type": "string",
+        "deprecated": true
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "configId",
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_githubEnterpriseConfigs_get": {
+    "name": "cloudbuild_projects_locations_githubEnterpriseConfigs_get",
+    "description": "Retrieve a GitHubEnterpriseConfig.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "configId": {
+        "location": "query",
+        "deprecated": true,
+        "description": "Unique identifier of the `GitHubEnterpriseConfig`",
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+/githubEnterpriseConfigs/[^/]+$",
+        "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
+        "required": true
+      },
+      "projectId": {
+        "type": "string",
+        "description": "ID of the project",
+        "deprecated": true,
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "configId",
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GitHubEnterpriseConfig"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_create": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_create",
+    "description": "Creates a new `GitLabConfig`. This API is experimental",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/gitLabConfigs",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the parent resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "type": "string",
+        "location": "path",
+        "required": true
+      },
+      "gitlabConfigId": {
+        "type": "string",
+        "location": "query",
+        "description": "Optional. The ID to use for the GitLabConfig, which will become the final component of the GitLabConfig\u2019s resource name. gitlab_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "gitlabConfigId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "GitLabConfig"
+    }
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_delete": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_delete",
+    "description": "Delete a `GitLabConfig`. This API is experimental",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The config resource name.",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_list": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_list",
+    "description": "List all `GitLabConfigs` for a given project. This API is experimental",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/gitLabConfigs",
+    "parameters": {
+      "pageToken": {
+        "type": "string",
+        "location": "query",
+        "description": "A page token, received from a previous \u2018ListGitlabConfigsRequest\u2019 call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to \u2018ListGitlabConfigsRequest\u2019 must match the call that provided the page token."
+      },
+      "pageSize": {
+        "location": "query",
+        "type": "integer",
+        "description": "The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000;, values above 1000 will be coerced to 1000.",
+        "format": "int32"
+      },
+      "parent": {
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "description": "Required. Name of the parent resource",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageToken",
+      "pageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListGitLabConfigsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_patch": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_patch",
+    "description": "Updates an existing `GitLabConfig`. This API is experimental",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+        "location": "path",
+        "description": "The resource name for the config."
+      },
+      "updateMask": {
+        "type": "string",
+        "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed.",
+        "format": "google-fieldmask",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "GitLabConfig"
+    }
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_get": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_get",
+    "description": "Retrieves a `GitLabConfig`. This API is experimental",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "description": "Required. The config resource name."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GitLabConfig"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_removeGitLabConnectedRepository": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_removeGitLabConnectedRepository",
+    "description": "Remove a GitLab repository from a given GitLabConfig's connected repositories. This API is experimental.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+config}:removeGitLabConnectedRepository",
+    "parameters": {
+      "config": {
+        "type": "string",
+        "description": "Required. The name of the `GitLabConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+        "location": "path",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "config"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "RemoveGitLabConnectedRepositoryRequest"
+    }
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_repos_list": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_repos_list",
+    "description": "List all repositories for a given `GitLabConfig`. This API is experimental",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/repos",
+    "parameters": {
+      "parent": {
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$",
+        "description": "Required. Name of the parent resource."
+      },
+      "pageSize": {
+        "format": "int32",
+        "description": "The maximum number of repositories to return. The service may return fewer than this value.",
+        "type": "integer",
+        "location": "query"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous ListGitLabRepositoriesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGitLabRepositoriesRequest` must match the call that provided the page token.",
+        "type": "string",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListGitLabRepositoriesResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_gitLabConfigs_connectedRepositories_batchCreate": {
+    "name": "cloudbuild_projects_locations_gitLabConfigs_connectedRepositories_batchCreate",
+    "description": "Batch connecting GitLab repositories to Cloud Build. This API is experimental.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/connectedRepositories:batchCreate",
+    "parameters": {
+      "parent": {
+        "required": true,
+        "location": "path",
+        "type": "string",
+        "description": "The name of the `GitLabConfig` that adds connected repositories. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/gitLabConfigs/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BatchCreateGitLabConnectedRepositoriesRequest"
+    }
+  },
+  "cloudbuild_projects_locations_operations_get": {
+    "name": "cloudbuild_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_operations_cancel": {
+    "name": "cloudbuild_projects_locations_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "required": true,
+        "location": "path",
+        "type": "string",
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CancelOperationRequest"
+    }
+  },
+  "cloudbuild_projects_locations_builds_list": {
+    "name": "cloudbuild_projects_locations_builds_list",
+    "description": "Lists previously requested builds. Previously requested builds may still be in-progress, or may have finished successfully or unsuccessfully.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/builds",
+    "parameters": {
+      "parent": {
+        "description": "The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "type": "string",
+        "required": true
+      },
+      "projectId": {
+        "type": "string",
+        "location": "query",
+        "description": "Required. ID of the project."
+      },
+      "pageSize": {
+        "description": "Number of results to return in the list.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "The raw filter text to constrain the results.",
+        "type": "string",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBuildsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_builds_retry": {
+    "name": "cloudbuild_projects_locations_builds_retry",
+    "description": "Creates a new build based on the specified build. This method creates a new build using the original build request, which may or may not result in an identical build. For triggered builds: * Triggered builds resolve to a precise revision; therefore a retry of a triggered build will result in a build that uses the same revision. For non-triggered builds that specify `RepoSource`: * If the original build built from the tip of a branch, the retried build will build from the tip of that branch, which may not be the same revision as the original build. * If the original build specified a commit sha or revision ID, the retried build will use the identical source. For builds that specify `StorageSource`: * If the original build pulled source from Cloud Storage without specifying the generation of the object, the new build will use the current object, which may be different from the original build source. * If the original build pulled source from Cloud Storage and specified the generation of the object, the new build will attempt to use the same object, which may or may not be available depending on the bucket's lifecycle management settings.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:retry",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+/builds/[^/]+$",
+        "required": true,
+        "description": "The name of the `Build` to retry. Format: `projects/{project}/locations/{location}/builds/{build}`",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RetryBuildRequest"
+    }
+  },
+  "cloudbuild_projects_locations_builds_get": {
+    "name": "cloudbuild_projects_locations_builds_get",
+    "description": "Returns information about a previously requested build. The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or `WORKING`), and timing information.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+/builds/[^/]+$",
+        "type": "string",
+        "description": "The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`",
+        "location": "path"
+      },
+      "projectId": {
+        "description": "Required. ID of the project.",
+        "location": "query",
+        "type": "string"
+      },
+      "id": {
+        "type": "string",
+        "description": "Required. ID of the build.",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "id"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Build"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_builds_approve": {
+    "name": "cloudbuild_projects_locations_builds_approve",
+    "description": "Approves or rejects a pending build. If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call. If rejected, the returned LRO will be immediately done.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:approve",
+    "parameters": {
+      "name": {
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+/builds/[^/]+$",
+        "description": "Required. Name of the target build. For example: \"projects/{$project_id}/builds/{$build_id}\"",
+        "type": "string",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ApproveBuildRequest"
+    }
+  },
+  "cloudbuild_projects_locations_builds_create": {
+    "name": "cloudbuild_projects_locations_builds_create",
+    "description": "Starts a build with the specified configuration. This method returns a long-running `Operation`, which includes the build ID. Pass the build ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/builds",
+    "parameters": {
+      "parent": {
+        "description": "The parent resource where this build will be created. Format: `projects/{project}/locations/{location}`",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+$"
+      },
+      "projectId": {
+        "description": "Required. ID of the project.",
+        "type": "string",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Build"
+    }
+  },
+  "cloudbuild_projects_locations_builds_cancel": {
+    "name": "cloudbuild_projects_locations_builds_cancel",
+    "description": "Cancels a build in progress.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the `Build` to cancel. Format: `projects/{project}/locations/{location}/builds/{build}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/builds/[^/]+$",
+        "type": "string",
+        "location": "path",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Build"
+    },
+    "request": {
+      "$ref": "CancelBuildRequest"
+    }
+  },
+  "cloudbuild_projects_locations_workerPools_get": {
+    "name": "cloudbuild_projects_locations_workerPools_get",
+    "description": "Returns details of a `WorkerPool`.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the `WorkerPool` to retrieve. Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "WorkerPool"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_workerPools_delete": {
+    "name": "cloudbuild_projects_locations_workerPools_delete",
+    "description": "Deletes a `WorkerPool`.",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "description": "Required. The name of the `WorkerPool` to delete. Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.",
+        "required": true
+      },
+      "etag": {
+        "type": "string",
+        "description": "Optional. If provided, it must match the server's etag on the workerpool for the request to be processed.",
+        "location": "query"
+      },
+      "allowMissing": {
+        "location": "query",
+        "type": "boolean",
+        "description": "If set to true, and the `WorkerPool` is not found, the request will succeed but no action will be taken on the server."
+      },
+      "validateOnly": {
+        "location": "query",
+        "type": "boolean",
+        "description": "If set, validate the request and preview the response, but do not actually post it."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "etag",
+      "allowMissing",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_workerPools_list": {
+    "name": "cloudbuild_projects_locations_workerPools_list",
+    "description": "Lists `WorkerPool`s.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/workerPools",
+    "parameters": {
+      "parent": {
+        "location": "path",
+        "required": true,
+        "description": "Required. The parent of the collection of `WorkerPools`. Format: `projects/{project}/locations/{location}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListWorkerPools` call. Provide this to retrieve the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "format": "int32",
+        "location": "query",
+        "description": "The maximum number of `WorkerPool`s to return. The service may return fewer than this value. If omitted, the server will use a sensible default.",
+        "type": "integer"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageToken",
+      "pageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListWorkerPoolsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_workerPools_create": {
+    "name": "cloudbuild_projects_locations_workerPools_create",
+    "description": "Creates a `WorkerPool`.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/workerPools",
+    "parameters": {
+      "parent": {
+        "required": true,
+        "description": "Required. The parent resource where this worker pool will be created. Format: `projects/{project}/locations/{location}`.",
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+$"
+      },
+      "workerPoolId": {
+        "description": "Required. Immutable. The ID to use for the `WorkerPool`, which will become the final component of the resource name. This value should be 1-63 characters, and valid characters are /a-z-/.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "location": "query",
+        "description": "If set, validate the request and preview the response, but do not actually post it.",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "workerPoolId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WorkerPool"
+    }
+  },
+  "cloudbuild_projects_locations_workerPools_patch": {
+    "name": "cloudbuild_projects_locations_workerPools_patch",
+    "description": "Updates a `WorkerPool`.",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name of the `WorkerPool`, with format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. The value of `{worker_pool}` is provided by `worker_pool_id` in `CreateWorkerPool` request and the value of `{location}` is determined by the endpoint accessed.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "type": "string",
+        "location": "path",
+        "required": true
+      },
+      "updateMask": {
+        "type": "string",
+        "description": "Optional. A mask specifying which fields in `worker_pool` to update.",
+        "location": "query",
+        "format": "google-fieldmask"
+      },
+      "validateOnly": {
+        "description": "If set, validate the request and preview the response, but do not actually post it.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "WorkerPool"
+    }
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_removeBitbucketServerConnectedRepository": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_removeBitbucketServerConnectedRepository",
+    "description": "Remove a Bitbucket Server repository from a given BitbucketServerConfig's connected repositories. This API is experimental.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+config}:removeBitbucketServerConnectedRepository",
+    "parameters": {
+      "config": {
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/bitbucketServerConfigs/[^/]+$",
+        "description": "Required. The name of the `BitbucketServerConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`"
+      }
+    },
+    "required_parameters": [
+      "config"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "RemoveBitbucketServerConnectedRepositoryRequest"
+    }
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_list": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_list",
+    "description": "List all `BitbucketServerConfigs` for a given project. This API is experimental.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/bitbucketServerConfigs",
+    "parameters": {
+      "pageSize": {
+        "type": "integer",
+        "location": "query",
+        "description": "The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 50 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+        "format": "int32"
+      },
+      "pageToken": {
+        "location": "query",
+        "description": "A page token, received from a previous `ListBitbucketServerConfigsRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBitbucketServerConfigsRequest` must match the call that provided the page token.",
+        "type": "string"
+      },
+      "parent": {
+        "type": "string",
+        "description": "Required. Name of the parent resource.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBitbucketServerConfigsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_delete": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_delete",
+    "description": "Delete a `BitbucketServerConfig`. This API is experimental.",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "description": "Required. The config resource name.",
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+/bitbucketServerConfigs/[^/]+$",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_get": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_get",
+    "description": "Retrieve a `BitbucketServerConfig`. This API is experimental.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+/bitbucketServerConfigs/[^/]+$",
+        "description": "Required. The config resource name.",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BitbucketServerConfig"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_create": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_create",
+    "description": "Creates a new `BitbucketServerConfig`. This API is experimental.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/bitbucketServerConfigs",
+    "parameters": {
+      "bitbucketServerConfigId": {
+        "description": "Optional. The ID to use for the BitbucketServerConfig, which will become the final component of the BitbucketServerConfig's resource name. bitbucket_server_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character.",
+        "location": "query",
+        "type": "string"
+      },
+      "parent": {
+        "required": true,
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "description": "Required. Name of the parent resource.",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "bitbucketServerConfigId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BitbucketServerConfig"
+    }
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_patch": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_patch",
+    "description": "Updates an existing `BitbucketServerConfig`. This API is experimental.",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "updateMask": {
+        "format": "google-fieldmask",
+        "location": "query",
+        "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed.",
+        "type": "string"
+      },
+      "name": {
+        "description": "The resource name for the config.",
+        "required": true,
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/locations/[^/]+/bitbucketServerConfigs/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BitbucketServerConfig"
+    }
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_repos_list": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_repos_list",
+    "description": "List all repositories for a given `BitbucketServerConfig`. This API is experimental.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/repos",
+    "parameters": {
+      "pageToken": {
+        "type": "string",
+        "location": "query",
+        "description": "A page token, received from a previous `ListBitbucketServerRepositoriesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBitbucketServerConfigsRequest` must match the call that provided the page token."
+      },
+      "pageSize": {
+        "description": "The maximum number of configs to return. The service may return fewer than this value. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+        "type": "integer",
+        "format": "int32",
+        "location": "query"
+      },
+      "parent": {
+        "required": true,
+        "location": "path",
+        "description": "Required. Name of the parent resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/bitbucketServerConfigs/[^/]+$",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageToken",
+      "pageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBitbucketServerRepositoriesResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_locations_bitbucketServerConfigs_connectedRepositories_batchCreate": {
+    "name": "cloudbuild_projects_locations_bitbucketServerConfigs_connectedRepositories_batchCreate",
+    "description": "Batch connecting Bitbucket Server repositories to Cloud Build.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/connectedRepositories:batchCreate",
+    "parameters": {
+      "parent": {
+        "location": "path",
+        "type": "string",
+        "required": true,
+        "description": "The name of the `BitbucketServerConfig` that added connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/bitbucketServerConfigs/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BatchCreateBitbucketServerConnectedRepositoriesRequest"
+    }
+  },
+  "cloudbuild_projects_builds_retry": {
+    "name": "cloudbuild_projects_builds_retry",
+    "description": "Creates a new build based on the specified build. This method creates a new build using the original build request, which may or may not result in an identical build. For triggered builds: * Triggered builds resolve to a precise revision; therefore a retry of a triggered build will result in a build that uses the same revision. For non-triggered builds that specify `RepoSource`: * If the original build built from the tip of a branch, the retried build will build from the tip of that branch, which may not be the same revision as the original build. * If the original build specified a commit sha or revision ID, the retried build will use the identical source. For builds that specify `StorageSource`: * If the original build pulled source from Cloud Storage without specifying the generation of the object, the new build will use the current object, which may be different from the original build source. * If the original build pulled source from Cloud Storage and specified the generation of the object, the new build will attempt to use the same object, which may or may not be available depending on the bucket's lifecycle management settings.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/builds/{id}:retry",
+    "parameters": {
+      "projectId": {
+        "description": "Required. ID of the project.",
+        "location": "path",
+        "type": "string",
+        "required": true
+      },
+      "id": {
+        "location": "path",
+        "description": "Required. Build ID of the original build.",
+        "type": "string",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "id"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RetryBuildRequest"
+    }
+  },
+  "cloudbuild_projects_builds_list": {
+    "name": "cloudbuild_projects_builds_list",
+    "description": "Lists previously requested builds. Previously requested builds may still be in-progress, or may have finished successfully or unsuccessfully.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/builds",
+    "parameters": {
+      "pageSize": {
+        "format": "int32",
+        "type": "integer",
+        "location": "query",
+        "description": "Number of results to return in the list."
+      },
+      "pageToken": {
+        "type": "string",
+        "description": "The page token for the next page of Builds. If unspecified, the first page of results is returned. If the token is rejected for any reason, INVALID_ARGUMENT will be thrown. In this case, the token should be discarded, and pagination should be restarted from the first page of results. See https://google.aip.dev/158 for more.",
+        "location": "query"
+      },
+      "filter": {
+        "description": "The raw filter text to constrain the results.",
+        "type": "string",
+        "location": "query"
+      },
+      "projectId": {
+        "required": true,
+        "description": "Required. ID of the project.",
+        "type": "string",
+        "location": "path"
+      },
+      "parent": {
+        "type": "string",
+        "location": "query",
+        "description": "The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "parent"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBuildsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_builds_approve": {
+    "name": "cloudbuild_projects_builds_approve",
+    "description": "Approves or rejects a pending build. If approved, the returned LRO will be analogous to the LRO returned from a CreateBuild call. If rejected, the returned LRO will be immediately done.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}:approve",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/builds/[^/]+$",
+        "required": true,
+        "description": "Required. Name of the target build. For example: \"projects/{$project_id}/builds/{$build_id}\""
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ApproveBuildRequest"
+    }
+  },
+  "cloudbuild_projects_builds_get": {
+    "name": "cloudbuild_projects_builds_get",
+    "description": "Returns information about a previously requested build. The `Build` that is returned includes its status (such as `SUCCESS`, `FAILURE`, or `WORKING`), and timing information.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/builds/{id}",
+    "parameters": {
+      "projectId": {
+        "required": true,
+        "description": "Required. ID of the project.",
+        "type": "string",
+        "location": "path"
+      },
+      "id": {
+        "description": "Required. ID of the build.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "name": {
+        "description": "The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "id"
+    ],
+    "optional_parameters": [
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Build"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_builds_cancel": {
+    "name": "cloudbuild_projects_builds_cancel",
+    "description": "Cancels a build in progress.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/builds/{id}:cancel",
+    "parameters": {
+      "projectId": {
+        "location": "path",
+        "description": "Required. ID of the project.",
+        "required": true,
+        "type": "string"
+      },
+      "id": {
+        "required": true,
+        "description": "Required. ID of the build.",
+        "location": "path",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "id"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Build"
+    },
+    "request": {
+      "$ref": "CancelBuildRequest"
+    }
+  },
+  "cloudbuild_projects_builds_create": {
+    "name": "cloudbuild_projects_builds_create",
+    "description": "Starts a build with the specified configuration. This method returns a long-running `Operation`, which includes the build ID. Pass the build ID to `GetBuild` to determine the build status (such as `SUCCESS` or `FAILURE`).",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/builds",
+    "parameters": {
+      "projectId": {
+        "type": "string",
+        "description": "Required. ID of the project.",
+        "required": true,
+        "location": "path"
+      },
+      "parent": {
+        "type": "string",
+        "description": "The parent resource where this build will be created. Format: `projects/{project}/locations/{location}`",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "parent"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Build"
+    }
+  },
+  "cloudbuild_projects_triggers_delete": {
+    "name": "cloudbuild_projects_triggers_delete",
+    "description": "Deletes a `BuildTrigger` by its project ID and trigger ID.",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers/{triggerId}",
+    "parameters": {
+      "triggerId": {
+        "description": "Required. ID of the `BuildTrigger` to delete.",
+        "required": true,
+        "location": "path",
+        "type": "string"
+      },
+      "projectId": {
+        "location": "path",
+        "required": true,
+        "description": "Required. ID of the project that owns the trigger.",
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the `Trigger` to delete. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "triggerId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_triggers_create": {
+    "name": "cloudbuild_projects_triggers_create",
+    "description": "Creates a new `BuildTrigger`.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers",
+    "parameters": {
+      "projectId": {
+        "type": "string",
+        "location": "path",
+        "description": "Required. ID of the project for which to configure automatic builds.",
+        "required": true
+      },
+      "parent": {
+        "type": "string",
+        "description": "The parent resource where this trigger will be created. Format: `projects/{project}/locations/{location}`",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "parent"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BuildTrigger"
+    },
+    "request": {
+      "$ref": "BuildTrigger"
+    }
+  },
+  "cloudbuild_projects_triggers_get": {
+    "name": "cloudbuild_projects_triggers_get",
+    "description": "Returns information about a `BuildTrigger`.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers/{triggerId}",
+    "parameters": {
+      "triggerId": {
+        "type": "string",
+        "description": "Required. Identifier (`id` or `name`) of the `BuildTrigger` to get.",
+        "required": true,
+        "location": "path"
+      },
+      "projectId": {
+        "location": "path",
+        "type": "string",
+        "required": true,
+        "description": "Required. ID of the project that owns the trigger."
+      },
+      "name": {
+        "description": "The name of the `Trigger` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "triggerId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BuildTrigger"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_triggers_patch": {
+    "name": "cloudbuild_projects_triggers_patch",
+    "description": "Updates a `BuildTrigger` by its project ID and trigger ID.",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers/{triggerId}",
+    "parameters": {
+      "updateMask": {
+        "type": "string",
+        "format": "google-fieldmask",
+        "location": "query",
+        "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed."
+      },
+      "triggerId": {
+        "required": true,
+        "type": "string",
+        "description": "Required. ID of the `BuildTrigger` to update.",
+        "location": "path"
+      },
+      "projectId": {
+        "description": "Required. ID of the project that owns the trigger.",
+        "required": true,
+        "type": "string",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "triggerId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "BuildTrigger"
+    },
+    "request": {
+      "$ref": "BuildTrigger"
+    }
+  },
+  "cloudbuild_projects_triggers_run": {
+    "name": "cloudbuild_projects_triggers_run",
+    "description": "Runs a `BuildTrigger` at a particular source revision. To run a regional or global trigger, use the POST request that includes the location endpoint in the path (ex. v1/projects/{projectId}/locations/{region}/triggers/{triggerId}:run). The POST request that does not include the location endpoint in the path can only be used when running global triggers.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers/{triggerId}:run",
+    "parameters": {
+      "projectId": {
+        "type": "string",
+        "location": "path",
+        "required": true,
+        "description": "Required. ID of the project."
+      },
+      "triggerId": {
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "description": "Required. ID of the trigger."
+      },
+      "name": {
+        "description": "The name of the `Trigger` to run. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "type": "string",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "triggerId"
+    ],
+    "optional_parameters": [
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RepoSource"
+    }
+  },
+  "cloudbuild_projects_triggers_webhook": {
+    "name": "cloudbuild_projects_triggers_webhook",
+    "description": "ReceiveTriggerWebhook [Experimental] is called when the API receives a webhook request targeted at a specific trigger.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers/{trigger}:webhook",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "description": "The name of the `ReceiveTriggerWebhook` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`",
+        "location": "query"
+      },
+      "trigger": {
+        "description": "Name of the trigger to run the payload against",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Project in which the specified trigger lives",
+        "required": true,
+        "location": "path",
+        "type": "string"
+      },
+      "secret": {
+        "location": "query",
+        "type": "string",
+        "description": "Secret token used for authorization if an OAuth token isn't provided."
+      }
+    },
+    "required_parameters": [
+      "trigger",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "name",
+      "secret"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "ReceiveTriggerWebhookResponse"
+    },
+    "request": {
+      "$ref": "HttpBody"
+    }
+  },
+  "cloudbuild_projects_triggers_list": {
+    "name": "cloudbuild_projects_triggers_list",
+    "description": "Lists existing `BuildTrigger`s.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/projects/{projectId}/triggers",
+    "parameters": {
+      "projectId": {
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "description": "Required. ID of the project for which to list BuildTriggers."
+      },
+      "pageSize": {
+        "description": "Number of results to return in the list.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "location": "query",
+        "description": "Token to provide to skip to a particular spot in the list.",
+        "type": "string"
+      },
+      "parent": {
+        "description": "The parent of the collection of `Triggers`. Format: `projects/{project}/locations/{location}`",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "parent"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBuildTriggersResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_githubEnterpriseConfigs_get": {
+    "name": "cloudbuild_projects_githubEnterpriseConfigs_get",
+    "description": "Retrieve a GitHubEnterpriseConfig.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
+        "required": true,
+        "location": "path",
+        "pattern": "^projects/[^/]+/githubEnterpriseConfigs/[^/]+$"
+      },
+      "projectId": {
+        "description": "ID of the project",
+        "type": "string",
+        "deprecated": true,
+        "location": "query"
+      },
+      "configId": {
+        "type": "string",
+        "deprecated": true,
+        "location": "query",
+        "description": "Unique identifier of the `GitHubEnterpriseConfig`"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "configId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GitHubEnterpriseConfig"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_githubEnterpriseConfigs_create": {
+    "name": "cloudbuild_projects_githubEnterpriseConfigs_create",
+    "description": "Create an association between a GCP project and a GitHub Enterprise server.",
+    "http_method": "POST",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/githubEnterpriseConfigs",
+    "parameters": {
+      "projectId": {
+        "location": "query",
+        "type": "string",
+        "deprecated": true,
+        "description": "ID of the project."
+      },
+      "parent": {
+        "type": "string",
+        "location": "path",
+        "required": true,
+        "pattern": "^projects/[^/]+$",
+        "description": "Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}"
+      },
+      "gheConfigId": {
+        "location": "query",
+        "description": "Optional. The ID to use for the GithubEnterpriseConfig, which will become the final component of the GithubEnterpriseConfig's resource name. ghe_config_id must meet the following requirements: + They must contain only alphanumeric characters and dashes. + They can be 1-64 characters long. + They must begin and end with an alphanumeric character",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "gheConfigId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "GitHubEnterpriseConfig"
+    }
+  },
+  "cloudbuild_projects_githubEnterpriseConfigs_patch": {
+    "name": "cloudbuild_projects_githubEnterpriseConfigs_patch",
+    "description": "Update an association between a GCP project and a GitHub Enterprise server.",
+    "http_method": "PATCH",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "description": "The full resource name for the GitHubEnterpriseConfig For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
+        "required": true,
+        "location": "path",
+        "pattern": "^projects/[^/]+/githubEnterpriseConfigs/[^/]+$"
+      },
+      "updateMask": {
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask",
+        "description": "Update mask for the resource. If this is set, the server will only update the fields specified in the field mask. Otherwise, a full update of the mutable resource fields will be performed."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "GitHubEnterpriseConfig"
+    }
+  },
+  "cloudbuild_projects_githubEnterpriseConfigs_list": {
+    "name": "cloudbuild_projects_githubEnterpriseConfigs_list",
+    "description": "List all GitHubEnterpriseConfigs for a given project.",
+    "http_method": "GET",
+    "path": "https://cloudbuild.googleapis.com/v1/{+parent}/githubEnterpriseConfigs",
+    "parameters": {
+      "parent": {
+        "pattern": "^projects/[^/]+$",
+        "required": true,
+        "description": "Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}",
+        "type": "string",
+        "location": "path"
+      },
+      "projectId": {
+        "location": "query",
+        "description": "ID of the project",
+        "deprecated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "projectId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListGithubEnterpriseConfigsResponse"
+    },
+    "request": {}
+  },
+  "cloudbuild_projects_githubEnterpriseConfigs_delete": {
+    "name": "cloudbuild_projects_githubEnterpriseConfigs_delete",
+    "description": "Delete an association between a GCP project and a GitHub Enterprise server.",
+    "http_method": "DELETE",
+    "path": "https://cloudbuild.googleapis.com/v1/{+name}",
+    "parameters": {
+      "projectId": {
+        "deprecated": true,
+        "type": "string",
+        "location": "query",
+        "description": "ID of the project"
+      },
+      "configId": {
+        "type": "string",
+        "deprecated": true,
+        "location": "query",
+        "description": "Unique identifier of the `GitHubEnterpriseConfig`"
+      },
+      "name": {
+        "location": "path",
+        "description": "This field should contain the name of the enterprise config resource. For example: \"projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}\"",
+        "pattern": "^projects/[^/]+/githubEnterpriseConfigs/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "projectId",
+      "configId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  }
+}

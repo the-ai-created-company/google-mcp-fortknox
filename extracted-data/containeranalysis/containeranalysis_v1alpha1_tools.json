@@ -1,0 +1,1152 @@
+{
+  "containeranalysis_projects_occurrences_testIamPermissions": {
+    "name": "containeranalysis_projects_occurrences_testIamPermissions",
+    "description": "Returns the permissions that a caller has on the specified note or occurrence resource. Requires list permission on the project (for example, \"storage.objects.list\" on the containing bucket for testing permission of an object). Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "location": "path",
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$",
+        "required": true,
+        "type": "string",
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field."
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "containeranalysis_projects_occurrences_create": {
+    "name": "containeranalysis_projects_occurrences_create",
+    "description": "Creates a new `Occurrence`. Use this method to create `Occurrences` for a resource.",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/occurrences",
+    "parameters": {
+      "parent": {
+        "type": "string",
+        "required": true,
+        "location": "path",
+        "description": "This field contains the project Id for example: \"projects/{project_id}\"",
+        "pattern": "^projects/[^/]+$"
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the project. Should be of the form \"projects/{project_id}\". @Deprecated",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Occurrence"
+    },
+    "request": {
+      "$ref": "Occurrence"
+    }
+  },
+  "containeranalysis_projects_occurrences_getNotes": {
+    "name": "containeranalysis_projects_occurrences_getNotes",
+    "description": "Gets the `Note` attached to the given `Occurrence`.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}/notes",
+    "parameters": {
+      "name": {
+        "required": true,
+        "description": "The name of the occurrence in the form \"projects/{project_id}/occurrences/{OCCURRENCE_ID}\"",
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_occurrences_getIamPolicy": {
+    "name": "containeranalysis_projects_occurrences_getIamPolicy",
+    "description": "Gets the access control policy for a note or an `Occurrence` resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. Attempting to call this method on a resource without the required permission will result in a `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and projects/{PROJECT_ID}/notes/{NOTE_ID} for notes",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "location": "path",
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "type": "string",
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "containeranalysis_projects_occurrences_patch": {
+    "name": "containeranalysis_projects_occurrences_patch",
+    "description": "Updates an existing occurrence.",
+    "http_method": "PATCH",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "updateMask": {
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask",
+        "description": "The fields to update."
+      },
+      "name": {
+        "required": true,
+        "description": "The name of the occurrence. Should be of the form \"projects/{project_id}/occurrences/{OCCURRENCE_ID}\".",
+        "location": "path",
+        "type": "string",
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Occurrence"
+    },
+    "request": {
+      "$ref": "Occurrence"
+    }
+  },
+  "containeranalysis_projects_occurrences_getVulnerabilitySummary": {
+    "name": "containeranalysis_projects_occurrences_getVulnerabilitySummary",
+    "description": "Gets a summary of the number and severity of occurrences.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/occurrences:vulnerabilitySummary",
+    "parameters": {
+      "filter": {
+        "type": "string",
+        "location": "query",
+        "description": "The filter expression."
+      },
+      "parent": {
+        "location": "path",
+        "description": "This contains the project Id for example: projects/{project_id}",
+        "required": true,
+        "type": "string",
+        "pattern": "^projects/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GetVulnzOccurrencesSummaryResponse"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_occurrences_list": {
+    "name": "containeranalysis_projects_occurrences_list",
+    "description": "Lists active `Occurrences` for a given project matching the filters.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/occurrences",
+    "parameters": {
+      "name": {
+        "location": "query",
+        "description": "The name field contains the project Id. For example: \"projects/{project_id} @Deprecated",
+        "type": "string"
+      },
+      "kind": {
+        "description": "The kind of occurrences to filter on.",
+        "type": "string",
+        "enum": [
+          "KIND_UNSPECIFIED",
+          "PACKAGE_VULNERABILITY",
+          "BUILD_DETAILS",
+          "IMAGE_BASIS",
+          "PACKAGE_MANAGER",
+          "DEPLOYABLE",
+          "DISCOVERY",
+          "ATTESTATION_AUTHORITY",
+          "UPGRADE",
+          "COMPLIANCE",
+          "SBOM",
+          "SPDX_PACKAGE",
+          "SPDX_FILE",
+          "SPDX_RELATIONSHIP",
+          "DSSE_ATTESTATION",
+          "VULNERABILITY_ASSESSMENT",
+          "SBOM_REFERENCE",
+          "SECRET"
+        ],
+        "location": "query",
+        "enumDescriptions": [
+          "Unknown",
+          "The note and occurrence represent a package vulnerability.",
+          "The note and occurrence assert build provenance.",
+          "This represents an image basis relationship.",
+          "This represents a package installed via a package manager.",
+          "The note and occurrence track deployment events.",
+          "The note and occurrence track the initial discovery status of a resource.",
+          "This represents a logical \"role\" that can attest to artifacts.",
+          "This represents an available software upgrade.",
+          "This represents a compliance check that can be applied to a resource.",
+          "This represents a software bill of materials.",
+          "This represents an SPDX Package.",
+          "This represents an SPDX File.",
+          "This represents an SPDX Relationship.",
+          "This represents a DSSE attestation Note",
+          "This represents a Vulnerability Assessment.",
+          "This represents a reference to an SBOM.",
+          "This represents a secret."
+        ]
+      },
+      "filter": {
+        "location": "query",
+        "description": "The filter expression.",
+        "type": "string"
+      },
+      "parent": {
+        "location": "path",
+        "description": "This contains the project Id for example: projects/{project_id}.",
+        "pattern": "^projects/[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "format": "int32",
+        "type": "integer",
+        "location": "query",
+        "description": "Number of occurrences to return in the list."
+      },
+      "pageToken": {
+        "type": "string",
+        "description": "Token to provide to skip to a particular spot in the list.",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "name",
+      "kind",
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListOccurrencesResponse"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_occurrences_delete": {
+    "name": "containeranalysis_projects_occurrences_delete",
+    "description": "Deletes the given `Occurrence` from the system. Use this when an `Occurrence` is no longer applicable for the given resource.",
+    "http_method": "DELETE",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the occurrence in the form of \"projects/{project_id}/occurrences/{OCCURRENCE_ID}\"",
+        "type": "string",
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$",
+        "required": true,
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_occurrences_setIamPolicy": {
+    "name": "containeranalysis_projects_occurrences_setIamPolicy",
+    "description": "Sets the access control policy on the specified `Note` or `Occurrence`. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a `Note` or an `Occurrence`, respectively. Attempting to call this method without these permissions will result in a ` `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences and projects/{projectid}/notes/{noteid} for notes",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "location": "path",
+        "type": "string",
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "containeranalysis_projects_occurrences_get": {
+    "name": "containeranalysis_projects_occurrences_get",
+    "description": "Returns the requested `Occurrence`.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "pattern": "^projects/[^/]+/occurrences/[^/]+$",
+        "location": "path",
+        "required": true,
+        "description": "The name of the occurrence of the form \"projects/{project_id}/occurrences/{OCCURRENCE_ID}\"",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Occurrence"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_notes_get": {
+    "name": "containeranalysis_projects_notes_get",
+    "description": "Returns the requested `Note`.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "description": "The name of the note in the form of \"providers/{provider_id}/notes/{NOTE_ID}\"",
+        "required": true,
+        "pattern": "^projects/[^/]+/notes/[^/]+$",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_notes_delete": {
+    "name": "containeranalysis_projects_notes_delete",
+    "description": "Deletes the given `Note` from the system.",
+    "http_method": "DELETE",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the note in the form of \"providers/{provider_id}/notes/{NOTE_ID}\"",
+        "type": "string",
+        "required": true,
+        "location": "path",
+        "pattern": "^projects/[^/]+/notes/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_notes_create": {
+    "name": "containeranalysis_projects_notes_create",
+    "description": "Creates a new `Note`.",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/notes",
+    "parameters": {
+      "name": {
+        "description": "The name of the project. Should be of the form \"providers/{provider_id}\". @Deprecated",
+        "type": "string",
+        "location": "query"
+      },
+      "parent": {
+        "required": true,
+        "description": "This field contains the project Id for example: \"projects/{project_id}",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "type": "string"
+      },
+      "noteId": {
+        "location": "query",
+        "type": "string",
+        "description": "The ID to use for this note."
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "name",
+      "noteId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {
+      "$ref": "Note"
+    }
+  },
+  "containeranalysis_projects_notes_list": {
+    "name": "containeranalysis_projects_notes_list",
+    "description": "Lists all `Notes` for a given project.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/notes",
+    "parameters": {
+      "filter": {
+        "description": "The filter expression.",
+        "type": "string",
+        "location": "query"
+      },
+      "name": {
+        "type": "string",
+        "location": "query",
+        "description": "The name field will contain the project Id for example: \"providers/{provider_id} @Deprecated"
+      },
+      "pageToken": {
+        "type": "string",
+        "description": "Token to provide to skip to a particular spot in the list.",
+        "location": "query"
+      },
+      "parent": {
+        "type": "string",
+        "pattern": "^projects/[^/]+$",
+        "description": "This field contains the project Id for example: \"projects/{PROJECT_ID}\".",
+        "required": true,
+        "location": "path"
+      },
+      "pageSize": {
+        "type": "integer",
+        "format": "int32",
+        "location": "query",
+        "description": "Number of notes to return in the list."
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter",
+      "name",
+      "pageToken",
+      "pageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListNotesResponse"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_notes_patch": {
+    "name": "containeranalysis_projects_notes_patch",
+    "description": "Updates an existing `Note`.",
+    "http_method": "PATCH",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "pattern": "^projects/[^/]+/notes/[^/]+$",
+        "type": "string",
+        "location": "path",
+        "description": "The name of the note. Should be of the form \"projects/{provider_id}/notes/{note_id}\".",
+        "required": true
+      },
+      "updateMask": {
+        "type": "string",
+        "location": "query",
+        "description": "The fields to update.",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {
+      "$ref": "Note"
+    }
+  },
+  "containeranalysis_projects_notes_setIamPolicy": {
+    "name": "containeranalysis_projects_notes_setIamPolicy",
+    "description": "Sets the access control policy on the specified `Note` or `Occurrence`. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a `Note` or an `Occurrence`, respectively. Attempting to call this method without these permissions will result in a ` `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences and projects/{projectid}/notes/{noteid} for notes",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "required": true,
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "type": "string",
+        "pattern": "^projects/[^/]+/notes/[^/]+$",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "containeranalysis_projects_notes_testIamPermissions": {
+    "name": "containeranalysis_projects_notes_testIamPermissions",
+    "description": "Returns the permissions that a caller has on the specified note or occurrence resource. Requires list permission on the project (for example, \"storage.objects.list\" on the containing bucket for testing permission of an object). Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "required": true,
+        "pattern": "^projects/[^/]+/notes/[^/]+$",
+        "type": "string",
+        "location": "path",
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field."
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "containeranalysis_projects_notes_getIamPolicy": {
+    "name": "containeranalysis_projects_notes_getIamPolicy",
+    "description": "Gets the access control policy for a note or an `Occurrence` resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. Attempting to call this method on a resource without the required permission will result in a `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and projects/{PROJECT_ID}/notes/{NOTE_ID} for notes",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "type": "string",
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/notes/[^/]+$",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "containeranalysis_projects_notes_occurrences_list": {
+    "name": "containeranalysis_projects_notes_occurrences_list",
+    "description": "Lists `Occurrences` referencing the specified `Note`. Use this method to get all occurrences referencing your `Note` across all your customer projects.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}/occurrences",
+    "parameters": {
+      "pageSize": {
+        "location": "query",
+        "type": "integer",
+        "format": "int32",
+        "description": "Number of notes to return in the list."
+      },
+      "name": {
+        "location": "path",
+        "type": "string",
+        "description": "The name field will contain the note name for example: \"provider/{provider_id}/notes/{note_id}\"",
+        "required": true,
+        "pattern": "^projects/[^/]+/notes/[^/]+$"
+      },
+      "pageToken": {
+        "location": "query",
+        "type": "string",
+        "description": "Token to provide to skip to a particular spot in the list."
+      },
+      "filter": {
+        "location": "query",
+        "description": "The filter expression.",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListNoteOccurrencesResponse"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_operations_create": {
+    "name": "containeranalysis_projects_operations_create",
+    "description": "Creates a new `Operation`.",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/operations",
+    "parameters": {
+      "parent": {
+        "location": "path",
+        "description": "The project Id that this operation should be created under.",
+        "pattern": "^projects/[^/]+$",
+        "type": "string",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "CreateOperationRequest"
+    }
+  },
+  "containeranalysis_projects_operations_patch": {
+    "name": "containeranalysis_projects_operations_patch",
+    "description": "Updates an existing operation returns an error if operation does not exist. The only valid operations are to update mark the done bit change the result.",
+    "http_method": "PATCH",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "pattern": "^projects/[^/]+/operations/[^/]+$",
+        "required": true,
+        "location": "path",
+        "description": "The name of the Operation. Should be of the form \"projects/{provider_id}/operations/{operation_id}\"."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpdateOperationRequest"
+    }
+  },
+  "containeranalysis_projects_scanConfigs_patch": {
+    "name": "containeranalysis_projects_scanConfigs_patch",
+    "description": "Updates the scan configuration to a new value.",
+    "http_method": "PATCH",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "pattern": "^projects/[^/]+/scanConfigs/[^/]+$",
+        "description": "The scan config to update of the form projects/{project_id}/scanConfigs/{scan_config_id}.",
+        "location": "path",
+        "required": true
+      },
+      "updateMask": {
+        "location": "query",
+        "format": "google-fieldmask",
+        "type": "string",
+        "description": "The fields to update."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ScanConfig"
+    },
+    "request": {
+      "$ref": "ScanConfig"
+    }
+  },
+  "containeranalysis_projects_scanConfigs_get": {
+    "name": "containeranalysis_projects_scanConfigs_get",
+    "description": "Gets a specific scan configuration for a project.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "required": true,
+        "type": "string",
+        "description": "The name of the ScanConfig in the form projects/{project_id}/scanConfigs/{scan_config_id}",
+        "location": "path",
+        "pattern": "^projects/[^/]+/scanConfigs/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ScanConfig"
+    },
+    "request": {}
+  },
+  "containeranalysis_projects_scanConfigs_list": {
+    "name": "containeranalysis_projects_scanConfigs_list",
+    "description": "Lists scan configurations for a project.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+parent}/scanConfigs",
+    "parameters": {
+      "parent": {
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "description": "This containers the project Id i.e.: projects/{project_id}",
+        "type": "string",
+        "required": true
+      },
+      "filter": {
+        "location": "query",
+        "type": "string",
+        "description": "The filter expression."
+      },
+      "pageToken": {
+        "type": "string",
+        "description": "The page token to use for the next request.",
+        "location": "query"
+      },
+      "pageSize": {
+        "location": "query",
+        "type": "integer",
+        "format": "int32",
+        "description": "The number of items to return."
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageToken",
+      "pageSize"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListScanConfigsResponse"
+    },
+    "request": {}
+  },
+  "containeranalysis_providers_notes_setIamPolicy": {
+    "name": "containeranalysis_providers_notes_setIamPolicy",
+    "description": "Sets the access control policy on the specified `Note` or `Occurrence`. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a `Note` or an `Occurrence`, respectively. Attempting to call this method without these permissions will result in a ` `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has `containeranalysis.notes.list` permission on a `Note` or `containeranalysis.occurrences.list` on an `Occurrence`, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{projectid}/occurrences/{occurrenceid}` for occurrences and projects/{projectid}/notes/{noteid} for notes",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "required": true,
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "type": "string",
+        "pattern": "^providers/[^/]+/notes/[^/]+$",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "containeranalysis_providers_notes_testIamPermissions": {
+    "name": "containeranalysis_providers_notes_testIamPermissions",
+    "description": "Returns the permissions that a caller has on the specified note or occurrence resource. Requires list permission on the project (for example, \"storage.objects.list\" on the containing bucket for testing permission of an object). Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for `Occurrences` and `projects/{PROJECT_ID}/notes/{NOTE_ID}` for `Notes`",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "required": true,
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "type": "string",
+        "pattern": "^providers/[^/]+/notes/[^/]+$",
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "containeranalysis_providers_notes_patch": {
+    "name": "containeranalysis_providers_notes_patch",
+    "description": "Updates an existing `Note`.",
+    "http_method": "PATCH",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "pattern": "^providers/[^/]+/notes/[^/]+$",
+        "location": "path",
+        "description": "The name of the note. Should be of the form \"projects/{provider_id}/notes/{note_id}\".",
+        "required": true
+      },
+      "updateMask": {
+        "format": "google-fieldmask",
+        "type": "string",
+        "location": "query",
+        "description": "The fields to update."
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {
+      "$ref": "Note"
+    }
+  },
+  "containeranalysis_providers_notes_list": {
+    "name": "containeranalysis_providers_notes_list",
+    "description": "Lists all `Notes` for a given project.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}/notes",
+    "parameters": {
+      "parent": {
+        "description": "This field contains the project Id for example: \"projects/{PROJECT_ID}\".",
+        "type": "string",
+        "location": "query"
+      },
+      "filter": {
+        "description": "The filter expression.",
+        "location": "query",
+        "type": "string"
+      },
+      "name": {
+        "type": "string",
+        "pattern": "^providers/[^/]+$",
+        "required": true,
+        "location": "path",
+        "description": "The name field will contain the project Id for example: \"providers/{provider_id} @Deprecated"
+      },
+      "pageSize": {
+        "format": "int32",
+        "location": "query",
+        "type": "integer",
+        "description": "Number of notes to return in the list."
+      },
+      "pageToken": {
+        "type": "string",
+        "description": "Token to provide to skip to a particular spot in the list.",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "parent",
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListNotesResponse"
+    },
+    "request": {}
+  },
+  "containeranalysis_providers_notes_get": {
+    "name": "containeranalysis_providers_notes_get",
+    "description": "Returns the requested `Note`.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "type": "string",
+        "location": "path",
+        "description": "The name of the note in the form of \"providers/{provider_id}/notes/{NOTE_ID}\"",
+        "pattern": "^providers/[^/]+/notes/[^/]+$",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {}
+  },
+  "containeranalysis_providers_notes_getIamPolicy": {
+    "name": "containeranalysis_providers_notes_getIamPolicy",
+    "description": "Gets the access control policy for a note or an `Occurrence` resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively. Attempting to call this method on a resource without the required permission will result in a `PERMISSION_DENIED` error. Attempting to call this method on a non-existent resource will result in a `NOT_FOUND` error if the user has list permission on the project, or a `PERMISSION_DENIED` error otherwise. The resource takes the following formats: `projects/{PROJECT_ID}/occurrences/{OCCURRENCE_ID}` for occurrences and projects/{PROJECT_ID}/notes/{NOTE_ID} for notes",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "type": "string",
+        "pattern": "^providers/[^/]+/notes/[^/]+$",
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "required": true,
+        "location": "path"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "containeranalysis_providers_notes_create": {
+    "name": "containeranalysis_providers_notes_create",
+    "description": "Creates a new `Note`.",
+    "http_method": "POST",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}/notes",
+    "parameters": {
+      "noteId": {
+        "description": "The ID to use for this note.",
+        "type": "string",
+        "location": "query"
+      },
+      "parent": {
+        "type": "string",
+        "location": "query",
+        "description": "This field contains the project Id for example: \"projects/{project_id}"
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the project. Should be of the form \"providers/{provider_id}\". @Deprecated",
+        "location": "path",
+        "pattern": "^providers/[^/]+$",
+        "required": true
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "noteId",
+      "parent"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Note"
+    },
+    "request": {
+      "$ref": "Note"
+    }
+  },
+  "containeranalysis_providers_notes_delete": {
+    "name": "containeranalysis_providers_notes_delete",
+    "description": "Deletes the given `Note` from the system.",
+    "http_method": "DELETE",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}",
+    "parameters": {
+      "name": {
+        "location": "path",
+        "required": true,
+        "description": "The name of the note in the form of \"providers/{provider_id}/notes/{NOTE_ID}\"",
+        "type": "string",
+        "pattern": "^providers/[^/]+/notes/[^/]+$"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "containeranalysis_providers_notes_occurrences_list": {
+    "name": "containeranalysis_providers_notes_occurrences_list",
+    "description": "Lists `Occurrences` referencing the specified `Note`. Use this method to get all occurrences referencing your `Note` across all your customer projects.",
+    "http_method": "GET",
+    "path": "https://containeranalysis.googleapis.com/v1alpha1/{+name}/occurrences",
+    "parameters": {
+      "pageSize": {
+        "format": "int32",
+        "type": "integer",
+        "description": "Number of notes to return in the list.",
+        "location": "query"
+      },
+      "name": {
+        "pattern": "^providers/[^/]+/notes/[^/]+$",
+        "type": "string",
+        "location": "path",
+        "description": "The name field will contain the note name for example: \"provider/{provider_id}/notes/{note_id}\"",
+        "required": true
+      },
+      "pageToken": {
+        "location": "query",
+        "description": "Token to provide to skip to a particular spot in the list.",
+        "type": "string"
+      },
+      "filter": {
+        "description": "The filter expression.",
+        "type": "string",
+        "location": "query"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListNoteOccurrencesResponse"
+    },
+    "request": {}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "notebooks",
+  "api_version": "v2",
+  "api_title": "Notebooks API",
+  "api_description": "Notebooks API is used to manage notebook resources in Google Cloud.",
+  "base_url": "https://notebooks.googleapis.com/",
+  "tool_count": 26,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\notebooks\\notebooks_v2_tools.json"
+}

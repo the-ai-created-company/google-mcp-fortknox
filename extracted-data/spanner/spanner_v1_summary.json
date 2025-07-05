@@ -1,0 +1,9 @@
+{
+  "api_name": "spanner",
+  "api_version": "v1",
+  "api_title": "Cloud Spanner API",
+  "api_description": "Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.",
+  "base_url": "https://spanner.googleapis.com/",
+  "tool_count": 99,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\spanner\\spanner_v1_tools.json"
+}

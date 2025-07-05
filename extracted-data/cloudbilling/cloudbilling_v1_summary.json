@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudbilling",
+  "api_version": "v1",
+  "api_title": "Cloud Billing API",
+  "api_description": "Allows developers to manage billing for their Google Cloud Platform projects programmatically.",
+  "base_url": "https://cloudbilling.googleapis.com/",
+  "tool_count": 18,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudbilling\\cloudbilling_v1_tools.json"
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudchannel",
+  "api_version": "v1",
+  "api_title": "Cloud Channel API",
+  "api_description": "The Cloud Channel API enables Google Cloud partners to have a single unified resale platform and APIs across all of Google Cloud including GCP, Workspace, Maps and Chrome.",
+  "base_url": "https://cloudchannel.googleapis.com/",
+  "tool_count": 65,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudchannel\\cloudchannel_v1_tools.json"
+}

@@ -1,0 +1,3083 @@
+{
+  "bigtableadmin_operations_get": {
+    "name": "bigtableadmin_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "bigtableadmin_operations_delete": {
+    "name": "bigtableadmin_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_operations_cancel": {
+    "name": "bigtableadmin_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_operations_projects_operations_list": {
+    "name": "bigtableadmin_operations_projects_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}/operations",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^operations/projects/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_create": {
+    "name": "bigtableadmin_projects_instances_create",
+    "description": "Create an instance within a project. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/instances",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the project in which to create the new instance. Values are of the form `projects/{project}`.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "CreateInstanceRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_get": {
+    "name": "bigtableadmin_projects_instances_get",
+    "description": "Gets information about an instance.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested instance. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Instance"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_list": {
+    "name": "bigtableadmin_projects_instances_list",
+    "description": "Lists information about instances in a project.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/instances",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the project for which a list of instances is requested. Values are of the form `projects/{project}`.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "DEPRECATED: This field is unused and ignored.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListInstancesResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_update": {
+    "name": "bigtableadmin_projects_instances_update",
+    "description": "Updates an instance within a project. This method updates only the display name and type for an Instance. To update other Instance properties, such as labels, use PartialUpdateInstance.",
+    "http_method": "PUT",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Instance"
+    },
+    "request": {
+      "$ref": "Instance"
+    }
+  },
+  "bigtableadmin_projects_instances_partialUpdateInstance": {
+    "name": "bigtableadmin_projects_instances_partialUpdateInstance",
+    "description": "Partially updates an instance within a project. This method can modify all fields of an Instance and is the preferred way to update an Instance.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. The subset of Instance fields which should be replaced. Must be explicitly set.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Instance"
+    }
+  },
+  "bigtableadmin_projects_instances_delete": {
+    "name": "bigtableadmin_projects_instances_delete",
+    "description": "Delete an instance from a project.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the instance to be deleted. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_getIamPolicy",
+    "description": "Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_setIamPolicy",
+    "description": "Sets the access control policy on an instance resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified instance resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_create": {
+    "name": "bigtableadmin_projects_instances_clusters_create",
+    "description": "Creates a cluster within an instance. Note that exactly one of Cluster.serve_nodes and Cluster.cluster_config.cluster_autoscaling_config can be set. If serve_nodes is set to non-zero, then the cluster is manually scaled. If cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is enabled.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/clusters",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance in which to create the new cluster. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "clusterId": {
+        "description": "Required. The ID to be used when referring to the new cluster within its instance, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "clusterId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Cluster"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_get": {
+    "name": "bigtableadmin_projects_instances_clusters_get",
+    "description": "Gets information about a cluster.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Cluster"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_list": {
+    "name": "bigtableadmin_projects_instances_clusters_list",
+    "description": "Lists information about clusters in an instance.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/clusters",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance for which a list of clusters is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list Clusters for all Instances in a project, e.g., `projects/myproject/instances/-`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "DEPRECATED: This field is unused and ignored.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListClustersResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_update": {
+    "name": "bigtableadmin_projects_instances_clusters_update",
+    "description": "Updates a cluster within an instance. Note that UpdateCluster does not support updating cluster_config.cluster_autoscaling_config. In order to update it, you must use PartialUpdateCluster.",
+    "http_method": "PUT",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Cluster"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_partialUpdateCluster": {
+    "name": "bigtableadmin_projects_instances_clusters_partialUpdateCluster",
+    "description": "Partially updates a cluster within a project. This method is the preferred way to update a Cluster. To enable and update autoscaling, set cluster_config.cluster_autoscaling_config. When autoscaling is enabled, serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it are ignored. Note that an update cannot simultaneously set serve_nodes to non-zero and cluster_config.cluster_autoscaling_config to non-empty, and also specify both in the update_mask. To disable autoscaling, clear cluster_config.cluster_autoscaling_config, and explicitly set a serve_node count via the update_mask.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. The subset of Cluster fields which should be replaced.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Cluster"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_delete": {
+    "name": "bigtableadmin_projects_instances_clusters_delete",
+    "description": "Deletes a cluster from an instance.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the cluster to be deleted. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_hotTablets_list": {
+    "name": "bigtableadmin_projects_instances_clusters_hotTablets_list",
+    "description": "Lists hot tablets in a cluster, within the time range provided. Hot tablets are ordered based on CPU usage.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/hotTablets",
+    "parameters": {
+      "parent": {
+        "description": "Required. The cluster name to list hot tablets. Value is in the following form: `projects/{project}/instances/{instance}/clusters/{cluster}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "startTime": {
+        "description": "The start time to list hot tablets. The hot tablets in the response will have start times between the requested start time and end time. Start time defaults to Now if it is unset, and end time defaults to Now - 24 hours if it is unset. The start time should be less than the end time, and the maximum allowed time range between start time and end time is 48 hours. Start time and end time should have values between Now and Now - 14 days.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "endTime": {
+        "description": "The end time to list hot tablets.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "pageSize": {
+        "description": "Maximum number of results per page. A page_size that is empty or zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls do not need a page_size field. If a page_size is set in subsequent calls, it must match the page_size given in the first request.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The value of `next_page_token` returned by a previous call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "startTime",
+      "endTime",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListHotTabletsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_backups_create": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_create",
+    "description": "Starts creating a new Cloud Bigtable Backup. The returned backup long-running operation can be used to track creation of the backup. The metadata field type is CreateBackupMetadata. The response field type is Backup, if successful. Cancelling the returned operation will stop the creation and delete the backup.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/backups",
+    "parameters": {
+      "parent": {
+        "description": "Required. This must be one of the clusters in the instance in which this table is located. The backup will be stored in this cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "backupId": {
+        "description": "Required. The id of the backup to be created. The `backup_id` along with the parent `parent` are combined as {parent}/backups/{backup_id} to create the full backup name, of the form: `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`. This string must be between 1 and 50 characters in length and match the regex _a-zA-Z0-9*.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "backupId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Backup"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_backups_get": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_get",
+    "description": "Gets metadata on a pending or completed Cloud Bigtable Backup.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the backup. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Backup"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_backups_patch": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_patch",
+    "description": "Updates a pending or completed Cloud Bigtable Backup.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. A mask specifying which fields (e.g. `expire_time`) in the Backup resource should be updated. This mask is relative to the Backup resource, not to the request message. The field mask must always be specified; this prevents any future fields from being erased accidentally by clients that do not know about them.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Backup"
+    },
+    "request": {
+      "$ref": "Backup"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_backups_delete": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_delete",
+    "description": "Deletes a pending or completed Cloud Bigtable backup.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the backup to delete. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_backups_list": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_list",
+    "description": "Lists Cloud Bigtable backups. Returns both completed and pending backups.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/backups",
+    "parameters": {
+      "parent": {
+        "description": "Required. The cluster to list backups from. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list backups for all clusters in an instance, e.g., `projects/{project}/instances/{instance}/clusters/-`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter expression that filters backups listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be <, >, <=, >=, !=, =, or :. Colon ':' represents a HAS operator which is roughly synonymous with equality. Filter rules are case insensitive. The fields eligible for filtering are: * `name` * `source_table` * `state` * `start_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `end_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) * `size_bytes` To filter on multiple expressions, provide each separate expression within parentheses. By default, each expression is an AND expression. However, you can include AND, OR, and NOT expressions explicitly. Some examples of using filters are: * `name:\"exact\"` --> The backup's name is the string \"exact\". * `name:howl` --> The backup's name contains the string \"howl\". * `source_table:prod` --> The source_table's name contains the string \"prod\". * `state:CREATING` --> The backup is pending creation. * `state:READY` --> The backup is fully created and ready for use. * `(name:howl) AND (start_time < \\\"2018-03-28T14:50:00Z\\\")` --> The backup name contains the string \"howl\" and start_time of the backup is before 2018-03-28T14:50:00Z. * `size_bytes > 10000000000` --> The backup's size is greater than 10GB",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "An expression for specifying the sort order of the results of the request. The string value should specify one or more fields in Backup. The full syntax is described at https://aip.dev/132#ordering. Fields supported are: * name * source_table * expire_time * start_time * end_time * size_bytes * state For example, \"start_time\". The default sorting order is ascending. To specify descending order for the field, a suffix \" desc\" should be appended to the field name. For example, \"start_time desc\". Redundant space characters in the syntax are insigificant. If order_by is empty, results will be sorted by `start_time` in descending order starting from the most recently created backup.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Number of backups to be returned in the response. If 0 or less, defaults to the server's maximum allowed page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "If non-empty, `page_token` should contain a next_page_token from a previous ListBackupsResponse to the same `parent` and with the same `filter`.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter",
+      "orderBy",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListBackupsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_clusters_backups_copy": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_copy",
+    "description": "Copy a Cloud Bigtable backup to a new backup in the destination cluster located in the destination instance and project.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/backups:copy",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the destination cluster that will contain the backup copy. The cluster must already exist. Values are of the form: `projects/{project}/instances/{instance}/clusters/{cluster}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "CopyBackupRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_backups_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_getIamPolicy",
+    "description": "Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_backups_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_setIamPolicy",
+    "description": "Sets the access control policy on a Bigtable resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_clusters_backups_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_clusters_backups_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified Bigtable resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/clusters/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_appProfiles_create": {
+    "name": "bigtableadmin_projects_instances_appProfiles_create",
+    "description": "Creates an app profile within an instance.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/appProfiles",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance in which to create the new app profile. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "appProfileId": {
+        "description": "Required. The ID to be used when referring to the new app profile within its instance, e.g., just `myprofile` rather than `projects/myproject/instances/myinstance/appProfiles/myprofile`.",
+        "location": "query",
+        "type": "string"
+      },
+      "ignoreWarnings": {
+        "description": "If true, ignore safety checks when creating the app profile.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "appProfileId",
+      "ignoreWarnings"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AppProfile"
+    },
+    "request": {
+      "$ref": "AppProfile"
+    }
+  },
+  "bigtableadmin_projects_instances_appProfiles_get": {
+    "name": "bigtableadmin_projects_instances_appProfiles_get",
+    "description": "Gets information about an app profile.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/appProfiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "AppProfile"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_appProfiles_list": {
+    "name": "bigtableadmin_projects_instances_appProfiles_list",
+    "description": "Lists information about app profiles in an instance.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/appProfiles",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance for which a list of app profiles is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list AppProfiles for all Instances in a project, e.g., `projects/myproject/instances/-`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The value of `next_page_token` returned by a previous call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListAppProfilesResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_appProfiles_patch": {
+    "name": "bigtableadmin_projects_instances_appProfiles_patch",
+    "description": "Updates an app profile within an instance.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The unique name of the app profile, up to 50 characters long. Values are of the form `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/appProfiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. The subset of app profile fields which should be replaced. If unset, all fields will be replaced.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "ignoreWarnings": {
+        "description": "If true, ignore safety checks when updating the app profile.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "ignoreWarnings"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "AppProfile"
+    }
+  },
+  "bigtableadmin_projects_instances_appProfiles_delete": {
+    "name": "bigtableadmin_projects_instances_appProfiles_delete",
+    "description": "Deletes an app profile from an instance.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the app profile to be deleted. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/appProfiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "ignoreWarnings": {
+        "description": "Required. If true, ignore safety checks when deleting the app profile.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "ignoreWarnings"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_materializedViews_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_materializedViews_getIamPolicy",
+    "description": "Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/materializedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_materializedViews_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_materializedViews_setIamPolicy",
+    "description": "Sets the access control policy on an instance resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/materializedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_materializedViews_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_materializedViews_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified instance resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/materializedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_materializedViews_create": {
+    "name": "bigtableadmin_projects_instances_materializedViews_create",
+    "description": "Creates a materialized view within an instance.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/materializedViews",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent instance where this materialized view will be created. Format: `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "materializedViewId": {
+        "description": "Required. The ID to use for the materialized view, which will become the final component of the materialized view's resource name.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "materializedViewId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "MaterializedView"
+    }
+  },
+  "bigtableadmin_projects_instances_materializedViews_get": {
+    "name": "bigtableadmin_projects_instances_materializedViews_get",
+    "description": "Gets information about a materialized view.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested materialized view. Values are of the form `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/materializedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "MaterializedView"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_materializedViews_list": {
+    "name": "bigtableadmin_projects_instances_materializedViews_list",
+    "description": "Lists information about materialized views in an instance.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/materializedViews",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance for which the list of materialized views is requested. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of materialized views to return. The service may return fewer than this value",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A page token, received from a previous `ListMaterializedViews` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListMaterializedViews` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListMaterializedViewsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_materializedViews_patch": {
+    "name": "bigtableadmin_projects_instances_materializedViews_patch",
+    "description": "Updates a materialized view within an instance.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The unique name of the materialized view. Format: `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/materializedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "MaterializedView"
+    }
+  },
+  "bigtableadmin_projects_instances_materializedViews_delete": {
+    "name": "bigtableadmin_projects_instances_materializedViews_delete",
+    "description": "Deletes a materialized view from an instance.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the materialized view to be deleted. Format: `projects/{project}/instances/{instance}/materializedViews/{materialized_view}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/materializedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "etag": {
+        "description": "Optional. The current etag of the materialized view. If an etag is provided and does not match the current etag of the materialized view, deletion will be blocked and an ABORTED error will be returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_logicalViews_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_logicalViews_getIamPolicy",
+    "description": "Gets the access control policy for an instance resource. Returns an empty policy if an instance exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/logicalViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_logicalViews_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_logicalViews_setIamPolicy",
+    "description": "Sets the access control policy on an instance resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/logicalViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_logicalViews_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_logicalViews_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified instance resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/logicalViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_logicalViews_create": {
+    "name": "bigtableadmin_projects_instances_logicalViews_create",
+    "description": "Creates a logical view within an instance.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/logicalViews",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent instance where this logical view will be created. Format: `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "logicalViewId": {
+        "description": "Required. The ID to use for the logical view, which will become the final component of the logical view's resource name.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "logicalViewId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "LogicalView"
+    }
+  },
+  "bigtableadmin_projects_instances_logicalViews_get": {
+    "name": "bigtableadmin_projects_instances_logicalViews_get",
+    "description": "Gets information about a logical view.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested logical view. Values are of the form `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/logicalViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "LogicalView"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_logicalViews_list": {
+    "name": "bigtableadmin_projects_instances_logicalViews_list",
+    "description": "Lists information about logical views in an instance.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/logicalViews",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance for which the list of logical views is requested. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of logical views to return. The service may return fewer than this value",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A page token, received from a previous `ListLogicalViews` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListLogicalViews` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListLogicalViewsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_logicalViews_patch": {
+    "name": "bigtableadmin_projects_instances_logicalViews_patch",
+    "description": "Updates a logical view within an instance.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The unique name of the logical view. Format: `projects/{project}/instances/{instance}/logicalViews/{logical_view}`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/logicalViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "LogicalView"
+    }
+  },
+  "bigtableadmin_projects_instances_logicalViews_delete": {
+    "name": "bigtableadmin_projects_instances_logicalViews_delete",
+    "description": "Deletes a logical view from an instance.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the logical view to be deleted. Format: `projects/{project}/instances/{instance}/logicalViews/{logical_view}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/logicalViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "etag": {
+        "description": "Optional. The current etag of the logical view. If an etag is provided and does not match the current etag of the logical view, deletion will be blocked and an ABORTED error will be returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_create": {
+    "name": "bigtableadmin_projects_instances_tables_create",
+    "description": "Creates a new table in the specified instance. The table can be created with a full set of initial column families, specified in the request.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/tables",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance in which to create the table. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {
+      "$ref": "CreateTableRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_list": {
+    "name": "bigtableadmin_projects_instances_tables_list",
+    "description": "Lists all tables served from a specified instance.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/tables",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the instance for which tables should be listed. Values are of the form `projects/{project}/instances/{instance}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "The view to be applied to the returned tables' fields. Only NAME_ONLY view (default), REPLICATION_VIEW and ENCRYPTION_VIEW are supported.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Uses the default view for each method as documented in its request.",
+          "Only populates `name`.",
+          "Only populates `name` and fields related to the table's schema.",
+          "Only populates `name` and fields related to the table's replication state.",
+          "Only populates `name` and fields related to the table's encryption state.",
+          "Only populates `name` and fields related to the table's stats (e.g. TableStats and ColumnFamilyStats).",
+          "Populates all fields except for stats. See STATS_VIEW to request stats."
+        ],
+        "enum": [
+          "VIEW_UNSPECIFIED",
+          "NAME_ONLY",
+          "SCHEMA_VIEW",
+          "REPLICATION_VIEW",
+          "ENCRYPTION_VIEW",
+          "STATS_VIEW",
+          "FULL"
+        ]
+      },
+      "pageSize": {
+        "description": "Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The value of `next_page_token` returned by a previous call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "view",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListTablesResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_get": {
+    "name": "bigtableadmin_projects_instances_tables_get",
+    "description": "Gets metadata information about the specified table.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested table. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "The view to be applied to the returned table's fields. Defaults to `SCHEMA_VIEW` if unspecified.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Uses the default view for each method as documented in its request.",
+          "Only populates `name`.",
+          "Only populates `name` and fields related to the table's schema.",
+          "Only populates `name` and fields related to the table's replication state.",
+          "Only populates `name` and fields related to the table's encryption state.",
+          "Only populates `name` and fields related to the table's stats (e.g. TableStats and ColumnFamilyStats).",
+          "Populates all fields except for stats. See STATS_VIEW to request stats."
+        ],
+        "enum": [
+          "VIEW_UNSPECIFIED",
+          "NAME_ONLY",
+          "SCHEMA_VIEW",
+          "REPLICATION_VIEW",
+          "ENCRYPTION_VIEW",
+          "STATS_VIEW",
+          "FULL"
+        ]
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "view"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_patch": {
+    "name": "bigtableadmin_projects_instances_tables_patch",
+    "description": "Updates a specified table.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The unique name of the table. Values are of the form `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`. Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `STATS_VIEW`, `FULL`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. The list of fields to update. A mask specifying which fields (e.g. `change_stream_config`) in the `table` field should be updated. This mask is relative to the `table` field, not to the request message. The wildcard (*) path is currently not supported. Currently UpdateTable is only supported for the following fields: * `change_stream_config` * `change_stream_config.retention_period` * `deletion_protection` * `automated_backup_policy` * `automated_backup_policy.retention_period` * `automated_backup_policy.frequency` * `row_key_schema` If `column_families` is set in `update_mask`, it will return an UNIMPLEMENTED error.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "ignoreWarnings": {
+        "description": "Optional. If true, ignore safety checks when updating the table.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "ignoreWarnings"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Table"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_delete": {
+    "name": "bigtableadmin_projects_instances_tables_delete",
+    "description": "Permanently deletes a specified table and all of its data.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the table to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_undelete": {
+    "name": "bigtableadmin_projects_instances_tables_undelete",
+    "description": "Restores a specified table which was accidentally deleted.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}:undelete",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the table to be restored. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UndeleteTableRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_modifyColumnFamilies": {
+    "name": "bigtableadmin_projects_instances_tables_modifyColumnFamilies",
+    "description": "Performs a series of column family modifications on the specified table. Either all or none of the modifications will occur before this method returns, but data requests received prior to that point may see a table where only some modifications have taken effect.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}:modifyColumnFamilies",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the table whose families should be modified. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {
+      "$ref": "ModifyColumnFamiliesRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_dropRowRange": {
+    "name": "bigtableadmin_projects_instances_tables_dropRowRange",
+    "description": "Permanently drop/delete a row range from a specified table. The request can specify whether to delete all rows in a table, or only those that match a particular prefix. Note that row key prefixes used here are treated as service data. For more information about how service data is handled, see the [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}:dropRowRange",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the table on which to drop a range of rows. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "DropRowRangeRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_generateConsistencyToken": {
+    "name": "bigtableadmin_projects_instances_tables_generateConsistencyToken",
+    "description": "Generates a consistency token for a Table, which can be used in CheckConsistency to check whether mutations to the table that finished before this call started have been replicated. The tokens will be available for 90 days.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}:generateConsistencyToken",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the Table for which to create a consistency token. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GenerateConsistencyTokenResponse"
+    },
+    "request": {
+      "$ref": "GenerateConsistencyTokenRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_checkConsistency": {
+    "name": "bigtableadmin_projects_instances_tables_checkConsistency",
+    "description": "Checks replication consistency based on a consistency token, that is, if replication has caught up based on the conditions specified in the token and the check request.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}:checkConsistency",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the Table for which to check replication consistency. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "CheckConsistencyResponse"
+    },
+    "request": {
+      "$ref": "CheckConsistencyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_restore": {
+    "name": "bigtableadmin_projects_instances_tables_restore",
+    "description": "Create a new table by restoring from a completed backup. The returned table long-running operation can be used to track the progress of the operation, and to cancel it. The metadata field type is RestoreTableMetadata. The response type is Table, if successful.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/tables:restore",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the instance in which to create the restored table. Values are of the form `projects//instances/`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "RestoreTableRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_tables_getIamPolicy",
+    "description": "Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_tables_setIamPolicy",
+    "description": "Sets the access control policy on a Bigtable resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_tables_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified Bigtable resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_create": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_create",
+    "description": "Creates a new AuthorizedView in a table.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/authorizedViews",
+    "parameters": {
+      "parent": {
+        "description": "Required. This is the name of the table the AuthorizedView belongs to. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedViewId": {
+        "description": "Required. The id of the AuthorizedView to create. This AuthorizedView must not already exist. The `authorized_view_id` appended to `parent` forms the full AuthorizedView name of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedView/{authorized_view}`.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "authorizedViewId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "AuthorizedView"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_list": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_list",
+    "description": "Lists all AuthorizedViews from a specific table.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/authorizedViews",
+    "parameters": {
+      "parent": {
+        "description": "Required. The unique name of the table for which AuthorizedViews should be listed. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. The value of `next_page_token` returned by a previous call.",
+        "location": "query",
+        "type": "string"
+      },
+      "view": {
+        "description": "Optional. The resource_view to be applied to the returned AuthorizedViews' fields. Default to NAME_ONLY.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Uses the default view for each method as documented in the request.",
+          "Only populates `name`.",
+          "Only populates the AuthorizedView's basic metadata. This includes: name, deletion_protection, etag.",
+          "Populates every fields."
+        ],
+        "enum": [
+          "RESPONSE_VIEW_UNSPECIFIED",
+          "NAME_ONLY",
+          "BASIC",
+          "FULL"
+        ]
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "view"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListAuthorizedViewsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_get": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_get",
+    "description": "Gets information from a specified AuthorizedView.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the requested AuthorizedView. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/authorizedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Optional. The resource_view to be applied to the returned AuthorizedView's fields. Default to BASIC.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Uses the default view for each method as documented in the request.",
+          "Only populates `name`.",
+          "Only populates the AuthorizedView's basic metadata. This includes: name, deletion_protection, etag.",
+          "Populates every fields."
+        ],
+        "enum": [
+          "RESPONSE_VIEW_UNSPECIFIED",
+          "NAME_ONLY",
+          "BASIC",
+          "FULL"
+        ]
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "view"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AuthorizedView"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_patch": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_patch",
+    "description": "Updates an AuthorizedView in a table.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The name of this AuthorizedView. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/authorizedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update. A mask specifying which fields in the AuthorizedView resource should be updated. This mask is relative to the AuthorizedView resource, not to the request message. A field will be overwritten if it is in the mask. If empty, all fields set in the request will be overwritten. A special value `*` means to overwrite all fields (including fields not set in the request).",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "ignoreWarnings": {
+        "description": "Optional. If true, ignore the safety checks when updating the AuthorizedView.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "ignoreWarnings"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "AuthorizedView"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_delete": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_delete",
+    "description": "Permanently deletes a specified AuthorizedView.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the AuthorizedView to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/authorizedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "etag": {
+        "description": "Optional. The current etag of the AuthorizedView. If an etag is provided and does not match the current etag of the AuthorizedView, deletion will be blocked and an ABORTED error will be returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_getIamPolicy",
+    "description": "Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/authorizedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_setIamPolicy",
+    "description": "Sets the access control policy on a Bigtable resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/authorizedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_authorizedViews_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_tables_authorizedViews_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified Bigtable resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/authorizedViews/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_getIamPolicy": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_getIamPolicy",
+    "description": "Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/schemaBundles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_setIamPolicy": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_setIamPolicy",
+    "description": "Sets the access control policy on a Bigtable resource. Replaces any existing policy.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/schemaBundles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_testIamPermissions": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_testIamPermissions",
+    "description": "Returns permissions that the caller has on the specified Bigtable resource.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/schemaBundles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_create": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_create",
+    "description": "Creates a new schema bundle in the specified table.",
+    "http_method": "POST",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/schemaBundles",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent resource where this schema bundle will be created. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "schemaBundleId": {
+        "description": "Required. The unique ID to use for the schema bundle, which will become the final component of the schema bundle's resource name.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "schemaBundleId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SchemaBundle"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_patch": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_patch",
+    "description": "Updates a schema bundle in the specified table.",
+    "http_method": "PATCH",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The unique name identifying this schema bundle. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/schemaBundles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "ignoreWarnings": {
+        "description": "Optional. If set, ignore the safety checks when updating the Schema Bundle. The safety checks are: - The new Schema Bundle is backwards compatible with the existing Schema Bundle.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "ignoreWarnings"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SchemaBundle"
+    }
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_get": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_get",
+    "description": "Gets metadata information about the specified schema bundle.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the schema bundle to retrieve. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/schemaBundles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "SchemaBundle"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_list": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_list",
+    "description": "Lists all schema bundles associated with the specified table.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+parent}/schemaBundles",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent, which owns this collection of schema bundles. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of schema bundles to return. If the value is positive, the server may return at most this value. If unspecified, the server will return the maximum allowed page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListSchemaBundles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSchemaBundles` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListSchemaBundlesResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_instances_tables_schemaBundles_delete": {
+    "name": "bigtableadmin_projects_instances_tables_schemaBundles_delete",
+    "description": "Deletes a schema bundle in the specified table.",
+    "http_method": "DELETE",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The unique name of the schema bundle to delete. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/schemaBundles/{schema_bundle}`",
+        "pattern": "^projects/[^/]+/instances/[^/]+/tables/[^/]+/schemaBundles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "etag": {
+        "description": "Optional. The etag of the schema bundle. If this is provided, it must match the server's etag. The server returns an ABORTED error on a mismatched etag.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.table",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_locations_list": {
+    "name": "bigtableadmin_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "bigtableadmin_projects_locations_get": {
+    "name": "bigtableadmin_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://bigtableadmin.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigtable.admin",
+      "https://www.googleapis.com/auth/bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/bigtable.admin.instance",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin",
+      "https://www.googleapis.com/auth/cloud-bigtable.admin.cluster",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  }
+}

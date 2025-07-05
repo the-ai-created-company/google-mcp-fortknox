@@ -1,0 +1,9 @@
+{
+  "api_name": "storagetransfer",
+  "api_version": "v1",
+  "api_title": "Storage Transfer API",
+  "api_description": "Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. ",
+  "base_url": "https://storagetransfer.googleapis.com/",
+  "tool_count": 17,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\storagetransfer\\storagetransfer_v1_tools.json"
+}

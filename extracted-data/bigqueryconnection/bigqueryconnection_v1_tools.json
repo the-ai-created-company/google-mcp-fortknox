@@ -1,0 +1,257 @@
+{
+  "bigqueryconnection_projects_locations_connections_create": {
+    "name": "bigqueryconnection_projects_locations_connections_create",
+    "description": "Creates a new connection.",
+    "http_method": "POST",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+parent}/connections",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name. Must be in the format `projects/{project_id}/locations/{location_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "connectionId": {
+        "description": "Optional. Connection id that should be assigned to the created connection.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "connectionId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Connection"
+    },
+    "request": {
+      "$ref": "Connection"
+    }
+  },
+  "bigqueryconnection_projects_locations_connections_get": {
+    "name": "bigqueryconnection_projects_locations_connections_get",
+    "description": "Returns specified connection.",
+    "http_method": "GET",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the requested connection, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Connection"
+    },
+    "request": {}
+  },
+  "bigqueryconnection_projects_locations_connections_list": {
+    "name": "bigqueryconnection_projects_locations_connections_list",
+    "description": "Returns a list of connections in the given project.",
+    "http_method": "GET",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+parent}/connections",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource name. Must be in the form: `projects/{project_id}/locations/{location_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Required. Page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListConnectionsResponse"
+    },
+    "request": {}
+  },
+  "bigqueryconnection_projects_locations_connections_patch": {
+    "name": "bigqueryconnection_projects_locations_connections_patch",
+    "description": "Updates the specified connection. For security reasons, also resets credential if connection properties are in the update field mask.",
+    "http_method": "PATCH",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the connection to update, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Update mask for the connection fields to be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Connection"
+    },
+    "request": {
+      "$ref": "Connection"
+    }
+  },
+  "bigqueryconnection_projects_locations_connections_delete": {
+    "name": "bigqueryconnection_projects_locations_connections_delete",
+    "description": "Deletes connection and associated credential.",
+    "http_method": "DELETE",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the deleted connection, for example: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "bigqueryconnection_projects_locations_connections_getIamPolicy": {
+    "name": "bigqueryconnection_projects_locations_connections_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigqueryconnection_projects_locations_connections_setIamPolicy": {
+    "name": "bigqueryconnection_projects_locations_connections_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigqueryconnection_projects_locations_connections_testIamPermissions": {
+    "name": "bigqueryconnection_projects_locations_connections_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://bigqueryconnection.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/connections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  }
+}

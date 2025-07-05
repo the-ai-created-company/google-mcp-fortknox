@@ -1,0 +1,9 @@
+{
+  "api_name": "translate",
+  "api_version": "v3beta1",
+  "api_title": "Cloud Translation API",
+  "api_description": "Integrates text translation into your website or application.",
+  "base_url": "https://translation.googleapis.com/",
+  "tool_count": 20,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\translate\\translate_v3beta1_tools.json"
+}

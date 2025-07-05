@@ -1,0 +1,7 @@
+{
+  "storage": {
+    "base_url": "https://storage.googleapis.com/storage/v1/",
+    "discovery_file": "storage_discovery.json",
+    "endpoint_count": 81
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "bigqueryreservation",
+  "api_version": "v1",
+  "api_title": "BigQuery Reservation API",
+  "api_description": "A service to modify your BigQuery reservations.",
+  "base_url": "https://bigqueryreservation.googleapis.com/",
+  "tool_count": 32,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\bigqueryreservation\\bigqueryreservation_v1_tools.json"
+}

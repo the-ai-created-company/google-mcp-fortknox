@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudfunctions",
+  "api_version": "v2alpha",
+  "api_title": "Cloud Functions API",
+  "api_description": "Manages lightweight user-provided functions executed in response to events.",
+  "base_url": "https://cloudfunctions.googleapis.com/",
+  "tool_count": 20,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudfunctions\\cloudfunctions_v2alpha_tools.json"
+}

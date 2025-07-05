@@ -1,0 +1,9 @@
+{
+  "api_name": "bigquery",
+  "api_version": "v2",
+  "api_title": "BigQuery API",
+  "api_description": "A data platform for customers to create, manage, share and query data.",
+  "base_url": "https://bigquery.googleapis.com/bigquery/v2/",
+  "tool_count": 47,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\bigquery\\bigquery_v2_tools.json"
+}

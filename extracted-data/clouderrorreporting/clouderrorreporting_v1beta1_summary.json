@@ -1,0 +1,9 @@
+{
+  "api_name": "clouderrorreporting",
+  "api_version": "v1beta1",
+  "api_title": "Error Reporting API",
+  "api_description": "Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors. ",
+  "base_url": "https://clouderrorreporting.googleapis.com/",
+  "tool_count": 11,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\clouderrorreporting\\clouderrorreporting_v1beta1_tools.json"
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "dialogflow",
+  "api_version": "v2",
+  "api_title": "Dialogflow API",
+  "api_description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).",
+  "base_url": "https://dialogflow.googleapis.com/",
+  "tool_count": 265,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\dialogflow\\dialogflow_v2_tools.json"
+}

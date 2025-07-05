@@ -1,0 +1,2252 @@
+{
+  "cloudkms_folders_updateAutokeyConfig": {
+    "name": "cloudkms_folders_updateAutokeyConfig",
+    "description": "Updates the AutokeyConfig for a folder. The caller must have both `cloudkms.autokeyConfigs.update` permission on the parent folder and `cloudkms.cryptoKeys.setIamPolicy` permission on the provided key project. A KeyHandle creation in the folder's descendant projects will use this configuration to determine where to create the resulting CryptoKey.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. Name of the AutokeyConfig resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.",
+        "pattern": "^folders/[^/]+/autokeyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Masks which fields of the AutokeyConfig to update, e.g. `keyProject`.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "AutokeyConfig"
+    },
+    "request": {
+      "$ref": "AutokeyConfig"
+    }
+  },
+  "cloudkms_folders_getAutokeyConfig": {
+    "name": "cloudkms_folders_getAutokeyConfig",
+    "description": "Returns the AutokeyConfig for a folder.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the AutokeyConfig resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.",
+        "pattern": "^folders/[^/]+/autokeyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "AutokeyConfig"
+    },
+    "request": {}
+  },
+  "cloudkms_folders_getKajPolicyConfig": {
+    "name": "cloudkms_folders_getKajPolicyConfig",
+    "description": "Gets the KeyAccessJustificationsPolicyConfig for a given organization/folder/projects.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the KeyAccessJustificationsPolicyConfig to get.",
+        "pattern": "^folders/[^/]+/kajPolicyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    },
+    "request": {}
+  },
+  "cloudkms_folders_updateKajPolicyConfig": {
+    "name": "cloudkms_folders_updateKajPolicyConfig",
+    "description": "Updates the KeyAccessJustificationsPolicyConfig for a given organization/folder/projects.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The resource name for this KeyAccessJustificationsPolicyConfig in the format of \"{organizations|folders|projects}/*/kajPolicyConfig\".",
+        "pattern": "^folders/[^/]+/kajPolicyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    },
+    "request": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    }
+  },
+  "cloudkms_projects_showEffectiveAutokeyConfig": {
+    "name": "cloudkms_projects_showEffectiveAutokeyConfig",
+    "description": "Returns the effective Cloud KMS Autokey configuration for a given project.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}:showEffectiveAutokeyConfig",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the resource project to the show effective Cloud KMS Autokey configuration for. This may be helpful for interrogating the effect of nested folder configurations on a given resource project.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ShowEffectiveAutokeyConfigResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_getKajPolicyConfig": {
+    "name": "cloudkms_projects_getKajPolicyConfig",
+    "description": "Gets the KeyAccessJustificationsPolicyConfig for a given organization/folder/projects.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the KeyAccessJustificationsPolicyConfig to get.",
+        "pattern": "^projects/[^/]+/kajPolicyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_updateKajPolicyConfig": {
+    "name": "cloudkms_projects_updateKajPolicyConfig",
+    "description": "Updates the KeyAccessJustificationsPolicyConfig for a given organization/folder/projects.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The resource name for this KeyAccessJustificationsPolicyConfig in the format of \"{organizations|folders|projects}/*/kajPolicyConfig\".",
+        "pattern": "^projects/[^/]+/kajPolicyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    },
+    "request": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    }
+  },
+  "cloudkms_projects_showEffectiveKeyAccessJustificationsPolicyConfig": {
+    "name": "cloudkms_projects_showEffectiveKeyAccessJustificationsPolicyConfig",
+    "description": "Returns the KeyAccessJustificationsPolicyConfig of the resource closest to the given project in hierarchy.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+project}:showEffectiveKeyAccessJustificationsPolicyConfig",
+    "parameters": {
+      "project": {
+        "description": "Required. The number or id of the project to get the effective KeyAccessJustificationsPolicyConfig. In the format of \"projects/{|}\"",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ShowEffectiveKeyAccessJustificationsPolicyConfigResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_showEffectiveKeyAccessJustificationsEnrollmentConfig": {
+    "name": "cloudkms_projects_showEffectiveKeyAccessJustificationsEnrollmentConfig",
+    "description": "Returns the KeyAccessJustificationsEnrollmentConfig of the resource closest to the given project in hierarchy.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+project}:showEffectiveKeyAccessJustificationsEnrollmentConfig",
+    "parameters": {
+      "project": {
+        "description": "Required. The number or id of the project to get the effective KeyAccessJustificationsEnrollmentConfig for.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ShowEffectiveKeyAccessJustificationsEnrollmentConfigResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_getEkmConfig": {
+    "name": "cloudkms_projects_locations_getEkmConfig",
+    "description": "Returns the EkmConfig singleton resource for a given project and location.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the EkmConfig to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "EkmConfig"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_updateEkmConfig": {
+    "name": "cloudkms_projects_locations_updateEkmConfig",
+    "description": "Updates the EkmConfig singleton resource for a given project and location.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name for the EkmConfig in the format `projects/*/locations/*/ekmConfig`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. List of fields to be updated in this request.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "EkmConfig"
+    },
+    "request": {
+      "$ref": "EkmConfig"
+    }
+  },
+  "cloudkms_projects_locations_generateRandomBytes": {
+    "name": "cloudkms_projects_locations_generateRandomBytes",
+    "description": "Generate random bytes using the Cloud KMS randomness source in the provided location.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+location}:generateRandomBytes",
+    "parameters": {
+      "location": {
+        "description": "The project-specific location in which to generate random bytes. For example, \"projects/my-project/locations/us-central1\".",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "location"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "GenerateRandomBytesResponse"
+    },
+    "request": {
+      "$ref": "GenerateRandomBytesRequest"
+    }
+  },
+  "cloudkms_projects_locations_list": {
+    "name": "cloudkms_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_get": {
+    "name": "cloudkms_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_operations_get": {
+    "name": "cloudkms_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyHandles_create": {
+    "name": "cloudkms_projects_locations_keyHandles_create",
+    "description": "Creates a new KeyHandle, triggering the provisioning of a new CryptoKey for CMEK use with the given resource type in the configured key project and the same location. GetOperation should be used to resolve the resulting long-running operation and get the resulting KeyHandle and CryptoKey.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/keyHandles",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the resource project and location to create the KeyHandle in, e.g. `projects/{PROJECT_ID}/locations/{LOCATION}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "keyHandleId": {
+        "description": "Optional. Id of the KeyHandle. Must be unique to the resource project and location. If not provided by the caller, a new UUID is used.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "keyHandleId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "KeyHandle"
+    }
+  },
+  "cloudkms_projects_locations_keyHandles_get": {
+    "name": "cloudkms_projects_locations_keyHandles_get",
+    "description": "Returns the KeyHandle.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the KeyHandle resource, e.g. `projects/{PROJECT_ID}/locations/{LOCATION}/keyHandles/{KEY_HANDLE_ID}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyHandles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyHandle"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyHandles_list": {
+    "name": "cloudkms_projects_locations_keyHandles_list",
+    "description": "Lists KeyHandles.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/keyHandles",
+    "parameters": {
+      "parent": {
+        "description": "Required. Name of the resource project and location from which to list KeyHandles, e.g. `projects/{PROJECT_ID}/locations/{LOCATION}`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Optional limit on the number of KeyHandles to include in the response. The service may return fewer than this value. Further KeyHandles can subsequently be obtained by including the ListKeyHandlesResponse.next_page_token in a subsequent request. If unspecified, at most 100 KeyHandles will be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Optional pagination token, returned earlier via ListKeyHandlesResponse.next_page_token.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filter to apply when listing KeyHandles, e.g. `resource_type_selector=\"{SERVICE}.googleapis.com/{TYPE}\"`.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListKeyHandlesResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_ekmConnections_list": {
+    "name": "cloudkms_projects_locations_ekmConnections_list",
+    "description": "Lists EkmConnections.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/ekmConnections",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the location associated with the EkmConnections to list, in the format `projects/*/locations/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Optional limit on the number of EkmConnections to include in the response. Further EkmConnections can subsequently be obtained by including the ListEkmConnectionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Optional pagination token, returned earlier via ListEkmConnectionsResponse.next_page_token.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListEkmConnectionsResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_ekmConnections_get": {
+    "name": "cloudkms_projects_locations_ekmConnections_get",
+    "description": "Returns metadata for a given EkmConnection.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the EkmConnection to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConnections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "EkmConnection"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_ekmConnections_create": {
+    "name": "cloudkms_projects_locations_ekmConnections_create",
+    "description": "Creates a new EkmConnection in a given Project and Location.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/ekmConnections",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the location associated with the EkmConnection, in the format `projects/*/locations/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "ekmConnectionId": {
+        "description": "Required. It must be unique within a location and match the regular expression `[a-zA-Z0-9_-]{1,63}`.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "ekmConnectionId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "EkmConnection"
+    },
+    "request": {
+      "$ref": "EkmConnection"
+    }
+  },
+  "cloudkms_projects_locations_ekmConnections_patch": {
+    "name": "cloudkms_projects_locations_ekmConnections_patch",
+    "description": "Updates an EkmConnection's metadata.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConnections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. List of fields to be updated in this request.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "EkmConnection"
+    },
+    "request": {
+      "$ref": "EkmConnection"
+    }
+  },
+  "cloudkms_projects_locations_ekmConnections_verifyConnectivity": {
+    "name": "cloudkms_projects_locations_ekmConnections_verifyConnectivity",
+    "description": "Verifies that Cloud KMS can successfully connect to the external key manager specified by an EkmConnection. If there is an error connecting to the EKM, this method returns a FAILED_PRECONDITION status containing structured information as described at https://cloud.google.com/kms/docs/reference/ekm_errors.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:verifyConnectivity",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the EkmConnection to verify.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConnections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "VerifyConnectivityResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_ekmConnections_setIamPolicy": {
+    "name": "cloudkms_projects_locations_ekmConnections_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConnections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "cloudkms_projects_locations_ekmConnections_getIamPolicy": {
+    "name": "cloudkms_projects_locations_ekmConnections_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConnections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_ekmConnections_testIamPermissions": {
+    "name": "cloudkms_projects_locations_ekmConnections_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConnections/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_list": {
+    "name": "cloudkms_projects_locations_keyRings_list",
+    "description": "Lists KeyRings.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/keyRings",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Optional limit on the number of KeyRings to include in the response. Further KeyRings can subsequently be obtained by including the ListKeyRingsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Optional pagination token, returned earlier via ListKeyRingsResponse.next_page_token.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListKeyRingsResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_get": {
+    "name": "cloudkms_projects_locations_keyRings_get",
+    "description": "Returns metadata for a given KeyRing.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the KeyRing to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyRing"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_create": {
+    "name": "cloudkms_projects_locations_keyRings_create",
+    "description": "Create a new KeyRing in a given Project and Location.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/keyRings",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "keyRingId": {
+        "description": "Required. It must be unique within a location and match the regular expression `[a-zA-Z0-9_-]{1,63}`",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "keyRingId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyRing"
+    },
+    "request": {
+      "$ref": "KeyRing"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_setIamPolicy": {
+    "name": "cloudkms_projects_locations_keyRings_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_getIamPolicy": {
+    "name": "cloudkms_projects_locations_keyRings_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_testIamPermissions": {
+    "name": "cloudkms_projects_locations_keyRings_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_list": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_list",
+    "description": "Lists CryptoKeys.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/cryptoKeys",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Optional limit on the number of CryptoKeys to include in the response. Further CryptoKeys can subsequently be obtained by including the ListCryptoKeysResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Optional pagination token, returned earlier via ListCryptoKeysResponse.next_page_token.",
+        "location": "query",
+        "type": "string"
+      },
+      "versionView": {
+        "description": "The fields of the primary version to include in the response.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Default view for each CryptoKeyVersion. Does not include the attestation field.",
+          "Provides all fields in each CryptoKeyVersion, including the attestation."
+        ],
+        "enum": [
+          "CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED",
+          "FULL"
+        ]
+      },
+      "filter": {
+        "description": "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "versionView",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListCryptoKeysResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_get": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_get",
+    "description": "Returns metadata for a given CryptoKey, as well as its primary CryptoKeyVersion.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the CryptoKey to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKey"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_create": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_create",
+    "description": "Create a new CryptoKey within a KeyRing. CryptoKey.purpose and CryptoKey.version_template.algorithm are required.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/cryptoKeys",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the KeyRing associated with the CryptoKeys.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "cryptoKeyId": {
+        "description": "Required. It must be unique within a KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`",
+        "location": "query",
+        "type": "string"
+      },
+      "skipInitialVersionCreation": {
+        "description": "If set to true, the request will create a CryptoKey without any CryptoKeyVersions. You must manually call CreateCryptoKeyVersion or ImportCryptoKeyVersion before you can use this CryptoKey.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "cryptoKeyId",
+      "skipInitialVersionCreation"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKey"
+    },
+    "request": {
+      "$ref": "CryptoKey"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_patch": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_patch",
+    "description": "Update a CryptoKey.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. List of fields to be updated in this request.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKey"
+    },
+    "request": {
+      "$ref": "CryptoKey"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_updatePrimaryVersion": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_updatePrimaryVersion",
+    "description": "Update the version of a CryptoKey that will be used in Encrypt. Returns an error if called on a key whose purpose is not ENCRYPT_DECRYPT.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:updatePrimaryVersion",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKey to update.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKey"
+    },
+    "request": {
+      "$ref": "UpdateCryptoKeyPrimaryVersionRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_encrypt": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_encrypt",
+    "description": "Encrypts data, so that it can only be recovered by a call to Decrypt. The CryptoKey.purpose must be ENCRYPT_DECRYPT.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:encrypt",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKey or CryptoKeyVersion to use for encryption. If a CryptoKey is specified, the server will use its primary version.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "EncryptResponse"
+    },
+    "request": {
+      "$ref": "EncryptRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_decrypt": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_decrypt",
+    "description": "Decrypts data that was protected by Encrypt. The CryptoKey.purpose must be ENCRYPT_DECRYPT.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:decrypt",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKey to use for decryption. The server will choose the appropriate version.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "DecryptResponse"
+    },
+    "request": {
+      "$ref": "DecryptRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_setIamPolicy": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_getIamPolicy": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_testIamPermissions": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_list": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_list",
+    "description": "Lists CryptoKeyVersions.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/cryptoKeyVersions",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the CryptoKey to list, in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Optional limit on the number of CryptoKeyVersions to include in the response. Further CryptoKeyVersions can subsequently be obtained by including the ListCryptoKeyVersionsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Optional pagination token, returned earlier via ListCryptoKeyVersionsResponse.next_page_token.",
+        "location": "query",
+        "type": "string"
+      },
+      "view": {
+        "description": "The fields to include in the response.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Default view for each CryptoKeyVersion. Does not include the attestation field.",
+          "Provides all fields in each CryptoKeyVersion, including the attestation."
+        ],
+        "enum": [
+          "CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED",
+          "FULL"
+        ]
+      },
+      "filter": {
+        "description": "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "view",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListCryptoKeyVersionsResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_get": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_get",
+    "description": "Returns metadata for a given CryptoKeyVersion.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the CryptoKeyVersion to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKeyVersion"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_getPublicKey": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_getPublicKey",
+    "description": "Returns the public key for the given CryptoKeyVersion. The CryptoKey.purpose must be ASYMMETRIC_SIGN or ASYMMETRIC_DECRYPT.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}/publicKey",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the CryptoKeyVersion public key to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "publicKeyFormat": {
+        "description": "Optional. The PublicKey format specified by the user. This field is required for PQC algorithms. If specified, the public key will be exported through the public_key field in the requested format. Otherwise, the pem field will be populated for non-PQC algorithms, and an error will be returned for PQC algorithms.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "If the public_key_format field is not specified: - For PQC algorithms, an error will be returned. - For non-PQC algorithms, the default format is PEM, and the field pem will be populated. Otherwise, the public key will be exported through the public_key field in the requested format.",
+          "The returned public key will be encoded in PEM format. See the [RFC7468](https://tools.ietf.org/html/rfc7468) sections for [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and [Textual Encoding of Subject Public Key Info] (https://tools.ietf.org/html/rfc7468#section-13) for more information.",
+          "This is supported only for PQC algorithms. The key material is returned in the format defined by NIST PQC standards (FIPS 203, FIPS 204, and FIPS 205)."
+        ],
+        "enum": [
+          "PUBLIC_KEY_FORMAT_UNSPECIFIED",
+          "PEM",
+          "NIST_PQC"
+        ]
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "publicKeyFormat"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "PublicKey"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_create": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_create",
+    "description": "Create a new CryptoKeyVersion in a CryptoKey. The server will assign the next sequential id. If unset, state will be set to ENABLED.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/cryptoKeyVersions",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the CryptoKey associated with the CryptoKeyVersions.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKeyVersion"
+    },
+    "request": {
+      "$ref": "CryptoKeyVersion"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_import": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_import",
+    "description": "Import wrapped key material into a CryptoKeyVersion. All requests must specify a CryptoKey. If a CryptoKeyVersion is additionally specified in the request, key material will be reimported into that version. Otherwise, a new version will be created, and will be assigned the next sequential id within the CryptoKey.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/cryptoKeyVersions:import",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the CryptoKey to be imported into. The create permission is only required on this key when creating a new CryptoKeyVersion.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKeyVersion"
+    },
+    "request": {
+      "$ref": "ImportCryptoKeyVersionRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_patch": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_patch",
+    "description": "Update a CryptoKeyVersion's metadata. state may be changed between ENABLED and DISABLED using this method. See DestroyCryptoKeyVersion and RestoreCryptoKeyVersion to move between other states.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. List of fields to be updated in this request.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKeyVersion"
+    },
+    "request": {
+      "$ref": "CryptoKeyVersion"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_destroy": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_destroy",
+    "description": "Schedule a CryptoKeyVersion for destruction. Upon calling this method, CryptoKeyVersion.state will be set to DESTROY_SCHEDULED, and destroy_time will be set to the time destroy_scheduled_duration in the future. At that time, the state will automatically change to DESTROYED, and the key material will be irrevocably destroyed. Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to reverse the process.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:destroy",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to destroy.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKeyVersion"
+    },
+    "request": {
+      "$ref": "DestroyCryptoKeyVersionRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_restore": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_restore",
+    "description": "Restore a CryptoKeyVersion in the DESTROY_SCHEDULED state. Upon restoration of the CryptoKeyVersion, state will be set to DISABLED, and destroy_time will be cleared.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:restore",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to restore.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "CryptoKeyVersion"
+    },
+    "request": {
+      "$ref": "RestoreCryptoKeyVersionRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_rawEncrypt": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_rawEncrypt",
+    "description": "Encrypts data using portable cryptographic primitives. Most users should choose Encrypt and Decrypt rather than their raw counterparts. The CryptoKey.purpose must be RAW_ENCRYPT_DECRYPT.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:rawEncrypt",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to use for encryption.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "RawEncryptResponse"
+    },
+    "request": {
+      "$ref": "RawEncryptRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_rawDecrypt": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_rawDecrypt",
+    "description": "Decrypts data that was originally encrypted using a raw cryptographic mechanism. The CryptoKey.purpose must be RAW_ENCRYPT_DECRYPT.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:rawDecrypt",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to use for decryption.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "RawDecryptResponse"
+    },
+    "request": {
+      "$ref": "RawDecryptRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_asymmetricSign": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_asymmetricSign",
+    "description": "Signs data using a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_SIGN, producing a signature that can be verified with the public key retrieved from GetPublicKey.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:asymmetricSign",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to use for signing.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "AsymmetricSignResponse"
+    },
+    "request": {
+      "$ref": "AsymmetricSignRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_asymmetricDecrypt": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_asymmetricDecrypt",
+    "description": "Decrypts data that was encrypted with a public key retrieved from GetPublicKey corresponding to a CryptoKeyVersion with CryptoKey.purpose ASYMMETRIC_DECRYPT.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:asymmetricDecrypt",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to use for decryption.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "AsymmetricDecryptResponse"
+    },
+    "request": {
+      "$ref": "AsymmetricDecryptRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_macSign": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_macSign",
+    "description": "Signs data using a CryptoKeyVersion with CryptoKey.purpose MAC, producing a tag that can be verified by another source with the same key.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:macSign",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to use for signing.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "MacSignResponse"
+    },
+    "request": {
+      "$ref": "MacSignRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_macVerify": {
+    "name": "cloudkms_projects_locations_keyRings_cryptoKeys_cryptoKeyVersions_macVerify",
+    "description": "Verifies MAC tag using a CryptoKeyVersion with CryptoKey.purpose MAC, and returns a response that indicates whether or not the verification was successful.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}:macVerify",
+    "parameters": {
+      "name": {
+        "description": "Required. The resource name of the CryptoKeyVersion to use for verification.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/cryptoKeys/[^/]+/cryptoKeyVersions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "MacVerifyResponse"
+    },
+    "request": {
+      "$ref": "MacVerifyRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_importJobs_list": {
+    "name": "cloudkms_projects_locations_keyRings_importJobs_list",
+    "description": "Lists ImportJobs.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/importJobs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Optional limit on the number of ImportJobs to include in the response. Further ImportJobs can subsequently be obtained by including the ListImportJobsResponse.next_page_token in a subsequent request. If unspecified, the server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Optional pagination token, returned earlier via ListImportJobsResponse.next_page_token.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Only include resources that match the filter in the response. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Specify how the results should be sorted. If not specified, the results will be sorted in the default order. For more information, see [Sorting and filtering list results](https://cloud.google.com/kms/docs/sorting-and-filtering).",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ListImportJobsResponse"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_importJobs_get": {
+    "name": "cloudkms_projects_locations_keyRings_importJobs_get",
+    "description": "Returns metadata for a given ImportJob.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the ImportJob to get.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/importJobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ImportJob"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_importJobs_create": {
+    "name": "cloudkms_projects_locations_keyRings_importJobs_create",
+    "description": "Create a new ImportJob within a KeyRing. ImportJob.import_method is required.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+parent}/importJobs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The name of the KeyRing associated with the ImportJobs.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "importJobId": {
+        "description": "Required. It must be unique within a KeyRing and match the regular expression `[a-zA-Z0-9_-]{1,63}`",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "importJobId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "ImportJob"
+    },
+    "request": {
+      "$ref": "ImportJob"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_importJobs_setIamPolicy": {
+    "name": "cloudkms_projects_locations_keyRings_importJobs_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/importJobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "cloudkms_projects_locations_keyRings_importJobs_getIamPolicy": {
+    "name": "cloudkms_projects_locations_keyRings_importJobs_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/importJobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_keyRings_importJobs_testIamPermissions": {
+    "name": "cloudkms_projects_locations_keyRings_importJobs_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/keyRings/[^/]+/importJobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "cloudkms_projects_locations_ekmConfig_setIamPolicy": {
+    "name": "cloudkms_projects_locations_ekmConfig_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "cloudkms_projects_locations_ekmConfig_getIamPolicy": {
+    "name": "cloudkms_projects_locations_ekmConfig_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {}
+  },
+  "cloudkms_projects_locations_ekmConfig_testIamPermissions": {
+    "name": "cloudkms_projects_locations_ekmConfig_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://cloudkms.googleapis.com/v1/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/ekmConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "cloudkms_organizations_getKajPolicyConfig": {
+    "name": "cloudkms_organizations_getKajPolicyConfig",
+    "description": "Gets the KeyAccessJustificationsPolicyConfig for a given organization/folder/projects.",
+    "http_method": "GET",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the KeyAccessJustificationsPolicyConfig to get.",
+        "pattern": "^organizations/[^/]+/kajPolicyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    },
+    "request": {}
+  },
+  "cloudkms_organizations_updateKajPolicyConfig": {
+    "name": "cloudkms_organizations_updateKajPolicyConfig",
+    "description": "Updates the KeyAccessJustificationsPolicyConfig for a given organization/folder/projects.",
+    "http_method": "PATCH",
+    "path": "https://cloudkms.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. The resource name for this KeyAccessJustificationsPolicyConfig in the format of \"{organizations|folders|projects}/*/kajPolicyConfig\".",
+        "pattern": "^organizations/[^/]+/kajPolicyConfig$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloudkms"
+    ],
+    "response": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    },
+    "request": {
+      "$ref": "KeyAccessJustificationsPolicyConfig"
+    }
+  }
+}

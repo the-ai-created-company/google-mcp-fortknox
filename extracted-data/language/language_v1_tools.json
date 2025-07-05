@@ -1,0 +1,135 @@
+{
+  "language_documents_analyzeSentiment": {
+    "name": "language_documents_analyzeSentiment",
+    "description": "Analyzes the sentiment of the provided text.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:analyzeSentiment",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnalyzeSentimentResponse"
+    },
+    "request": {
+      "$ref": "AnalyzeSentimentRequest"
+    }
+  },
+  "language_documents_analyzeEntities": {
+    "name": "language_documents_analyzeEntities",
+    "description": "Finds named entities (currently proper names and common nouns) in the text along with entity types, salience, mentions for each entity, and other properties.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:analyzeEntities",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnalyzeEntitiesResponse"
+    },
+    "request": {
+      "$ref": "AnalyzeEntitiesRequest"
+    }
+  },
+  "language_documents_analyzeEntitySentiment": {
+    "name": "language_documents_analyzeEntitySentiment",
+    "description": "Finds entities, similar to AnalyzeEntities in the text and analyzes sentiment associated with each entity and its mentions.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:analyzeEntitySentiment",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnalyzeEntitySentimentResponse"
+    },
+    "request": {
+      "$ref": "AnalyzeEntitySentimentRequest"
+    }
+  },
+  "language_documents_analyzeSyntax": {
+    "name": "language_documents_analyzeSyntax",
+    "description": "Analyzes the syntax of the text and provides sentence boundaries and tokenization along with part of speech tags, dependency trees, and other properties.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:analyzeSyntax",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnalyzeSyntaxResponse"
+    },
+    "request": {
+      "$ref": "AnalyzeSyntaxRequest"
+    }
+  },
+  "language_documents_classifyText": {
+    "name": "language_documents_classifyText",
+    "description": "Classifies a document into categories.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:classifyText",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ClassifyTextResponse"
+    },
+    "request": {
+      "$ref": "ClassifyTextRequest"
+    }
+  },
+  "language_documents_moderateText": {
+    "name": "language_documents_moderateText",
+    "description": "Moderates a document for harmful and sensitive categories.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:moderateText",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ModerateTextResponse"
+    },
+    "request": {
+      "$ref": "ModerateTextRequest"
+    }
+  },
+  "language_documents_annotateText": {
+    "name": "language_documents_annotateText",
+    "description": "A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and analyzeSyntax provide in one call.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v1/documents:annotateText",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnnotateTextResponse"
+    },
+    "request": {
+      "$ref": "AnnotateTextRequest"
+    }
+  }
+}

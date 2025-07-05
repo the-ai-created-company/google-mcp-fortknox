@@ -1,0 +1,20 @@
+{
+  "videointelligence_videos_annotate": {
+    "name": "videointelligence_videos_annotate",
+    "description": "Performs asynchronous video annotation. Progress and results can be retrieved through the `google.longrunning.Operations` interface. `Operation.metadata` contains `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse` (results).",
+    "http_method": "POST",
+    "path": "https://videointelligence.googleapis.com/v1p2beta1/videos:annotate",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunning_Operation"
+    },
+    "request": {
+      "$ref": "GoogleCloudVideointelligenceV1p2beta1_AnnotateVideoRequest"
+    }
+  }
+}

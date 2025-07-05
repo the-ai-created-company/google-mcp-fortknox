@@ -1,0 +1,439 @@
+{
+  "cloudscheduler_projects_locations_list": {
+    "name": "cloudscheduler_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "cloudscheduler_projects_locations_get": {
+    "name": "cloudscheduler_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "cloudscheduler_projects_locations_jobs_list": {
+    "name": "cloudscheduler_projects_locations_jobs_list",
+    "description": "Lists jobs.",
+    "http_method": "GET",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+parent}/jobs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Requested page size. The maximum page size is 500. If unspecified, the page size will be the maximum. Fewer jobs than requested might be returned, even if more jobs exist; use next_page_token to determine if more jobs exist.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token identifying a page of results the server will return. To request the first page results, page_token must be empty. To request the next page of results, page_token must be the value of next_page_token returned from the previous call to ListJobs.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListJobsResponse"
+    },
+    "request": {}
+  },
+  "cloudscheduler_projects_locations_jobs_get": {
+    "name": "cloudscheduler_projects_locations_jobs_get",
+    "description": "Gets a job.",
+    "http_method": "GET",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {}
+  },
+  "cloudscheduler_projects_locations_jobs_create": {
+    "name": "cloudscheduler_projects_locations_jobs_create",
+    "description": "Creates a job.",
+    "http_method": "POST",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+parent}/jobs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {
+      "$ref": "Job"
+    }
+  },
+  "cloudscheduler_projects_locations_jobs_patch": {
+    "name": "cloudscheduler_projects_locations_jobs_patch",
+    "description": "Updates a job. If successful, the updated Job is returned. If the job does not exist, `NOT_FOUND` is returned. If UpdateJob does not successfully return, it is possible for the job to be in an Job.State.UPDATE_FAILED state. A job in this state may not be executed. If this happens, retry the UpdateJob request until a successful response is received.",
+    "http_method": "PATCH",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Optionally caller-specified in CreateJob, after which it becomes output only. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the job's location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `JOB_ID` can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), or underscores (_). The maximum length is 500 characters.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "A mask used to specify which fields of the job are being updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {
+      "$ref": "Job"
+    }
+  },
+  "cloudscheduler_projects_locations_jobs_delete": {
+    "name": "cloudscheduler_projects_locations_jobs_delete",
+    "description": "Deletes a job.",
+    "http_method": "DELETE",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "cloudscheduler_projects_locations_jobs_pause": {
+    "name": "cloudscheduler_projects_locations_jobs_pause",
+    "description": "Pauses a job. If a job is paused then the system will stop executing the job until it is re-enabled via ResumeJob. The state of the job is stored in state; if paused it will be set to Job.State.PAUSED. A job must be in Job.State.ENABLED to be paused.",
+    "http_method": "POST",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}:pause",
+    "parameters": {
+      "name": {
+        "description": "Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {
+      "$ref": "PauseJobRequest"
+    }
+  },
+  "cloudscheduler_projects_locations_jobs_resume": {
+    "name": "cloudscheduler_projects_locations_jobs_resume",
+    "description": "Resume a job. This method reenables a job after it has been Job.State.PAUSED. The state of a job is stored in Job.state; after calling this method it will be set to Job.State.ENABLED. A job must be in Job.State.PAUSED to be resumed.",
+    "http_method": "POST",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}:resume",
+    "parameters": {
+      "name": {
+        "description": "Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {
+      "$ref": "ResumeJobRequest"
+    }
+  },
+  "cloudscheduler_projects_locations_jobs_run": {
+    "name": "cloudscheduler_projects_locations_jobs_run",
+    "description": "Forces a job to run now. When this method is called, Cloud Scheduler will dispatch the job, even if the job is already running.",
+    "http_method": "POST",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}:run",
+    "parameters": {
+      "name": {
+        "description": "Required. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {
+      "$ref": "RunJobRequest"
+    }
+  },
+  "cloudscheduler_operations_list": {
+    "name": "cloudscheduler_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^operations$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "cloudscheduler_operations_get": {
+    "name": "cloudscheduler_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudscheduler_operations_delete": {
+    "name": "cloudscheduler_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "cloudscheduler_operations_cancel": {
+    "name": "cloudscheduler_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://cloudscheduler.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CancelOperationRequest"
+    }
+  }
+}

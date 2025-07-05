@@ -1,0 +1,9 @@
+{
+  "api_name": "bigquerydatatransfer",
+  "api_version": "v1",
+  "api_title": "BigQuery Data Transfer API",
+  "api_description": "Schedule queries or transfer external data from SaaS applications to Google BigQuery on a regular basis.",
+  "base_url": "https://bigquerydatatransfer.googleapis.com/",
+  "tool_count": 33,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\bigquerydatatransfer\\bigquerydatatransfer_v1_tools.json"
+}

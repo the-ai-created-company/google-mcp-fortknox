@@ -1,0 +1,419 @@
+{
+  "speech_operations_list": {
+    "name": "speech_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://speech.googleapis.com/v1p1beta1/operations",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "name",
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "speech_operations_get": {
+    "name": "speech_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://speech.googleapis.com/v1p1beta1/operations/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "speech_projects_locations_phraseSets_create": {
+    "name": "speech_projects_locations_phraseSets_create",
+    "description": "Create a set of phrase hints. Each item in the set can be a single word or a multi-word phrase. The items in the PhraseSet are favored by the recognition model when you send a call that includes the PhraseSet.",
+    "http_method": "POST",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+parent}/phraseSets",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent resource where this phrase set will be created. Format: `projects/{project}/locations/{location}` Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "PhraseSet"
+    },
+    "request": {
+      "$ref": "CreatePhraseSetRequest"
+    }
+  },
+  "speech_projects_locations_phraseSets_get": {
+    "name": "speech_projects_locations_phraseSets_get",
+    "description": "Get a phrase set.",
+    "http_method": "GET",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the phrase set to retrieve. Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}` Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/phraseSets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "PhraseSet"
+    },
+    "request": {}
+  },
+  "speech_projects_locations_phraseSets_list": {
+    "name": "speech_projects_locations_phraseSets_list",
+    "description": "List phrase sets.",
+    "http_method": "GET",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+parent}/phraseSets",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent, which owns this collection of phrase set. Format: `projects/{project}/locations/{location}` Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of phrase sets to return. The service may return fewer than this value. If unspecified, at most 50 phrase sets will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListPhraseSet` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPhraseSet` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListPhraseSetResponse"
+    },
+    "request": {}
+  },
+  "speech_projects_locations_phraseSets_patch": {
+    "name": "speech_projects_locations_phraseSets_patch",
+    "description": "Update a phrase set.",
+    "http_method": "PATCH",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The resource name of the phrase set.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/phraseSets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "The list of fields to be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "PhraseSet"
+    },
+    "request": {
+      "$ref": "PhraseSet"
+    }
+  },
+  "speech_projects_locations_phraseSets_delete": {
+    "name": "speech_projects_locations_phraseSets_delete",
+    "description": "Delete a phrase set.",
+    "http_method": "DELETE",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the phrase set to delete. Format: `projects/{project}/locations/{location}/phraseSets/{phrase_set}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/phraseSets/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "speech_projects_locations_customClasses_create": {
+    "name": "speech_projects_locations_customClasses_create",
+    "description": "Create a custom class.",
+    "http_method": "POST",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+parent}/customClasses",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent resource where this custom class will be created. Format: `projects/{project}/locations/{location}/customClasses` Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "CustomClass"
+    },
+    "request": {
+      "$ref": "CreateCustomClassRequest"
+    }
+  },
+  "speech_projects_locations_customClasses_get": {
+    "name": "speech_projects_locations_customClasses_get",
+    "description": "Get a custom class.",
+    "http_method": "GET",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the custom class to retrieve. Format: `projects/{project}/locations/{location}/customClasses/{custom_class}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+/customClasses/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "CustomClass"
+    },
+    "request": {}
+  },
+  "speech_projects_locations_customClasses_list": {
+    "name": "speech_projects_locations_customClasses_list",
+    "description": "List custom classes.",
+    "http_method": "GET",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+parent}/customClasses",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent, which owns this collection of custom classes. Format: `projects/{project}/locations/{location}/customClasses` Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of custom classes to return. The service may return fewer than this value. If unspecified, at most 50 custom classes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListCustomClass` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCustomClass` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListCustomClassesResponse"
+    },
+    "request": {}
+  },
+  "speech_projects_locations_customClasses_patch": {
+    "name": "speech_projects_locations_customClasses_patch",
+    "description": "Update a custom class.",
+    "http_method": "PATCH",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The resource name of the custom class.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/customClasses/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "The list of fields to be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "CustomClass"
+    },
+    "request": {
+      "$ref": "CustomClass"
+    }
+  },
+  "speech_projects_locations_customClasses_delete": {
+    "name": "speech_projects_locations_customClasses_delete",
+    "description": "Delete a custom class.",
+    "http_method": "DELETE",
+    "path": "https://speech.googleapis.com/v1p1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the custom class to delete. Format: `projects/{project}/locations/{location}/customClasses/{custom_class}` Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu` (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global` location. To specify a region, use a [regional endpoint](https://cloud.google.com/speech-to-text/docs/endpoints) with matching `us` or `eu` location value.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/customClasses/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "speech_speech_recognize": {
+    "name": "speech_speech_recognize",
+    "description": "Performs synchronous speech recognition: receive results after all audio has been sent and processed.",
+    "http_method": "POST",
+    "path": "https://speech.googleapis.com/v1p1beta1/speech:recognize",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "RecognizeResponse"
+    },
+    "request": {
+      "$ref": "RecognizeRequest"
+    }
+  },
+  "speech_speech_longrunningrecognize": {
+    "name": "speech_speech_longrunningrecognize",
+    "description": "Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).",
+    "http_method": "POST",
+    "path": "https://speech.googleapis.com/v1p1beta1/speech:longrunningrecognize",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "LongRunningRecognizeRequest"
+    }
+  }
+}

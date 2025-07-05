@@ -1,0 +1,205 @@
+{
+  "cloudlocationfinder_projects_locations_list": {
+    "name": "cloudlocationfinder_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://cloudlocationfinder.googleapis.com/v1alpha/{+name}/locations",
+    "parameters": {
+      "name": {
+        "description": "The resource that owns the locations collection, if applicable.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like `\"displayName=tokyo\"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "cloudlocationfinder_projects_locations_get": {
+    "name": "cloudlocationfinder_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://cloudlocationfinder.googleapis.com/v1alpha/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Resource name for the location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "cloudlocationfinder_projects_locations_cloudLocations_list": {
+    "name": "cloudlocationfinder_projects_locations_cloudLocations_list",
+    "description": "Lists cloud locations under a given project and location.",
+    "http_method": "GET",
+    "path": "https://cloudlocationfinder.googleapis.com/v1alpha/{+parent}/cloudLocations",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent, which owns this collection of cloud locations. Format: projects/{project}/locations/{location}",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of cloud locations to return per page. The service might return fewer cloud locations than this value. If unspecified, server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results the server should return. Provide page token returned by a previous 'ListCloudLocations' call to retrieve the next page of results. When paginating, all other parameters provided to 'ListCloudLocations' must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. A filter expression that filters resources listed in the response. The expression is in the form of field=value. For example, 'cloud_location_type=CLOUD_LOCATION_TYPE_REGION'. Multiple filter queries are space-separated. For example, 'cloud_location_type=CLOUD_LOCATION_TYPE_REGION territory_code=\"US\"' By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListCloudLocationsResponse"
+    },
+    "request": {}
+  },
+  "cloudlocationfinder_projects_locations_cloudLocations_get": {
+    "name": "cloudlocationfinder_projects_locations_cloudLocations_get",
+    "description": "Retrieves a resource containing information about a cloud location.",
+    "http_method": "GET",
+    "path": "https://cloudlocationfinder.googleapis.com/v1alpha/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/cloudLocations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "CloudLocation"
+    },
+    "request": {}
+  },
+  "cloudlocationfinder_projects_locations_cloudLocations_search": {
+    "name": "cloudlocationfinder_projects_locations_cloudLocations_search",
+    "description": "Searches for cloud locations from a given source location.",
+    "http_method": "GET",
+    "path": "https://cloudlocationfinder.googleapis.com/v1alpha/{+parent}/cloudLocations:search",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent, which owns this collection of cloud locations. Format: projects/{project}/locations/{location}",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "sourceCloudLocation": {
+        "description": "Required. The source cloud location to search from. Example search can be searching nearby cloud locations from the source cloud location by latency.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of cloud locations to return. The service might return fewer cloud locations than this value. If unspecified, server will pick an appropriate default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A token identifying a page of results the server should return. Provide Page token returned by a previous 'ListCloudLocations' call to retrieve the next page of results. When paginating, all other parameters provided to 'ListCloudLocations' must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      },
+      "query": {
+        "description": "Optional. The query string in search query syntax. While filter is used to filter the search results by attributes, query is used to specify the search requirements.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "sourceCloudLocation",
+      "pageSize",
+      "pageToken",
+      "query"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "SearchCloudLocationsResponse"
+    },
+    "request": {}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudkms",
+  "api_version": "v1",
+  "api_title": "Cloud Key Management Service (KMS) API",
+  "api_description": "Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. ",
+  "base_url": "https://cloudkms.googleapis.com/",
+  "tool_count": 67,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudkms\\cloudkms_v1_tools.json"
+}

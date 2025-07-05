@@ -1,0 +1,635 @@
+{
+  "cloudbilling_billingAccounts_estimateCostScenario": {
+    "name": "cloudbilling_billingAccounts_estimateCostScenario",
+    "description": "Use custom pricing in the estimate, using a `CostScenario` with a defined `billingAccount`.",
+    "http_method": "POST",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+billingAccount}:estimateCostScenario",
+    "parameters": {
+      "billingAccount": {
+        "description": "Resource name of the billing account for the cost estimate. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF` is the resource name for billing account `012345-567890-ABCDEF`. Must be specified.",
+        "pattern": "^billingAccounts/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "billingAccount"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "EstimateCostScenarioForBillingAccountResponse"
+    },
+    "request": {
+      "$ref": "EstimateCostScenarioForBillingAccountRequest"
+    }
+  },
+  "cloudbilling_billingAccounts_services_list": {
+    "name": "cloudbilling_billingAccounts_services_list",
+    "description": "Lists services visible to a billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/services",
+    "parameters": {
+      "parent": {
+        "description": "Required. The billing account to list billing account service from. Format: billingAccounts/{billing_account}",
+        "pattern": "^billingAccounts/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of billing account service to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token received from a previous ListBillingAccountServices call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountservicesV1betaListBillingAccountServicesResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_services_get": {
+    "name": "cloudbilling_billingAccounts_services_get",
+    "description": "Gets a Google Cloud service visible to a billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the billing account service to retrieve. Format: billingAccounts/{billing_account}/services/{service}",
+        "pattern": "^billingAccounts/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountservicesV1betaBillingAccountService"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skuGroups_list": {
+    "name": "cloudbilling_billingAccounts_skuGroups_list",
+    "description": "Lists SKU groups visible to a billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/skuGroups",
+    "parameters": {
+      "parent": {
+        "description": "Required. The billing account to list billing account SKU groups from. Format: billingAccounts/{billing_account}",
+        "pattern": "^billingAccounts/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of billing account SKU groups to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token received from a previous ListBillingAccountSkuGroups call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountskugroupsV1betaListBillingAccountSkuGroupsResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skuGroups_get": {
+    "name": "cloudbilling_billingAccounts_skuGroups_get",
+    "description": "Gets a SKU group visible to a billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the BillingAccountSkuGroup to retrieve. Format: billingAccounts/{billing_account}/skuGroups/{sku_group}",
+        "pattern": "^billingAccounts/[^/]+/skuGroups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountskugroupsV1betaBillingAccountSkuGroup"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skuGroups_skus_list": {
+    "name": "cloudbilling_billingAccounts_skuGroups_skus_list",
+    "description": "Lists SKUs that is part of billing account SKU groups.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/skus",
+    "parameters": {
+      "parent": {
+        "description": "Required. The billing account SKU group to list billing account SKU group SKUs from. Format: billingAccounts/{billing_account}/skuGroups/{sku_group}",
+        "pattern": "^billingAccounts/[^/]+/skuGroups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of billing account SKU group SKUs to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token received from a previous ListBillingAccountSkuGroupSkus call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountskugroupskusV1betaListBillingAccountSkuGroupSkusResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skuGroups_skus_get": {
+    "name": "cloudbilling_billingAccounts_skuGroups_skus_get",
+    "description": "Gets a SKU that is part of a billing account SKU group.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the billing account SKU group SKU to retrieve. Format: billingAccounts/{billing_account}/skuGroups/{sku_group}/skus/{sku}",
+        "pattern": "^billingAccounts/[^/]+/skuGroups/[^/]+/skus/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountskugroupskusV1betaBillingAccountSkuGroupSku"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skus_list": {
+    "name": "cloudbilling_billingAccounts_skus_list",
+    "description": "Lists SKUs visible to a billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/skus",
+    "parameters": {
+      "parent": {
+        "description": "Required. The billing account to list billing account SKU from. Format: billingAccounts/{billing_account}",
+        "pattern": "^billingAccounts/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "Options for how to filter the billing account SKUs. Currently, only filter on `billing_account_service` is supported. Only !=, = operators are supported. Examples: - billing_account_service = \"billingAccounts/012345-567890-ABCDEF/services/DA34-426B-A397\"",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of billing account SKUs to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token received from a previous ListBillingAccountSkus call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountskusV1betaListBillingAccountSkusResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skus_get": {
+    "name": "cloudbilling_billingAccounts_skus_get",
+    "description": "Gets a SKU visible to a billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the billing account SKU to retrieve. Format: billingAccounts/{billing_account}/skus/{sku}",
+        "pattern": "^billingAccounts/[^/]+/skus/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountskusV1betaBillingAccountSku"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skus_price_get": {
+    "name": "cloudbilling_billingAccounts_skus_price_get",
+    "description": "Gets the latest price for SKUs available to your Cloud Billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the billing account price to retrieve. Format: billingAccounts/{billing_account}/skus/{sku}/price",
+        "pattern": "^billingAccounts/[^/]+/skus/[^/]+/price$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "currencyCode": {
+        "description": "Optional. ISO-4217 currency code for the price. If not specified, the currency of the billing account is used.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "currencyCode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountpricesV1betaBillingAccountPrice"
+    },
+    "request": {}
+  },
+  "cloudbilling_billingAccounts_skus_prices_list": {
+    "name": "cloudbilling_billingAccounts_skus_prices_list",
+    "description": "Lists the latest prices for SKUs available to your Cloud Billing account.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/prices",
+    "parameters": {
+      "parent": {
+        "description": "Required. To list all Billing Account SKUs, use `-` as the SKU ID. Format: `billingAccounts/{billing_account}/skus/-` Note: Specifying an actual SKU resource id will return a collection of one Billing Account Price.",
+        "pattern": "^billingAccounts/[^/]+/skus/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "currencyCode": {
+        "description": "Optional. ISO-4217 currency code for the price. If not specified, currency of billing account will be used.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of billing account price to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Page token received from a previous ListBillingAccountPrices call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "currencyCode",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingBillingaccountpricesV1betaListBillingAccountPricesResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_v1beta_estimateCostScenario": {
+    "name": "cloudbilling_v1beta_estimateCostScenario",
+    "description": "Estimate list prices using a `CostScenario` without a defined `billingAccount`.",
+    "http_method": "POST",
+    "path": "https://cloudbilling.googleapis.com/v1beta:estimateCostScenario",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "EstimateCostScenarioWithListPriceResponse"
+    },
+    "request": {
+      "$ref": "EstimateCostScenarioWithListPriceRequest"
+    }
+  },
+  "cloudbilling_skus_price_get": {
+    "name": "cloudbilling_skus_price_get",
+    "description": "Gets the latest price for the given SKU.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the latest price to retrieve. Format: skus/{sku}/price",
+        "pattern": "^skus/[^/]+/price$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "currencyCode": {
+        "description": "Optional. ISO-4217 currency code for the price. If not specified, USD will be used.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "currencyCode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingPricesV1betaPrice"
+    },
+    "request": {}
+  },
+  "cloudbilling_skus_prices_list": {
+    "name": "cloudbilling_skus_prices_list",
+    "description": "Lists the latest prices for all SKUs.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/prices",
+    "parameters": {
+      "parent": {
+        "description": "Required. To list the prices for all SKUs, use `-` as the SKU ID. Format: `skus/-` Specifying a specific SKU ID returns a collection with one Price object for the SKU.",
+        "pattern": "^skus/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of prices to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. Page token received from a previous ListPrices call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      },
+      "currencyCode": {
+        "description": "Optional. ISO-4217 currency code for the price. If not specified, USD will be used.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "currencyCode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingPricesV1betaListPricesResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_skuGroups_list": {
+    "name": "cloudbilling_skuGroups_list",
+    "description": "Lists all publicly listed SKU groups.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/skuGroups",
+    "parameters": {
+      "pageSize": {
+        "description": "Maximum number of SKU groups to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token received from a previous ListSkuGroups call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingSkugroupsV1betaListSkuGroupsResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_skuGroups_get": {
+    "name": "cloudbilling_skuGroups_get",
+    "description": "Gets a publicly listed SKU group.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the SKU group to retrieve. Format: skuGroups/{sku_group}",
+        "pattern": "^skuGroups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingSkugroupsV1betaSkuGroup"
+    },
+    "request": {}
+  },
+  "cloudbilling_skuGroups_skus_list": {
+    "name": "cloudbilling_skuGroups_skus_list",
+    "description": "Lists all publicly listed SKUs contained by a publicly listed SKU group.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+parent}/skus",
+    "parameters": {
+      "parent": {
+        "description": "Required. The SkuGroup to list SkuGroupSku from. Format: skuGroups/{sku_group}",
+        "pattern": "^skuGroups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of SKU group SKUs to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Page token received from a previous ListSkuGroupSkus call to retrieve the next page of results. If this field is empty, the first page is returned.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingSkugroupskusV1betaListSkuGroupSkusResponse"
+    },
+    "request": {}
+  },
+  "cloudbilling_skuGroups_skus_get": {
+    "name": "cloudbilling_skuGroups_skus_get",
+    "description": "Gets a publicly listed SKU that is part of a publicly listed SKU group.",
+    "http_method": "GET",
+    "path": "https://cloudbilling.googleapis.com/v1beta/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the SKU group SKU to retrieve. Format: skuGroups/{sku_group}/skus/{sku}",
+        "pattern": "^skuGroups/[^/]+/skus/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-billing",
+      "https://www.googleapis.com/auth/cloud-billing.readonly",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudBillingSkugroupskusV1betaSkuGroupSku"
+    },
+    "request": {}
+  }
+}

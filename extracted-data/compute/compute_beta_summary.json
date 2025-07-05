@@ -1,0 +1,9 @@
+{
+  "api_name": "compute",
+  "api_version": "beta",
+  "api_title": "Compute Engine API",
+  "api_description": "Creates and runs virtual machines on Google Cloud Platform. ",
+  "base_url": "https://compute.googleapis.com/compute/beta/",
+  "tool_count": 958,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\compute\\compute_beta_tools.json"
+}

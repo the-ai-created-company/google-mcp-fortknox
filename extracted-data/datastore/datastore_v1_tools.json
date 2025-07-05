@@ -1,0 +1,549 @@
+{
+  "datastore_projects_export": {
+    "name": "datastore_projects_export",
+    "description": "Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. Recent updates to entities may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:export",
+    "parameters": {
+      "projectId": {
+        "description": "Required. Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleDatastoreAdminV1ExportEntitiesRequest"
+    }
+  },
+  "datastore_projects_import": {
+    "name": "datastore_projects_import",
+    "description": "Imports entities into Google Cloud Datastore. Existing entities with the same key are overwritten. The import occurs in the background and its progress can be monitored and managed via the Operation resource that is created. If an ImportEntities operation is cancelled, it is possible that a subset of the data has already been imported to Cloud Datastore.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:import",
+    "parameters": {
+      "projectId": {
+        "description": "Required. Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleDatastoreAdminV1ImportEntitiesRequest"
+    }
+  },
+  "datastore_projects_lookup": {
+    "name": "datastore_projects_lookup",
+    "description": "Looks up entities by key.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:lookup",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "LookupResponse"
+    },
+    "request": {
+      "$ref": "LookupRequest"
+    }
+  },
+  "datastore_projects_runQuery": {
+    "name": "datastore_projects_runQuery",
+    "description": "Queries for entities.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:runQuery",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "RunQueryResponse"
+    },
+    "request": {
+      "$ref": "RunQueryRequest"
+    }
+  },
+  "datastore_projects_runAggregationQuery": {
+    "name": "datastore_projects_runAggregationQuery",
+    "description": "Runs an aggregation query.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:runAggregationQuery",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "RunAggregationQueryResponse"
+    },
+    "request": {
+      "$ref": "RunAggregationQueryRequest"
+    }
+  },
+  "datastore_projects_beginTransaction": {
+    "name": "datastore_projects_beginTransaction",
+    "description": "Begins a new transaction.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:beginTransaction",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "BeginTransactionResponse"
+    },
+    "request": {
+      "$ref": "BeginTransactionRequest"
+    }
+  },
+  "datastore_projects_commit": {
+    "name": "datastore_projects_commit",
+    "description": "Commits a transaction, optionally creating, deleting or modifying some entities.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:commit",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "CommitResponse"
+    },
+    "request": {
+      "$ref": "CommitRequest"
+    }
+  },
+  "datastore_projects_rollback": {
+    "name": "datastore_projects_rollback",
+    "description": "Rolls back a transaction.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:rollback",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "RollbackResponse"
+    },
+    "request": {
+      "$ref": "RollbackRequest"
+    }
+  },
+  "datastore_projects_allocateIds": {
+    "name": "datastore_projects_allocateIds",
+    "description": "Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:allocateIds",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "AllocateIdsResponse"
+    },
+    "request": {
+      "$ref": "AllocateIdsRequest"
+    }
+  },
+  "datastore_projects_reserveIds": {
+    "name": "datastore_projects_reserveIds",
+    "description": "Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}:reserveIds",
+    "parameters": {
+      "projectId": {
+        "description": "Required. The ID of the project against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "ReserveIdsResponse"
+    },
+    "request": {
+      "$ref": "ReserveIdsRequest"
+    }
+  },
+  "datastore_projects_operations_list": {
+    "name": "datastore_projects_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://datastore.googleapis.com/v1/{+name}/operations",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningListOperationsResponse"
+    },
+    "request": {}
+  },
+  "datastore_projects_operations_get": {
+    "name": "datastore_projects_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://datastore.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "datastore_projects_operations_delete": {
+    "name": "datastore_projects_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://datastore.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^projects/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "datastore_projects_operations_cancel": {
+    "name": "datastore_projects_operations_cancel",
+    "description": "Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be cancelled.",
+        "pattern": "^projects/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "datastore_projects_indexes_create": {
+    "name": "datastore_projects_indexes_create",
+    "description": "Creates the specified index. A newly created index's initial state is `CREATING`. On completion of the returned google.longrunning.Operation, the state will be `READY`. If the index already exists, the call will return an `ALREADY_EXISTS` status. During index creation, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, removing the index with delete, then re-creating the index with create. Indexes with a single property cannot be created.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}/indexes",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleDatastoreAdminV1Index"
+    }
+  },
+  "datastore_projects_indexes_delete": {
+    "name": "datastore_projects_indexes_delete",
+    "description": "Deletes an existing index. An index can only be deleted if it is in a `READY` or `ERROR` state. On successful execution of the request, the index will be in a `DELETING` state. And on completion of the returned google.longrunning.Operation, the index will be removed. During index deletion, the process could result in an error, in which case the index will move to the `ERROR` state. The process can be recovered by fixing the data that caused the error, followed by calling delete again.",
+    "http_method": "DELETE",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}/indexes/{indexId}",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "indexId": {
+        "description": "The resource ID of the index to delete.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "indexId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "datastore_projects_indexes_get": {
+    "name": "datastore_projects_indexes_get",
+    "description": "Gets an index.",
+    "http_method": "GET",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}/indexes/{indexId}",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "indexId": {
+        "description": "The resource ID of the index to get.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "indexId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleDatastoreAdminV1Index"
+    },
+    "request": {}
+  },
+  "datastore_projects_indexes_list": {
+    "name": "datastore_projects_indexes_list",
+    "description": "Lists the indexes that match the specified filters. Datastore uses an eventually consistent query to fetch the list of indexes and may occasionally return stale results.",
+    "http_method": "GET",
+    "path": "https://datastore.googleapis.com/v1/projects/{projectId}/indexes",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of items to return. If zero, then all results will be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleDatastoreAdminV1ListIndexesResponse"
+    },
+    "request": {}
+  }
+}

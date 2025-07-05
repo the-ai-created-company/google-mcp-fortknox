@@ -1,0 +1,142 @@
+{
+  "cloudprofiler_projects_profiles_create": {
+    "name": "cloudprofiler_projects_profiles_create",
+    "description": "CreateProfile creates a new profile resource in the online mode. _Direct use of this API is discouraged, please use a [supported profiler agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for profile collection._ The server ensures that the new profiles are created at a constant rate per deployment, so the creation request may hang for some time until the next profile session is available. The request may fail with ABORTED error if the creation is not available within ~1m, the response will indicate the duration of the backoff the client should take before attempting creating a profile again. The backoff duration is returned in google.rpc.RetryInfo extension on the response status. To a gRPC client, the extension will be return as a binary-serialized proto in the trailing metadata item named \"google.rpc.retryinfo-bin\". ",
+    "http_method": "POST",
+    "path": "https://cloudprofiler.googleapis.com/v2/{+parent}/profiles",
+    "parameters": {
+      "parent": {
+        "description": "Parent project to create the profile in.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/monitoring.write"
+    ],
+    "response": {
+      "$ref": "Profile"
+    },
+    "request": {
+      "$ref": "CreateProfileRequest"
+    }
+  },
+  "cloudprofiler_projects_profiles_createOffline": {
+    "name": "cloudprofiler_projects_profiles_createOffline",
+    "description": "CreateOfflineProfile creates a new profile resource in the offline mode. The client provides the profile to create along with the profile bytes, the server records it. _Direct use of this API is discouraged, please use a [supported profiler agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for profile collection._",
+    "http_method": "POST",
+    "path": "https://cloudprofiler.googleapis.com/v2/{+parent}/profiles:createOffline",
+    "parameters": {
+      "parent": {
+        "description": "Parent project to create the profile in.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/monitoring.write"
+    ],
+    "response": {
+      "$ref": "Profile"
+    },
+    "request": {
+      "$ref": "Profile"
+    }
+  },
+  "cloudprofiler_projects_profiles_patch": {
+    "name": "cloudprofiler_projects_profiles_patch",
+    "description": "UpdateProfile updates the profile bytes and labels on the profile resource created in the online mode. Updating the bytes for profiles created in the offline mode is currently not supported: the profile content must be provided at the time of the profile creation. _Direct use of this API is discouraged, please use a [supported profiler agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for profile collection._",
+    "http_method": "PATCH",
+    "path": "https://cloudprofiler.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. Opaque, server-assigned, unique ID for this profile.",
+        "pattern": "^projects/[^/]+/profiles/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Field mask used to specify the fields to be overwritten. Currently only profile_bytes and labels fields are supported by UpdateProfile, so only those fields can be specified in the mask. When no mask is provided, all fields are overwritten.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/monitoring.write"
+    ],
+    "response": {
+      "$ref": "Profile"
+    },
+    "request": {
+      "$ref": "Profile"
+    }
+  },
+  "cloudprofiler_projects_profiles_list": {
+    "name": "cloudprofiler_projects_profiles_list",
+    "description": "Lists profiles which have been collected so far and for which the caller has permission to view.",
+    "http_method": "GET",
+    "path": "https://cloudprofiler.googleapis.com/v2/{+parent}/profiles",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent, which owns this collection of profiles. Format: projects/{user_project_id}",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of items to return. Default page_size is 1000. Max limit is 1000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. The token to continue pagination and get profiles from a particular page. When paginating, all other parameters provided to `ListProfiles` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/monitoring",
+      "https://www.googleapis.com/auth/monitoring.write"
+    ],
+    "response": {
+      "$ref": "ListProfilesResponse"
+    },
+    "request": {}
+  }
+}

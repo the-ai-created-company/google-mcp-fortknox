@@ -1,0 +1,9 @@
+{
+  "api_name": "containeranalysis",
+  "api_version": "v1beta1",
+  "api_title": "Container Analysis API",
+  "api_description": "This API is a prerequisite for leveraging Artifact Analysis scanning capabilities in both Artifact Registry and with Advanced Vulnerability Insights (runtime scanning) in GKE. In addition, the Container Analysis API is an implementation of the Grafeas API, which enables storing, querying, and retrieval of critical metadata about all of your software artifacts.",
+  "base_url": "https://containeranalysis.googleapis.com/",
+  "tool_count": 46,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\containeranalysis\\containeranalysis_v1beta1_tools.json"
+}

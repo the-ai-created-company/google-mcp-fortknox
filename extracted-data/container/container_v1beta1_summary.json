@@ -1,0 +1,9 @@
+{
+  "api_name": "container",
+  "api_version": "v1beta1",
+  "api_title": "Kubernetes Engine API",
+  "api_description": "Builds and manages container-based applications, powered by the open source Kubernetes technology.",
+  "base_url": "https://container.googleapis.com/",
+  "tool_count": 70,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\container\\container_v1beta1_tools.json"
+}

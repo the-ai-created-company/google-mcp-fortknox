@@ -1,0 +1,9 @@
+{
+  "api_name": "datastore",
+  "api_version": "v1",
+  "api_title": "Cloud Datastore API",
+  "api_description": "Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application. ",
+  "base_url": "https://datastore.googleapis.com/",
+  "tool_count": 18,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\datastore\\datastore_v1_tools.json"
+}

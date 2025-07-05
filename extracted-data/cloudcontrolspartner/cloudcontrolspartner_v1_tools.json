@@ -1,0 +1,477 @@
+{
+  "cloudcontrolspartner_organizations_locations_getPartner": {
+    "name": "cloudcontrolspartner_organizations_locations_getPartner",
+    "description": "Get details of a Partner.",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `organizations/{organization}/locations/{location}/partner`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/partner$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Partner"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_get": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_get",
+    "description": "Gets details of a single customer",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `organizations/{organization}/locations/{location}/customers/{customer}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Customer"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_list": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_list",
+    "description": "Lists customers of a partner identified by its Google Cloud organization ID",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+parent}/customers",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource Format: `organizations/{organization}/locations/{location}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of Customers to return. The service may return fewer than this value. If unspecified, at most 500 Customers will be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListCustomers` call. Provide this to retrieve the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filtering results",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Hint for how to order the results",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListCustomersResponse"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_create": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_create",
+    "description": "Creates a new customer.",
+    "http_method": "POST",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+parent}/customers",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource Format: `organizations/{organization}/locations/{location}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "customerId": {
+        "description": "Required. The customer id to use for the customer, which will become the final component of the customer's resource name. The specified value must be a valid Google cloud organization id.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "customerId"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Customer"
+    },
+    "request": {
+      "$ref": "Customer"
+    }
+  },
+  "cloudcontrolspartner_organizations_locations_customers_patch": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_patch",
+    "description": "Update details of a single customer",
+    "http_method": "PATCH",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Identifier. Format: `organizations/{organization}/locations/{location}/customers/{customer}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to update",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Customer"
+    },
+    "request": {
+      "$ref": "Customer"
+    }
+  },
+  "cloudcontrolspartner_organizations_locations_customers_delete": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_delete",
+    "description": "Delete details of a single customer",
+    "http_method": "DELETE",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. name of the resource to be deleted format: name=organizations/*/locations/*/customers/*",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_get": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_get",
+    "description": "Gets details of a single workload",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+/workloads/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Workload"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_list": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_list",
+    "description": "Lists customer workloads for a given customer org id",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+parent}/workloads",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource Format: `organizations/{organization}/locations/{location}/customers/{customer}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of workloads to return. The service may return fewer than this value. If unspecified, at most 500 workloads will be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListWorkloads` call. Provide this to retrieve the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filtering results.",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Hint for how to order the results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListWorkloadsResponse"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_getEkmConnections": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_getEkmConnections",
+    "description": "Gets the EKM connections associated with a workload",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+/workloads/[^/]+/ekmConnections$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "EkmConnections"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_getPartnerPermissions": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_getPartnerPermissions",
+    "description": "Gets the partner permissions granted for a workload",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Name of the resource to get in the format: `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+/workloads/[^/]+/partnerPermissions$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "PartnerPermissions"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_accessApprovalRequests_list": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_accessApprovalRequests_list",
+    "description": "Deprecated: Only returns access approval requests directly associated with an assured workload folder.",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+parent}/accessApprovalRequests",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource Format: `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+/workloads/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of access requests to return. The service may return fewer than this value. If unspecified, at most 500 access requests will be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A page token, received from a previous `ListAccessApprovalRequests` call. Provide this to retrieve the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filtering results.",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Hint for how to order the results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListAccessApprovalRequestsResponse"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_violations_list": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_violations_list",
+    "description": "Lists Violations for a workload Callers may also choose to read across multiple Customers or for a single customer as per [AIP-159](https://google.aip.dev/159) by using '-' (the hyphen or dash character) as a wildcard character instead of {customer} & {workload}. Format: `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+parent}/violations",
+    "parameters": {
+      "parent": {
+        "description": "Required. Parent resource Format `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+/workloads/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of customers row to return. The service may return fewer than this value. If unspecified, at most 10 customers will be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A page token, received from a previous `ListViolations` call. Provide this to retrieve the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. Filtering results",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Hint for how to order the results",
+        "location": "query",
+        "type": "string"
+      },
+      "interval.startTime": {
+        "description": "Optional. Inclusive start of the interval. If specified, a Timestamp matching this interval will have to be the same or after the start.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "interval.endTime": {
+        "description": "Optional. Exclusive end of the interval. If specified, a Timestamp matching this interval will have to be before the end.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter",
+      "orderBy",
+      "interval.startTime",
+      "interval.endTime"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListViolationsResponse"
+    },
+    "request": {}
+  },
+  "cloudcontrolspartner_organizations_locations_customers_workloads_violations_get": {
+    "name": "cloudcontrolspartner_organizations_locations_customers_workloads_violations_get",
+    "description": "Gets details of a single Violation.",
+    "http_method": "GET",
+    "path": "https://cloudcontrolspartner.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. Format: `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`",
+        "pattern": "^organizations/[^/]+/locations/[^/]+/customers/[^/]+/workloads/[^/]+/violations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Violation"
+    },
+    "request": {}
+  }
+}

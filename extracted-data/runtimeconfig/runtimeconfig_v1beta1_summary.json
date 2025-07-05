@@ -1,0 +1,9 @@
+{
+  "api_name": "runtimeconfig",
+  "api_version": "v1beta1",
+  "api_title": "Cloud Runtime Configuration API",
+  "api_description": "The Runtime Configurator allows you to dynamically configure and expose variables through Google Cloud Platform. In addition, you can also set Watchers and Waiters that will watch for changes to your data and return based on certain conditions.",
+  "base_url": "https://runtimeconfig.googleapis.com/",
+  "tool_count": 22,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\runtimeconfig\\runtimeconfig_v1beta1_tools.json"
+}

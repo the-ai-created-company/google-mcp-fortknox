@@ -1,0 +1,9 @@
+{
+  "api_name": "aiplatform",
+  "api_version": "v1",
+  "api_title": "Vertex AI API",
+  "api_description": "Train high-quality custom machine learning models with minimal machine learning expertise and effort.",
+  "base_url": "https://aiplatform.googleapis.com/",
+  "tool_count": 630,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\aiplatform\\aiplatform_v1_tools.json"
+}

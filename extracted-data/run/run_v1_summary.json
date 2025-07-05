@@ -1,0 +1,9 @@
+{
+  "api_name": "run",
+  "api_version": "v1",
+  "api_title": "Cloud Run Admin API",
+  "api_description": "Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API v1 follows the Knative Serving API specification, while v2 is aligned with Google Cloud AIP-based API standards, as described in https://google.aip.dev/.",
+  "base_url": "https://run.googleapis.com/",
+  "tool_count": 66,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\run\\run_v1_tools.json"
+}

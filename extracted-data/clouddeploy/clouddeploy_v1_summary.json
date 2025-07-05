@@ -1,0 +1,9 @@
+{
+  "api_name": "clouddeploy",
+  "api_version": "v1",
+  "api_title": "Cloud Deploy API",
+  "api_description": "",
+  "base_url": "https://clouddeploy.googleapis.com/",
+  "tool_count": 61,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\clouddeploy\\clouddeploy_v1_tools.json"
+}

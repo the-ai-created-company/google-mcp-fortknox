@@ -1,0 +1,9 @@
+{
+  "api_name": "contactcenteraiplatform",
+  "api_version": "v1alpha1",
+  "api_title": "Contact Center AI Platform API",
+  "api_description": "",
+  "base_url": "https://contactcenteraiplatform.googleapis.com/",
+  "tool_count": 12,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\contactcenteraiplatform\\contactcenteraiplatform_v1alpha1_tools.json"
+}

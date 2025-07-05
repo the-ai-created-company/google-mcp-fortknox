@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudprofiler",
+  "api_version": "v2",
+  "api_title": "Cloud Profiler API",
+  "api_description": "Manages continuous profiling information.",
+  "base_url": "https://cloudprofiler.googleapis.com/",
+  "tool_count": 4,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudprofiler\\cloudprofiler_v2_tools.json"
+}

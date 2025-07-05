@@ -1,0 +1,768 @@
+{
+  "androiddeviceprovisioning_operations_get": {
+    "name": "androiddeviceprovisioning_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_partners_vendors_list": {
+    "name": "androiddeviceprovisioning_partners_vendors_list",
+    "description": "Lists the vendors of the partner.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/vendors",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name in the format `partners/[PARTNER_ID]`.",
+        "pattern": "^partners/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token identifying a page of results returned by the server.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "ListVendorsResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_partners_vendors_customers_list": {
+    "name": "androiddeviceprovisioning_partners_vendors_customers_list",
+    "description": "Lists the customers of the vendor.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/customers",
+    "parameters": {
+      "parent": {
+        "description": "Required. The resource name in the format `partners/[PARTNER_ID]/vendors/[VENDOR_ID]`.",
+        "pattern": "^partners/[^/]+/vendors/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to be returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token identifying a page of results returned by the server.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "ListVendorCustomersResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_partners_customers_create": {
+    "name": "androiddeviceprovisioning_partners_customers_create",
+    "description": "Creates a customer for zero-touch enrollment. After the method returns successfully, admin and owner roles can manage devices and EMM configs by calling API methods or using their zero-touch enrollment portal. The customer receives an email that welcomes them to zero-touch enrollment and explains how to sign into the portal.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/customers",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent resource ID in the format `partners/[PARTNER_ID]` that identifies the reseller.",
+        "pattern": "^partners/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Company"
+    },
+    "request": {
+      "$ref": "CreateCustomerRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_customers_list": {
+    "name": "androiddeviceprovisioning_partners_customers_list",
+    "description": "Lists the customers that are enrolled to the reseller identified by the `partnerId` argument. This list includes customers that the reseller created and customers that enrolled themselves using the portal.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/customers",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the reseller partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to be returned. If not specified or 0, all the records are returned.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token identifying a page of results returned by the server.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "ListCustomersResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_partners_devices_claim": {
+    "name": "androiddeviceprovisioning_partners_devices_claim",
+    "description": "Claims a device for a customer and adds it to zero-touch enrollment. If the device is already claimed by another customer, the call returns an error.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:claim",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the reseller partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "ClaimDeviceResponse"
+    },
+    "request": {
+      "$ref": "ClaimDeviceRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_unclaim": {
+    "name": "androiddeviceprovisioning_partners_devices_unclaim",
+    "description": "Unclaims a device from a customer and removes it from zero-touch enrollment.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:unclaim",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the reseller partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "UnclaimDeviceRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_findByIdentifier": {
+    "name": "androiddeviceprovisioning_partners_devices_findByIdentifier",
+    "description": "Finds devices by hardware identifiers, such as IMEI.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:findByIdentifier",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the reseller partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "FindDevicesByDeviceIdentifierResponse"
+    },
+    "request": {
+      "$ref": "FindDevicesByDeviceIdentifierRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_findByOwner": {
+    "name": "androiddeviceprovisioning_partners_devices_findByOwner",
+    "description": "Finds devices claimed for customers. The results only contain devices registered to the reseller that's identified by the `partnerId` argument. The customer's devices purchased from other resellers don't appear in the results.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:findByOwner",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the reseller partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "FindDevicesByOwnerResponse"
+    },
+    "request": {
+      "$ref": "FindDevicesByOwnerRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_get": {
+    "name": "androiddeviceprovisioning_partners_devices_get",
+    "description": "Gets a device.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The device API resource name in the format `partners/[PARTNER_ID]/devices/[DEVICE_ID]`.",
+        "pattern": "^partners/[^/]+/devices/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Device"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_partners_devices_getSimLockState": {
+    "name": "androiddeviceprovisioning_partners_devices_getSimLockState",
+    "description": "Gets a device's SIM lock state.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:getSimLockState",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "GetDeviceSimLockStateResponse"
+    },
+    "request": {
+      "$ref": "GetDeviceSimLockStateRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_metadata": {
+    "name": "androiddeviceprovisioning_partners_devices_metadata",
+    "description": "Updates reseller metadata associated with the device. Android devices only.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+metadataOwnerId}/devices/{+deviceId}/metadata",
+    "parameters": {
+      "metadataOwnerId": {
+        "description": "Required. The owner of the newly set metadata. Set this to the partner ID.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      },
+      "deviceId": {
+        "description": "Required. The ID of the device.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "metadataOwnerId",
+      "deviceId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "DeviceMetadata"
+    },
+    "request": {
+      "$ref": "UpdateDeviceMetadataRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_claimAsync": {
+    "name": "androiddeviceprovisioning_partners_devices_claimAsync",
+    "description": "Claims a batch of devices for a customer asynchronously. Adds the devices to zero-touch enrollment. To learn more, read [Long\u2011running batch operations](/zero-touch/guides/how-it-works#operations).",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:claimAsync",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The ID of the reseller partner.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ClaimDevicesRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_unclaimAsync": {
+    "name": "androiddeviceprovisioning_partners_devices_unclaimAsync",
+    "description": "Unclaims a batch of devices for a customer asynchronously. Removes the devices from zero-touch enrollment. To learn more, read [Long\u2011running batch operations](/zero-touch/guides/how-it-works#operations).",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:unclaimAsync",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The reseller partner ID.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UnclaimDevicesRequest"
+    }
+  },
+  "androiddeviceprovisioning_partners_devices_updateMetadataAsync": {
+    "name": "androiddeviceprovisioning_partners_devices_updateMetadataAsync",
+    "description": "Updates the reseller metadata attached to a batch of devices. This method updates devices asynchronously and returns an `Operation` that can be used to track progress. Read [Long\u2011running batch operations](/zero-touch/guides/how-it-works#operations). Android Devices only.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/partners/{+partnerId}/devices:updateMetadataAsync",
+    "parameters": {
+      "partnerId": {
+        "description": "Required. The reseller partner ID.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "partnerId"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpdateDeviceMetadataInBatchRequest"
+    }
+  },
+  "androiddeviceprovisioning_customers_list": {
+    "name": "androiddeviceprovisioning_customers_list",
+    "description": "Lists the user's customer accounts.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/customers",
+    "parameters": {
+      "pageSize": {
+        "description": "Required. The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A token specifying which result page to return. This field has custom validations in ListCustomersRequestValidator",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "CustomerListCustomersResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_configurations_create": {
+    "name": "androiddeviceprovisioning_customers_configurations_create",
+    "description": "Creates a new configuration. Once created, a customer can apply the configuration to devices.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/configurations",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer that manages the configuration. An API resource name in the format `customers/[CUSTOMER_ID]`. This field has custom validation in CreateConfigurationRequestValidator",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Configuration"
+    },
+    "request": {
+      "$ref": "Configuration"
+    }
+  },
+  "androiddeviceprovisioning_customers_configurations_get": {
+    "name": "androiddeviceprovisioning_customers_configurations_get",
+    "description": "Gets the details of a configuration.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The configuration to get. An API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`.",
+        "pattern": "^customers/[^/]+/configurations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Configuration"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_configurations_patch": {
+    "name": "androiddeviceprovisioning_customers_configurations_patch",
+    "description": "Updates a configuration's field values.",
+    "http_method": "PATCH",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by the server.",
+        "pattern": "^customers/[^/]+/configurations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. The field mask applied to the target `Configuration` before updating the fields. To learn more about using field masks, read [FieldMask](/protocol-buffers/docs/reference/google.protobuf#fieldmask) in the Protocol Buffers documentation.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "Configuration"
+    },
+    "request": {
+      "$ref": "Configuration"
+    }
+  },
+  "androiddeviceprovisioning_customers_configurations_delete": {
+    "name": "androiddeviceprovisioning_customers_configurations_delete",
+    "description": "Deletes an unused configuration. The API call fails if the customer has devices with the configuration applied.",
+    "http_method": "DELETE",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The configuration to delete. An API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. If the configuration is applied to any devices, the API call fails.",
+        "pattern": "^customers/[^/]+/configurations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_configurations_list": {
+    "name": "androiddeviceprovisioning_customers_configurations_list",
+    "description": "Lists a customer's configurations.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/configurations",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer that manages the listed configurations. An API resource name in the format `customers/[CUSTOMER_ID]`.",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "CustomerListConfigurationsResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_dpcs_list": {
+    "name": "androiddeviceprovisioning_customers_dpcs_list",
+    "description": "Lists the DPCs (device policy controllers) that support zero-touch enrollment.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/dpcs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer that can use the DPCs in configurations. An API resource name in the format `customers/[CUSTOMER_ID]`.",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "CustomerListDpcsResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_devices_list": {
+    "name": "androiddeviceprovisioning_customers_devices_list",
+    "description": "Lists a customer's devices.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/devices",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer managing the devices. An API resource name in the format `customers/[CUSTOMER_ID]`.",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Required. The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive.",
+        "location": "query",
+        "type": "string",
+        "format": "int64"
+      },
+      "pageToken": {
+        "description": "A token specifying which result page to return.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [],
+    "response": {
+      "$ref": "CustomerListDevicesResponse"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_devices_get": {
+    "name": "androiddeviceprovisioning_customers_devices_get",
+    "description": "Gets the details of a device.",
+    "http_method": "GET",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The device to get. An API resource name in the format `customers/[CUSTOMER_ID]/devices/[DEVICE_ID]`.",
+        "pattern": "^customers/[^/]+/devices/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Device"
+    },
+    "request": {}
+  },
+  "androiddeviceprovisioning_customers_devices_unclaim": {
+    "name": "androiddeviceprovisioning_customers_devices_unclaim",
+    "description": "Unclaims a device from a customer and removes it from zero-touch enrollment. After removing a device, a customer must contact their reseller to register the device into zero-touch enrollment again.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/devices:unclaim",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer managing the device. An API resource name in the format `customers/[CUSTOMER_ID]`.",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CustomerUnclaimDeviceRequest"
+    }
+  },
+  "androiddeviceprovisioning_customers_devices_applyConfiguration": {
+    "name": "androiddeviceprovisioning_customers_devices_applyConfiguration",
+    "description": "Applies a Configuration to the device to register the device for zero-touch enrollment. After applying a configuration to a device, the device automatically provisions itself on first boot, or next factory reset.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/devices:applyConfiguration",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer managing the device. An API resource name in the format `customers/[CUSTOMER_ID]`.",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CustomerApplyConfigurationRequest"
+    }
+  },
+  "androiddeviceprovisioning_customers_devices_removeConfiguration": {
+    "name": "androiddeviceprovisioning_customers_devices_removeConfiguration",
+    "description": "Removes a configuration from device.",
+    "http_method": "POST",
+    "path": "https://androiddeviceprovisioning.googleapis.com/v1/{+parent}/devices:removeConfiguration",
+    "parameters": {
+      "parent": {
+        "description": "Required. The customer managing the device in the format `customers/[CUSTOMER_ID]`.",
+        "pattern": "^customers/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "CustomerRemoveConfigurationRequest"
+    }
+  }
+}

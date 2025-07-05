@@ -1,0 +1,2515 @@
+{
+  "sqladmin_instances_addServerCa": {
+    "name": "sqladmin_instances_addServerCa",
+    "description": "Adds a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in. For instances that have enabled Certificate Authority Service (CAS) based server CA, use AddServerCertificate to add a new server certificate.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/addServerCa",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_addServerCertificate": {
+    "name": "sqladmin_instances_addServerCertificate",
+    "description": "Add a new trusted server certificate version for the specified instance using Certificate Authority Service (CAS) server CA. Required to prepare for a certificate rotation. If a server certificate version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one certificate version waiting to be rotated in. For instances not using CAS server CA, use AddServerCa instead.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/addServerCertificate",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_clone": {
+    "name": "sqladmin_instances_clone",
+    "description": "Creates a Cloud SQL instance as a clone of the source instance. Using this operation might cause your instance to restart.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/clone",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the source as well as the clone Cloud SQL instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "The ID of the Cloud SQL instance to be cloned (source). This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesCloneRequest"
+    }
+  },
+  "sqladmin_instances_delete": {
+    "name": "sqladmin_instances_delete",
+    "description": "Deletes a Cloud SQL instance.",
+    "http_method": "DELETE",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance to be deleted.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "enableFinalBackup": {
+        "description": "Flag to opt-in for final backup. By default, it is turned off.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "finalBackupTtlDays": {
+        "description": "Optional. Retention period of the final backup.",
+        "location": "query",
+        "type": "string",
+        "format": "int64"
+      },
+      "finalBackupExpiryTime": {
+        "description": "Optional. Final Backup expiration time. Timestamp in UTC of when this resource is considered expired.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "finalBackupDescription": {
+        "description": "Optional. The description of the final backup.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "enableFinalBackup",
+      "finalBackupTtlDays",
+      "finalBackupExpiryTime",
+      "finalBackupDescription"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_demoteMaster": {
+    "name": "sqladmin_instances_demoteMaster",
+    "description": "Demotes the stand-alone instance to be a Cloud SQL read replica for an external database server.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/demoteMaster",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesDemoteMasterRequest"
+    }
+  },
+  "sqladmin_instances_demote": {
+    "name": "sqladmin_instances_demote",
+    "description": "Demotes an existing standalone instance to be a Cloud SQL read replica for an external database server.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/demote",
+    "parameters": {
+      "project": {
+        "description": "Required. ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Required. Cloud SQL instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesDemoteRequest"
+    }
+  },
+  "sqladmin_instances_export": {
+    "name": "sqladmin_instances_export",
+    "description": "Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump or CSV file.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/export",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance to be exported.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesExportRequest"
+    }
+  },
+  "sqladmin_instances_failover": {
+    "name": "sqladmin_instances_failover",
+    "description": "Initiates a manual failover of a high availability (HA) primary instance to a standby instance, which becomes the primary instance. Users are then rerouted to the new primary. For more information, see the [Overview of high availability](https://cloud.google.com/sql/docs/mysql/high-availability) page in the Cloud SQL documentation. If using Legacy HA (MySQL only), this causes the instance to failover to its failover replica instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/failover",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the read replica.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesFailoverRequest"
+    }
+  },
+  "sqladmin_instances_reencrypt": {
+    "name": "sqladmin_instances_reencrypt",
+    "description": "Reencrypt CMEK instance with latest key version.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/reencrypt",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesReencryptRequest"
+    }
+  },
+  "sqladmin_instances_get": {
+    "name": "sqladmin_instances_get",
+    "description": "Retrieves a resource containing information about a Cloud SQL instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "DatabaseInstance"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_import": {
+    "name": "sqladmin_instances_import",
+    "description": "Imports data into a Cloud SQL instance from a SQL dump or CSV file in Cloud Storage.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/import",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesImportRequest"
+    }
+  },
+  "sqladmin_instances_insert": {
+    "name": "sqladmin_instances_insert",
+    "description": "Creates a new Cloud SQL instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project to which the newly created Cloud SQL instances should belong.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DatabaseInstance"
+    }
+  },
+  "sqladmin_instances_list": {
+    "name": "sqladmin_instances_list",
+    "description": "Lists instances under a given project.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project for which to list Cloud SQL instances.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter expression that filters resources listed in the response. The expression is in the form of field:value. For example, 'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per their JSON representation, such as 'settings.userLabels.auto_start:true'. Multiple filter queries are space-separated. For example. 'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly.",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "The maximum number of instances to return. The service may return fewer than this value. If unspecified, at most 500 instances are returned. The maximum value is 1000; values above 1000 are coerced to 1000.",
+        "location": "query",
+        "type": "integer",
+        "format": "uint32"
+      },
+      "pageToken": {
+        "description": "A previously-returned page token representing part of the larger set of results to view.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project"
+    ],
+    "optional_parameters": [
+      "filter",
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "InstancesListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_listServerCas": {
+    "name": "sqladmin_instances_listServerCas",
+    "description": "Lists all of the trusted Certificate Authorities (CAs) for the specified instance. There can be up to three CAs listed: the CA that was used to sign the certificate that is currently in use, a CA that has been added but not yet used to sign a certificate, and a CA used to sign a certificate that has previously rotated out.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/listServerCas",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "InstancesListServerCasResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_ListServerCertificates": {
+    "name": "sqladmin_instances_ListServerCertificates",
+    "description": "Lists all versions of server certificates and certificate authorities (CAs) for the specified instance. There can be up to three sets of certs listed: the certificate that is currently in use, a future that has been added but not yet used to sign a certificate, and a certificate that has been rotated out. For instances not using Certificate Authority Service (CAS) server CA, use ListServerCas instead.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/listServerCertificates",
+    "parameters": {
+      "project": {
+        "description": "Required. Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Required. Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "InstancesListServerCertificatesResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_patch": {
+    "name": "sqladmin_instances_patch",
+    "description": "Partially updates settings of a Cloud SQL instance by merging the request with the current configuration. This method supports patch semantics.",
+    "http_method": "PATCH",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DatabaseInstance"
+    }
+  },
+  "sqladmin_instances_promoteReplica": {
+    "name": "sqladmin_instances_promoteReplica",
+    "description": "Promotes the read replica instance to be an independent Cloud SQL primary instance. Using this operation might cause your instance to restart.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/promoteReplica",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the read replica.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL read replica instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "failover": {
+        "description": "Set to true to invoke a replica failover to the DR replica. As part of replica failover, the promote operation attempts to add the original primary instance as a replica of the promoted DR replica when the original primary instance comes back online. If set to false or not specified, then the original primary instance becomes an independent Cloud SQL primary instance.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "failover"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_switchover": {
+    "name": "sqladmin_instances_switchover",
+    "description": "Switches over from the primary instance to the DR replica instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/switchover",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the replica.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL read replica instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "dbTimeout": {
+        "description": "Optional. (MySQL and PostgreSQL only) Cloud SQL instance operations timeout, which is a sum of all database operations. Default value is 10 minutes and can be modified to a maximum value of 24 hours.",
+        "location": "query",
+        "type": "string",
+        "format": "google-duration"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "dbTimeout"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_resetSslConfig": {
+    "name": "sqladmin_instances_resetSslConfig",
+    "description": "Deletes all client certificates and generates a new server SSL certificate for the instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/resetSslConfig",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_restart": {
+    "name": "sqladmin_instances_restart",
+    "description": "Restarts a Cloud SQL instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/restart",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance to be restarted.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_restoreBackup": {
+    "name": "sqladmin_instances_restoreBackup",
+    "description": "Restores a backup of a Cloud SQL instance. Using this operation might cause your instance to restart.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/restoreBackup",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesRestoreBackupRequest"
+    }
+  },
+  "sqladmin_instances_rotateServerCa": {
+    "name": "sqladmin_instances_rotateServerCa",
+    "description": "Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method. For instances that have enabled Certificate Authority Service (CAS) based server CA, use RotateServerCertificate to rotate the server certificate.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/rotateServerCa",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesRotateServerCaRequest"
+    }
+  },
+  "sqladmin_instances_RotateServerCertificate": {
+    "name": "sqladmin_instances_RotateServerCertificate",
+    "description": "Rotates the server certificate version to one previously added with the addServerCertificate method. For instances not using Certificate Authority Service (CAS) server CA, use RotateServerCa instead.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/rotateServerCertificate",
+    "parameters": {
+      "project": {
+        "description": "Required. Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Required. Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesRotateServerCertificateRequest"
+    }
+  },
+  "sqladmin_instances_startReplica": {
+    "name": "sqladmin_instances_startReplica",
+    "description": "Starts the replication in the read replica instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/startReplica",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the read replica.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL read replica instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_stopReplica": {
+    "name": "sqladmin_instances_stopReplica",
+    "description": "Stops the replication in the read replica instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/stopReplica",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the read replica.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL read replica instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_truncateLog": {
+    "name": "sqladmin_instances_truncateLog",
+    "description": "Truncate MySQL general and slow query log tables MySQL only.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/truncateLog",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the Cloud SQL project.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InstancesTruncateLogRequest"
+    }
+  },
+  "sqladmin_instances_update": {
+    "name": "sqladmin_instances_update",
+    "description": "Updates settings of a Cloud SQL instance. Using this operation might cause your instance to restart.",
+    "http_method": "PUT",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DatabaseInstance"
+    }
+  },
+  "sqladmin_instances_acquireSsrsLease": {
+    "name": "sqladmin_instances_acquireSsrsLease",
+    "description": "Acquire a lease for the setup of SQL Server Reporting Services (SSRS).",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/acquireSsrsLease",
+    "parameters": {
+      "project": {
+        "description": "Required. Project ID of the project that contains the instance (Example: project-id).",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Required. Cloud SQL instance ID. This doesn't include the project ID. It's composed of lowercase letters, numbers, and hyphens, and it must start with a letter. The total length must be 98 characters or less (Example: instance-id).",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SqlInstancesAcquireSsrsLeaseResponse"
+    },
+    "request": {
+      "$ref": "InstancesAcquireSsrsLeaseRequest"
+    }
+  },
+  "sqladmin_instances_releaseSsrsLease": {
+    "name": "sqladmin_instances_releaseSsrsLease",
+    "description": "Release a lease for the setup of SQL Server Reporting Services (SSRS).",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/releaseSsrsLease",
+    "parameters": {
+      "project": {
+        "description": "Required. The project ID that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Required. The Cloud SQL instance ID. This doesn't include the project ID. The instance ID contains lowercase letters, numbers, and hyphens, and it must start with a letter. This ID can have a maximum length of 98 characters.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SqlInstancesReleaseSsrsLeaseResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_instances_pointInTimeRestore": {
+    "name": "sqladmin_instances_pointInTimeRestore",
+    "description": "Point in time restore for an instance managed by Google Cloud Backup and Disaster Recovery.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/{+parent}:pointInTimeRestore",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent resource where you created this instance. Format: projects/{project}",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "PointInTimeRestoreContext"
+    }
+  },
+  "sqladmin_sslCerts_createEphemeral": {
+    "name": "sqladmin_sslCerts_createEphemeral",
+    "description": "Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/createEphemeral",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the Cloud SQL project.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SslCert"
+    },
+    "request": {
+      "$ref": "SslCertsCreateEphemeralRequest"
+    }
+  },
+  "sqladmin_sslCerts_delete": {
+    "name": "sqladmin_sslCerts_delete",
+    "description": "Deletes the SSL certificate. For First Generation instances, the certificate remains valid until the instance is restarted.",
+    "http_method": "DELETE",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "sha1Fingerprint": {
+        "description": "Sha1 FingerPrint.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "sha1Fingerprint"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_sslCerts_get": {
+    "name": "sqladmin_sslCerts_get",
+    "description": "Retrieves a particular SSL certificate. Does not include the private key (required for usage). The private key must be saved from the response to initial creation.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/sslCerts/{sha1Fingerprint}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "sha1Fingerprint": {
+        "description": "Sha1 FingerPrint.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "sha1Fingerprint"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SslCert"
+    },
+    "request": {}
+  },
+  "sqladmin_sslCerts_insert": {
+    "name": "sqladmin_sslCerts_insert",
+    "description": "Creates an SSL certificate and returns it along with the private key and server certificate authority. The new certificate will not be usable until the instance is restarted.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/sslCerts",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SslCertsInsertResponse"
+    },
+    "request": {
+      "$ref": "SslCertsInsertRequest"
+    }
+  },
+  "sqladmin_sslCerts_list": {
+    "name": "sqladmin_sslCerts_list",
+    "description": "Lists all of the current SSL certificates for the instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/sslCerts",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SslCertsListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_projects_instances_rescheduleMaintenance": {
+    "name": "sqladmin_projects_instances_rescheduleMaintenance",
+    "description": "Reschedules the maintenance on the given instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/rescheduleMaintenance",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SqlInstancesRescheduleMaintenanceRequestBody"
+    }
+  },
+  "sqladmin_projects_instances_verifyExternalSyncSettings": {
+    "name": "sqladmin_projects_instances_verifyExternalSyncSettings",
+    "description": "Verify External primary instance external sync settings.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/verifyExternalSyncSettings",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SqlInstancesVerifyExternalSyncSettingsResponse"
+    },
+    "request": {
+      "$ref": "SqlInstancesVerifyExternalSyncSettingsRequest"
+    }
+  },
+  "sqladmin_projects_instances_startExternalSync": {
+    "name": "sqladmin_projects_instances_startExternalSync",
+    "description": "Start External primary instance migration.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/startExternalSync",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SqlInstancesStartExternalSyncRequest"
+    }
+  },
+  "sqladmin_projects_instances_performDiskShrink": {
+    "name": "sqladmin_projects_instances_performDiskShrink",
+    "description": "Perform Disk Shrink on primary instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/performDiskShrink",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "PerformDiskShrinkContext"
+    }
+  },
+  "sqladmin_projects_instances_getDiskShrinkConfig": {
+    "name": "sqladmin_projects_instances_getDiskShrinkConfig",
+    "description": "Get Disk Shrink Config for a given instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/getDiskShrinkConfig",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SqlInstancesGetDiskShrinkConfigResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_projects_instances_resetReplicaSize": {
+    "name": "sqladmin_projects_instances_resetReplicaSize",
+    "description": "Reset Replica Size to primary instance disk size.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/resetReplicaSize",
+    "parameters": {
+      "project": {
+        "description": "ID of the project that contains the read replica.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL read replica instance name.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SqlInstancesResetReplicaSizeRequest"
+    }
+  },
+  "sqladmin_projects_instances_getLatestRecoveryTime": {
+    "name": "sqladmin_projects_instances_getLatestRecoveryTime",
+    "description": "Get Latest Recovery Time for a given instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/getLatestRecoveryTime",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "SqlInstancesGetLatestRecoveryTimeResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_backupRuns_delete": {
+    "name": "sqladmin_backupRuns_delete",
+    "description": "Deletes the backup taken by a backup run.",
+    "http_method": "DELETE",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/backupRuns/{id}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "id": {
+        "description": "The ID of the backup run to delete. To find a backup run ID, use the [list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/list) method.",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "id"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_backupRuns_get": {
+    "name": "sqladmin_backupRuns_get",
+    "description": "Retrieves a resource containing information about a backup run.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/backupRuns/{id}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "id": {
+        "description": "The ID of this backup run.",
+        "location": "path",
+        "required": true,
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "id"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "BackupRun"
+    },
+    "request": {}
+  },
+  "sqladmin_backupRuns_insert": {
+    "name": "sqladmin_backupRuns_insert",
+    "description": "Creates a new backup run on demand.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/backupRuns",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "BackupRun"
+    }
+  },
+  "sqladmin_backupRuns_list": {
+    "name": "sqladmin_backupRuns_list",
+    "description": "Lists all backup runs associated with the project or a given instance and configuration in the reverse chronological order of the backup initiation time.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/backupRuns",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID, or \"-\" for all instances. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "Maximum number of backup runs per response.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A previously-returned page token representing part of the larger set of results to view.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "BackupRunsListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_Backups_CreateBackup": {
+    "name": "sqladmin_Backups_CreateBackup",
+    "description": "Creates a backup for a Cloud SQL instance. This API can be used only to create on-demand backups.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/{+parent}/backups",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent resource where this backup is created. Format: projects/{project}",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Backup"
+    }
+  },
+  "sqladmin_Backups_GetBackup": {
+    "name": "sqladmin_Backups_GetBackup",
+    "description": "Retrieves a resource containing information about a backup.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the backup to retrieve. Format: projects/{project}/backups/{backup}",
+        "pattern": "^projects/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Backup"
+    },
+    "request": {}
+  },
+  "sqladmin_Backups_ListBackups": {
+    "name": "sqladmin_Backups_ListBackups",
+    "description": "Lists all backups associated with the project.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/{+parent}/backups",
+    "parameters": {
+      "parent": {
+        "description": "Required. The parent that owns this collection of backups. Format: projects/{project}",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of backups to return per response. The service might return fewer backups than this value. If a value for this parameter isn't specified, then, at most, 500 backups are returned. The maximum value is 2,000. Any values that you set, which are greater than 2,000, are changed to 2,000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token, received from a previous `ListBackups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBackups` must match the call that provided the page token.",
+        "location": "query",
+        "type": "string"
+      },
+      "filter": {
+        "description": "Multiple filter queries are separated by spaces. For example, 'instance:abc AND type:FINAL, 'location:us', 'backupInterval.startTime>=1950-01-01T01:01:25.771Z'. You can filter by type, instance, backupInterval.startTime (creation time), or location.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "filter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "ListBackupsResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_Backups_UpdateBackup": {
+    "name": "sqladmin_Backups_UpdateBackup",
+    "description": "Updates the retention period and description of the backup. You can use this API to update final backups only.",
+    "http_method": "PATCH",
+    "path": "https://sqladmin.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Output only. The resource name of the backup. Format: projects/{project}/backups/{backup}.",
+        "pattern": "^projects/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "The list of fields that you can update. You can update only the description and retention period of the final backup.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Backup"
+    }
+  },
+  "sqladmin_Backups_DeleteBackup": {
+    "name": "sqladmin_Backups_DeleteBackup",
+    "description": "Deletes the backup.",
+    "http_method": "DELETE",
+    "path": "https://sqladmin.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the backup to delete. Format: projects/{project}/backups/{backup}",
+        "pattern": "^projects/[^/]+/backups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_connect_get": {
+    "name": "sqladmin_connect_get",
+    "description": "Retrieves connect settings about a Cloud SQL instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/connectSettings",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "readTime": {
+        "description": "Optional. Optional snapshot read timestamp to trade freshness for performance.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "readTime"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "ConnectSettings"
+    },
+    "request": {}
+  },
+  "sqladmin_connect_generateEphemeralCert": {
+    "name": "sqladmin_connect_generateEphemeralCert",
+    "description": "Generates a short-lived X509 certificate containing the provided public key and signed by a private key specific to the target instance. Users may use the certificate to authenticate as themselves when connecting to the database.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}:generateEphemeralCert",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "GenerateEphemeralCertResponse"
+    },
+    "request": {
+      "$ref": "GenerateEphemeralCertRequest"
+    }
+  },
+  "sqladmin_databases_delete": {
+    "name": "sqladmin_databases_delete",
+    "description": "Deletes a database from a Cloud SQL instance.",
+    "http_method": "DELETE",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/databases/{database}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "database": {
+        "description": "Name of the database to be deleted in the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "database"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_databases_get": {
+    "name": "sqladmin_databases_get",
+    "description": "Retrieves a resource containing information about a database inside a Cloud SQL instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/databases/{database}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "database": {
+        "description": "Name of the database in the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "database"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Database"
+    },
+    "request": {}
+  },
+  "sqladmin_databases_insert": {
+    "name": "sqladmin_databases_insert",
+    "description": "Inserts a resource containing information about a database inside a Cloud SQL instance. **Note:** You can't modify the default character set and collation.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/databases",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Database"
+    }
+  },
+  "sqladmin_databases_list": {
+    "name": "sqladmin_databases_list",
+    "description": "Lists databases in the specified Cloud SQL instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/databases",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "DatabasesListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_databases_patch": {
+    "name": "sqladmin_databases_patch",
+    "description": "Partially updates a resource containing information about a database inside a Cloud SQL instance. This method supports patch semantics.",
+    "http_method": "PATCH",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/databases/{database}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "database": {
+        "description": "Name of the database to be updated in the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "database"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Database"
+    }
+  },
+  "sqladmin_databases_update": {
+    "name": "sqladmin_databases_update",
+    "description": "Updates a resource containing information about a database inside a Cloud SQL instance.",
+    "http_method": "PUT",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/databases/{database}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "database": {
+        "description": "Name of the database to be updated in the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "database"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "Database"
+    }
+  },
+  "sqladmin_flags_list": {
+    "name": "sqladmin_flags_list",
+    "description": "Lists all available database flags for Cloud SQL instances.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/flags",
+    "parameters": {
+      "databaseVersion": {
+        "description": "Database type and version you want to retrieve flags for. By default, this method returns flags for all database types and versions.",
+        "location": "query",
+        "type": "string"
+      },
+      "flagScope": {
+        "description": "Optional. Specify the scope of flags to be returned by SqlFlagsListService. Return list of database flags if unspecified.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Assume database flags if unspecified",
+          "database flags",
+          "connection pool configuration flags"
+        ],
+        "enum": [
+          "SQL_FLAG_SCOPE_UNSPECIFIED",
+          "SQL_FLAG_SCOPE_DATABASE",
+          "SQL_FLAG_SCOPE_CONNECTION_POOL"
+        ]
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "databaseVersion",
+      "flagScope"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "FlagsListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_operations_get": {
+    "name": "sqladmin_operations_get",
+    "description": "Retrieves an instance operation that has been performed on an instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/operations/{operation}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "operation": {
+        "description": "Instance operation ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "operation"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_operations_list": {
+    "name": "sqladmin_operations_list",
+    "description": "Lists all instance operations that have been performed on the given Cloud SQL instance in the reverse chronological order of the start time.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/operations",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Cloud SQL instance ID. This does not include the project ID.",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "Maximum number of operations per response.",
+        "location": "query",
+        "type": "integer",
+        "format": "uint32"
+      },
+      "pageToken": {
+        "description": "A previously-returned page token representing part of the larger set of results to view.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project"
+    ],
+    "optional_parameters": [
+      "instance",
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "OperationsListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_operations_cancel": {
+    "name": "sqladmin_operations_cancel",
+    "description": "Cancels an instance operation that has been performed on an instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/operations/{operation}/cancel",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "operation": {
+        "description": "Instance operation ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "operation"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "sqladmin_tiers_list": {
+    "name": "sqladmin_tiers_list",
+    "description": "Lists all available machine types (tiers) for Cloud SQL, for example, `db-custom-1-3840`. For more information, see https://cloud.google.com/sql/pricing.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/tiers",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project for which to list tiers.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "TiersListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_users_delete": {
+    "name": "sqladmin_users_delete",
+    "description": "Deletes a user from a Cloud SQL instance.",
+    "http_method": "DELETE",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/users",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "host": {
+        "description": "Host of the user in the instance.",
+        "location": "query",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of the user in the instance.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "host",
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "sqladmin_users_get": {
+    "name": "sqladmin_users_get",
+    "description": "Retrieves a resource containing information about a user.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/users/{name}",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "name": {
+        "description": "User of the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "host": {
+        "description": "Host of a user of the instance.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance",
+      "name"
+    ],
+    "optional_parameters": [
+      "host"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "User"
+    },
+    "request": {}
+  },
+  "sqladmin_users_insert": {
+    "name": "sqladmin_users_insert",
+    "description": "Creates a new user in a Cloud SQL instance.",
+    "http_method": "POST",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/users",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "User"
+    }
+  },
+  "sqladmin_users_list": {
+    "name": "sqladmin_users_list",
+    "description": "Lists users in the specified Cloud SQL instance.",
+    "http_method": "GET",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/users",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "UsersListResponse"
+    },
+    "request": {}
+  },
+  "sqladmin_users_update": {
+    "name": "sqladmin_users_update",
+    "description": "Updates an existing user in a Cloud SQL instance.",
+    "http_method": "PUT",
+    "path": "https://sqladmin.googleapis.com/v1/projects/{project}/instances/{instance}/users",
+    "parameters": {
+      "project": {
+        "description": "Project ID of the project that contains the instance.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "instance": {
+        "description": "Database instance ID. This does not include the project ID.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "host": {
+        "description": "Optional. Host of the user in the instance.",
+        "location": "query",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of the user in the instance.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "project",
+      "instance"
+    ],
+    "optional_parameters": [
+      "host",
+      "name"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/sqlservice.admin"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "User"
+    }
+  }
+}

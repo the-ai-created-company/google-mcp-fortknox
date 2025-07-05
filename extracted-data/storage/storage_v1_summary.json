@@ -1,0 +1,9 @@
+{
+  "api_name": "storage",
+  "api_version": "v1",
+  "api_title": "Cloud Storage JSON API",
+  "api_description": "Stores and retrieves potentially large, immutable data objects.",
+  "base_url": "https://storage.googleapis.com/storage/v1/",
+  "tool_count": 81,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\storage\\storage_v1_tools.json"
+}

@@ -1,0 +1,356 @@
+{
+  "total_apis": 58,
+  "total_tools": 4881,
+  "apis": {
+    "aiplatform": {
+      "version": "v1",
+      "title": "Vertex AI API",
+      "tool_count": 630,
+      "base_url": "https://aiplatform.googleapis.com/"
+    },
+    "androiddeviceprovisioning": {
+      "version": "v1",
+      "title": "Android Device Provisioning Partner API",
+      "tool_count": 27,
+      "base_url": "https://androiddeviceprovisioning.googleapis.com/"
+    },
+    "appengine": {
+      "version": "v1",
+      "title": "App Engine Admin API",
+      "tool_count": 52,
+      "base_url": "https://appengine.googleapis.com/"
+    },
+    "bigqueryconnection": {
+      "version": "v1",
+      "title": "BigQuery Connection API",
+      "tool_count": 8,
+      "base_url": "https://bigqueryconnection.googleapis.com/"
+    },
+    "bigquerydatapolicy": {
+      "version": "v1",
+      "title": "BigQuery Data Policy API",
+      "tool_count": 9,
+      "base_url": "https://bigquerydatapolicy.googleapis.com/"
+    },
+    "bigquerydatatransfer": {
+      "version": "v1",
+      "title": "BigQuery Data Transfer API",
+      "tool_count": 33,
+      "base_url": "https://bigquerydatatransfer.googleapis.com/"
+    },
+    "bigqueryreservation": {
+      "version": "v1",
+      "title": "BigQuery Reservation API",
+      "tool_count": 32,
+      "base_url": "https://bigqueryreservation.googleapis.com/"
+    },
+    "bigquery": {
+      "version": "v2",
+      "title": "BigQuery API",
+      "tool_count": 47,
+      "base_url": "https://bigquery.googleapis.com/bigquery/v2/"
+    },
+    "bigtableadmin": {
+      "version": "v2",
+      "title": "Cloud Bigtable Admin API",
+      "tool_count": 82,
+      "base_url": "https://bigtableadmin.googleapis.com/"
+    },
+    "cloudasset": {
+      "version": "v1",
+      "title": "Cloud Asset API",
+      "tool_count": 24,
+      "base_url": "https://cloudasset.googleapis.com/"
+    },
+    "cloudbilling": {
+      "version": "v1",
+      "title": "Cloud Billing API",
+      "tool_count": 18,
+      "base_url": "https://cloudbilling.googleapis.com/"
+    },
+    "cloudbuild": {
+      "version": "v2",
+      "title": "Cloud Build API",
+      "tool_count": 22,
+      "base_url": "https://cloudbuild.googleapis.com/"
+    },
+    "cloudchannel": {
+      "version": "v1",
+      "title": "Cloud Channel API",
+      "tool_count": 65,
+      "base_url": "https://cloudchannel.googleapis.com/"
+    },
+    "cloudcontrolspartner": {
+      "version": "v1",
+      "title": "Cloud Controls Partner API",
+      "tool_count": 13,
+      "base_url": "https://cloudcontrolspartner.googleapis.com/"
+    },
+    "clouddeploy": {
+      "version": "v1",
+      "title": "Cloud Deploy API",
+      "tool_count": 61,
+      "base_url": "https://clouddeploy.googleapis.com/"
+    },
+    "clouderrorreporting": {
+      "version": "v1beta1",
+      "title": "Error Reporting API",
+      "tool_count": 11,
+      "base_url": "https://clouderrorreporting.googleapis.com/"
+    },
+    "cloudfunctions": {
+      "version": "v2",
+      "title": "Cloud Functions API",
+      "tool_count": 20,
+      "base_url": "https://cloudfunctions.googleapis.com/"
+    },
+    "cloudidentity": {
+      "version": "v1",
+      "title": "Cloud Identity API",
+      "tool_count": 58,
+      "base_url": "https://cloudidentity.googleapis.com/"
+    },
+    "cloudkms": {
+      "version": "v1",
+      "title": "Cloud Key Management Service (KMS) API",
+      "tool_count": 67,
+      "base_url": "https://cloudkms.googleapis.com/"
+    },
+    "cloudlocationfinder": {
+      "version": "v1alpha",
+      "title": "Cloud Location Finder API",
+      "tool_count": 5,
+      "base_url": "https://cloudlocationfinder.googleapis.com/"
+    },
+    "cloudprofiler": {
+      "version": "v2",
+      "title": "Cloud Profiler API",
+      "tool_count": 4,
+      "base_url": "https://cloudprofiler.googleapis.com/"
+    },
+    "cloudresourcemanager": {
+      "version": "v3",
+      "title": "Cloud Resource Manager API",
+      "tool_count": 62,
+      "base_url": "https://cloudresourcemanager.googleapis.com/"
+    },
+    "cloudscheduler": {
+      "version": "v1",
+      "title": "Cloud Scheduler API",
+      "tool_count": 14,
+      "base_url": "https://cloudscheduler.googleapis.com/"
+    },
+    "cloudsearch": {
+      "version": "v1",
+      "title": "Cloud Search API",
+      "tool_count": 50,
+      "base_url": "https://cloudsearch.googleapis.com/"
+    },
+    "cloudshell": {
+      "version": "v1",
+      "title": "Cloud Shell API",
+      "tool_count": 9,
+      "base_url": "https://cloudshell.googleapis.com/"
+    },
+    "cloudsupport": {
+      "version": "v2",
+      "title": "Google Cloud Support API",
+      "tool_count": 13,
+      "base_url": "https://cloudsupport.googleapis.com/"
+    },
+    "cloudtasks": {
+      "version": "v2",
+      "title": "Cloud Tasks API",
+      "tool_count": 21,
+      "base_url": "https://cloudtasks.googleapis.com/"
+    },
+    "cloudtrace": {
+      "version": "v2",
+      "title": "Cloud Trace API",
+      "tool_count": 2,
+      "base_url": "https://cloudtrace.googleapis.com/"
+    },
+    "compute": {
+      "version": "v1",
+      "title": "Compute Engine API",
+      "tool_count": 831,
+      "base_url": "https://compute.googleapis.com/compute/v1/"
+    },
+    "contactcenteraiplatform": {
+      "version": "v1alpha1",
+      "title": "Contact Center AI Platform API",
+      "tool_count": 12,
+      "base_url": "https://contactcenteraiplatform.googleapis.com/"
+    },
+    "containeranalysis": {
+      "version": "v1",
+      "title": "Container Analysis API",
+      "tool_count": 44,
+      "base_url": "https://containeranalysis.googleapis.com/"
+    },
+    "container": {
+      "version": "v1",
+      "title": "Kubernetes Engine API",
+      "tool_count": 69,
+      "base_url": "https://container.googleapis.com/"
+    },
+    "dataflow": {
+      "version": "v1b3",
+      "title": "Dataflow API",
+      "tool_count": 42,
+      "base_url": "https://dataflow.googleapis.com/"
+    },
+    "dataproc": {
+      "version": "v1",
+      "title": "Cloud Dataproc API",
+      "tool_count": 129,
+      "base_url": "https://dataproc.googleapis.com/"
+    },
+    "datastore": {
+      "version": "v1",
+      "title": "Cloud Datastore API",
+      "tool_count": 18,
+      "base_url": "https://datastore.googleapis.com/"
+    },
+    "dialogflow": {
+      "version": "v3",
+      "title": "Dialogflow API",
+      "tool_count": 158,
+      "base_url": "https://dialogflow.googleapis.com/"
+    },
+    "displayvideo": {
+      "version": "v4",
+      "title": "Display & Video 360 API",
+      "tool_count": 154,
+      "base_url": "https://displayvideo.googleapis.com/"
+    },
+    "firebasestorage": {
+      "version": "v1beta",
+      "title": "Cloud Storage for Firebase API",
+      "tool_count": 7,
+      "base_url": "https://firebasestorage.googleapis.com/"
+    },
+    "firestore": {
+      "version": "v1",
+      "title": "Cloud Firestore API",
+      "tool_count": 55,
+      "base_url": "https://firestore.googleapis.com/"
+    },
+    "language": {
+      "version": "v2",
+      "title": "Cloud Natural Language API",
+      "tool_count": 5,
+      "base_url": "https://language.googleapis.com/"
+    },
+    "logging": {
+      "version": "v2",
+      "title": "Cloud Logging API",
+      "tool_count": 254,
+      "base_url": "https://logging.googleapis.com/"
+    },
+    "monitoring": {
+      "version": "v3",
+      "title": "Cloud Monitoring API",
+      "tool_count": 54,
+      "base_url": "https://monitoring.googleapis.com/"
+    },
+    "notebooks": {
+      "version": "v2",
+      "title": "Notebooks API",
+      "tool_count": 26,
+      "base_url": "https://notebooks.googleapis.com/"
+    },
+    "pubsublite": {
+      "version": "v1",
+      "title": "Pub/Sub Lite API",
+      "tool_count": 28,
+      "base_url": "https://pubsublite.googleapis.com/"
+    },
+    "pubsub": {
+      "version": "v1",
+      "title": "Cloud Pub/Sub API",
+      "tool_count": 46,
+      "base_url": "https://pubsub.googleapis.com/"
+    },
+    "runtimeconfig": {
+      "version": "v1",
+      "title": "Cloud Runtime Configuration API",
+      "tool_count": 3,
+      "base_url": "https://runtimeconfig.googleapis.com/"
+    },
+    "run": {
+      "version": "v2",
+      "title": "Cloud Run Admin API",
+      "tool_count": 48,
+      "base_url": "https://run.googleapis.com/"
+    },
+    "spanner": {
+      "version": "v1",
+      "title": "Cloud Spanner API",
+      "tool_count": 99,
+      "base_url": "https://spanner.googleapis.com/"
+    },
+    "speech": {
+      "version": "v1",
+      "title": "Cloud Speech-to-Text API",
+      "tool_count": 14,
+      "base_url": "https://speech.googleapis.com/"
+    },
+    "sqladmin": {
+      "version": "v1",
+      "title": "Cloud SQL Admin API",
+      "tool_count": 69,
+      "base_url": "https://sqladmin.googleapis.com/"
+    },
+    "storagebatchoperations": {
+      "version": "v1",
+      "title": "Storage Batch Operations API",
+      "tool_count": 11,
+      "base_url": "https://storagebatchoperations.googleapis.com/"
+    },
+    "storagetransfer": {
+      "version": "v1",
+      "title": "Storage Transfer API",
+      "tool_count": 17,
+      "base_url": "https://storagetransfer.googleapis.com/"
+    },
+    "storage": {
+      "version": "v1",
+      "title": "Cloud Storage JSON API",
+      "tool_count": 81,
+      "base_url": "https://storage.googleapis.com/storage/v1/"
+    },
+    "texttospeech": {
+      "version": "v1",
+      "title": "Cloud Text-to-Speech API",
+      "tool_count": 7,
+      "base_url": "https://texttospeech.googleapis.com/"
+    },
+    "translate": {
+      "version": "v3",
+      "title": "Cloud Translation API",
+      "tool_count": 50,
+      "base_url": "https://translation.googleapis.com/"
+    },
+    "videointelligence": {
+      "version": "v1",
+      "title": "Cloud Video Intelligence API",
+      "tool_count": 8,
+      "base_url": "https://videointelligence.googleapis.com/"
+    },
+    "vision": {
+      "version": "v1",
+      "title": "Cloud Vision API",
+      "tool_count": 38,
+      "base_url": "https://vision.googleapis.com/"
+    },
+    "workstations": {
+      "version": "v1",
+      "title": "Cloud Workstations API",
+      "tool_count": 32,
+      "base_url": "https://workstations.googleapis.com/"
+    }
+  },
+  "generated_at": "Not John Or Justin",
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\all_google_cloud_tools.json"
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "workstations",
+  "api_version": "v1beta",
+  "api_title": "Cloud Workstations API",
+  "api_description": "Allows administrators to create managed developer environments in the cloud. ",
+  "base_url": "https://workstations.googleapis.com/",
+  "tool_count": 30,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\workstations\\workstations_v1beta_tools.json"
+}

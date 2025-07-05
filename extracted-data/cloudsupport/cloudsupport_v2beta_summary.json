@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudsupport",
+  "api_version": "v2beta",
+  "api_title": "Google Cloud Support API",
+  "api_description": "Manages Google Cloud technical support cases for Customer Care support offerings. ",
+  "base_url": "https://cloudsupport.googleapis.com/",
+  "tool_count": 14,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudsupport\\cloudsupport_v2beta_tools.json"
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudshell",
+  "api_version": "v1",
+  "api_title": "Cloud Shell API",
+  "api_description": "Allows users to start, configure, and connect to interactive shell sessions running in the cloud. ",
+  "base_url": "https://cloudshell.googleapis.com/",
+  "tool_count": 9,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudshell\\cloudshell_v1_tools.json"
+}

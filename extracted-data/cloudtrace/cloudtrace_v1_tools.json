@@ -1,0 +1,147 @@
+{
+  "cloudtrace_projects_patchTraces": {
+    "name": "cloudtrace_projects_patchTraces",
+    "description": "Sends trace spans to Cloud Trace. Spans cannot be updated. If the trace ID and span ID already exist, an additional copy of the span will be stored.",
+    "http_method": "PATCH",
+    "path": "https://cloudtrace.googleapis.com/v1/projects/{projectId}/traces",
+    "parameters": {
+      "projectId": {
+        "description": "Required. ID of the Cloud project where the trace data is stored.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/trace.append"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "Traces"
+    }
+  },
+  "cloudtrace_projects_traces_list": {
+    "name": "cloudtrace_projects_traces_list",
+    "description": "Returns a list of traces that match the specified filter conditions.",
+    "http_method": "GET",
+    "path": "https://cloudtrace.googleapis.com/v1/projects/{projectId}/traces",
+    "parameters": {
+      "projectId": {
+        "description": "Required. ID of the Cloud project where the trace data is stored.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Optional. Type of data returned for traces in the list. Default is `MINIMAL`.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Default is `MINIMAL` if unspecified.",
+          "Minimal view of the trace record that contains only the project and trace IDs.",
+          "Root span view of the trace record that returns the root spans along with the minimal trace data.",
+          "Complete view of the trace record that contains the actual trace data. This is equivalent to calling the REST `get` or RPC `GetTrace` method using the ID of each listed trace."
+        ],
+        "enum": [
+          "VIEW_TYPE_UNSPECIFIED",
+          "MINIMAL",
+          "ROOTSPAN",
+          "COMPLETE"
+        ]
+      },
+      "pageSize": {
+        "description": "Optional. Maximum number of traces to return. If not specified or <= 0, the implementation selects a reasonable value. The implementation may return fewer traces than the requested page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Token identifying the page of results to return. If provided, use the value of the `next_page_token` field from a previous request.",
+        "location": "query",
+        "type": "string"
+      },
+      "startTime": {
+        "description": "Start of the time interval (inclusive) during which the trace data was collected from the application.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "endTime": {
+        "description": "End of the time interval (inclusive) during which the trace data was collected from the application.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "filter": {
+        "description": "Optional. A filter against properties of the trace. See [filter syntax documentation](https://cloud.google.com/trace/docs/trace-filters) for details.",
+        "location": "query",
+        "type": "string"
+      },
+      "orderBy": {
+        "description": "Optional. Field used to sort the returned traces. Can be one of the following: * `trace_id` * `name` (`name` field of root span in the trace) * `duration` (difference between `end_time` and `start_time` fields of the root span) * `start` (`start_time` field of the root span) Descending order can be specified by appending `desc` to the sort field (for example, `name desc`). Only one sort field is permitted.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "view",
+      "pageSize",
+      "pageToken",
+      "startTime",
+      "endTime",
+      "filter",
+      "orderBy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/trace.readonly"
+    ],
+    "response": {
+      "$ref": "ListTracesResponse"
+    },
+    "request": {}
+  },
+  "cloudtrace_projects_traces_get": {
+    "name": "cloudtrace_projects_traces_get",
+    "description": "Gets a single trace by its ID.",
+    "http_method": "GET",
+    "path": "https://cloudtrace.googleapis.com/v1/projects/{projectId}/traces/{traceId}",
+    "parameters": {
+      "projectId": {
+        "description": "Required. ID of the Cloud project where the trace data is stored.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "traceId": {
+        "description": "Required. ID of the trace to return.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId",
+      "traceId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/trace.readonly"
+    ],
+    "response": {
+      "$ref": "Trace"
+    },
+    "request": {}
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "pubsub_topics_create": {
+    "name": "pubsub_topics_create",
+    "description": "Creates the given topic with the given name.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/topics",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Topic"
+    },
+    "request": {
+      "$ref": "Topic"
+    }
+  },
+  "pubsub_topics_publish": {
+    "name": "pubsub_topics_publish",
+    "description": "Adds a message to the topic. Returns NOT_FOUND if the topic does not exist.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/topics/publish",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "PublishRequest"
+    }
+  },
+  "pubsub_topics_publishBatch": {
+    "name": "pubsub_topics_publishBatch",
+    "description": "Adds one or more messages to the topic. Returns NOT_FOUND if the topic does not exist.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/topics/publishBatch",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "PublishBatchResponse"
+    },
+    "request": {
+      "$ref": "PublishBatchRequest"
+    }
+  },
+  "pubsub_topics_get": {
+    "name": "pubsub_topics_get",
+    "description": "Gets the configuration of a topic. Since the topic only has the name attribute, this method is only useful to check the existence of a topic. If other attributes are added in the future, they will be returned here.",
+    "http_method": "GET",
+    "path": "https://pubsub.googleapis.com/v1beta1a/topics/{+topic}",
+    "parameters": {
+      "topic": {
+        "description": "The name of the topic to get.",
+        "pattern": "^.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "topic"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Topic"
+    },
+    "request": {}
+  },
+  "pubsub_topics_list": {
+    "name": "pubsub_topics_list",
+    "description": "Lists matching topics.",
+    "http_method": "GET",
+    "path": "https://pubsub.googleapis.com/v1beta1a/topics",
+    "parameters": {
+      "query": {
+        "description": "A valid label query expression.",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "Maximum number of topics to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The value obtained in the last ListTopicsResponse for continuation.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "query",
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "ListTopicsResponse"
+    },
+    "request": {}
+  },
+  "pubsub_topics_delete": {
+    "name": "pubsub_topics_delete",
+    "description": "Deletes the topic with the given name. Returns NOT_FOUND if the topic does not exist. After a topic is deleted, a new topic may be created with the same name.",
+    "http_method": "DELETE",
+    "path": "https://pubsub.googleapis.com/v1beta1a/topics/{+topic}",
+    "parameters": {
+      "topic": {
+        "description": "Name of the topic to delete.",
+        "pattern": "^.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "topic"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "pubsub_subscriptions_create": {
+    "name": "pubsub_subscriptions_create",
+    "description": "Creates a subscription on a given topic for a given subscriber. If the subscription already exists, returns ALREADY_EXISTS. If the corresponding topic doesn't exist, returns NOT_FOUND. If the name is not provided in the request, the server will assign a random name for this subscription on the same project as the topic.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Subscription"
+    },
+    "request": {
+      "$ref": "Subscription"
+    }
+  },
+  "pubsub_subscriptions_get": {
+    "name": "pubsub_subscriptions_get",
+    "description": "Gets the configuration details of a subscription.",
+    "http_method": "GET",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/{+subscription}",
+    "parameters": {
+      "subscription": {
+        "description": "The name of the subscription to get.",
+        "pattern": "^.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "subscription"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Subscription"
+    },
+    "request": {}
+  },
+  "pubsub_subscriptions_list": {
+    "name": "pubsub_subscriptions_list",
+    "description": "Lists matching subscriptions.",
+    "http_method": "GET",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions",
+    "parameters": {
+      "query": {
+        "description": "A valid label query expression.",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "Maximum number of subscriptions to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The value obtained in the last ListSubscriptionsResponse for continuation.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "query",
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "ListSubscriptionsResponse"
+    },
+    "request": {}
+  },
+  "pubsub_subscriptions_delete": {
+    "name": "pubsub_subscriptions_delete",
+    "description": "Deletes an existing subscription. All pending messages in the subscription are immediately dropped. Calls to Pull after deletion will return NOT_FOUND.",
+    "http_method": "DELETE",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/{+subscription}",
+    "parameters": {
+      "subscription": {
+        "description": "The subscription to delete.",
+        "pattern": "^.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "subscription"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "pubsub_subscriptions_modifyPushConfig": {
+    "name": "pubsub_subscriptions_modifyPushConfig",
+    "description": "Modifies the PushConfig for a specified subscription. This method can be used to suspend the flow of messages to an endpoint by clearing the PushConfig field in the request. Messages will be accumulated for delivery even if no push configuration is defined or while the configuration is modified.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/modifyPushConfig",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "ModifyPushConfigRequest"
+    }
+  },
+  "pubsub_subscriptions_pull": {
+    "name": "pubsub_subscriptions_pull",
+    "description": "Pulls a single message from the server. If return_immediately is true, and no messages are available in the subscription, this method returns FAILED_PRECONDITION. The system is free to return an UNAVAILABLE error if no messages are available in a reasonable amount of time (to reduce system load).",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/pull",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "PullResponse"
+    },
+    "request": {
+      "$ref": "PullRequest"
+    }
+  },
+  "pubsub_subscriptions_pullBatch": {
+    "name": "pubsub_subscriptions_pullBatch",
+    "description": "Pulls messages from the server. Returns an empty list if there are no messages available in the backlog. The system is free to return UNAVAILABLE if there are too many pull requests outstanding for the given subscription.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/pullBatch",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "PullBatchResponse"
+    },
+    "request": {
+      "$ref": "PullBatchRequest"
+    }
+  },
+  "pubsub_subscriptions_modifyAckDeadline": {
+    "name": "pubsub_subscriptions_modifyAckDeadline",
+    "description": "Modifies the Ack deadline for a message received from a pull request.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/modifyAckDeadline",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "ModifyAckDeadlineRequest"
+    }
+  },
+  "pubsub_subscriptions_acknowledge": {
+    "name": "pubsub_subscriptions_acknowledge",
+    "description": "Acknowledges a particular received message: the Pub/Sub system can remove the given message from the subscription. Acknowledging a message whose Ack deadline has expired may succeed, but the message could have been already redelivered. Acknowledging a message more than once will not result in an error. This is only used for messages received via pull.",
+    "http_method": "POST",
+    "path": "https://pubsub.googleapis.com/v1beta1a/subscriptions/acknowledge",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/pubsub"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {
+      "$ref": "AcknowledgeRequest"
+    }
+  }
+}

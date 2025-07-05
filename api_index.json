@@ -1,0 +1,408 @@
+{
+  "aiplatform": {
+    "file": "aiplatform_v1_discovery.json",
+    "version": "v1",
+    "title": "Vertex AI API",
+    "description": "Train high-quality custom machine learning models with minimal machine learning expertise and effort.",
+    "baseUrl": "https://aiplatform.googleapis.com/"
+  },
+  "androiddeviceprovisioning": {
+    "file": "androiddeviceprovisioning_v1_discovery.json",
+    "version": "v1",
+    "title": "Android Device Provisioning Partner API",
+    "description": "Automates Android zero-touch enrollment for device resellers, customers, and EMMs.",
+    "baseUrl": "https://androiddeviceprovisioning.googleapis.com/"
+  },
+  "appengine": {
+    "file": "appengine_v1_discovery.json",
+    "version": "v1",
+    "title": "App Engine Admin API",
+    "description": "Provisions and manages developers' App Engine applications.",
+    "baseUrl": "https://appengine.googleapis.com/"
+  },
+  "bigqueryconnection": {
+    "file": "bigqueryconnection_v1_discovery.json",
+    "version": "v1",
+    "title": "BigQuery Connection API",
+    "description": "Allows users to manage BigQuery connections to external data sources.",
+    "baseUrl": "https://bigqueryconnection.googleapis.com/"
+  },
+  "bigquerydatapolicy": {
+    "file": "bigquerydatapolicy_v1_discovery.json",
+    "version": "v1",
+    "title": "BigQuery Data Policy API",
+    "description": "Allows users to manage BigQuery data policies.",
+    "baseUrl": "https://bigquerydatapolicy.googleapis.com/"
+  },
+  "bigquerydatatransfer": {
+    "file": "bigquerydatatransfer_v1_discovery.json",
+    "version": "v1",
+    "title": "BigQuery Data Transfer API",
+    "description": "Schedule queries or transfer external data from SaaS applications to Google BigQuery on a regular basis.",
+    "baseUrl": "https://bigquerydatatransfer.googleapis.com/"
+  },
+  "bigqueryreservation": {
+    "file": "bigqueryreservation_v1_discovery.json",
+    "version": "v1",
+    "title": "BigQuery Reservation API",
+    "description": "A service to modify your BigQuery reservations.",
+    "baseUrl": "https://bigqueryreservation.googleapis.com/"
+  },
+  "bigquery": {
+    "file": "bigquery_v2_discovery.json",
+    "version": "v2",
+    "title": "BigQuery API",
+    "description": "A data platform for customers to create, manage, share and query data.",
+    "baseUrl": "https://bigquery.googleapis.com/bigquery/v2/"
+  },
+  "bigtableadmin": {
+    "file": "bigtableadmin_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Bigtable Admin API",
+    "description": "Administer your Cloud Bigtable tables and instances.",
+    "baseUrl": "https://bigtableadmin.googleapis.com/"
+  },
+  "cloudasset": {
+    "file": "cloudasset_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Asset API",
+    "description": "The Cloud Asset API manages the history and inventory of Google Cloud resources.",
+    "baseUrl": "https://cloudasset.googleapis.com/"
+  },
+  "cloudbilling": {
+    "file": "cloudbilling_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Billing API",
+    "description": "Allows developers to manage billing for their Google Cloud Platform projects programmatically.",
+    "baseUrl": "https://cloudbilling.googleapis.com/"
+  },
+  "cloudbuild": {
+    "file": "cloudbuild_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Build API",
+    "description": "Creates and manages builds on Google Cloud Platform.",
+    "baseUrl": "https://cloudbuild.googleapis.com/"
+  },
+  "cloudchannel": {
+    "file": "cloudchannel_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Channel API",
+    "description": "The Cloud Channel API enables Google Cloud partners to have a single unified resale platform and APIs across all of Google Cloud including GCP, Workspace, Maps and Chrome.",
+    "baseUrl": "https://cloudchannel.googleapis.com/"
+  },
+  "cloudcontrolspartner": {
+    "file": "cloudcontrolspartner_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Controls Partner API",
+    "description": "Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.",
+    "baseUrl": "https://cloudcontrolspartner.googleapis.com/"
+  },
+  "clouddeploy": {
+    "file": "clouddeploy_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Deploy API",
+    "description": "",
+    "baseUrl": "https://clouddeploy.googleapis.com/"
+  },
+  "clouderrorreporting": {
+    "file": "clouderrorreporting_v1beta1_discovery.json",
+    "version": "v1beta1",
+    "title": "Error Reporting API",
+    "description": "Groups and counts similar errors from cloud services and applications, reports new errors, and provides access to error groups and their associated errors. ",
+    "baseUrl": "https://clouderrorreporting.googleapis.com/"
+  },
+  "cloudfunctions": {
+    "file": "cloudfunctions_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Functions API",
+    "description": "Manages lightweight user-provided functions executed in response to events.",
+    "baseUrl": "https://cloudfunctions.googleapis.com/"
+  },
+  "cloudidentity": {
+    "file": "cloudidentity_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Identity API",
+    "description": "API for provisioning and managing identity resources.",
+    "baseUrl": "https://cloudidentity.googleapis.com/"
+  },
+  "cloudkms": {
+    "file": "cloudkms_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Key Management Service (KMS) API",
+    "description": "Manages keys and performs cryptographic operations in a central cloud service, for direct use by other cloud resources and applications. ",
+    "baseUrl": "https://cloudkms.googleapis.com/"
+  },
+  "cloudlocationfinder": {
+    "file": "cloudlocationfinder_v1alpha_discovery.json",
+    "version": "v1alpha",
+    "title": "Cloud Location Finder API",
+    "description": "",
+    "baseUrl": "https://cloudlocationfinder.googleapis.com/"
+  },
+  "cloudprofiler": {
+    "file": "cloudprofiler_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Profiler API",
+    "description": "Manages continuous profiling information.",
+    "baseUrl": "https://cloudprofiler.googleapis.com/"
+  },
+  "cloudresourcemanager": {
+    "file": "cloudresourcemanager_v3_discovery.json",
+    "version": "v3",
+    "title": "Cloud Resource Manager API",
+    "description": "Creates, reads, and updates metadata for Google Cloud Platform resource containers.",
+    "baseUrl": "https://cloudresourcemanager.googleapis.com/"
+  },
+  "cloudscheduler": {
+    "file": "cloudscheduler_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Scheduler API",
+    "description": "Creates and manages jobs run on a regular recurring schedule.",
+    "baseUrl": "https://cloudscheduler.googleapis.com/"
+  },
+  "cloudsearch": {
+    "file": "cloudsearch_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Search API",
+    "description": "Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.",
+    "baseUrl": "https://cloudsearch.googleapis.com/"
+  },
+  "cloudshell": {
+    "file": "cloudshell_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Shell API",
+    "description": "Allows users to start, configure, and connect to interactive shell sessions running in the cloud. ",
+    "baseUrl": "https://cloudshell.googleapis.com/"
+  },
+  "cloudsupport": {
+    "file": "cloudsupport_v2_discovery.json",
+    "version": "v2",
+    "title": "Google Cloud Support API",
+    "description": "Manages Google Cloud technical support cases for Customer Care support offerings. ",
+    "baseUrl": "https://cloudsupport.googleapis.com/"
+  },
+  "cloudtasks": {
+    "file": "cloudtasks_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Tasks API",
+    "description": "Manages the execution of large numbers of distributed requests.",
+    "baseUrl": "https://cloudtasks.googleapis.com/"
+  },
+  "cloudtrace": {
+    "file": "cloudtrace_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Trace API",
+    "description": "Sends application trace data to Cloud Trace for viewing. Trace data is collected for all App Engine applications by default. Trace data from other applications can be provided using this API. This library is used to interact with the Cloud Trace API directly. If you are looking to instrument your application for Cloud Trace, we recommend using OpenTelemetry. ",
+    "baseUrl": "https://cloudtrace.googleapis.com/"
+  },
+  "compute": {
+    "file": "compute_v1_discovery.json",
+    "version": "v1",
+    "title": "Compute Engine API",
+    "description": "Creates and runs virtual machines on Google Cloud Platform. ",
+    "baseUrl": "https://compute.googleapis.com/compute/v1/"
+  },
+  "contactcenteraiplatform": {
+    "file": "contactcenteraiplatform_v1alpha1_discovery.json",
+    "version": "v1alpha1",
+    "title": "Contact Center AI Platform API",
+    "description": "",
+    "baseUrl": "https://contactcenteraiplatform.googleapis.com/"
+  },
+  "containeranalysis": {
+    "file": "containeranalysis_v1_discovery.json",
+    "version": "v1",
+    "title": "Container Analysis API",
+    "description": "This API is a prerequisite for leveraging Artifact Analysis scanning capabilities in both Artifact Registry and with Advanced Vulnerability Insights (runtime scanning) in GKE. In addition, the Container Analysis API is an implementation of the Grafeas API, which enables storing, querying, and retrieval of critical metadata about all of your software artifacts.",
+    "baseUrl": "https://containeranalysis.googleapis.com/"
+  },
+  "container": {
+    "file": "container_v1_discovery.json",
+    "version": "v1",
+    "title": "Kubernetes Engine API",
+    "description": "Builds and manages container-based applications, powered by the open source Kubernetes technology.",
+    "baseUrl": "https://container.googleapis.com/"
+  },
+  "dataflow": {
+    "file": "dataflow_v1b3_discovery.json",
+    "version": "v1b3",
+    "title": "Dataflow API",
+    "description": "Manages Google Cloud Dataflow projects on Google Cloud Platform.",
+    "baseUrl": "https://dataflow.googleapis.com/"
+  },
+  "dataproc": {
+    "file": "dataproc_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Dataproc API",
+    "description": "Manages Hadoop-based clusters and jobs on Google Cloud Platform.",
+    "baseUrl": "https://dataproc.googleapis.com/"
+  },
+  "datastore": {
+    "file": "datastore_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Datastore API",
+    "description": "Accesses the schemaless NoSQL database to provide fully managed, robust, scalable storage for your application. ",
+    "baseUrl": "https://datastore.googleapis.com/"
+  },
+  "dialogflow": {
+    "file": "dialogflow_v3_discovery.json",
+    "version": "v3",
+    "title": "Dialogflow API",
+    "description": "Builds conversational interfaces (for example, chatbots, and voice-powered apps and devices).",
+    "baseUrl": "https://dialogflow.googleapis.com/"
+  },
+  "displayvideo": {
+    "file": "displayvideo_v4_discovery.json",
+    "version": "v4",
+    "title": "Display & Video 360 API",
+    "description": "Display & Video 360 API allows users to automate complex Display & Video 360 workflows, such as creating insertion orders and setting targeting options for individual line items.",
+    "baseUrl": "https://displayvideo.googleapis.com/"
+  },
+  "firebasestorage": {
+    "file": "firebasestorage_v1beta_discovery.json",
+    "version": "v1beta",
+    "title": "Cloud Storage for Firebase API",
+    "description": "The Cloud Storage for Firebase API enables programmatic management of Cloud Storage buckets for use in Firebase projects",
+    "baseUrl": "https://firebasestorage.googleapis.com/"
+  },
+  "firestore": {
+    "file": "firestore_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Firestore API",
+    "description": "Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ",
+    "baseUrl": "https://firestore.googleapis.com/"
+  },
+  "language": {
+    "file": "language_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Natural Language API",
+    "description": "Provides natural language understanding technologies, such as sentiment analysis, entity recognition, entity sentiment analysis, and other text annotations, to developers.",
+    "baseUrl": "https://language.googleapis.com/"
+  },
+  "logging": {
+    "file": "logging_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Logging API",
+    "description": "Writes log entries and manages your Cloud Logging configuration.",
+    "baseUrl": "https://logging.googleapis.com/"
+  },
+  "monitoring": {
+    "file": "monitoring_v3_discovery.json",
+    "version": "v3",
+    "title": "Cloud Monitoring API",
+    "description": "Manages your Cloud Monitoring data and configurations.",
+    "baseUrl": "https://monitoring.googleapis.com/"
+  },
+  "notebooks": {
+    "file": "notebooks_v2_discovery.json",
+    "version": "v2",
+    "title": "Notebooks API",
+    "description": "Notebooks API is used to manage notebook resources in Google Cloud.",
+    "baseUrl": "https://notebooks.googleapis.com/"
+  },
+  "pubsublite": {
+    "file": "pubsublite_v1_discovery.json",
+    "version": "v1",
+    "title": "Pub/Sub Lite API",
+    "description": "",
+    "baseUrl": "https://pubsublite.googleapis.com/"
+  },
+  "pubsub": {
+    "file": "pubsub_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Pub/Sub API",
+    "description": "Provides reliable, many-to-many, asynchronous messaging between applications. ",
+    "baseUrl": "https://pubsub.googleapis.com/"
+  },
+  "runtimeconfig": {
+    "file": "runtimeconfig_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Runtime Configuration API",
+    "description": "The Runtime Configurator allows you to dynamically configure and expose variables through Google Cloud Platform. In addition, you can also set Watchers and Waiters that will watch for changes to your data and return based on certain conditions.",
+    "baseUrl": "https://runtimeconfig.googleapis.com/"
+  },
+  "run": {
+    "file": "run_v2_discovery.json",
+    "version": "v2",
+    "title": "Cloud Run Admin API",
+    "description": "Deploy and manage user provided container images that scale automatically based on incoming requests. The Cloud Run Admin API v1 follows the Knative Serving API specification, while v2 is aligned with Google Cloud AIP-based API standards, as described in https://google.aip.dev/.",
+    "baseUrl": "https://run.googleapis.com/"
+  },
+  "spanner": {
+    "file": "spanner_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Spanner API",
+    "description": "Cloud Spanner is a managed, mission-critical, globally consistent and scalable relational database service.",
+    "baseUrl": "https://spanner.googleapis.com/"
+  },
+  "speech": {
+    "file": "speech_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Speech-to-Text API",
+    "description": "Converts audio to text by applying powerful neural network models.",
+    "baseUrl": "https://speech.googleapis.com/"
+  },
+  "sqladmin": {
+    "file": "sqladmin_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud SQL Admin API",
+    "description": "API for Cloud SQL database instance management",
+    "baseUrl": "https://sqladmin.googleapis.com/"
+  },
+  "storagebatchoperations": {
+    "file": "storagebatchoperations_v1_discovery.json",
+    "version": "v1",
+    "title": "Storage Batch Operations API",
+    "description": "",
+    "baseUrl": "https://storagebatchoperations.googleapis.com/"
+  },
+  "storagetransfer": {
+    "file": "storagetransfer_v1_discovery.json",
+    "version": "v1",
+    "title": "Storage Transfer API",
+    "description": "Transfers data from external data sources to a Google Cloud Storage bucket or between Google Cloud Storage buckets. ",
+    "baseUrl": "https://storagetransfer.googleapis.com/"
+  },
+  "storage": {
+    "file": "storage_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Storage JSON API",
+    "description": "Stores and retrieves potentially large, immutable data objects.",
+    "baseUrl": "https://storage.googleapis.com/storage/v1/"
+  },
+  "texttospeech": {
+    "file": "texttospeech_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Text-to-Speech API",
+    "description": "Synthesizes natural-sounding speech by applying powerful neural network models.",
+    "baseUrl": "https://texttospeech.googleapis.com/"
+  },
+  "translate": {
+    "file": "translate_v3_discovery.json",
+    "version": "v3",
+    "title": "Cloud Translation API",
+    "description": "Integrates text translation into your website or application.",
+    "baseUrl": "https://translation.googleapis.com/"
+  },
+  "videointelligence": {
+    "file": "videointelligence_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Video Intelligence API",
+    "description": "Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API.",
+    "baseUrl": "https://videointelligence.googleapis.com/"
+  },
+  "vision": {
+    "file": "vision_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Vision API",
+    "description": "Integrates Google Vision features, including image labeling, face, logo, and landmark detection, optical character recognition (OCR), and detection of explicit content, into applications.",
+    "baseUrl": "https://vision.googleapis.com/"
+  },
+  "workstations": {
+    "file": "workstations_v1_discovery.json",
+    "version": "v1",
+    "title": "Cloud Workstations API",
+    "description": "Allows administrators to create managed developer environments in the cloud. ",
+    "baseUrl": "https://workstations.googleapis.com/"
+  }
+}

@@ -1,0 +1,2011 @@
+{
+  "cloudsearch_operations_get": {
+    "name": "cloudsearch_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug",
+      "https://www.googleapis.com/auth/cloud_search.indexing",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudsearch_operations_lro_list": {
+    "name": "cloudsearch_operations_lro_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/{+name}/lro",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation's parent resource.",
+        "pattern": "^operations/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug",
+      "https://www.googleapis.com/auth/cloud_search.indexing",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_debug_datasources_items_checkAccess": {
+    "name": "cloudsearch_debug_datasources_items_checkAccess",
+    "description": "Checks whether an item is accessible by specified principal. Principal must be a user; groups and domain values aren't supported. **Note:** This API requires an admin account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/debug/{+name}:checkAccess",
+    "parameters": {
+      "name": {
+        "description": "Item name, format: datasources/{source_id}/items/{item_id}",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug"
+    ],
+    "response": {
+      "$ref": "CheckAccessResponse"
+    },
+    "request": {
+      "$ref": "Principal"
+    }
+  },
+  "cloudsearch_debug_datasources_items_searchByViewUrl": {
+    "name": "cloudsearch_debug_datasources_items_searchByViewUrl",
+    "description": "Fetches the item whose viewUrl exactly matches that of the URL provided in the request. **Note:** This API requires an admin account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/debug/{+name}/items:searchByViewUrl",
+    "parameters": {
+      "name": {
+        "description": "Source name, format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug"
+    ],
+    "response": {
+      "$ref": "SearchItemsByViewUrlResponse"
+    },
+    "request": {
+      "$ref": "SearchItemsByViewUrlRequest"
+    }
+  },
+  "cloudsearch_debug_datasources_items_unmappedids_list": {
+    "name": "cloudsearch_debug_datasources_items_unmappedids_list",
+    "description": "List all unmapped identities for a specific item. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/debug/{+parent}/unmappedids",
+    "parameters": {
+      "parent": {
+        "description": "The name of the item, in the following format: datasources/{source_id}/items/{ID}",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "The next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of items to fetch in a request. Defaults to 100.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageToken",
+      "pageSize",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug"
+    ],
+    "response": {
+      "$ref": "ListUnmappedIdentitiesResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_debug_identitysources_unmappedids_list": {
+    "name": "cloudsearch_debug_identitysources_unmappedids_list",
+    "description": "Lists unmapped user identities for an identity source. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/debug/{+parent}/unmappedids",
+    "parameters": {
+      "parent": {
+        "description": "The name of the identity source, in the following format: identitysources/{source_id}",
+        "pattern": "^identitysources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "resolutionStatusCode": {
+        "description": "Limit users selection to this status.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Input-only value. Used to list all unmapped identities regardless of status.",
+          "The unmapped identity was not found in IDaaS, and needs to be provided by the user.",
+          "The identity source associated with the identity was either not found or deleted.",
+          "IDaaS does not understand the identity source, probably because the schema was modified in a non compatible way.",
+          "The number of users associated with the external identity is too large.",
+          "Internal error."
+        ],
+        "enum": [
+          "CODE_UNSPECIFIED",
+          "NOT_FOUND",
+          "IDENTITY_SOURCE_NOT_FOUND",
+          "IDENTITY_SOURCE_MISCONFIGURED",
+          "TOO_MANY_MAPPINGS_FOUND",
+          "INTERNAL_ERROR"
+        ]
+      },
+      "pageToken": {
+        "description": "The next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of items to fetch in a request. Defaults to 100.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "resolutionStatusCode",
+      "pageToken",
+      "pageSize",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug"
+    ],
+    "response": {
+      "$ref": "ListUnmappedIdentitiesResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_debug_identitysources_items_listForunmappedidentity": {
+    "name": "cloudsearch_debug_identitysources_items_listForunmappedidentity",
+    "description": "Lists names of items associated with an unmapped identity. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/debug/{+parent}/items:forunmappedidentity",
+    "parameters": {
+      "parent": {
+        "description": "The name of the identity source, in the following format: identitysources/{source_id}}",
+        "pattern": "^identitysources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "userResourceName": {
+        "location": "query",
+        "type": "string"
+      },
+      "groupResourceName": {
+        "location": "query",
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "The next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of items to fetch in a request. Defaults to 100.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "userResourceName",
+      "groupResourceName",
+      "pageToken",
+      "pageSize",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.debug"
+    ],
+    "response": {
+      "$ref": "ListItemNamesForUnmappedIdentityResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_getCustomer": {
+    "name": "cloudsearch_settings_getCustomer",
+    "description": "Get customer settings. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/customer",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "CustomerSettings"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_updateCustomer": {
+    "name": "cloudsearch_settings_updateCustomer",
+    "description": "Update customer settings. **Note:** This API requires an admin account to execute.",
+    "http_method": "PATCH",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/customer",
+    "parameters": {
+      "updateMask": {
+        "description": "Update mask to control which fields get updated. If you specify a field in the update_mask but don't specify its value here, that field will be cleared. If the mask is not present or empty, all fields will be updated. Currently supported field paths: vpc_settings and audit_logging_settings",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "CustomerSettings"
+    }
+  },
+  "cloudsearch_settings_searchapplications_list": {
+    "name": "cloudsearch_settings_searchapplications_list",
+    "description": "Lists all search applications. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/searchapplications",
+    "parameters": {
+      "pageToken": {
+        "description": "The next_page_token value returned from a previous List request, if any. The default value is 10",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of items to return.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "pageToken",
+      "pageSize",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "ListSearchApplicationsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_searchapplications_get": {
+    "name": "cloudsearch_settings_searchapplications_get",
+    "description": "Gets the specified search application. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the search application. Format: searchapplications/{application_id}.",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "SearchApplication"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_searchapplications_create": {
+    "name": "cloudsearch_settings_searchapplications_create",
+    "description": "Creates a search application. **Note:** This API requires an admin account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/searchapplications",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SearchApplication"
+    }
+  },
+  "cloudsearch_settings_searchapplications_update": {
+    "name": "cloudsearch_settings_searchapplications_update",
+    "description": "Updates a search application. **Note:** This API requires an admin account to execute.",
+    "http_method": "PUT",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the Search Application. Format: searchapplications/{application_id}.",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Only applies to [`settings.searchapplications.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/patch). Update mask to control which fields to update. Example field paths: `search_application.name`, `search_application.displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the `search_application`, then that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SearchApplication"
+    }
+  },
+  "cloudsearch_settings_searchapplications_patch": {
+    "name": "cloudsearch_settings_searchapplications_patch",
+    "description": "Updates a search application. **Note:** This API requires an admin account to execute.",
+    "http_method": "PATCH",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the Search Application. Format: searchapplications/{application_id}.",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Only applies to [`settings.searchapplications.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.searchapplications/patch). Update mask to control which fields to update. Example field paths: `search_application.name`, `search_application.displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the `search_application`, then that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "SearchApplication"
+    }
+  },
+  "cloudsearch_settings_searchapplications_delete": {
+    "name": "cloudsearch_settings_searchapplications_delete",
+    "description": "Deletes a search application. **Note:** This API requires an admin account to execute.",
+    "http_method": "DELETE",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the search application to be deleted. Format: applications/{application_id}.",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_searchapplications_reset": {
+    "name": "cloudsearch_settings_searchapplications_reset",
+    "description": "Resets a search application to default settings. This will return an empty response. **Note:** This API requires an admin account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}:reset",
+    "parameters": {
+      "name": {
+        "description": "The name of the search application to be reset. Format: applications/{application_id}.",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.query"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "ResetSearchApplicationRequest"
+    }
+  },
+  "cloudsearch_settings_datasources_create": {
+    "name": "cloudsearch_settings_datasources_create",
+    "description": "Creates a datasource. **Note:** This API requires an admin account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/datasources",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DataSource"
+    }
+  },
+  "cloudsearch_settings_datasources_delete": {
+    "name": "cloudsearch_settings_datasources_delete",
+    "description": "Deletes a datasource. **Note:** This API requires an admin account to execute.",
+    "http_method": "DELETE",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the datasource. Format: datasources/{source_id}.",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_datasources_get": {
+    "name": "cloudsearch_settings_datasources_get",
+    "description": "Gets a datasource. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the datasource resource. Format: datasources/{source_id}.",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "DataSource"
+    },
+    "request": {}
+  },
+  "cloudsearch_settings_datasources_update": {
+    "name": "cloudsearch_settings_datasources_update",
+    "description": "Updates a datasource. **Note:** This API requires an admin account to execute.",
+    "http_method": "PUT",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the datasource resource. Format: datasources/{source_id}. The name is ignored when creating a datasource.",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpdateDataSourceRequest"
+    }
+  },
+  "cloudsearch_settings_datasources_patch": {
+    "name": "cloudsearch_settings_datasources_patch",
+    "description": "Updates a datasource. **Note:** This API requires an admin account to execute.",
+    "http_method": "PATCH",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the datasource resource. Format: datasources/{source_id}. The name is ignored when creating a datasource.",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "updateMask": {
+        "description": "Only applies to [`settings.datasources.patch`](https://developers.google.com/cloud-search/docs/reference/rest/v1/settings.datasources/patch). Update mask to control which fields to update. Example field paths: `name`, `displayName`. * If `update_mask` is non-empty, then only the fields specified in the `update_mask` are updated. * If you specify a field in the `update_mask`, but don't specify its value in the source, that field is cleared. * If the `update_mask` is not present or empty or has the value `*`, then all fields are updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging",
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DataSource"
+    }
+  },
+  "cloudsearch_settings_datasources_list": {
+    "name": "cloudsearch_settings_datasources_list",
+    "description": "Lists datasources. **Note:** This API requires an admin account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/settings/datasources",
+    "parameters": {
+      "pageToken": {
+        "description": "Starting index of the results.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of datasources to fetch in a request. The max value is 1000. The default value is 1000.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "pageToken",
+      "pageSize",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "ListDataSourceResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_v1_initializeCustomer": {
+    "name": "cloudsearch_v1_initializeCustomer",
+    "description": "Enables `third party` support in Google Cloud Search. **Note:** This API requires an admin account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1:initializeCustomer",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "InitializeCustomerRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_updateSchema": {
+    "name": "cloudsearch_indexing_datasources_updateSchema",
+    "description": "Updates the schema of a data source. This method does not perform incremental updates to the schema. Instead, this method updates the schema by overwriting the entire schema. **Note:** This API requires an admin or service account to execute.",
+    "http_method": "PUT",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/schema",
+    "parameters": {
+      "name": {
+        "description": "The name of the data source to update Schema. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UpdateSchemaRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_getSchema": {
+    "name": "cloudsearch_indexing_datasources_getSchema",
+    "description": "Gets the schema of a data source. **Note:** This API requires an admin or service account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/schema",
+    "parameters": {
+      "name": {
+        "description": "The name of the data source to get Schema. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Schema"
+    },
+    "request": {}
+  },
+  "cloudsearch_indexing_datasources_deleteSchema": {
+    "name": "cloudsearch_indexing_datasources_deleteSchema",
+    "description": "Deletes the schema of a data source. **Note:** This API requires an admin or service account to execute.",
+    "http_method": "DELETE",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/schema",
+    "parameters": {
+      "name": {
+        "description": "The name of the data source to delete Schema. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.settings",
+      "https://www.googleapis.com/auth/cloud_search.settings.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudsearch_indexing_datasources_items_delete": {
+    "name": "cloudsearch_indexing_datasources_items_delete",
+    "description": "Deletes Item resource for the specified resource name. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "DELETE",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the item to delete. Format: datasources/{source_id}/items/{item_id}",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "version": {
+        "description": "Required. The incremented version of the item to delete from the index. The indexing system stores the version from the datasource as a byte string and compares the Item version in the index to the version of the queued Item using lexical ordering. Cloud Search Indexing won't delete any queued item with a version value that is less than or equal to the version of the currently indexed item. The maximum length for this field is 1024 bytes. For information on how item version affects the deletion process, refer to [Handle revisions after manual deletes](https://developers.google.com/cloud-search/docs/guides/operations).",
+        "location": "query",
+        "type": "string",
+        "format": "byte"
+      },
+      "connectorName": {
+        "description": "The name of connector making this call. Format: datasources/{source_id}/connectors/{ID}",
+        "location": "query",
+        "type": "string"
+      },
+      "mode": {
+        "description": "Required. The RequestMode for this request.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "The priority is not specified in the update request. Leaving priority unspecified results in an update failure.",
+          "For real-time updates.",
+          "For changes that are executed after the response is sent back to the caller."
+        ],
+        "enum": [
+          "UNSPECIFIED",
+          "SYNCHRONOUS",
+          "ASYNCHRONOUS"
+        ]
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "version",
+      "connectorName",
+      "mode",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "cloudsearch_indexing_datasources_items_get": {
+    "name": "cloudsearch_indexing_datasources_items_get",
+    "description": "Gets Item resource by item name. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the item to get info. Format: datasources/{source_id}/items/{item_id}",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "connectorName": {
+        "description": "The name of connector making this call. Format: datasources/{source_id}/connectors/{ID}",
+        "location": "query",
+        "type": "string"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "connectorName",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Item"
+    },
+    "request": {}
+  },
+  "cloudsearch_indexing_datasources_items_list": {
+    "name": "cloudsearch_indexing_datasources_items_list",
+    "description": "Lists all or a subset of Item resources. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/items",
+    "parameters": {
+      "name": {
+        "description": "The name of the Data Source to list Items. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "connectorName": {
+        "description": "The name of connector making this call. Format: datasources/{source_id}/connectors/{ID}",
+        "location": "query",
+        "type": "string"
+      },
+      "brief": {
+        "description": "When set to true, the indexing system only populates the following fields: name, version, queue. metadata.hash, metadata.title, metadata.sourceRepositoryURL, metadata.objectType, metadata.createTime, metadata.updateTime, metadata.contentLanguage, metadata.mimeType, structured_data.hash, content.hash, itemType, itemStatus.code, itemStatus.processingError.code, itemStatus.repositoryError.type, If this value is false, then all the fields are populated in Item.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "pageToken": {
+        "description": "The next_page_token value returned from a previous List request, if any.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of items to fetch in a request. The max value is 1000 when brief is true. The max value is 10 if brief is false. The default value is 10",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "connectorName",
+      "brief",
+      "pageToken",
+      "pageSize",
+      "debugOptions.enableDebugging"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "ListItemsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_indexing_datasources_items_index": {
+    "name": "cloudsearch_indexing_datasources_items_index",
+    "description": "Updates Item ACL, metadata, and content. It will insert the Item if it does not exist. This method does not support partial updates. Fields with no provided values are cleared out in the Cloud Search index. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}:index",
+    "parameters": {
+      "name": {
+        "description": "The name of the Item. Format: datasources/{source_id}/items/{item_id} This is a required field. The maximum length is 1536 characters.",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "IndexItemRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_items_upload": {
+    "name": "cloudsearch_indexing_datasources_items_upload",
+    "description": "Creates an upload session for uploading item content. For items smaller than 100 KB, it's easier to embed the content inline within an index request. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}:upload",
+    "parameters": {
+      "name": {
+        "description": "The name of the Item to start a resumable upload. Format: datasources/{source_id}/items/{item_id}. The maximum length is 1536 bytes.",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "UploadItemRef"
+    },
+    "request": {
+      "$ref": "StartUploadItemRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_items_poll": {
+    "name": "cloudsearch_indexing_datasources_items_poll",
+    "description": "Polls for unreserved items from the indexing queue and marks a set as reserved, starting with items that have the oldest timestamp from the highest priority ItemStatus. The priority order is as follows: ERROR MODIFIED NEW_ITEM ACCEPTED Reserving items ensures that polling from other threads cannot create overlapping sets. After handling the reserved items, the client should put items back into the unreserved state, either by calling index, or by calling push with the type REQUEUE. Items automatically become available (unreserved) after 4 hours even if no update or push method is called. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/items:poll",
+    "parameters": {
+      "name": {
+        "description": "The name of the Data Source to poll items. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "PollItemsResponse"
+    },
+    "request": {
+      "$ref": "PollItemsRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_items_push": {
+    "name": "cloudsearch_indexing_datasources_items_push",
+    "description": "Pushes an item onto a queue for later polling and updating. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}:push",
+    "parameters": {
+      "name": {
+        "description": "The name of the item to push into the indexing queue. Format: datasources/{source_id}/items/{ID} This is a required field. The maximum length is 1536 characters.",
+        "pattern": "^datasources/[^/]+/items/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Item"
+    },
+    "request": {
+      "$ref": "PushItemRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_items_unreserve": {
+    "name": "cloudsearch_indexing_datasources_items_unreserve",
+    "description": "Unreserves all items from a queue, making them all eligible to be polled. This method is useful for resetting the indexing queue after a connector has been restarted. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/items:unreserve",
+    "parameters": {
+      "name": {
+        "description": "The name of the Data Source to unreserve all items. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "UnreserveItemsRequest"
+    }
+  },
+  "cloudsearch_indexing_datasources_items_deleteQueueItems": {
+    "name": "cloudsearch_indexing_datasources_items_deleteQueueItems",
+    "description": "Deletes all items in a queue. This method is useful for deleting stale items. This API requires an admin or service account to execute. The service account used is the one whitelisted in the corresponding data source.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/indexing/{+name}/items:deleteQueueItems",
+    "parameters": {
+      "name": {
+        "description": "The name of the Data Source to delete items in a queue. Format: datasources/{source_id}",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DeleteQueueItemsRequest"
+    }
+  },
+  "cloudsearch_query_suggest": {
+    "name": "cloudsearch_query_suggest",
+    "description": "Provides suggestions for autocompleting the query. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/query/suggest",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.query"
+    ],
+    "response": {
+      "$ref": "SuggestResponse"
+    },
+    "request": {
+      "$ref": "SuggestRequest"
+    }
+  },
+  "cloudsearch_query_search": {
+    "name": "cloudsearch_query_search",
+    "description": "The Cloud Search Query API provides the search method, which returns the most relevant results from a user query. The results can come from Google Workspace apps, such as Gmail or Google Drive, or they can come from data that you have indexed from a third party. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/query/search",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.query"
+    ],
+    "response": {
+      "$ref": "SearchResponse"
+    },
+    "request": {
+      "$ref": "SearchRequest"
+    }
+  },
+  "cloudsearch_query_removeActivity": {
+    "name": "cloudsearch_query_removeActivity",
+    "description": "Provides functionality to remove logged activity for a user. Currently to be used only for Chat 1p clients **Note:** This API requires a standard end user account to execute. A service account can't perform Remove Activity requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/query:removeActivity",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.query"
+    ],
+    "response": {
+      "$ref": "RemoveActivityResponse"
+    },
+    "request": {
+      "$ref": "RemoveActivityRequest"
+    }
+  },
+  "cloudsearch_query_debugSearch": {
+    "name": "cloudsearch_query_debugSearch",
+    "description": "Returns Debug information for Cloud Search Query API provides the search method. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/query:debugSearch",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.query"
+    ],
+    "response": {
+      "$ref": "DebugResponse"
+    },
+    "request": {
+      "$ref": "SearchRequest"
+    }
+  },
+  "cloudsearch_query_sources_list": {
+    "name": "cloudsearch_query_sources_list",
+    "description": "Returns list of sources that user can use for Search and Suggest APIs. **Note:** This API requires a standard end user account to execute. A service account can't perform Query API requests directly; to use a service account to perform queries, set up [Google Workspace domain-wide delegation of authority](https://developers.google.com/cloud-search/docs/guides/delegation/).",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/query/sources",
+    "parameters": {
+      "requestOptions.languageCode": {
+        "description": "The BCP-47 language code, such as \"en-US\" or \"sr-Latn\". For more information, see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. For translations. Set this field using the language set in browser or for the page. In the event that the user's language preference is known, set this field to the known user language. When specified, the documents in search results are biased towards the specified language. The Suggest API uses this field as a hint to make better third-party autocomplete predictions.",
+        "location": "query",
+        "type": "string"
+      },
+      "requestOptions.debugOptions.enableDebugging": {
+        "description": "If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "requestOptions.timeZone": {
+        "description": "Current user's time zone id, such as \"America/Los_Angeles\" or \"Australia/Sydney\". These IDs are defined by [Unicode Common Locale Data Repository (CLDR)](http://cldr.unicode.org/) project, and currently available in the file [timezone.xml](http://unicode.org/repos/cldr/trunk/common/bcp47/timezone.xml). This field is used to correctly interpret date and time queries. If this field is not specified, the default time zone (UTC) is used.",
+        "location": "query",
+        "type": "string"
+      },
+      "requestOptions.searchApplicationId": {
+        "description": "The ID generated when you create a search application using the [admin console](https://support.google.com/a/answer/9043922).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "Number of sources to return in the response.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "requestOptions.languageCode",
+      "requestOptions.debugOptions.enableDebugging",
+      "requestOptions.timeZone",
+      "requestOptions.searchApplicationId",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.query"
+    ],
+    "response": {
+      "$ref": "ListQuerySourcesResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_getIndex": {
+    "name": "cloudsearch_stats_getIndex",
+    "description": "Gets indexed item statistics aggreggated across all data sources. This API only returns statistics for previous dates; it doesn't return statistics for the current day. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/index",
+    "parameters": {
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetCustomerIndexStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_getQuery": {
+    "name": "cloudsearch_stats_getQuery",
+    "description": "Get the query statistics for customer. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/query",
+    "parameters": {
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetCustomerQueryStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_getUser": {
+    "name": "cloudsearch_stats_getUser",
+    "description": "Get the users statistics for customer. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/user",
+    "parameters": {
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetCustomerUserStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_getSession": {
+    "name": "cloudsearch_stats_getSession",
+    "description": "Get the # of search sessions, % of successful sessions with a click query statistics for customer. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/session",
+    "parameters": {
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetCustomerSessionStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_getSearchapplication": {
+    "name": "cloudsearch_stats_getSearchapplication",
+    "description": "Get search application stats for customer. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/searchapplication",
+    "parameters": {
+      "startDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "startDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "startDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "endDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "endDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "endDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "startDate.year",
+      "startDate.month",
+      "startDate.day",
+      "endDate.year",
+      "endDate.month",
+      "endDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetCustomerSearchApplicationStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_index_datasources_get": {
+    "name": "cloudsearch_stats_index_datasources_get",
+    "description": "Gets indexed item statistics for a single data source. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/index/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The resource id of the data source to retrieve statistics for, in the following format: \"datasources/{source_id}\"",
+        "pattern": "^datasources/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetDataSourceIndexStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_query_searchapplications_get": {
+    "name": "cloudsearch_stats_query_searchapplications_get",
+    "description": "Get the query statistics for search application. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/query/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The resource id of the search application query stats, in the following format: searchapplications/{application_id}",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetSearchApplicationQueryStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_user_searchapplications_get": {
+    "name": "cloudsearch_stats_user_searchapplications_get",
+    "description": "Get the users statistics for search application. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/user/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The resource id of the search application session stats, in the following format: searchapplications/{application_id}",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetSearchApplicationUserStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_stats_session_searchapplications_get": {
+    "name": "cloudsearch_stats_session_searchapplications_get",
+    "description": "Get the # of search sessions, % of successful sessions with a click query statistics for search application. **Note:** This API requires a standard end user account to execute.",
+    "http_method": "GET",
+    "path": "https://cloudsearch.googleapis.com/v1/stats/session/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The resource id of the search application session stats, in the following format: searchapplications/{application_id}",
+        "pattern": "^searchapplications/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "fromDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "fromDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.year": {
+        "description": "Year of date. Must be from 1 to 9999.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.month": {
+        "description": "Month of date. Must be from 1 to 12.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "toDate.day": {
+        "description": "Day of month. Must be from 1 to 31 and valid for the year and month.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "fromDate.year",
+      "fromDate.month",
+      "fromDate.day",
+      "toDate.year",
+      "toDate.month",
+      "toDate.day"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.stats",
+      "https://www.googleapis.com/auth/cloud_search.stats.indexing"
+    ],
+    "response": {
+      "$ref": "GetSearchApplicationSessionStatsResponse"
+    },
+    "request": {}
+  },
+  "cloudsearch_media_upload": {
+    "name": "cloudsearch_media_upload",
+    "description": "Uploads media for indexing. The upload endpoint supports direct and resumable upload protocols and is intended for large items that can not be [inlined during index requests](https://developers.google.com/cloud-search/docs/reference/rest/v1/indexing.datasources.items#itemcontent). To index large content: 1. Call indexing.datasources.items.upload with the item name to begin an upload session and retrieve the UploadItemRef. 1. Call media.upload to upload the content, as a streaming request, using the same resource name from the UploadItemRef from step 1. 1. Call indexing.datasources.items.index to index the item. Populate the [ItemContent](/cloud-search/docs/reference/rest/v1/indexing.datasources.items#ItemContent) with the UploadItemRef from step 1. For additional information, see [Create a content connector using the REST API](https://developers.google.com/cloud-search/docs/guides/content-connector#rest). **Note:** This API requires a service account to execute.",
+    "http_method": "POST",
+    "path": "https://cloudsearch.googleapis.com/v1/media/{+resourceName}",
+    "parameters": {
+      "resourceName": {
+        "description": "Name of the media that is being downloaded. See ReadRequest.resource_name.",
+        "pattern": "^.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resourceName"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud_search",
+      "https://www.googleapis.com/auth/cloud_search.indexing"
+    ],
+    "response": {
+      "$ref": "Media"
+    },
+    "request": {
+      "$ref": "Media"
+    }
+  }
+}

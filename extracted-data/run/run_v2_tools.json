@@ -1,0 +1,1660 @@
+{
+  "run_projects_locations_exportProjectMetadata": {
+    "name": "run_projects_locations_exportProjectMetadata",
+    "description": "Export generated customer metadata for a given project.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}:exportProjectMetadata",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the project of which metadata should be exported. Format: `projects/{project_id_or_number}/locations/{location}` for Project in a given location.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Metadata"
+    },
+    "request": {}
+  },
+  "run_projects_locations_exportMetadata": {
+    "name": "run_projects_locations_exportMetadata",
+    "description": "Export generated customer metadata for a given resource.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}:exportMetadata",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the resource of which metadata should be exported. Format: `projects/{project_id_or_number}/locations/{location}/services/{service}` for Service `projects/{project_id_or_number}/locations/{location}/services/{service}/revisions/{revision}` for Revision `projects/{project_id_or_number}/locations/{location}/jobs/{job}/executions/{execution}` for Execution {project_id_or_number} may contains domain-scoped project IDs",
+        "pattern": "^projects/[^/]+/locations/[^/]+/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Metadata"
+    },
+    "request": {}
+  },
+  "run_projects_locations_exportImageMetadata": {
+    "name": "run_projects_locations_exportImageMetadata",
+    "description": "Export image metadata for a given resource.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}:exportImageMetadata",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the resource of which image metadata should be exported. Format: `projects/{project_id_or_number}/locations/{location}/services/{service}/revisions/{revision}` for Revision `projects/{project_id_or_number}/locations/{location}/jobs/{job}/executions/{execution}` for Execution",
+        "pattern": "^projects/[^/]+/locations/[^/]+/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Metadata"
+    },
+    "request": {}
+  },
+  "run_projects_locations_exportImage": {
+    "name": "run_projects_locations_exportImage",
+    "description": "Export image for a given resource.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+name}:exportImage",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the resource of which image metadata should be exported. Format: `projects/{project_id_or_number}/locations/{location}/services/{service}/revisions/{revision}` for Revision `projects/{project_id_or_number}/locations/{location}/jobs/{job}/executions/{execution}` for Execution",
+        "pattern": "^projects/[^/]+/locations/[^/]+/.*$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ExportImageResponse"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2ExportImageRequest"
+    }
+  },
+  "run_projects_locations_operations_list": {
+    "name": "run_projects_locations_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}/operations",
+    "parameters": {
+      "name": {
+        "description": "Required. To query for all of the operations for a project.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "Optional. A filter for matching the completed or in-progress operations. The supported formats of *filter* are: To query for only completed operations: done:true To query for only ongoing operations: done:false Must be empty to query for all of the latest operations for the given parent project.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of records that should be returned. Requested page size cannot exceed 100. If not set or set to less than or equal to 0, the default page size is 100. .",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Token identifying which result to start with, which is returned by a previous list call.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningListOperationsResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_operations_get": {
+    "name": "run_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "run_projects_locations_operations_delete": {
+    "name": "run_projects_locations_operations_delete",
+    "description": "Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to be deleted.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleProtobufEmpty"
+    },
+    "request": {}
+  },
+  "run_projects_locations_operations_wait": {
+    "name": "run_projects_locations_operations_wait",
+    "description": "Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+name}:wait",
+    "parameters": {
+      "name": {
+        "description": "The name of the operation resource to wait on.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/operations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleLongrunningWaitOperationRequest"
+    }
+  },
+  "run_projects_locations_builds_submit": {
+    "name": "run_projects_locations_builds_submit",
+    "description": "Submits a build in a given project.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+parent}/builds:submit",
+    "parameters": {
+      "parent": {
+        "description": "Required. The project and location to build in. Location must be a region, e.g., 'us-central1' or 'global' if the global builder is to be used. Format: `projects/{project}/locations/{location}`",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2SubmitBuildResponse"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2SubmitBuildRequest"
+    }
+  },
+  "run_projects_locations_jobs_create": {
+    "name": "run_projects_locations_jobs_create",
+    "description": "Creates a Job.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+parent}/jobs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location and project in which this Job should be created. Format: projects/{project}/locations/{location}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "jobId": {
+        "description": "Required. The unique identifier for the Job. The name of the job becomes {parent}/jobs/{job_id}.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated and default values populated, without persisting the request or creating any resources.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "jobId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2Job"
+    }
+  },
+  "run_projects_locations_jobs_get": {
+    "name": "run_projects_locations_jobs_get",
+    "description": "Gets information about a Job.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Job"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_list": {
+    "name": "run_projects_locations_jobs_list",
+    "description": "Lists Jobs. Results are sorted by creation time, descending.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/jobs",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location and project to list resources on. Format: projects/{project}/locations/{location}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of Jobs to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListJobs. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListJobsResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_patch": {
+    "name": "run_projects_locations_jobs_patch",
+    "description": "Updates a Job.",
+    "http_method": "PATCH",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The fully qualified name of this Job. Format: projects/{project}/locations/{location}/jobs/{job}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated and default values populated, without persisting the request or updating any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "allowMissing": {
+        "description": "Optional. If set to true, and if the Job does not exist, it will create a new one. Caller must have both create and update permissions for this call if this is set to true.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "allowMissing"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2Job"
+    }
+  },
+  "run_projects_locations_jobs_delete": {
+    "name": "run_projects_locations_jobs_delete",
+    "description": "Deletes a Job.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated without actually deleting any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_run": {
+    "name": "run_projects_locations_jobs_run",
+    "description": "Triggers creation of a new Execution of this Job.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+name}:run",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Job. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2RunJobRequest"
+    }
+  },
+  "run_projects_locations_jobs_getIamPolicy": {
+    "name": "run_projects_locations_jobs_getIamPolicy",
+    "description": "Gets the IAM Access Control policy currently in effect for the given Job. This result does not include any inherited policies.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1Policy"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_setIamPolicy": {
+    "name": "run_projects_locations_jobs_setIamPolicy",
+    "description": "Sets the IAM Access control policy for the specified Job. Overwrites any existing policy.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1Policy"
+    },
+    "request": {
+      "$ref": "GoogleIamV1SetIamPolicyRequest"
+    }
+  },
+  "run_projects_locations_jobs_testIamPermissions": {
+    "name": "run_projects_locations_jobs_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified Project. There are no permissions required for making this API call.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "GoogleIamV1TestIamPermissionsRequest"
+    }
+  },
+  "run_projects_locations_jobs_executions_exportStatus": {
+    "name": "run_projects_locations_jobs_executions_exportStatus",
+    "description": "Read the status of an image export operation.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}/{+operationId}:exportStatus",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the resource of which image export operation status has to be fetched. Format: `projects/{project_id_or_number}/locations/{location}/services/{service}/revisions/{revision}` for Revision `projects/{project_id_or_number}/locations/{location}/jobs/{job}/executions/{execution}` for Execution",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "operationId": {
+        "description": "Required. The operation id returned from ExportImage.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name",
+      "operationId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ExportStatusResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_executions_get": {
+    "name": "run_projects_locations_jobs_executions_get",
+    "description": "Gets information about an Execution.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Execution. Format: `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where `{project}` can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Execution"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_executions_list": {
+    "name": "run_projects_locations_jobs_executions_list",
+    "description": "Lists Executions from a Job. Results are sorted by creation time, descending.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/executions",
+    "parameters": {
+      "parent": {
+        "description": "Required. The Execution from which the Executions should be listed. To list all Executions across Jobs, use \"-\" instead of Job name. Format: `projects/{project}/locations/{location}/jobs/{job}`, where `{project}` can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of Executions to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListExecutions. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListExecutionsResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_executions_delete": {
+    "name": "run_projects_locations_jobs_executions_delete",
+    "description": "Deletes an Execution.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the Execution to delete. Format: `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where `{project}` can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated without actually deleting any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "A system-generated fingerprint for this version of the resource. This may be used to detect modification conflict during updates.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_executions_cancel": {
+    "name": "run_projects_locations_jobs_executions_cancel",
+    "description": "Cancels an Execution.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+name}:cancel",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the Execution to cancel. Format: `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where `{project}` can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2CancelExecutionRequest"
+    }
+  },
+  "run_projects_locations_jobs_executions_tasks_get": {
+    "name": "run_projects_locations_jobs_executions_tasks_get",
+    "description": "Gets information about a Task.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Task. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}/tasks/{task}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+/executions/[^/]+/tasks/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Task"
+    },
+    "request": {}
+  },
+  "run_projects_locations_jobs_executions_tasks_list": {
+    "name": "run_projects_locations_jobs_executions_tasks_list",
+    "description": "Lists Tasks from an Execution of a Job.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/tasks",
+    "parameters": {
+      "parent": {
+        "description": "Required. The Execution from which the Tasks should be listed. To list all Tasks across Executions of a Job, use \"-\" instead of Execution name. To list all Tasks across Jobs, use \"-\" instead of Job name. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/jobs/[^/]+/executions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of Tasks to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListTasks. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListTasksResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_create": {
+    "name": "run_projects_locations_services_create",
+    "description": "Creates a new Service in a given project and location.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+parent}/services",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location and project in which this service should be created. Format: projects/{project}/locations/{location}, where {project} can be project id or number. Only lowercase characters, digits, and hyphens.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "serviceId": {
+        "description": "Required. The unique identifier for the Service. It must begin with letter, and cannot end with hyphen; must contain fewer than 50 characters. The name of the service becomes {parent}/services/{service_id}.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated and default values populated, without persisting the request or creating any resources.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "serviceId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2Service"
+    }
+  },
+  "run_projects_locations_services_get": {
+    "name": "run_projects_locations_services_get",
+    "description": "Gets information about a Service.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Service"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_list": {
+    "name": "run_projects_locations_services_list",
+    "description": "Lists Services. Results are sorted by creation time, descending.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/services",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location and project to list resources on. Location must be a valid Google Cloud region, and cannot be the \"-\" wildcard. Format: projects/{project}/locations/{location}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of Services to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListServices. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListServicesResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_patch": {
+    "name": "run_projects_locations_services_patch",
+    "description": "Updates a Service.",
+    "http_method": "PATCH",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The fully qualified name of this Service. In CreateServiceRequest, this field is ignored, and instead composed from CreateServiceRequest.parent and CreateServiceRequest.service_id. Format: projects/{project}/locations/{location}/services/{service_id}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated and default values populated, without persisting the request or updating any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "allowMissing": {
+        "description": "Optional. If set to true, and if the Service does not exist, it will create a new one. The caller must have 'run.services.create' permissions if this is set to true and the Service does not exist.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "validateOnly",
+      "allowMissing"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2Service"
+    }
+  },
+  "run_projects_locations_services_delete": {
+    "name": "run_projects_locations_services_delete",
+    "description": "Deletes a Service. This will cause the Service to stop serving traffic and will delete all revisions.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Service. Format: projects/{project}/locations/{location}/services/{service}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated without actually deleting any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_getIamPolicy": {
+    "name": "run_projects_locations_services_getIamPolicy",
+    "description": "Gets the IAM Access Control policy currently in effect for the given Cloud Run Service. This result does not include any inherited policies.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1Policy"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_setIamPolicy": {
+    "name": "run_projects_locations_services_setIamPolicy",
+    "description": "Sets the IAM Access control policy for the specified Service. Overwrites any existing policy.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1Policy"
+    },
+    "request": {
+      "$ref": "GoogleIamV1SetIamPolicyRequest"
+    }
+  },
+  "run_projects_locations_services_testIamPermissions": {
+    "name": "run_projects_locations_services_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified Project. There are no permissions required for making this API call.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "GoogleIamV1TestIamPermissionsRequest"
+    }
+  },
+  "run_projects_locations_services_revisions_exportStatus": {
+    "name": "run_projects_locations_services_revisions_exportStatus",
+    "description": "Read the status of an image export operation.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}/{+operationId}:exportStatus",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the resource of which image export operation status has to be fetched. Format: `projects/{project_id_or_number}/locations/{location}/services/{service}/revisions/{revision}` for Revision `projects/{project_id_or_number}/locations/{location}/jobs/{job}/executions/{execution}` for Execution",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+/revisions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "operationId": {
+        "description": "Required. The operation id returned from ExportImage.",
+        "pattern": "^[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name",
+      "operationId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ExportStatusResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_revisions_get": {
+    "name": "run_projects_locations_services_revisions_get",
+    "description": "Gets information about a Revision.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Revision. Format: projects/{project}/locations/{location}/services/{service}/revisions/{revision}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+/revisions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Revision"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_revisions_list": {
+    "name": "run_projects_locations_services_revisions_list",
+    "description": "Lists Revisions from a given Service, or from a given location. Results are sorted by creation time, descending.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/revisions",
+    "parameters": {
+      "parent": {
+        "description": "Required. The Service from which the Revisions should be listed. To list all Revisions across Services, use \"-\" instead of Service name. Format: projects/{project}/locations/{location}/services/{service}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of revisions to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListRevisions. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListRevisionsResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_services_revisions_delete": {
+    "name": "run_projects_locations_services_revisions_delete",
+    "description": "Deletes a Revision.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the Revision to delete. Format: projects/{project}/locations/{location}/services/{service}/revisions/{revision}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/services/[^/]+/revisions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated without actually deleting any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "A system-generated fingerprint for this version of the resource. This may be used to detect modification conflict during updates.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_create": {
+    "name": "run_projects_locations_workerPools_create",
+    "description": "Creates a new WorkerPool in a given project and location.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+parent}/workerPools",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location and project in which this worker pool should be created. Format: projects/{project}/locations/{location}, where {project} can be project id or number. Only lowercase characters, digits, and hyphens.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "workerPoolId": {
+        "description": "Required. The unique identifier for the WorkerPool. It must begin with letter, and cannot end with hyphen; must contain fewer than 50 characters. The name of the worker pool becomes {parent}/workerPools/{worker_pool_id}.",
+        "location": "query",
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. Indicates that the request should be validated and default values populated, without persisting the request or creating any resources.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "workerPoolId",
+      "validateOnly"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2WorkerPool"
+    }
+  },
+  "run_projects_locations_workerPools_get": {
+    "name": "run_projects_locations_workerPools_get",
+    "description": "Gets information about a WorkerPool.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the WorkerPool. Format: projects/{project}/locations/{location}/workerPools/{worker_pool}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2WorkerPool"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_list": {
+    "name": "run_projects_locations_workerPools_list",
+    "description": "Lists WorkerPools. Results are sorted by creation time, descending.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/workerPools",
+    "parameters": {
+      "parent": {
+        "description": "Required. The location and project to list resources on. Location must be a valid Google Cloud region, and cannot be the \"-\" wildcard. Format: projects/{project}/locations/{location}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of WorkerPools to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListWorkerPools. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListWorkerPoolsResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_patch": {
+    "name": "run_projects_locations_workerPools_patch",
+    "description": "Updates a WorkerPool.",
+    "http_method": "PATCH",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The fully qualified name of this WorkerPool. In CreateWorkerPoolRequest, this field is ignored, and instead composed from CreateWorkerPoolRequest.parent and CreateWorkerPoolRequest.worker_id. Format: projects/{project}/locations/{location}/workerPools/{worker_id}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Optional. The list of fields to be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "validateOnly": {
+        "description": "Optional. Indicates that the request should be validated and default values populated, without persisting the request or updating any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "allowMissing": {
+        "description": "Optional. If set to true, and if the WorkerPool does not exist, it will create a new one. The caller must have 'run.workerpools.create' permissions if this is set to true and the WorkerPool does not exist.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "forceNewRevision": {
+        "description": "Optional. If set to true, a new revision will be created from the template even if the system doesn't detect any changes from the previously deployed revision. This may be useful for cases where the underlying resources need to be recreated or reinitialized. For example if the image is specified by label, but the underlying image digest has changed) or if the container performs deployment initialization work that needs to be performed again.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "validateOnly",
+      "allowMissing",
+      "forceNewRevision"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleCloudRunV2WorkerPool"
+    }
+  },
+  "run_projects_locations_workerPools_delete": {
+    "name": "run_projects_locations_workerPools_delete",
+    "description": "Deletes a WorkerPool.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the WorkerPool. Format: projects/{project}/locations/{location}/workerPools/{worker_pool}, where {project} can be project id or number.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Optional. Indicates that the request should be validated without actually deleting any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_getIamPolicy": {
+    "name": "run_projects_locations_workerPools_getIamPolicy",
+    "description": "Gets the IAM Access Control policy currently in effect for the given Cloud Run WorkerPool. This result does not include any inherited policies.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "options.requestedPolicyVersion": {
+        "description": "Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [
+      "options.requestedPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1Policy"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_setIamPolicy": {
+    "name": "run_projects_locations_workerPools_setIamPolicy",
+    "description": "Sets the IAM Access control policy for the specified WorkerPool. Overwrites any existing policy.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1Policy"
+    },
+    "request": {
+      "$ref": "GoogleIamV1SetIamPolicyRequest"
+    }
+  },
+  "run_projects_locations_workerPools_testIamPermissions": {
+    "name": "run_projects_locations_workerPools_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified Project. There are no permissions required for making this API call.",
+    "http_method": "POST",
+    "path": "https://run.googleapis.com/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleIamV1TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "GoogleIamV1TestIamPermissionsRequest"
+    }
+  },
+  "run_projects_locations_workerPools_revisions_get": {
+    "name": "run_projects_locations_workerPools_revisions_get",
+    "description": "Gets information about a Revision.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The full name of the Revision. Format: projects/{project}/locations/{location}/services/{service}/revisions/{revision}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+/revisions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2Revision"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_revisions_list": {
+    "name": "run_projects_locations_workerPools_revisions_list",
+    "description": "Lists Revisions from a given Service, or from a given location. Results are sorted by creation time, descending.",
+    "http_method": "GET",
+    "path": "https://run.googleapis.com/v2/{+parent}/revisions",
+    "parameters": {
+      "parent": {
+        "description": "Required. The Service from which the Revisions should be listed. To list all Revisions across Services, use \"-\" instead of Service name. Format: projects/{project}/locations/{location}/services/{service}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum number of revisions to return in this call.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from a previous call to ListRevisions. All other parameters must match.",
+        "location": "query",
+        "type": "string"
+      },
+      "showDeleted": {
+        "description": "If true, returns deleted (but unexpired) resources along with active ones.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "parent"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken",
+      "showDeleted"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleCloudRunV2ListRevisionsResponse"
+    },
+    "request": {}
+  },
+  "run_projects_locations_workerPools_revisions_delete": {
+    "name": "run_projects_locations_workerPools_revisions_delete",
+    "description": "Deletes a Revision.",
+    "http_method": "DELETE",
+    "path": "https://run.googleapis.com/v2/{+name}",
+    "parameters": {
+      "name": {
+        "description": "Required. The name of the Revision to delete. Format: projects/{project}/locations/{location}/services/{service}/revisions/{revision}",
+        "pattern": "^projects/[^/]+/locations/[^/]+/workerPools/[^/]+/revisions/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "validateOnly": {
+        "description": "Indicates that the request should be validated without actually deleting any resources.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "etag": {
+        "description": "A system-generated fingerprint for this version of the resource. This may be used to detect modification conflict during updates.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [
+      "validateOnly",
+      "etag"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {}
+  }
+}

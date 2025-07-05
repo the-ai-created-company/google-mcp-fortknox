@@ -1,0 +1,2172 @@
+{
+  "bigquery_datasets_delete": {
+    "name": "bigquery_datasets_delete",
+    "description": "Deletes the dataset specified by the datasetId value. Before you can delete a dataset, you must delete all its tables, either manually or by specifying deleteContents. Immediately after deletion, you can create another dataset with the same name.",
+    "http_method": "DELETE",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of dataset being deleted",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "deleteContents": {
+        "description": "If True, delete all the tables in the dataset. If False and the dataset contains tables, the request will fail. Default is False",
+        "location": "query",
+        "type": "boolean"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the dataset being deleted",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "deleteContents"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {},
+    "request": {}
+  },
+  "bigquery_datasets_get": {
+    "name": "bigquery_datasets_get",
+    "description": "Returns the dataset specified by datasetID.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}",
+    "parameters": {
+      "accessPolicyVersion": {
+        "description": "Optional. The version of the access policy schema to fetch. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for conditional access policy binding in datasets must specify version 3. Dataset with no conditional role bindings in access policy may specify any valid value or leave the field unset. This field will be mapped to [IAM Policy version] (https://cloud.google.com/iam/docs/policies#versions) and will be used to fetch policy from IAM. If unset or if 0 or 1 value is used for dataset with conditional bindings, access entry with condition will have role string appended by 'withcond' string followed by a hash value. For example : { \"access\": [ { \"role\": \"roles/bigquery.dataViewer_with_conditionalbinding_7a34awqsda\", \"userByEmail\": \"user@example.com\", } ] } Please refer https://cloud.google.com/iam/docs/troubleshooting-withcond for more details.",
+        "format": "int32",
+        "location": "query",
+        "type": "integer"
+      },
+      "datasetId": {
+        "description": "Required. Dataset ID of the requested dataset",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "datasetView": {
+        "description": "Optional. Specifies the view that determines which dataset information is returned. By default, metadata and ACL information are returned.",
+        "enum": [
+          "DATASET_VIEW_UNSPECIFIED",
+          "METADATA",
+          "ACL",
+          "FULL"
+        ],
+        "enumDescriptions": [
+          "The default value. Default to the FULL view.",
+          "View metadata information for the dataset, such as friendlyName, description, labels, etc.",
+          "View ACL information for the dataset, which defines dataset access for one or more entities.",
+          "View both dataset metadata and ACL information."
+        ],
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the requested dataset",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "accessPolicyVersion",
+      "datasetView"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Dataset"
+    },
+    "request": {}
+  },
+  "bigquery_datasets_insert": {
+    "name": "bigquery_datasets_insert",
+    "description": "Creates a new empty dataset.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets",
+    "parameters": {
+      "accessPolicyVersion": {
+        "description": "Optional. The version of the provided access policy schema. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. This version refers to the schema version of the access policy and not the version of access policy. This field's value can be equal or more than the access policy schema provided in the request. For example, * Requests with conditional access policy binding in datasets must specify version 3. * But dataset with no conditional role bindings in access policy may specify any valid value or leave the field unset. If unset or if 0 or 1 value is used for dataset with conditional bindings, request will be rejected. This field will be mapped to IAM Policy version (https://cloud.google.com/iam/docs/policies#versions) and will be used to set policy in IAM.",
+        "format": "int32",
+        "location": "query",
+        "type": "integer"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the new dataset",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "accessPolicyVersion"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Dataset"
+    },
+    "request": {
+      "$ref": "Dataset"
+    }
+  },
+  "bigquery_datasets_list": {
+    "name": "bigquery_datasets_list",
+    "description": "Lists all datasets in the specified project to which the user has been granted the READER dataset role.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets",
+    "parameters": {
+      "all": {
+        "description": "Whether to list all datasets, including hidden ones",
+        "location": "query",
+        "type": "boolean"
+      },
+      "filter": {
+        "description": "An expression for filtering the results of the request by label. The syntax is `labels.[:]`. Multiple filters can be AND-ed together by connecting with a space. Example: `labels.department:receiving labels.active`. See [Filtering datasets using labels](https://cloud.google.com/bigquery/docs/filtering-labels#filtering_datasets_using_labels) for details.",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the datasets to be listed",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "all",
+      "filter",
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "DatasetList"
+    },
+    "request": {}
+  },
+  "bigquery_datasets_patch": {
+    "name": "bigquery_datasets_patch",
+    "description": "Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource. This method supports RFC5789 patch semantics.",
+    "http_method": "PATCH",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}",
+    "parameters": {
+      "accessPolicyVersion": {
+        "description": "Optional. The version of the provided access policy schema. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. This version refers to the schema version of the access policy and not the version of access policy. This field's value can be equal or more than the access policy schema provided in the request. For example, * Operations updating conditional access policy binding in datasets must specify version 3. Some of the operations are : - Adding a new access policy entry with condition. - Removing an access policy entry with condition. - Updating an access policy entry with condition. * But dataset with no conditional role bindings in access policy may specify any valid value or leave the field unset. If unset or if 0 or 1 value is used for dataset with conditional bindings, request will be rejected. This field will be mapped to IAM Policy version (https://cloud.google.com/iam/docs/policies#versions) and will be used to set policy in IAM.",
+        "format": "int32",
+        "location": "query",
+        "type": "integer"
+      },
+      "datasetId": {
+        "description": "Required. Dataset ID of the dataset being updated",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the dataset being updated",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "updateMode": {
+        "description": "Optional. Specifies the fields of dataset that update/patch operation is targeting By default, both metadata and ACL fields are updated.",
+        "enum": [
+          "UPDATE_MODE_UNSPECIFIED",
+          "UPDATE_METADATA",
+          "UPDATE_ACL",
+          "UPDATE_FULL"
+        ],
+        "enumDescriptions": [
+          "The default value. Default to the UPDATE_FULL.",
+          "Includes metadata information for the dataset, such as friendlyName, description, labels, etc.",
+          "Includes ACL information for the dataset, which defines dataset access for one or more entities.",
+          "Includes both dataset metadata and ACL information."
+        ],
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "accessPolicyVersion",
+      "updateMode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Dataset"
+    },
+    "request": {
+      "$ref": "Dataset"
+    }
+  },
+  "bigquery_datasets_undelete": {
+    "name": "bigquery_datasets_undelete",
+    "description": "Undeletes a dataset which is within time travel window based on datasetId. If a time is specified, the dataset version deleted at that time is undeleted, else the last live version is undeleted.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}:undelete",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of dataset being deleted",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the dataset to be undeleted",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Dataset"
+    },
+    "request": {
+      "$ref": "UndeleteDatasetRequest"
+    }
+  },
+  "bigquery_datasets_update": {
+    "name": "bigquery_datasets_update",
+    "description": "Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource.",
+    "http_method": "PUT",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}",
+    "parameters": {
+      "accessPolicyVersion": {
+        "description": "Optional. The version of the provided access policy schema. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. This version refers to the schema version of the access policy and not the version of access policy. This field's value can be equal or more than the access policy schema provided in the request. For example, * Operations updating conditional access policy binding in datasets must specify version 3. Some of the operations are : - Adding a new access policy entry with condition. - Removing an access policy entry with condition. - Updating an access policy entry with condition. * But dataset with no conditional role bindings in access policy may specify any valid value or leave the field unset. If unset or if 0 or 1 value is used for dataset with conditional bindings, request will be rejected. This field will be mapped to IAM Policy version (https://cloud.google.com/iam/docs/policies#versions) and will be used to set policy in IAM.",
+        "format": "int32",
+        "location": "query",
+        "type": "integer"
+      },
+      "datasetId": {
+        "description": "Required. Dataset ID of the dataset being updated",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the dataset being updated",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "updateMode": {
+        "description": "Optional. Specifies the fields of dataset that update/patch operation is targeting By default, both metadata and ACL fields are updated.",
+        "enum": [
+          "UPDATE_MODE_UNSPECIFIED",
+          "UPDATE_METADATA",
+          "UPDATE_ACL",
+          "UPDATE_FULL"
+        ],
+        "enumDescriptions": [
+          "The default value. Default to the UPDATE_FULL.",
+          "Includes metadata information for the dataset, such as friendlyName, description, labels, etc.",
+          "Includes ACL information for the dataset, which defines dataset access for one or more entities.",
+          "Includes both dataset metadata and ACL information."
+        ],
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "accessPolicyVersion",
+      "updateMode"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Dataset"
+    },
+    "request": {
+      "$ref": "Dataset"
+    }
+  },
+  "bigquery_jobs_cancel": {
+    "name": "bigquery_jobs_cancel",
+    "description": "Requests that a job be cancelled. This call will return immediately, and the client will need to poll for the job status to see if the cancel completed successfully. Cancelled jobs may still incur costs.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/jobs/{+jobId}/cancel",
+    "parameters": {
+      "jobId": {
+        "description": "Required. Job ID of the job to cancel",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "location": {
+        "description": "The geographic location of the job. You must [specify the location](https://cloud.google.com/bigquery/docs/locations#specify_locations) to run the job for the following scenarios: * If the location to run a job is not in the `us` or the `eu` multi-regional location * If the job's location is in a single region (for example, `us-central1`)",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the job to cancel",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "jobId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "location"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "JobCancelResponse"
+    },
+    "request": {}
+  },
+  "bigquery_jobs_delete": {
+    "name": "bigquery_jobs_delete",
+    "description": "Requests the deletion of the metadata of a job. This call returns when the job's metadata is deleted.",
+    "http_method": "DELETE",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/jobs/{+jobId}/delete",
+    "parameters": {
+      "jobId": {
+        "description": "Required. Job ID of the job for which metadata is to be deleted. If this is a parent job which has child jobs, the metadata from all child jobs will be deleted as well. Direct deletion of the metadata of child jobs is not allowed.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "location": {
+        "description": "The geographic location of the job. Required. For more information, see how to [specify locations](https://cloud.google.com/bigquery/docs/locations#specify_locations).",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the job for which metadata is to be deleted.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "jobId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "location"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {},
+    "request": {}
+  },
+  "bigquery_jobs_get": {
+    "name": "bigquery_jobs_get",
+    "description": "Returns information about a specific job. Job information is available for a six month period after creation. Requires that you're the person who ran the job, or have the Is Owner project role.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/jobs/{+jobId}",
+    "parameters": {
+      "jobId": {
+        "description": "Required. Job ID of the requested job.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "location": {
+        "description": "The geographic location of the job. You must specify the location to run the job for the following scenarios: * If the location to run a job is not in the `us` or the `eu` multi-regional location * If the job's location is in a single region (for example, `us-central1`) For more information, see how to [specify locations](https://cloud.google.com/bigquery/docs/locations#specify_locations).",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the requested job.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "jobId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "location"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {}
+  },
+  "bigquery_jobs_getQueryResults": {
+    "name": "bigquery_jobs_getQueryResults",
+    "description": "RPC to get the results of a query job.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/queries/{+jobId}",
+    "parameters": {
+      "formatOptions.useInt64Timestamp": {
+        "description": "Optional. Output timestamp as usec int64. Default is false.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "jobId": {
+        "description": "Required. Job ID of the query job.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "location": {
+        "description": "The geographic location of the job. You must specify the location to run the job for the following scenarios: * If the location to run a job is not in the `us` or the `eu` multi-regional location * If the job's location is in a single region (for example, `us-central1`) For more information, see how to [specify locations](https://cloud.google.com/bigquery/docs/locations#specify_locations).",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "Maximum number of results to read.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results.",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the query job.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "startIndex": {
+        "description": "Zero-based index of the starting row.",
+        "format": "uint64",
+        "location": "query",
+        "type": "string"
+      },
+      "timeoutMs": {
+        "description": "Optional: Specifies the maximum amount of time, in milliseconds, that the client is willing to wait for the query to complete. By default, this limit is 10 seconds (10,000 milliseconds). If the query is complete, the jobComplete field in the response is true. If the query has not yet completed, jobComplete is false. You can request a longer timeout period in the timeoutMs field. However, the call is not guaranteed to wait for the specified timeout; it typically returns after around 200 seconds (200,000 milliseconds), even if the query is not complete. If jobComplete is false, you can continue to wait for the query to complete by calling the getQueryResults method until the jobComplete field in the getQueryResults response is true.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      }
+    },
+    "required_parameters": [
+      "jobId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "formatOptions.useInt64Timestamp",
+      "location",
+      "maxResults",
+      "pageToken",
+      "startIndex",
+      "timeoutMs"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "GetQueryResultsResponse"
+    },
+    "request": {}
+  },
+  "bigquery_jobs_insert": {
+    "name": "bigquery_jobs_insert",
+    "description": "Starts a new asynchronous job. This API has two different kinds of endpoint URIs, as this method supports a variety of use cases. * The *Metadata* URI is used for most interactions, as it accepts the job configuration directly. * The *Upload* URI is ONLY for the case when you're sending both a load job configuration and a data stream together. In this case, the Upload URI accepts the job configuration and the data as two distinct multipart MIME parts.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/jobs",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID of project that will be billed for the job.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/devstorage.full_control",
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      "https://www.googleapis.com/auth/devstorage.read_write"
+    ],
+    "response": {
+      "$ref": "Job"
+    },
+    "request": {
+      "$ref": "Job"
+    }
+  },
+  "bigquery_jobs_list": {
+    "name": "bigquery_jobs_list",
+    "description": "Lists all jobs that you started in the specified project. Job information is available for a six month period after creation. The job list is sorted in reverse chronological order, by job creation time. Requires the Can View project role, or the Is Owner project role if you set the allUsers property.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/jobs",
+    "parameters": {
+      "allUsers": {
+        "description": "Whether to display jobs owned by all users in the project. Default False.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "maxCreationTime": {
+        "description": "Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned.",
+        "format": "uint64",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "minCreationTime": {
+        "description": "Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned.",
+        "format": "uint64",
+        "location": "query",
+        "type": "string"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results.",
+        "location": "query",
+        "type": "string"
+      },
+      "parentJobId": {
+        "description": "If set, show only child jobs of the specified parent. Otherwise, show all top-level jobs.",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Project ID of the jobs to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projection": {
+        "description": "Restrict information returned to a set of selected fields",
+        "enum": [
+          "full",
+          "minimal"
+        ],
+        "enumDescriptions": [
+          "Includes all job data",
+          "Does not include the job configuration"
+        ],
+        "location": "query",
+        "type": "string"
+      },
+      "stateFilter": {
+        "description": "Filter for job state",
+        "enum": [
+          "done",
+          "pending",
+          "running"
+        ],
+        "enumDescriptions": [
+          "Finished jobs",
+          "Pending jobs",
+          "Running jobs"
+        ],
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [
+      "allUsers",
+      "maxCreationTime",
+      "maxResults",
+      "minCreationTime",
+      "pageToken",
+      "parentJobId",
+      "projection",
+      "stateFilter"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "JobList"
+    },
+    "request": {}
+  },
+  "bigquery_jobs_query": {
+    "name": "bigquery_jobs_query",
+    "description": "Runs a BigQuery SQL query synchronously and returns query results if the query completes within a specified timeout.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/queries",
+    "parameters": {
+      "projectId": {
+        "description": "Required. Project ID of the query request.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "QueryResponse"
+    },
+    "request": {
+      "$ref": "QueryRequest"
+    }
+  },
+  "bigquery_models_delete": {
+    "name": "bigquery_models_delete",
+    "description": "Deletes the model specified by modelId from the dataset.",
+    "http_method": "DELETE",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/models/{+modelId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the model to delete.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "modelId": {
+        "description": "Required. Model ID of the model to delete.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the model to delete.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "modelId",
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {},
+    "request": {}
+  },
+  "bigquery_models_get": {
+    "name": "bigquery_models_get",
+    "description": "Gets the specified model resource by model ID.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/models/{+modelId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the requested model.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "modelId": {
+        "description": "Required. Model ID of the requested model.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the requested model.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "modelId",
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Model"
+    },
+    "request": {}
+  },
+  "bigquery_models_list": {
+    "name": "bigquery_models_list",
+    "description": "Lists all models in the specified dataset. Requires the READER dataset role. After retrieving the list of models, you can get information about a particular model by calling the models.get method.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/models",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the models to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call to request the next page of results",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the models to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListModelsResponse"
+    },
+    "request": {}
+  },
+  "bigquery_models_patch": {
+    "name": "bigquery_models_patch",
+    "description": "Patch specific fields in the specified model.",
+    "http_method": "PATCH",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/models/{+modelId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the model to patch.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "modelId": {
+        "description": "Required. Model ID of the model to patch.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the model to patch.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "modelId",
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Model"
+    },
+    "request": {
+      "$ref": "Model"
+    }
+  },
+  "bigquery_projects_getServiceAccount": {
+    "name": "bigquery_projects_getServiceAccount",
+    "description": "RPC to get the service account for a project used for interactions with Google Cloud KMS",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/serviceAccount",
+    "parameters": {
+      "projectId": {
+        "description": "Required. ID of the project.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "GetServiceAccountResponse"
+    },
+    "request": {}
+  },
+  "bigquery_projects_list": {
+    "name": "bigquery_projects_list",
+    "description": "RPC to list projects to which the user has been granted any project role. Users of this method are encouraged to consider the [Resource Manager](https://cloud.google.com/resource-manager/docs/) API, which provides the underlying data for this method and has more capabilities.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects",
+    "parameters": {
+      "maxResults": {
+        "description": "`maxResults` unset returns all results, up to 50 per page. Additionally, the number of projects in a page may be fewer than `maxResults` because projects are retrieved and then filtered to only projects with the BigQuery API enabled.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results. If not present, no further pages are present.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [],
+    "optional_parameters": [
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ProjectList"
+    },
+    "request": {}
+  },
+  "bigquery_routines_delete": {
+    "name": "bigquery_routines_delete",
+    "description": "Deletes the routine specified by routineId from the dataset.",
+    "http_method": "DELETE",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/routines/{+routineId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the routine to delete",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the routine to delete",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "routineId": {
+        "description": "Required. Routine ID of the routine to delete",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "routineId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {},
+    "request": {}
+  },
+  "bigquery_routines_get": {
+    "name": "bigquery_routines_get",
+    "description": "Gets the specified routine resource by routine ID.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/routines/{+routineId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the requested routine",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the requested routine",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "readMask": {
+        "description": "If set, only the Routine fields in the field mask are returned in the response. If unset, all Routine fields are returned.",
+        "format": "google-fieldmask",
+        "location": "query",
+        "type": "string"
+      },
+      "routineId": {
+        "description": "Required. Routine ID of the requested routine",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "routineId"
+    ],
+    "optional_parameters": [
+      "readMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Routine"
+    },
+    "request": {}
+  },
+  "bigquery_routines_getIamPolicy": {
+    "name": "bigquery_routines_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/routines/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigquery_routines_insert": {
+    "name": "bigquery_routines_insert",
+    "description": "Creates a new routine in the dataset.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/routines",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the new routine",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the new routine",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Routine"
+    },
+    "request": {
+      "$ref": "Routine"
+    }
+  },
+  "bigquery_routines_list": {
+    "name": "bigquery_routines_list",
+    "description": "Lists all routines in the specified dataset. Requires the READER dataset role.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/routines",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the routines to list",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "If set, then only the Routines matching this filter are returned. The supported format is `routineType:{RoutineType}`, where `{RoutineType}` is a RoutineType enum. For example: `routineType:SCALAR_FUNCTION`.",
+        "location": "query",
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the routines to list",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "readMask": {
+        "description": "If set, then only the Routine fields in the field mask, as well as project_id, dataset_id and routine_id, are returned in the response. If unset, then the following Routine fields are returned: etag, project_id, dataset_id, routine_id, routine_type, creation_time, last_modified_time, and language.",
+        "format": "google-fieldmask",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "filter",
+      "maxResults",
+      "pageToken",
+      "readMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListRoutinesResponse"
+    },
+    "request": {}
+  },
+  "bigquery_routines_setIamPolicy": {
+    "name": "bigquery_routines_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/routines/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigquery_routines_testIamPermissions": {
+    "name": "bigquery_routines_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/routines/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigquery_routines_update": {
+    "name": "bigquery_routines_update",
+    "description": "Updates information in an existing routine. The update method replaces the entire Routine resource.",
+    "http_method": "PUT",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/routines/{+routineId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the routine to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the routine to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "routineId": {
+        "description": "Required. Routine ID of the routine to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "routineId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Routine"
+    },
+    "request": {
+      "$ref": "Routine"
+    }
+  },
+  "bigquery_rowAccessPolicies_batchDelete": {
+    "name": "bigquery_rowAccessPolicies_batchDelete",
+    "description": "Deletes provided row access policies.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/rowAccessPolicies:batchDelete",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to delete the row access policies.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to delete the row access policies.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to delete the row access policies.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {},
+    "request": {
+      "$ref": "BatchDeleteRowAccessPoliciesRequest"
+    }
+  },
+  "bigquery_rowAccessPolicies_delete": {
+    "name": "bigquery_rowAccessPolicies_delete",
+    "description": "Deletes a row access policy.",
+    "http_method": "DELETE",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/rowAccessPolicies/{+policyId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to delete the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "force": {
+        "description": "If set to true, it deletes the row access policy even if it's the last row access policy on the table and the deletion will widen the access rather narrowing it.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "policyId": {
+        "description": "Required. Policy ID of the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to delete the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to delete the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "policyId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [
+      "force"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {},
+    "request": {}
+  },
+  "bigquery_rowAccessPolicies_get": {
+    "name": "bigquery_rowAccessPolicies_get",
+    "description": "Gets the specified row access policy by policy ID.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/rowAccessPolicies/{+policyId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "policyId": {
+        "description": "Required. Policy ID of the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "policyId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "RowAccessPolicy"
+    },
+    "request": {}
+  },
+  "bigquery_rowAccessPolicies_getIamPolicy": {
+    "name": "bigquery_rowAccessPolicies_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/tables/[^/]+/rowAccessPolicies/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigquery_rowAccessPolicies_insert": {
+    "name": "bigquery_rowAccessPolicies_insert",
+    "description": "Creates a row access policy.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/rowAccessPolicies",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "RowAccessPolicy"
+    },
+    "request": {
+      "$ref": "RowAccessPolicy"
+    }
+  },
+  "bigquery_rowAccessPolicies_list": {
+    "name": "bigquery_rowAccessPolicies_list",
+    "description": "Lists all row access policies on the specified table.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/rowAccessPolicies",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of row access policies to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.",
+        "format": "int32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results.",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the row access policies to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to list row access policies.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListRowAccessPoliciesResponse"
+    },
+    "request": {}
+  },
+  "bigquery_rowAccessPolicies_testIamPermissions": {
+    "name": "bigquery_rowAccessPolicies_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/tables/[^/]+/rowAccessPolicies/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigquery_rowAccessPolicies_update": {
+    "name": "bigquery_rowAccessPolicies_update",
+    "description": "Updates a row access policy.",
+    "http_method": "PUT",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/rowAccessPolicies/{+policyId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "policyId": {
+        "description": "Required. Policy ID of the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to get the row access policy.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "policyId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "RowAccessPolicy"
+    },
+    "request": {
+      "$ref": "RowAccessPolicy"
+    }
+  },
+  "bigquery_tabledata_insertAll": {
+    "name": "bigquery_tabledata_insertAll",
+    "description": "Streams data into BigQuery one record at a time without needing to run a load job.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/insertAll",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the destination.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the destination.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the destination.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/bigquery.insertdata",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "TableDataInsertAllResponse"
+    },
+    "request": {
+      "$ref": "TableDataInsertAllRequest"
+    }
+  },
+  "bigquery_tabledata_list": {
+    "name": "bigquery_tabledata_list",
+    "description": "List the content of a table in rows.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/data",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset id of the table to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "formatOptions.useInt64Timestamp": {
+        "description": "Optional. Output timestamp as usec int64. Default is false.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "maxResults": {
+        "description": "Row limit of the table.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "To retrieve the next page of table data, set this field to the string provided in the pageToken field of the response body from your previous call to tabledata.list.",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project id of the table to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "selectedFields": {
+        "description": "Subset of fields to return, supports select into sub fields. Example: selected_fields = \"a,e.d.f\";",
+        "location": "query",
+        "type": "string"
+      },
+      "startIndex": {
+        "description": "Start row index of the table.",
+        "format": "uint64",
+        "location": "query",
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table id of the table to list.",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [
+      "formatOptions.useInt64Timestamp",
+      "maxResults",
+      "pageToken",
+      "selectedFields",
+      "startIndex"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "TableDataList"
+    },
+    "request": {}
+  },
+  "bigquery_tables_delete": {
+    "name": "bigquery_tables_delete",
+    "description": "Deletes the table specified by tableId from the dataset. If the table contains data, all the data will be deleted.",
+    "http_method": "DELETE",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to delete",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to delete",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to delete",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {},
+    "request": {}
+  },
+  "bigquery_tables_get": {
+    "name": "bigquery_tables_get",
+    "description": "Gets the specified table resource by table ID. This method does not return the data in the table, it only returns the table resource, which describes the structure of this table.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the requested table",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the requested table",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "selectedFields": {
+        "description": "List of table schema fields to return (comma-separated). If unspecified, all fields are returned. A fieldMask cannot be used here because the fields will automatically be converted from camelCase to snake_case and the conversion will fail if there are underscores. Since these are fields in BigQuery table schemas, underscores are allowed.",
+        "location": "query",
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the requested table",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Optional. Specifies the view that determines which table information is returned. By default, basic table information and storage statistics (STORAGE_STATS) are returned.",
+        "enum": [
+          "TABLE_METADATA_VIEW_UNSPECIFIED",
+          "BASIC",
+          "STORAGE_STATS",
+          "FULL"
+        ],
+        "enumDescriptions": [
+          "The default value. Default to the STORAGE_STATS view.",
+          "Includes basic table information including schema and partitioning specification. This view does not include storage statistics such as numRows or numBytes. This view is significantly more efficient and should be used to support high query rates.",
+          "Includes all information in the BASIC view as well as storage statistics (numBytes, numLongTermBytes, numRows and lastModifiedTime).",
+          "Includes all table information, including storage statistics. It returns same information as STORAGE_STATS view, but may contain additional information in the future."
+        ],
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [
+      "selectedFields",
+      "view"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {}
+  },
+  "bigquery_tables_getIamPolicy": {
+    "name": "bigquery_tables_getIamPolicy",
+    "description": "Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:getIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/tables/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "GetIamPolicyRequest"
+    }
+  },
+  "bigquery_tables_insert": {
+    "name": "bigquery_tables_insert",
+    "description": "Creates a new, empty table in the dataset.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the new table",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the new table",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {
+      "$ref": "Table"
+    }
+  },
+  "bigquery_tables_list": {
+    "name": "bigquery_tables_list",
+    "description": "Lists all tables in the specified dataset. Requires the READER dataset role.",
+    "http_method": "GET",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables",
+    "parameters": {
+      "datasetId": {
+        "description": "Required. Dataset ID of the tables to list",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "maxResults": {
+        "description": "The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.",
+        "format": "uint32",
+        "location": "query",
+        "type": "integer"
+      },
+      "pageToken": {
+        "description": "Page token, returned by a previous call, to request the next page of results",
+        "location": "query",
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the tables to list",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId"
+    ],
+    "optional_parameters": [
+      "maxResults",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "TableList"
+    },
+    "request": {}
+  },
+  "bigquery_tables_patch": {
+    "name": "bigquery_tables_patch",
+    "description": "Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports RFC5789 patch semantics.",
+    "http_method": "PATCH",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+    "parameters": {
+      "autodetect_schema": {
+        "description": "Optional.  When true will autodetect schema, else will keep original schema",
+        "location": "query",
+        "type": "boolean"
+      },
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [
+      "autodetect_schema"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {
+      "$ref": "Table"
+    }
+  },
+  "bigquery_tables_setIamPolicy": {
+    "name": "bigquery_tables_setIamPolicy",
+    "description": "Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:setIamPolicy",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/tables/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Policy"
+    },
+    "request": {
+      "$ref": "SetIamPolicyRequest"
+    }
+  },
+  "bigquery_tables_testIamPermissions": {
+    "name": "bigquery_tables_testIamPermissions",
+    "description": "Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may \"fail open\" without warning.",
+    "http_method": "POST",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/{+resource}:testIamPermissions",
+    "parameters": {
+      "resource": {
+        "description": "REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.",
+        "location": "path",
+        "pattern": "^projects/[^/]+/datasets/[^/]+/tables/[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "resource"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "TestIamPermissionsResponse"
+    },
+    "request": {
+      "$ref": "TestIamPermissionsRequest"
+    }
+  },
+  "bigquery_tables_update": {
+    "name": "bigquery_tables_update",
+    "description": "Updates information in an existing table. The update method replaces the entire Table resource, whereas the patch method only replaces fields that are provided in the submitted Table resource.",
+    "http_method": "PUT",
+    "path": "https://bigquery.googleapis.com/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+    "parameters": {
+      "autodetect_schema": {
+        "description": "Optional.  When true will autodetect schema, else will keep original schema",
+        "location": "query",
+        "type": "boolean"
+      },
+      "datasetId": {
+        "description": "Required. Dataset ID of the table to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "projectId": {
+        "description": "Required. Project ID of the table to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      },
+      "tableId": {
+        "description": "Required. Table ID of the table to update",
+        "location": "path",
+        "pattern": "^[^/]+$",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "datasetId",
+      "projectId",
+      "tableId"
+    ],
+    "optional_parameters": [
+      "autodetect_schema"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Table"
+    },
+    "request": {
+      "$ref": "Table"
+    }
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "clouderrorreporting_projects_deleteEvents": {
+    "name": "clouderrorreporting_projects_deleteEvents",
+    "description": "Deletes all error events of a given project.",
+    "http_method": "DELETE",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/events",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840) and `{location}` is a Cloud region. Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`. For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "DeleteEventsResponse"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_groups_get": {
+    "name": "clouderrorreporting_projects_groups_get",
+    "description": "Get the specified group.",
+    "http_method": "GET",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+groupName}",
+    "parameters": {
+      "groupName": {
+        "description": "Required. The group resource name. Written as either `projects/{projectID}/groups/{group_id}` or `projects/{projectID}/locations/{location}/groups/{group_id}`. Call groupStats.list to return a list of groups belonging to this project. Examples: `projects/my-project-123/groups/my-group`, `projects/my-project-123/locations/global/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice). For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+/groups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "groupName"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ErrorGroup"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_groups_update": {
+    "name": "clouderrorreporting_projects_groups_update",
+    "description": "Replace the data for the specified group. Fails if the group does not exist.",
+    "http_method": "PUT",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The group resource name. Written as `projects/{projectID}/groups/{group_id}` or `projects/{projectID}/locations/{location}/groups/{group_id}` Examples: `projects/my-project-123/groups/my-group`, `projects/my-project-123/locations/us-central1/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice). For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+/groups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ErrorGroup"
+    },
+    "request": {
+      "$ref": "ErrorGroup"
+    }
+  },
+  "clouderrorreporting_projects_groupStats_list": {
+    "name": "clouderrorreporting_projects_groupStats_list",
+    "description": "Lists the specified groups.",
+    "http_method": "GET",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/groupStats",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}` and `{projectNumber}` can be found in the [Google Cloud console](https://support.google.com/cloud/answer/6158840). It may also include a location, such as `projects/{projectID}/locations/{location}` where `{location}` is a cloud region. Examples: `projects/my-project-123`, `projects/5551234`, `projects/my-project-123/locations/us-central1`, `projects/5551234/locations/us-central1`. For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified. Use `-` as a wildcard to request group stats from all regions.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "groupId": {
+        "description": "Optional. List all ErrorGroupStats with these IDs. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice] (https://cloud.google.com/terms/cloud-privacy-notice).",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      },
+      "serviceFilter.service": {
+        "description": "Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.version": {
+        "description": "Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.resourceType": {
+        "description": "Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).",
+        "location": "query",
+        "type": "string"
+      },
+      "timeRange.period": {
+        "description": "Restricts the query to the specified time range.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Do not use.",
+          "Retrieve data for the last hour. Recommended minimum timed count duration: 1 min.",
+          "Retrieve data for the last 6 hours. Recommended minimum timed count duration: 10 min.",
+          "Retrieve data for the last day. Recommended minimum timed count duration: 1 hour.",
+          "Retrieve data for the last week. Recommended minimum timed count duration: 6 hours.",
+          "Retrieve data for the last 30 days. Recommended minimum timed count duration: 1 day."
+        ],
+        "enum": [
+          "PERIOD_UNSPECIFIED",
+          "PERIOD_1_HOUR",
+          "PERIOD_6_HOURS",
+          "PERIOD_1_DAY",
+          "PERIOD_1_WEEK",
+          "PERIOD_30_DAYS"
+        ]
+      },
+      "timedCountDuration": {
+        "description": "Optional. The preferred duration for a single returned TimedCount. If not set, no timed counts are returned.",
+        "location": "query",
+        "type": "string",
+        "format": "google-duration"
+      },
+      "alignment": {
+        "description": "Optional. The alignment of the timed counts to be returned. Default is `ALIGNMENT_EQUAL_AT_END`.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "No alignment specified.",
+          "The time periods shall be consecutive, have width equal to the requested duration, and be aligned at the alignment_time provided in the request. The alignment_time does not have to be inside the query period but even if it is outside, only time periods are returned which overlap with the query period. A rounded alignment will typically result in a different size of the first or the last time period.",
+          "The time periods shall be consecutive, have width equal to the requested duration, and be aligned at the end of the requested time period. This can result in a different size of the first time period."
+        ],
+        "enum": [
+          "ERROR_COUNT_ALIGNMENT_UNSPECIFIED",
+          "ALIGNMENT_EQUAL_ROUNDED",
+          "ALIGNMENT_EQUAL_AT_END"
+        ]
+      },
+      "alignmentTime": {
+        "description": "Optional. Time where the timed counts shall be aligned if rounded alignment is chosen. Default is 00:00 UTC.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "order": {
+        "description": "Optional. The sort order in which the results are returned. Default is `COUNT_DESC`.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "No group order specified.",
+          "Total count of errors in the given time window in descending order.",
+          "Timestamp when the group was last seen in the given time window in descending order.",
+          "Timestamp when the group was created in descending order.",
+          "Number of affected users in the given time window in descending order."
+        ],
+        "enum": [
+          "GROUP_ORDER_UNSPECIFIED",
+          "COUNT_DESC",
+          "LAST_SEEN_DESC",
+          "CREATED_DESC",
+          "AFFECTED_USERS_DESC"
+        ]
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of results to return per response. Default is 20.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A next_page_token provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [
+      "groupId",
+      "serviceFilter.service",
+      "serviceFilter.version",
+      "serviceFilter.resourceType",
+      "timeRange.period",
+      "timedCountDuration",
+      "alignment",
+      "alignmentTime",
+      "order",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListGroupStatsResponse"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_events_list": {
+    "name": "clouderrorreporting_projects_events_list",
+    "description": "Lists the specified events.",
+    "http_method": "GET",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/events",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840) and `{location}` is a Cloud region. Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`. For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "groupId": {
+        "description": "Required. The group for which events shall be returned. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.service": {
+        "description": "Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.version": {
+        "description": "Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.resourceType": {
+        "description": "Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).",
+        "location": "query",
+        "type": "string"
+      },
+      "timeRange.period": {
+        "description": "Restricts the query to the specified time range.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Do not use.",
+          "Retrieve data for the last hour. Recommended minimum timed count duration: 1 min.",
+          "Retrieve data for the last 6 hours. Recommended minimum timed count duration: 10 min.",
+          "Retrieve data for the last day. Recommended minimum timed count duration: 1 hour.",
+          "Retrieve data for the last week. Recommended minimum timed count duration: 6 hours.",
+          "Retrieve data for the last 30 days. Recommended minimum timed count duration: 1 day."
+        ],
+        "enum": [
+          "PERIOD_UNSPECIFIED",
+          "PERIOD_1_HOUR",
+          "PERIOD_6_HOURS",
+          "PERIOD_1_DAY",
+          "PERIOD_1_WEEK",
+          "PERIOD_30_DAYS"
+        ]
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of results to return per response.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A `next_page_token` provided by a previous response.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [
+      "groupId",
+      "serviceFilter.service",
+      "serviceFilter.version",
+      "serviceFilter.resourceType",
+      "timeRange.period",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListEventsResponse"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_events_report": {
+    "name": "clouderrorreporting_projects_events_report",
+    "description": "Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting] (https://cloud.google.com/error-reporting) is a service built on Cloud Logging and can analyze log entries when all of the following are true: * Customer-managed encryption keys (CMEK) are disabled on the log bucket. * The log bucket satisfies one of the following: * The log bucket is stored in the same project where the logs originated. * The logs were routed to a project, and then that project stored those logs in a log bucket that it owns.",
+    "http_method": "POST",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/events:report",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectId}`, where `{projectId}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: // `projects/my-project-123`.",
+        "pattern": "^projects/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ReportErrorEventResponse"
+    },
+    "request": {
+      "$ref": "ReportedErrorEvent"
+    }
+  },
+  "clouderrorreporting_projects_locations_deleteEvents": {
+    "name": "clouderrorreporting_projects_locations_deleteEvents",
+    "description": "Deletes all error events of a given project.",
+    "http_method": "DELETE",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/events",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840) and `{location}` is a Cloud region. Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`. For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "DeleteEventsResponse"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_locations_groups_get": {
+    "name": "clouderrorreporting_projects_locations_groups_get",
+    "description": "Get the specified group.",
+    "http_method": "GET",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+groupName}",
+    "parameters": {
+      "groupName": {
+        "description": "Required. The group resource name. Written as either `projects/{projectID}/groups/{group_id}` or `projects/{projectID}/locations/{location}/groups/{group_id}`. Call groupStats.list to return a list of groups belonging to this project. Examples: `projects/my-project-123/groups/my-group`, `projects/my-project-123/locations/global/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice). For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/groups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "groupName"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ErrorGroup"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_locations_groups_update": {
+    "name": "clouderrorreporting_projects_locations_groups_update",
+    "description": "Replace the data for the specified group. Fails if the group does not exist.",
+    "http_method": "PUT",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+name}",
+    "parameters": {
+      "name": {
+        "description": "The group resource name. Written as `projects/{projectID}/groups/{group_id}` or `projects/{projectID}/locations/{location}/groups/{group_id}` Examples: `projects/my-project-123/groups/my-group`, `projects/my-project-123/locations/us-central1/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice). For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+/locations/[^/]+/groups/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "name"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ErrorGroup"
+    },
+    "request": {
+      "$ref": "ErrorGroup"
+    }
+  },
+  "clouderrorreporting_projects_locations_groupStats_list": {
+    "name": "clouderrorreporting_projects_locations_groupStats_list",
+    "description": "Lists the specified groups.",
+    "http_method": "GET",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/groupStats",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}` and `{projectNumber}` can be found in the [Google Cloud console](https://support.google.com/cloud/answer/6158840). It may also include a location, such as `projects/{projectID}/locations/{location}` where `{location}` is a cloud region. Examples: `projects/my-project-123`, `projects/5551234`, `projects/my-project-123/locations/us-central1`, `projects/5551234/locations/us-central1`. For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified. Use `-` as a wildcard to request group stats from all regions.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "groupId": {
+        "description": "Optional. List all ErrorGroupStats with these IDs. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice] (https://cloud.google.com/terms/cloud-privacy-notice).",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      },
+      "serviceFilter.service": {
+        "description": "Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.version": {
+        "description": "Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.resourceType": {
+        "description": "Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).",
+        "location": "query",
+        "type": "string"
+      },
+      "timeRange.period": {
+        "description": "Restricts the query to the specified time range.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Do not use.",
+          "Retrieve data for the last hour. Recommended minimum timed count duration: 1 min.",
+          "Retrieve data for the last 6 hours. Recommended minimum timed count duration: 10 min.",
+          "Retrieve data for the last day. Recommended minimum timed count duration: 1 hour.",
+          "Retrieve data for the last week. Recommended minimum timed count duration: 6 hours.",
+          "Retrieve data for the last 30 days. Recommended minimum timed count duration: 1 day."
+        ],
+        "enum": [
+          "PERIOD_UNSPECIFIED",
+          "PERIOD_1_HOUR",
+          "PERIOD_6_HOURS",
+          "PERIOD_1_DAY",
+          "PERIOD_1_WEEK",
+          "PERIOD_30_DAYS"
+        ]
+      },
+      "timedCountDuration": {
+        "description": "Optional. The preferred duration for a single returned TimedCount. If not set, no timed counts are returned.",
+        "location": "query",
+        "type": "string",
+        "format": "google-duration"
+      },
+      "alignment": {
+        "description": "Optional. The alignment of the timed counts to be returned. Default is `ALIGNMENT_EQUAL_AT_END`.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "No alignment specified.",
+          "The time periods shall be consecutive, have width equal to the requested duration, and be aligned at the alignment_time provided in the request. The alignment_time does not have to be inside the query period but even if it is outside, only time periods are returned which overlap with the query period. A rounded alignment will typically result in a different size of the first or the last time period.",
+          "The time periods shall be consecutive, have width equal to the requested duration, and be aligned at the end of the requested time period. This can result in a different size of the first time period."
+        ],
+        "enum": [
+          "ERROR_COUNT_ALIGNMENT_UNSPECIFIED",
+          "ALIGNMENT_EQUAL_ROUNDED",
+          "ALIGNMENT_EQUAL_AT_END"
+        ]
+      },
+      "alignmentTime": {
+        "description": "Optional. Time where the timed counts shall be aligned if rounded alignment is chosen. Default is 00:00 UTC.",
+        "location": "query",
+        "type": "string",
+        "format": "google-datetime"
+      },
+      "order": {
+        "description": "Optional. The sort order in which the results are returned. Default is `COUNT_DESC`.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "No group order specified.",
+          "Total count of errors in the given time window in descending order.",
+          "Timestamp when the group was last seen in the given time window in descending order.",
+          "Timestamp when the group was created in descending order.",
+          "Number of affected users in the given time window in descending order."
+        ],
+        "enum": [
+          "GROUP_ORDER_UNSPECIFIED",
+          "COUNT_DESC",
+          "LAST_SEEN_DESC",
+          "CREATED_DESC",
+          "AFFECTED_USERS_DESC"
+        ]
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of results to return per response. Default is 20.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A next_page_token provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [
+      "groupId",
+      "serviceFilter.service",
+      "serviceFilter.version",
+      "serviceFilter.resourceType",
+      "timeRange.period",
+      "timedCountDuration",
+      "alignment",
+      "alignmentTime",
+      "order",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListGroupStatsResponse"
+    },
+    "request": {}
+  },
+  "clouderrorreporting_projects_locations_events_list": {
+    "name": "clouderrorreporting_projects_locations_events_list",
+    "description": "Lists the specified events.",
+    "http_method": "GET",
+    "path": "https://clouderrorreporting.googleapis.com/v1beta1/{+projectName}/events",
+    "parameters": {
+      "projectName": {
+        "description": "Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}` or `projects/{projectID}/locations/{location}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840) and `{location}` is a Cloud region. Examples: `projects/my-project-123`, `projects/my-project-123/locations/global`. For a list of supported locations, see [Supported Regions](https://cloud.google.com/logging/docs/region-support). `global` is the default when unspecified.",
+        "pattern": "^projects/[^/]+/locations/[^/]+$",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "groupId": {
+        "description": "Required. The group for which events shall be returned. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.service": {
+        "description": "Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.version": {
+        "description": "Optional. The exact value to match against [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).",
+        "location": "query",
+        "type": "string"
+      },
+      "serviceFilter.resourceType": {
+        "description": "Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).",
+        "location": "query",
+        "type": "string"
+      },
+      "timeRange.period": {
+        "description": "Restricts the query to the specified time range.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Do not use.",
+          "Retrieve data for the last hour. Recommended minimum timed count duration: 1 min.",
+          "Retrieve data for the last 6 hours. Recommended minimum timed count duration: 10 min.",
+          "Retrieve data for the last day. Recommended minimum timed count duration: 1 hour.",
+          "Retrieve data for the last week. Recommended minimum timed count duration: 6 hours.",
+          "Retrieve data for the last 30 days. Recommended minimum timed count duration: 1 day."
+        ],
+        "enum": [
+          "PERIOD_UNSPECIFIED",
+          "PERIOD_1_HOUR",
+          "PERIOD_6_HOURS",
+          "PERIOD_1_DAY",
+          "PERIOD_1_WEEK",
+          "PERIOD_30_DAYS"
+        ]
+      },
+      "pageSize": {
+        "description": "Optional. The maximum number of results to return per response.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Optional. A `next_page_token` provided by a previous response.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectName"
+    ],
+    "optional_parameters": [
+      "groupId",
+      "serviceFilter.service",
+      "serviceFilter.version",
+      "serviceFilter.resourceType",
+      "timeRange.period",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ListEventsResponse"
+    },
+    "request": {}
+  }
+}

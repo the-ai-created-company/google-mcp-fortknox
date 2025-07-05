@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudscheduler",
+  "api_version": "v1beta1",
+  "api_title": "Cloud Scheduler API",
+  "api_description": "Creates and manages jobs run on a regular recurring schedule.",
+  "base_url": "https://cloudscheduler.googleapis.com/",
+  "tool_count": 10,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudscheduler\\cloudscheduler_v1beta1_tools.json"
+}

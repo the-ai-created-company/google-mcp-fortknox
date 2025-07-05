@@ -1,0 +1,1247 @@
+{
+  "appengine_apps_operations_list": {
+    "name": "appengine_apps_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns UNIMPLEMENTED.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/operations",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. The name of the operation's parent resource.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "appengine_apps_operations_get": {
+    "name": "appengine_apps_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/operations/{operationsId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. The name of the operation resource.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "operationsId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "operationsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "appengine_apps_authorizedDomains_list": {
+    "name": "appengine_apps_authorizedDomains_list",
+    "description": "Lists all domains the user is authorized to administer.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/authorizedDomains",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum results to return per page.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Continuation token for fetching the next page of results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListAuthorizedDomainsResponse"
+    },
+    "request": {}
+  },
+  "appengine_apps_authorizedCertificates_list": {
+    "name": "appengine_apps_authorizedCertificates_list",
+    "description": "Lists all SSL certificates the user is authorized to administer.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/authorizedCertificates",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Controls the set of fields returned in the LIST response.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Basic certificate information, including applicable domains and expiration date.",
+          "The information from BASIC_CERTIFICATE, plus detailed information on the domain mappings that have this certificate mapped."
+        ],
+        "enum": [
+          "BASIC_CERTIFICATE",
+          "FULL_CERTIFICATE"
+        ]
+      },
+      "pageSize": {
+        "description": "Maximum results to return per page.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Continuation token for fetching the next page of results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [
+      "view",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListAuthorizedCertificatesResponse"
+    },
+    "request": {}
+  },
+  "appengine_apps_authorizedCertificates_get": {
+    "name": "appengine_apps_authorizedCertificates_get",
+    "description": "Gets the specified SSL certificate.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Name of the resource requested. Example: apps/myapp/authorizedCertificates/12345.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedCertificatesId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Controls the set of fields returned in the GET response.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Basic certificate information, including applicable domains and expiration date.",
+          "The information from BASIC_CERTIFICATE, plus detailed information on the domain mappings that have this certificate mapped."
+        ],
+        "enum": [
+          "BASIC_CERTIFICATE",
+          "FULL_CERTIFICATE"
+        ]
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "authorizedCertificatesId"
+    ],
+    "optional_parameters": [
+      "view"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "AuthorizedCertificate"
+    },
+    "request": {}
+  },
+  "appengine_apps_authorizedCertificates_create": {
+    "name": "appengine_apps_authorizedCertificates_create",
+    "description": "Uploads the specified SSL certificate.",
+    "http_method": "POST",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/authorizedCertificates",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AuthorizedCertificate"
+    },
+    "request": {
+      "$ref": "AuthorizedCertificate"
+    }
+  },
+  "appengine_apps_authorizedCertificates_patch": {
+    "name": "appengine_apps_authorizedCertificates_patch",
+    "description": "Updates the specified SSL certificate. To renew a certificate and maintain its existing domain mappings, update certificate_data with a new certificate. The new certificate must be applicable to the same domains as the original certificate. The certificate display_name may also be updated.",
+    "http_method": "PATCH",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Name of the resource to update. Example: apps/myapp/authorizedCertificates/12345.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedCertificatesId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "authorizedCertificatesId"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AuthorizedCertificate"
+    },
+    "request": {
+      "$ref": "AuthorizedCertificate"
+    }
+  },
+  "appengine_apps_authorizedCertificates_delete": {
+    "name": "appengine_apps_authorizedCertificates_delete",
+    "description": "Deletes the specified SSL certificate.",
+    "http_method": "DELETE",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/authorizedCertificates/{authorizedCertificatesId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Name of the resource to delete. Example: apps/myapp/authorizedCertificates/12345.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedCertificatesId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "authorizedCertificatesId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "appengine_apps_domainMappings_list": {
+    "name": "appengine_apps_domainMappings_list",
+    "description": "Lists the domain mappings on an application.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/domainMappings",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum results to return per page.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Continuation token for fetching the next page of results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListDomainMappingsResponse"
+    },
+    "request": {}
+  },
+  "appengine_apps_domainMappings_get": {
+    "name": "appengine_apps_domainMappings_get",
+    "description": "Gets the specified domain mapping.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/domainMappings/{domainMappingsId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Name of the resource requested. Example: apps/myapp/domainMappings/example.com.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "domainMappingsId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "domainMappingsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "DomainMapping"
+    },
+    "request": {}
+  },
+  "appengine_apps_domainMappings_create": {
+    "name": "appengine_apps_domainMappings_create",
+    "description": "Maps a domain to an application. A user must be authorized to administer a domain in order to map it to an application. For a list of available authorized domains, see AuthorizedDomains.ListAuthorizedDomains.",
+    "http_method": "POST",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/domainMappings",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "noManagedCertificate": {
+        "description": "Whether a managed certificate should be provided by App Engine. If true, a certificate ID must be manaually set in the DomainMapping resource to configure SSL for this domain. If false, a managed certificate will be provisioned and a certificate ID will be automatically populated.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "overrideStrategy": {
+        "description": "Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Strategy unspecified. Defaults to STRICT.",
+          "Overrides not allowed. If a mapping already exists for the specified domain, the request will return an ALREADY_EXISTS (409).",
+          "Overrides allowed. If a mapping already exists for the specified domain, the request will overwrite it. Note that this might stop another Google product from serving. For example, if the domain is mapped to another App Engine application, that app will no longer serve from that domain."
+        ],
+        "enum": [
+          "UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY",
+          "STRICT",
+          "OVERRIDE"
+        ]
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [
+      "noManagedCertificate",
+      "overrideStrategy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DomainMapping"
+    }
+  },
+  "appengine_apps_domainMappings_patch": {
+    "name": "appengine_apps_domainMappings_patch",
+    "description": "Updates the specified domain mapping. To map an SSL certificate to a domain mapping, update certificate_id to point to an AuthorizedCertificate resource. A user must be authorized to administer the associated domain in order to update a DomainMapping resource.",
+    "http_method": "PATCH",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/domainMappings/{domainMappingsId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Name of the resource to update. Example: apps/myapp/domainMappings/example.com.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "domainMappingsId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Required. Standard field mask for the set of fields to be updated.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      },
+      "noManagedCertificate": {
+        "description": "Whether a managed certificate should be provided by App Engine. If true, a certificate ID must be manually set in the DomainMapping resource to configure SSL for this domain. If false, a managed certificate will be provisioned and a certificate ID will be automatically populated. Only applicable if ssl_settings.certificate_id is specified in the update mask.",
+        "location": "query",
+        "type": "boolean"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "domainMappingsId"
+    ],
+    "optional_parameters": [
+      "updateMask",
+      "noManagedCertificate"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DomainMapping"
+    }
+  },
+  "appengine_apps_domainMappings_delete": {
+    "name": "appengine_apps_domainMappings_delete",
+    "description": "Deletes the specified domain mapping. A user must be authorized to administer the associated domain in order to delete a DomainMapping resource.",
+    "http_method": "DELETE",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/domainMappings/{domainMappingsId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Name of the resource to delete. Example: apps/myapp/domainMappings/example.com.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "domainMappingsId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "domainMappingsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "appengine_apps_locations_list": {
+    "name": "appengine_apps_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/locations",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. The resource that owns the locations collection, if applicable.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in AIP-160 (https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "appengine_apps_locations_get": {
+    "name": "appengine_apps_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/apps/{appsId}/locations/{locationsId}",
+    "parameters": {
+      "appsId": {
+        "description": "Part of `name`. Resource name for the location.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `appsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "appsId",
+      "locationsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_list": {
+    "name": "appengine_projects_locations_list",
+    "description": "Lists information about the supported locations for this service.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. The resource that owns the locations collection, if applicable.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "A filter to narrow down results to a preferred subset. The filtering language accepts strings like \"displayName=tokyo\", and is documented in more detail in AIP-160 (https://google.aip.dev/160).",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The maximum number of results to return. If not set, the service selects a default.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.",
+        "location": "query",
+        "type": "string"
+      },
+      "extraLocationTypes": {
+        "description": "Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.",
+        "location": "query",
+        "repeated": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken",
+      "extraLocationTypes"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListLocationsResponse"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_get": {
+    "name": "appengine_projects_locations_get",
+    "description": "Gets information about a location.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. Resource name for the location.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Location"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_operations_list": {
+    "name": "appengine_projects_locations_operations_list",
+    "description": "Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns UNIMPLEMENTED.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/operations",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. The name of the operation's parent resource.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "filter": {
+        "description": "The standard list filter.",
+        "location": "query",
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "The standard list page size.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "The standard list page token.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId"
+    ],
+    "optional_parameters": [
+      "filter",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListOperationsResponse"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_operations_get": {
+    "name": "appengine_projects_locations_operations_get",
+    "description": "Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. The name of the operation resource.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "operationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "operationsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_applications_authorizedDomains_list": {
+    "name": "appengine_projects_locations_applications_authorizedDomains_list",
+    "description": "Lists all domains the user is authorized to administer.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/authorizedDomains",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "pageSize": {
+        "description": "Maximum results to return per page.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Continuation token for fetching the next page of results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId"
+    ],
+    "optional_parameters": [
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListAuthorizedDomainsResponse"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_applications_authorizedCertificates_list": {
+    "name": "appengine_projects_locations_applications_authorizedCertificates_list",
+    "description": "Lists all SSL certificates the user is authorized to administer.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/authorizedCertificates",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Controls the set of fields returned in the LIST response.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Basic certificate information, including applicable domains and expiration date.",
+          "The information from BASIC_CERTIFICATE, plus detailed information on the domain mappings that have this certificate mapped."
+        ],
+        "enum": [
+          "BASIC_CERTIFICATE",
+          "FULL_CERTIFICATE"
+        ]
+      },
+      "pageSize": {
+        "description": "Maximum results to return per page.",
+        "location": "query",
+        "type": "integer",
+        "format": "int32"
+      },
+      "pageToken": {
+        "description": "Continuation token for fetching the next page of results.",
+        "location": "query",
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId"
+    ],
+    "optional_parameters": [
+      "view",
+      "pageSize",
+      "pageToken"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "ListAuthorizedCertificatesResponse"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_applications_authorizedCertificates_get": {
+    "name": "appengine_projects_locations_applications_authorizedCertificates_get",
+    "description": "Gets the specified SSL certificate.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/authorizedCertificates/{authorizedCertificatesId}",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. Name of the resource requested. Example: apps/myapp/authorizedCertificates/12345.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedCertificatesId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "view": {
+        "description": "Controls the set of fields returned in the GET response.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Basic certificate information, including applicable domains and expiration date.",
+          "The information from BASIC_CERTIFICATE, plus detailed information on the domain mappings that have this certificate mapped."
+        ],
+        "enum": [
+          "BASIC_CERTIFICATE",
+          "FULL_CERTIFICATE"
+        ]
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId",
+      "authorizedCertificatesId"
+    ],
+    "optional_parameters": [
+      "view"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "AuthorizedCertificate"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_applications_authorizedCertificates_create": {
+    "name": "appengine_projects_locations_applications_authorizedCertificates_create",
+    "description": "Uploads the specified SSL certificate.",
+    "http_method": "POST",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/authorizedCertificates",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AuthorizedCertificate"
+    },
+    "request": {
+      "$ref": "AuthorizedCertificate"
+    }
+  },
+  "appengine_projects_locations_applications_authorizedCertificates_patch": {
+    "name": "appengine_projects_locations_applications_authorizedCertificates_patch",
+    "description": "Updates the specified SSL certificate. To renew a certificate and maintain its existing domain mappings, update certificate_data with a new certificate. The new certificate must be applicable to the same domains as the original certificate. The certificate display_name may also be updated.",
+    "http_method": "PATCH",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/authorizedCertificates/{authorizedCertificatesId}",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. Name of the resource to update. Example: apps/myapp/authorizedCertificates/12345.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedCertificatesId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "updateMask": {
+        "description": "Standard field mask for the set of fields to be updated. Updates are only supported on the certificate_raw_data and display_name fields.",
+        "location": "query",
+        "type": "string",
+        "format": "google-fieldmask"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId",
+      "authorizedCertificatesId"
+    ],
+    "optional_parameters": [
+      "updateMask"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AuthorizedCertificate"
+    },
+    "request": {
+      "$ref": "AuthorizedCertificate"
+    }
+  },
+  "appengine_projects_locations_applications_authorizedCertificates_delete": {
+    "name": "appengine_projects_locations_applications_authorizedCertificates_delete",
+    "description": "Deletes the specified SSL certificate.",
+    "http_method": "DELETE",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/authorizedCertificates/{authorizedCertificatesId}",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. Name of the resource to delete. Example: apps/myapp/authorizedCertificates/12345.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "authorizedCertificatesId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId",
+      "authorizedCertificatesId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Empty"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_applications_domainMappings_get": {
+    "name": "appengine_projects_locations_applications_domainMappings_get",
+    "description": "Gets the specified domain mapping.",
+    "http_method": "GET",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/domainMappings/{domainMappingsId}",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `name`. Name of the resource requested. Example: apps/myapp/domainMappings/example.com.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "domainMappingsId": {
+        "description": "Part of `name`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId",
+      "domainMappingsId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/appengine.admin",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/cloud-platform.read-only"
+    ],
+    "response": {
+      "$ref": "DomainMapping"
+    },
+    "request": {}
+  },
+  "appengine_projects_locations_applications_domainMappings_create": {
+    "name": "appengine_projects_locations_applications_domainMappings_create",
+    "description": "Maps a domain to an application. A user must be authorized to administer a domain in order to map it to an application. For a list of available authorized domains, see AuthorizedDomains.ListAuthorizedDomains.",
+    "http_method": "POST",
+    "path": "https://appengine.googleapis.com/v1alpha/projects/{projectsId}/locations/{locationsId}/applications/{applicationsId}/domainMappings",
+    "parameters": {
+      "projectsId": {
+        "description": "Part of `parent`. Name of the parent Application resource. Example: apps/myapp.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "locationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "applicationsId": {
+        "description": "Part of `parent`. See documentation of `projectsId`.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      },
+      "noManagedCertificate": {
+        "description": "Whether a managed certificate should be provided by App Engine. If true, a certificate ID must be manaually set in the DomainMapping resource to configure SSL for this domain. If false, a managed certificate will be provisioned and a certificate ID will be automatically populated.",
+        "location": "query",
+        "type": "boolean"
+      },
+      "overrideStrategy": {
+        "description": "Whether the domain creation should override any existing mappings for this domain. By default, overrides are rejected.",
+        "location": "query",
+        "type": "string",
+        "enumDescriptions": [
+          "Strategy unspecified. Defaults to STRICT.",
+          "Overrides not allowed. If a mapping already exists for the specified domain, the request will return an ALREADY_EXISTS (409).",
+          "Overrides allowed. If a mapping already exists for the specified domain, the request will overwrite it. Note that this might stop another Google product from serving. For example, if the domain is mapped to another App Engine application, that app will no longer serve from that domain."
+        ],
+        "enum": [
+          "UNSPECIFIED_DOMAIN_OVERRIDE_STRATEGY",
+          "STRICT",
+          "OVERRIDE"
+        ]
+      }
+    },
+    "required_parameters": [
+      "projectsId",
+      "locationsId",
+      "applicationsId"
+    ],
+    "optional_parameters": [
+      "noManagedCertificate",
+      "overrideStrategy"
+    ],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "Operation"
+    },
+    "request": {
+      "$ref": "DomainMapping"
+    }
+  }
+}

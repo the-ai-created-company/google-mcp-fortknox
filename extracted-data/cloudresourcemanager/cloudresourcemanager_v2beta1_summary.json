@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudresourcemanager",
+  "api_version": "v2beta1",
+  "api_title": "Cloud Resource Manager API",
+  "api_description": "Creates, reads, and updates metadata for Google Cloud Platform resource containers.",
+  "base_url": "https://cloudresourcemanager.googleapis.com/",
+  "tool_count": 12,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudresourcemanager\\cloudresourcemanager_v2beta1_tools.json"
+}

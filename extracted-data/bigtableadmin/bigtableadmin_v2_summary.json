@@ -1,0 +1,9 @@
+{
+  "api_name": "bigtableadmin",
+  "api_version": "v2",
+  "api_title": "Cloud Bigtable Admin API",
+  "api_description": "Administer your Cloud Bigtable tables and instances.",
+  "base_url": "https://bigtableadmin.googleapis.com/",
+  "tool_count": 82,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\bigtableadmin\\bigtableadmin_v2_tools.json"
+}

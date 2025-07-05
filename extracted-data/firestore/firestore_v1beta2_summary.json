@@ -1,0 +1,9 @@
+{
+  "api_name": "firestore",
+  "api_version": "v1beta2",
+  "api_title": "Cloud Firestore API",
+  "api_description": "Accesses the NoSQL document database built for automatic scaling, high performance, and ease of application development. ",
+  "base_url": "https://firestore.googleapis.com/",
+  "tool_count": 9,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\firestore\\firestore_v1beta2_tools.json"
+}

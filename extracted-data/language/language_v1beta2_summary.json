@@ -1,0 +1,9 @@
+{
+  "api_name": "language",
+  "api_version": "v1beta2",
+  "api_title": "Cloud Natural Language API",
+  "api_description": "Provides natural language understanding technologies, such as sentiment analysis, entity recognition, entity sentiment analysis, and other text annotations, to developers.",
+  "base_url": "https://language.googleapis.com/",
+  "tool_count": 7,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\language\\language_v1beta2_tools.json"
+}

@@ -1,0 +1,9 @@
+{
+  "api_name": "pubsublite",
+  "api_version": "v1",
+  "api_title": "Pub/Sub Lite API",
+  "api_description": "",
+  "base_url": "https://pubsublite.googleapis.com/",
+  "tool_count": 28,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\pubsublite\\pubsublite_v1_tools.json"
+}

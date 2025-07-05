@@ -1,0 +1,9 @@
+{
+  "api_name": "bigquerydatapolicy",
+  "api_version": "v1",
+  "api_title": "BigQuery Data Policy API",
+  "api_description": "Allows users to manage BigQuery data policies.",
+  "base_url": "https://bigquerydatapolicy.googleapis.com/",
+  "tool_count": 9,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\bigquerydatapolicy\\bigquerydatapolicy_v1_tools.json"
+}

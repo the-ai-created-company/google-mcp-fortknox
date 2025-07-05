@@ -1,0 +1,9 @@
+{
+  "api_name": "speech",
+  "api_version": "v1p1beta1",
+  "api_title": "Cloud Speech-to-Text API",
+  "api_description": "Converts audio to text by applying powerful neural network models.",
+  "base_url": "https://speech.googleapis.com/",
+  "tool_count": 14,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\speech\\speech_v1p1beta1_tools.json"
+}

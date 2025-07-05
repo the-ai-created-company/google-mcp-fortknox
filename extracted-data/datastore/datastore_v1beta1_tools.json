@@ -1,0 +1,58 @@
+{
+  "datastore_projects_export": {
+    "name": "datastore_projects_export",
+    "description": "Exports a copy of all or a subset of entities from Google Cloud Datastore to another storage system, such as Google Cloud Storage. Recent updates to entities may not be reflected in the export. The export occurs in the background and its progress can be monitored and managed via the Operation resource that is created. The output of an export may only be used once the associated operation is done. If an export operation is cancelled before completion it may leave partial data behind in Google Cloud Storage.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta1/projects/{projectId}:export",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleDatastoreAdminV1beta1ExportEntitiesRequest"
+    }
+  },
+  "datastore_projects_import": {
+    "name": "datastore_projects_import",
+    "description": "Imports entities into Google Cloud Datastore. Existing entities with the same key are overwritten. The import occurs in the background and its progress can be monitored and managed via the Operation resource that is created. If an ImportEntities operation is cancelled, it is possible that a subset of the data has already been imported to Cloud Datastore.",
+    "http_method": "POST",
+    "path": "https://datastore.googleapis.com/v1beta1/projects/{projectId}:import",
+    "parameters": {
+      "projectId": {
+        "description": "Project ID against which to make the request.",
+        "location": "path",
+        "required": true,
+        "type": "string"
+      }
+    },
+    "required_parameters": [
+      "projectId"
+    ],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/datastore"
+    ],
+    "response": {
+      "$ref": "GoogleLongrunningOperation"
+    },
+    "request": {
+      "$ref": "GoogleDatastoreAdminV1beta1ImportEntitiesRequest"
+    }
+  }
+}

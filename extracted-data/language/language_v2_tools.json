@@ -1,0 +1,97 @@
+{
+  "language_documents_analyzeSentiment": {
+    "name": "language_documents_analyzeSentiment",
+    "description": "Analyzes the sentiment of the provided text.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v2/documents:analyzeSentiment",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnalyzeSentimentResponse"
+    },
+    "request": {
+      "$ref": "AnalyzeSentimentRequest"
+    }
+  },
+  "language_documents_analyzeEntities": {
+    "name": "language_documents_analyzeEntities",
+    "description": "Finds named entities (currently proper names and common nouns) in the text along with entity types, probability, mentions for each entity, and other properties.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v2/documents:analyzeEntities",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnalyzeEntitiesResponse"
+    },
+    "request": {
+      "$ref": "AnalyzeEntitiesRequest"
+    }
+  },
+  "language_documents_classifyText": {
+    "name": "language_documents_classifyText",
+    "description": "Classifies a document into categories.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v2/documents:classifyText",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ClassifyTextResponse"
+    },
+    "request": {
+      "$ref": "ClassifyTextRequest"
+    }
+  },
+  "language_documents_moderateText": {
+    "name": "language_documents_moderateText",
+    "description": "Moderates a document for harmful and sensitive categories.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v2/documents:moderateText",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "ModerateTextResponse"
+    },
+    "request": {
+      "$ref": "ModerateTextRequest"
+    }
+  },
+  "language_documents_annotateText": {
+    "name": "language_documents_annotateText",
+    "description": "A convenience method that provides all features in one call.",
+    "http_method": "POST",
+    "path": "https://language.googleapis.com/v2/documents:annotateText",
+    "parameters": {},
+    "required_parameters": [],
+    "optional_parameters": [],
+    "scopes": [
+      "https://www.googleapis.com/auth/cloud-language",
+      "https://www.googleapis.com/auth/cloud-platform"
+    ],
+    "response": {
+      "$ref": "AnnotateTextResponse"
+    },
+    "request": {
+      "$ref": "AnnotateTextRequest"
+    }
+  }
+}

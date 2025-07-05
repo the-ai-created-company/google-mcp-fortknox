@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudcontrolspartner",
+  "api_version": "v1",
+  "api_title": "Cloud Controls Partner API",
+  "api_description": "Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.",
+  "base_url": "https://cloudcontrolspartner.googleapis.com/",
+  "tool_count": 13,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudcontrolspartner\\cloudcontrolspartner_v1_tools.json"
+}

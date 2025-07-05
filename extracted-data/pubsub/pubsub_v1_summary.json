@@ -1,0 +1,9 @@
+{
+  "api_name": "pubsub",
+  "api_version": "v1",
+  "api_title": "Cloud Pub/Sub API",
+  "api_description": "Provides reliable, many-to-many, asynchronous messaging between applications. ",
+  "base_url": "https://pubsub.googleapis.com/",
+  "tool_count": 46,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\pubsub\\pubsub_v1_tools.json"
+}

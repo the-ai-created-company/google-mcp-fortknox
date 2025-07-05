@@ -1,0 +1,9 @@
+{
+  "api_name": "videointelligence",
+  "api_version": "v1",
+  "api_title": "Cloud Video Intelligence API",
+  "api_description": "Detects objects, explicit content, and scene changes in videos. It also specifies the region for annotation and transcribes speech to text. Supports both asynchronous API and streaming API.",
+  "base_url": "https://videointelligence.googleapis.com/",
+  "tool_count": 8,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\videointelligence\\videointelligence_v1_tools.json"
+}

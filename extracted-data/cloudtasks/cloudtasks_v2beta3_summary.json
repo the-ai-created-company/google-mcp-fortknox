@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudtasks",
+  "api_version": "v2beta3",
+  "api_title": "Cloud Tasks API",
+  "api_description": "Manages the execution of large numbers of distributed requests.",
+  "base_url": "https://cloudtasks.googleapis.com/",
+  "tool_count": 21,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudtasks\\cloudtasks_v2beta3_tools.json"
+}

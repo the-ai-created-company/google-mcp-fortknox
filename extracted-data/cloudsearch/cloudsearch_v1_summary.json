@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudsearch",
+  "api_version": "v1",
+  "api_title": "Cloud Search API",
+  "api_description": "Cloud Search provides cloud-based search capabilities over Google Workspace data. The Cloud Search API allows indexing of non-Google Workspace data into Cloud Search.",
+  "base_url": "https://cloudsearch.googleapis.com/",
+  "tool_count": 50,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudsearch\\cloudsearch_v1_tools.json"
+}

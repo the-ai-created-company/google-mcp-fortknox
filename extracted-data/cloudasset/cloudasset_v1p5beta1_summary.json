@@ -1,0 +1,9 @@
+{
+  "api_name": "cloudasset",
+  "api_version": "v1p5beta1",
+  "api_title": "Cloud Asset API",
+  "api_description": "The Cloud Asset API manages the history and inventory of Google Cloud resources.",
+  "base_url": "https://cloudasset.googleapis.com/",
+  "tool_count": 1,
+  "tools_file": "C:\\Users\\Not John Or Justin\\Documents\\google-mcp-fortknox\\extracted-data\\cloudasset\\cloudasset_v1p5beta1_tools.json"
+}
