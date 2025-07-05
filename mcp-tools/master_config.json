@@ -1,0 +1,61 @@
+{
+  "mcp_servers": {
+    "docker": {
+      "name": "Docker MCP Server",
+      "type": "container_management",
+      "status": "configured",
+      "capabilities": [
+        "container_create",
+        "container_manage",
+        "compose_deploy",
+        "logs_retrieve"
+      ],
+      "description": "Manages Docker containers and compose stacks"
+    },
+    "github": {
+      "name": "GitHub MCP Server",
+      "type": "version_control",
+      "status": "configured",
+      "capabilities": [
+        "repository_management",
+        "issue_tracking",
+        "pull_requests",
+        "actions_management"
+      ],
+      "description": "GitHub repository and workflow management"
+    },
+    "google_cloud": {
+      "name": "Google Cloud MCP Tools",
+      "type": "cloud_infrastructure",
+      "status": "available",
+      "tool_count": 4881,
+      "api_count": 58,
+      "location": "/app/fort-knox-apis",
+      "capabilities": [
+        "compute_engine",
+        "cloud_run",
+        "cloud_sql",
+        "vertex_ai",
+        "cloud_storage",
+        "kubernetes_engine"
+      ],
+      "description": "Complete Google Cloud Platform operations via Fort Knox tools"
+    }
+  },
+  "activation_status": {
+    "docker": true,
+    "github": true,
+    "google_cloud": false
+  },
+  "integration_notes": {
+    "google_cloud": "Tools are available at /app/fort-knox-apis but require service account credentials for activation",
+    "hybrid_deployment": "System supports both DigitalOcean (current) and Google Cloud (target) deployments"
+  },
+  "deprecated_removed": [
+    "redis",
+    "supabase",
+    "digitalocean",
+    "vercel"
+  ],
+  "updated_at": "2025-07-03T18:53:06.836759"
+}

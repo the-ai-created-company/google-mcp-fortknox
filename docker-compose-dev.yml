@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # For now, let's just run Open WebUI and Redis
+  openwebui:
+    build:
+      context: .
+      dockerfile: Dockerfile.supervisor
+    image: fort-knox-supervisor:latest
+    command: python /app/agents/supervisor_agent_gcp.py
+    ports:
+      - "8080:8080"
+    volumes:
+      - openwebui_data:/app/backend/data
+      - ./agents:/app/agents
+      - ./fort-knox-apis:/app/fort-knox-apis
+      - C:/Users/Not John Or Justin/Documents/google-mcp-fortknox/extracted-data:/app/fort-knox-apis:ro
+      - shared-memory:/app/shared-memory
+      - ./mcp-tools:/app/mcp-tools
+      # Mount the Master Google Cloud service account key
+      # IMPORTANT: This key has ABSOLUTE POWER over your Google Cloud organization.
+      # Ensure it is kept secure and NEVER committed to version control.
+      - ./ai-created-master-key.json:/app/ai-created-master-key.json:ro
+    environment:
+      - DATA_DIR=/app/backend/data
+      - WEBUI_SECRET_KEY=your-secret-key-here
+      - ENABLE_SIGNUP=false
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/ai-created-master-key.json
+    networks:
+      - fort-knox-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - fort-knox-network
+
+volumes:
+  openwebui_data:
+  redis_data:
+  shared-memory:
+
+networks:
+  fort-knox-network:
+    driver: bridge

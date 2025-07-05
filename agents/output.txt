@@ -1,0 +1,6 @@
+{
+  "status": "SUCCESS",
+  "command": "gcloud compute instances delete fort-knox-test-vm --zone=us-central1-a --project=ai-created-master-1751592481 --quiet",
+  "output": "",
+  "message": "Google Cloud command executed successfully"
+}

@@ -1,0 +1,19 @@
+{
+  "agent_id": "agent-06-database-specialist",
+  "agent_type": "database-specialist",
+  "created_by": "test-spawner-001",
+  "created_at": "2025-07-03T06:36:59.639156",
+  "config": {
+    "capabilities": [
+      "database-management",
+      "sql-optimization",
+      "backup-restore"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "Cloud SQL",
+      "Redis"
+    ],
+    "auto_start": true
+  }
+}

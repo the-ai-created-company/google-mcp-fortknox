@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  fort-knox:
+    build:
+      context: .
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8080:8080"    # Open WebUI
+      - "8888:8888"    # MCP Server
+    volumes:
+      # Mount local code for development
+      - ./agents:/app/agents
+      - ./mcp-tools:/app/mcp-tools
+      - ./shared-memory:/app/shared-memory
+      - ./fort-knox-apis:/app/fort-knox-apis
+      - ./openwebui-control:/app/openwebui-control
+      - ./mcp-server:/app/mcp-server
+      # Persistent storage for Open WebUI
+      - openwebui_data:/app/backend/data
+    environment:
+      # Google Cloud Configuration
+      - GOOGLE_CLOUD_PROJECT=${GOOGLE_CLOUD_PROJECT:-arched-logic-464602-d9}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/service-account-key.json
+      
+      # MCP Configuration
+      - ENABLE_MCP_FACTORY=true
+      - BLUEPRINTS_PATH=/app/blueprints
+      - MCP_SERVER_PORT=8888
+      
+      # Open WebUI Configuration
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY:-your-secret-key-here}
+      - DATA_DIR=/app/backend/data
+      - ENABLE_SIGNUP=false
+      
+      # Agent Configuration
+      - AGENT_WORKSPACE=/app/shared-memory
+      - ENABLE_SELF_MODIFICATION=true
+      
+      # Redis Configuration (if you want to use local Redis)
+      - REDIS_URL=${REDIS_URL:-redis://redis:6379}
+      
+    depends_on:
+      - redis
+    networks:
+      - fort-knox-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - fort-knox-network
+
+volumes:
+  openwebui_data:
+  redis_data:
+
+networks:
+  fort-knox-network:
+    driver: bridge

@@ -21,3 +21,13 @@ Thumbs.db
 # Project specific
 *.log
 temp/
+
+# Google Cloud Service Account Keys - CRITICAL SECURITY
+*-key.json
+*-sa.json
+*-credentials.json
+ai-created-master-key.json
+service-account-*.json
+gcp-*.json
+credentials/
+.gcp/
